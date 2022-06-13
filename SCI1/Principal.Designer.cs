@@ -171,6 +171,7 @@ namespace SCI1
             this.btnSGR.FlatAppearance.BorderSize = 0;
             this.btnSGR.Name = "btnSGR";
             this.btnSGR.UseVisualStyleBackColor = true;
+            this.btnSGR.Click += new System.EventHandler(this.btnSGR_Click);
             // 
             // btnMNT
             // 

@@ -85,5 +85,10 @@ namespace SCI1
         {
             AbrirFormulario<InventarioMNT>();
         }
+
+        private void btnSGR_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<InventarioSGR>();
+        }
     }
 }

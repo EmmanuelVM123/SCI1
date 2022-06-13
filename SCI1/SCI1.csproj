@@ -99,6 +99,9 @@
     <EmbeddedResource Include="InventarioMNT.resx">
       <DependentUpon>InventarioMNT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InventarioSGR.resx">
+      <DependentUpon>InventarioSGR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
