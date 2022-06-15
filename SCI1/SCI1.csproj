@@ -46,7 +46,9 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,6 +61,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EliminarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarArticulo.Designer.cs">
+      <DependentUpon>EliminarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarInventario.Designer.cs">
+      <DependentUpon>InsertarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioAMT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioAMT.Designer.cs">
+      <DependentUpon>InventarioAMT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioLBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioLBC.Designer.cs">
+      <DependentUpon>InventarioLBC.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventarioMNT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +122,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SCIDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EliminarArticulo.resx">
+      <DependentUpon>EliminarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarInventario.resx">
+      <DependentUpon>InsertarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioAMT.resx">
+      <DependentUpon>InventarioAMT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioLBC.resx">
+      <DependentUpon>InventarioLBC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventarioMNT.resx">
       <DependentUpon>InventarioMNT.cs</DependentUpon>
     </EmbeddedResource>

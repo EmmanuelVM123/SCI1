@@ -24,8 +24,8 @@ namespace SCI1
 
         private void OcultarSubMenus()
         {
-            if (subMenu.Visible == false)
-                subMenu.Visible = false;
+            if (subMenu.Visible == true)
+                subMenu.Visible = true;
             if (panel1.Visible == false)
                 panel1.Visible = false;
             if (panel2.Visible == false)
@@ -89,6 +89,26 @@ namespace SCI1
         private void btnSGR_Click(object sender, EventArgs e)
         {
             AbrirFormulario<InventarioSGR>();
+        }
+
+        private void btnLBC_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<InventarioLBC>();
+        }
+
+        private void btnAMT_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<InventarioAMT>();
+        }
+
+        private void btnNuevoingreso_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<InsertarInventario>();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<EliminarArticulo>();
         }
     }
 }

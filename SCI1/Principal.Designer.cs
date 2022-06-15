@@ -37,7 +37,7 @@ namespace SCI1
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnNuevoingreso = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.subMenu = new System.Windows.Forms.Panel();
             this.btnAMT = new System.Windows.Forms.Button();
@@ -99,6 +99,7 @@ namespace SCI1
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.Name = "button10";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button8
             // 
@@ -112,7 +113,7 @@ namespace SCI1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button13);
+            this.panel1.Controls.Add(this.btnNuevoingreso);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -124,13 +125,14 @@ namespace SCI1
             this.button12.Name = "button12";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // btnNuevoingreso
             // 
-            this.button13.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.Name = "button13";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnNuevoingreso.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.btnNuevoingreso, "btnNuevoingreso");
+            this.btnNuevoingreso.FlatAppearance.BorderSize = 0;
+            this.btnNuevoingreso.Name = "btnNuevoingreso";
+            this.btnNuevoingreso.UseVisualStyleBackColor = false;
+            this.btnNuevoingreso.Click += new System.EventHandler(this.btnNuevoingreso_Click);
             // 
             // button1
             // 
@@ -157,6 +159,7 @@ namespace SCI1
             this.btnAMT.FlatAppearance.BorderSize = 0;
             this.btnAMT.Name = "btnAMT";
             this.btnAMT.UseVisualStyleBackColor = true;
+            this.btnAMT.Click += new System.EventHandler(this.btnAMT_Click);
             // 
             // btnLBC
             // 
@@ -164,6 +167,7 @@ namespace SCI1
             this.btnLBC.FlatAppearance.BorderSize = 0;
             this.btnLBC.Name = "btnLBC";
             this.btnLBC.UseVisualStyleBackColor = true;
+            this.btnLBC.Click += new System.EventHandler(this.btnLBC_Click);
             // 
             // btnSGR
             // 
@@ -237,6 +241,7 @@ namespace SCI1
             this.Controls.Add(this.panelMenu);
             this.Name = "FormularioPrincipal";
             this.Opacity = 0.99D;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -257,7 +262,7 @@ namespace SCI1
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnNuevoingreso;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel subMenu;
         private System.Windows.Forms.Button btnAMT;
