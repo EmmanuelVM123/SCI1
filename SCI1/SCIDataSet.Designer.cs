@@ -8662,7 +8662,7 @@ SELECT TOP (100) IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUn
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TOP (100) IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUni" +
                 "dadMedida, CantidadNormal, CantidadCritica FROM dbo.Inventario\r\nWHERE IdArticulo" +
-                " >100\r\nOrder by IdArticulo desc";
+                " >103\r\nOrder by IdArticulo desc";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

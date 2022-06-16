@@ -53,8 +53,8 @@ namespace SCI1
                     this.idArticuloTextBox.Enabled = false;
                     this.idAreaTextBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
-                    this.cantidadNumericUpDown.Enabled = false; 
                     this.descripcionTextBox.Enabled = false;
+                    this.cantidadNumericUpDown.Enabled = false;
                     this.idUnidadMedidaTextBox.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
                     this.cantidadCriticaNumericUpDown.Enabled = false;
@@ -67,8 +67,8 @@ namespace SCI1
                     this.idAreaTextBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
-                    this.cantidadNumericUpDown.Enabled = true;
                     this.idUnidadMedidaTextBox.Enabled = true;
+                    this.cantidadNumericUpDown.Enabled = true;                    
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
                     this.descripcionTextBox.Text = "";

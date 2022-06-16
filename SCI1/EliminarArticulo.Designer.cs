@@ -31,17 +31,18 @@ namespace SCI1
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label idArticuloLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarArticulo));
             System.Windows.Forms.Label nombreArticuloLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarArticulo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarFormulario = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
-            this.btbEliminar = new System.Windows.Forms.Button();
-            this.idArticuloTextBox = new System.Windows.Forms.TextBox();
+            this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             this.inventario1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sCIDataSet = new SCI1.SCIDataSet();
+            this.btbEliminar = new System.Windows.Forms.Button();
+            this.idArticuloTextBox = new System.Windows.Forms.TextBox();
             this.panelDGV = new System.Windows.Forms.Panel();
             this.inventarioDataGridView = new System.Windows.Forms.DataGridView();
             this.idAreaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@ namespace SCI1
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
             this.eToolStrip = new System.Windows.Forms.ToolStrip();
             this.eToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -77,6 +77,15 @@ namespace SCI1
             idArticuloLabel.Size = new System.Drawing.Size(21, 13);
             idArticuloLabel.TabIndex = 7;
             idArticuloLabel.Text = "ID:";
+            // 
+            // nombreArticuloLabel
+            // 
+            nombreArticuloLabel.AutoSize = true;
+            nombreArticuloLabel.Location = new System.Drawing.Point(134, 14);
+            nombreArticuloLabel.Name = "nombreArticuloLabel";
+            nombreArticuloLabel.Size = new System.Drawing.Size(85, 13);
+            nombreArticuloLabel.TabIndex = 29;
+            nombreArticuloLabel.Text = "Nombre Articulo:";
             // 
             // panel1
             // 
@@ -108,9 +117,9 @@ namespace SCI1
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(35, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 17);
+            this.label1.Size = new System.Drawing.Size(129, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Insertar nuevo artículo";
+            this.label1.Text = "Eliminar artiículo";
             // 
             // panel2
             // 
@@ -128,10 +137,29 @@ namespace SCI1
             this.panelBotones.Controls.Add(idArticuloLabel);
             this.panelBotones.Controls.Add(this.idArticuloTextBox);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotones.Location = new System.Drawing.Point(0, 700);
+            this.panelBotones.Location = new System.Drawing.Point(0, 687);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(1108, 101);
             this.panelBotones.TabIndex = 8;
+            // 
+            // nombreArticuloTextBox
+            // 
+            this.nombreArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "NombreArticulo", true));
+            this.nombreArticuloTextBox.Location = new System.Drawing.Point(225, 11);
+            this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
+            this.nombreArticuloTextBox.ReadOnly = true;
+            this.nombreArticuloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nombreArticuloTextBox.TabIndex = 30;
+            // 
+            // inventario1BindingSource
+            // 
+            this.inventario1BindingSource.DataMember = "Inventario1";
+            this.inventario1BindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btbEliminar
             // 
@@ -158,23 +186,13 @@ namespace SCI1
             this.idArticuloTextBox.Size = new System.Drawing.Size(84, 20);
             this.idArticuloTextBox.TabIndex = 8;
             // 
-            // inventario1BindingSource
-            // 
-            this.inventario1BindingSource.DataMember = "Inventario1";
-            this.inventario1BindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // panelDGV
             // 
             this.panelDGV.Controls.Add(this.inventarioDataGridView);
             this.panelDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDGV.Location = new System.Drawing.Point(0, 125);
             this.panelDGV.Name = "panelDGV";
-            this.panelDGV.Size = new System.Drawing.Size(1108, 575);
+            this.panelDGV.Size = new System.Drawing.Size(1108, 562);
             this.panelDGV.TabIndex = 10;
             // 
             // inventarioDataGridView
@@ -207,7 +225,7 @@ namespace SCI1
             this.inventarioDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.inventarioDataGridView.RowHeadersVisible = false;
             this.inventarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventarioDataGridView.Size = new System.Drawing.Size(1108, 575);
+            this.inventarioDataGridView.Size = new System.Drawing.Size(1108, 562);
             this.inventarioDataGridView.TabIndex = 0;
             // 
             // idAreaDataGridViewTextBoxColumn
@@ -312,29 +330,11 @@ namespace SCI1
             this.eToolStripButton.Text = "E";
             this.eToolStripButton.Click += new System.EventHandler(this.eToolStripButton_Click);
             // 
-            // nombreArticuloLabel
-            // 
-            nombreArticuloLabel.AutoSize = true;
-            nombreArticuloLabel.Location = new System.Drawing.Point(134, 14);
-            nombreArticuloLabel.Name = "nombreArticuloLabel";
-            nombreArticuloLabel.Size = new System.Drawing.Size(85, 13);
-            nombreArticuloLabel.TabIndex = 29;
-            nombreArticuloLabel.Text = "Nombre Articulo:";
-            // 
-            // nombreArticuloTextBox
-            // 
-            this.nombreArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "NombreArticulo", true));
-            this.nombreArticuloTextBox.Location = new System.Drawing.Point(225, 11);
-            this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
-            this.nombreArticuloTextBox.ReadOnly = true;
-            this.nombreArticuloTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreArticuloTextBox.TabIndex = 30;
-            // 
             // EliminarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 801);
+            this.ClientSize = new System.Drawing.Size(1108, 788);
             this.Controls.Add(this.eToolStrip);
             this.Controls.Add(this.panelDGV);
             this.Controls.Add(this.panel2);
