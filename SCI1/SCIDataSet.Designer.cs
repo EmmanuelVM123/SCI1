@@ -10593,7 +10593,7 @@ SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE       Inventario
 SET                IdArea = @IdArea, NombreArticulo = @NombreArticulo, Descripcion = @Descripcion, IdUnidadMedida = @IdUnidadMedida, CantidadNormal = @CantidadNormal, CantidadCritica = @CantidadCritica
-WHERE        (IdArticulo = @IdArticulo); 
+WHERE        (IdArticulo = @IdArticulo);  
 SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida, CantidadNormal, CantidadCritica FROM Inventario WHERE (IdArticulo = @IdArticulo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArea", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15433,25 +15433,13 @@ SELECT TOP (100) IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUn
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadCritica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Inventario] SET [IdArea] = @IdArea, [NombreArticulo] = @NombreArticulo, [Descripcion] = @Descripcion, [Cantidad] = @Cantidad, [IdUnidadMedida] = @IdUnidadMedida, [CantidadNormal] = @CantidadNormal, [CantidadCritica] = @CantidadCritica WHERE (([IdArea] = @Original_IdArea) AND ([IdArticulo] = @Original_IdArticulo) AND ([NombreArticulo] = @Original_NombreArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Cantidad] = @Original_Cantidad) AND ([IdUnidadMedida] = @Original_IdUnidadMedida) AND ([CantidadNormal] = @Original_CantidadNormal) AND ([CantidadCritica] = @Original_CantidadCritica));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       Inventario
+SET                Cantidad = Cantidad + @Cantidad
+WHERE        (IdArticulo = @IdArticulo);  
 SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida, CantidadNormal, CantidadCritica FROM Inventario WHERE (IdArticulo = @IdArticulo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreArticulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdUnidadMedida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUnidadMedida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadNormal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadNormal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadCritica", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadCritica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdArea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdArticulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreArticulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdUnidadMedida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUnidadMedida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CantidadNormal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadNormal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CantidadCritica", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadCritica", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15642,69 +15630,9 @@ SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string IdArea, 
-                    string NombreArticulo, 
-                    string Descripcion, 
-                    int Cantidad, 
-                    int IdUnidadMedida, 
-                    int CantidadNormal, 
-                    int CantidadCritica, 
-                    string Original_IdArea, 
-                    int Original_IdArticulo, 
-                    string Original_NombreArticulo, 
-                    string Original_Descripcion, 
-                    int Original_Cantidad, 
-                    int Original_IdUnidadMedida, 
-                    int Original_CantidadNormal, 
-                    int Original_CantidadCritica, 
-                    int IdArticulo) {
-            if ((IdArea == null)) {
-                throw new global::System.ArgumentNullException("IdArea");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(IdArea));
-            }
-            if ((NombreArticulo == null)) {
-                throw new global::System.ArgumentNullException("NombreArticulo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NombreArticulo));
-            }
-            if ((Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Descripcion));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Cantidad));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(IdUnidadMedida));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(CantidadNormal));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(CantidadCritica));
-            if ((Original_IdArea == null)) {
-                throw new global::System.ArgumentNullException("Original_IdArea");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_IdArea));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IdArticulo));
-            if ((Original_NombreArticulo == null)) {
-                throw new global::System.ArgumentNullException("Original_NombreArticulo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_NombreArticulo));
-            }
-            if ((Original_Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Descripcion));
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Cantidad));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IdUnidadMedida));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_CantidadNormal));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_CantidadCritica));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(IdArticulo));
+        public virtual int Update(int Cantidad, int IdArticulo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Cantidad));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdArticulo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15719,14 +15647,6 @@ SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string IdArea, string NombreArticulo, string Descripcion, int Cantidad, int IdUnidadMedida, int CantidadNormal, int CantidadCritica, string Original_IdArea, int Original_IdArticulo, string Original_NombreArticulo, string Original_Descripcion, int Original_Cantidad, int Original_IdUnidadMedida, int Original_CantidadNormal, int Original_CantidadCritica) {
-            return this.Update(IdArea, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida, CantidadNormal, CantidadCritica, Original_IdArea, Original_IdArticulo, Original_NombreArticulo, Original_Descripcion, Original_Cantidad, Original_IdUnidadMedida, Original_CantidadNormal, Original_CantidadCritica, Original_IdArticulo);
         }
     }
     
@@ -15887,25 +15807,13 @@ SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadCritica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Inventario] SET [IdArea] = @IdArea, [NombreArticulo] = @NombreArticulo, [Descripcion] = @Descripcion, [Cantidad] = @Cantidad, [IdUnidadMedida] = @IdUnidadMedida, [CantidadNormal] = @CantidadNormal, [CantidadCritica] = @CantidadCritica WHERE (([IdArea] = @Original_IdArea) AND ([IdArticulo] = @Original_IdArticulo) AND ([NombreArticulo] = @Original_NombreArticulo) AND ([Descripcion] = @Original_Descripcion) AND ([Cantidad] = @Original_Cantidad) AND ([IdUnidadMedida] = @Original_IdUnidadMedida) AND ([CantidadNormal] = @Original_CantidadNormal) AND ([CantidadCritica] = @Original_CantidadCritica));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       Inventario
+SET                Cantidad = Cantidad - @Cantidad
+WHERE        (IdArticulo = @IdArticulo); 
 SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida, CantidadNormal, CantidadCritica FROM Inventario WHERE (IdArticulo = @IdArticulo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreArticulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdUnidadMedida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUnidadMedida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadNormal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadNormal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadCritica", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadCritica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdArea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdArticulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreArticulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdUnidadMedida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUnidadMedida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CantidadNormal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadNormal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CantidadCritica", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadCritica", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdArticulo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdArticulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16096,69 +16004,9 @@ SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string IdArea, 
-                    string NombreArticulo, 
-                    string Descripcion, 
-                    int Cantidad, 
-                    int IdUnidadMedida, 
-                    int CantidadNormal, 
-                    int CantidadCritica, 
-                    string Original_IdArea, 
-                    int Original_IdArticulo, 
-                    string Original_NombreArticulo, 
-                    string Original_Descripcion, 
-                    int Original_Cantidad, 
-                    int Original_IdUnidadMedida, 
-                    int Original_CantidadNormal, 
-                    int Original_CantidadCritica, 
-                    int IdArticulo) {
-            if ((IdArea == null)) {
-                throw new global::System.ArgumentNullException("IdArea");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(IdArea));
-            }
-            if ((NombreArticulo == null)) {
-                throw new global::System.ArgumentNullException("NombreArticulo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NombreArticulo));
-            }
-            if ((Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Descripcion));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Cantidad));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(IdUnidadMedida));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(CantidadNormal));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(CantidadCritica));
-            if ((Original_IdArea == null)) {
-                throw new global::System.ArgumentNullException("Original_IdArea");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_IdArea));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IdArticulo));
-            if ((Original_NombreArticulo == null)) {
-                throw new global::System.ArgumentNullException("Original_NombreArticulo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_NombreArticulo));
-            }
-            if ((Original_Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Descripcion));
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Cantidad));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IdUnidadMedida));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_CantidadNormal));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_CantidadCritica));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(IdArticulo));
+        public virtual int Update(int Cantidad, int IdArticulo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Cantidad));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdArticulo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16173,14 +16021,6 @@ SELECT IdArea, IdArticulo, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string IdArea, string NombreArticulo, string Descripcion, int Cantidad, int IdUnidadMedida, int CantidadNormal, int CantidadCritica, string Original_IdArea, int Original_IdArticulo, string Original_NombreArticulo, string Original_Descripcion, int Original_Cantidad, int Original_IdUnidadMedida, int Original_CantidadNormal, int Original_CantidadCritica) {
-            return this.Update(IdArea, NombreArticulo, Descripcion, Cantidad, IdUnidadMedida, CantidadNormal, CantidadCritica, Original_IdArea, Original_IdArticulo, Original_NombreArticulo, Original_Descripcion, Original_Cantidad, Original_IdUnidadMedida, Original_CantidadNormal, Original_CantidadCritica, Original_IdArticulo);
         }
     }
     

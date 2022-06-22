@@ -79,13 +79,14 @@ namespace SCI1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            cmd = new SqlCommand("SpInventarioIn");
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@IdArticulo", idArticuloTextBox));
-            //int id = int.Parse(this.idArticuloTextBox.Text);
-            //this.añadirStockTableAdapter.Update( Convert.ToInt32(this.cantidadNumericUpDown.Value),
-            //    id);
+
+            //cmd = new SqlCommand("SpInventarioIn");
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.Add(new SqlParameter("@IdArticulo", idArticuloTextBox));
+            int id = int.Parse(this.idArticuloTextBox.Text);
+            this.añadirStockTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
+                id);
+
             this.CargaDatos();
         }
 

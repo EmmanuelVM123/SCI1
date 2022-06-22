@@ -442,6 +442,7 @@ namespace SCI1
             this.tableAdapterManager.AñadirStockTableAdapter = null;
             this.tableAdapterManager.AreasTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DisminuirStockTableAdapter = null;
             this.tableAdapterManager.Inventario11111TableAdapter = null;
             this.tableAdapterManager.Inventario1111TableAdapter = null;
             this.tableAdapterManager.Inventario111TableAdapter = null;

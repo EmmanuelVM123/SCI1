@@ -76,8 +76,18 @@ namespace SCI1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            this.CargaDatos();
+            try
+            {
+                int id = int.Parse(this.idArticuloTextBox.Text);
+                this.disminuirStockTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
+                    id);
+                MessageBox.Show("¡Se ha disminunido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa");
+                this.CargaDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error al disminuir el Stock: " + ex.Message.ToString());
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
