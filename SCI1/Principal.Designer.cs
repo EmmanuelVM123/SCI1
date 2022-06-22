@@ -30,6 +30,7 @@ namespace SCI1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
+            this.panelInicial = new System.Windows.Forms.Panel();
             this.panelMenu = new MetroFramework.Controls.MetroPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnRestarStcok = new System.Windows.Forms.Button();
@@ -49,7 +50,8 @@ namespace SCI1
             this.btnInventarioAreas = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new MetroFramework.Controls.MetroPanel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panelInicial.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,6 +59,13 @@ namespace SCI1
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panelInicial
+            // 
+            this.panelInicial.Controls.Add(this.panelContenedor);
+            this.panelInicial.Controls.Add(this.panelMenu);
+            resources.ApplyResources(this.panelInicial, "panelInicial");
+            this.panelInicial.Name = "panelInicial";
             // 
             // panelMenu
             // 
@@ -177,7 +186,7 @@ namespace SCI1
             this.btnSGR.FlatAppearance.BorderSize = 0;
             this.btnSGR.Name = "btnSGR";
             this.btnSGR.UseVisualStyleBackColor = true;
-            this.btnSGR.Click += new System.EventHandler(this.btnSGR_Click);
+            this.btnSGR.MouseCaptureChanged += new System.EventHandler(this.btnSGR_Click);
             // 
             // btnMNT
             // 
@@ -227,24 +236,18 @@ namespace SCI1
             // panelContenedor
             // 
             resources.ApplyResources(this.panelContenedor, "panelContenedor");
-            this.panelContenedor.HorizontalScrollbarBarColor = true;
-            this.panelContenedor.HorizontalScrollbarHighlightOnWheel = false;
-            this.panelContenedor.HorizontalScrollbarSize = 10;
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.VerticalScrollbarBarColor = true;
-            this.panelContenedor.VerticalScrollbarHighlightOnWheel = false;
-            this.panelContenedor.VerticalScrollbarSize = 10;
             // 
             // FormularioPrincipal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.panelInicial);
             this.Name = "FormularioPrincipal";
             this.Opacity = 0.99D;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
+            this.panelInicial.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -257,6 +260,7 @@ namespace SCI1
 
         #endregion
 
+        private System.Windows.Forms.Panel panelInicial;
         private MetroFramework.Controls.MetroPanel panelMenu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnRestarStcok;
@@ -276,7 +280,7 @@ namespace SCI1
         private System.Windows.Forms.Button btnInventarioAreas;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroPanel panelContenedor;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }
 

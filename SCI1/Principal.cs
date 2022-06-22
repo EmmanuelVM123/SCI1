@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,14 +14,43 @@ namespace SCI1
 {
     public partial class FormularioPrincipal : Form
     {
+        private int tolerance = 15;
+        private const int WM_NCHITTEST = 132;
+        private const int HTBOTTOMRIGHT = 17;
+        private Rectangle sizeGripRectangle;
         public FormularioPrincipal()
         {
             InitializeComponent();
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.DoubleBuffered = true;
         }
 
         private void FormularioPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //----------------DIBUJAR RECTANGULO / EXCLUIR ESQUINA PANEL 
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            var region = new Region(new Rectangle(0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height));
+
+            sizeGripRectangle = new Rectangle(this.ClientRectangle.Width - tolerance, this.ClientRectangle.Height - tolerance, tolerance, tolerance);
+
+            region.Exclude(sizeGripRectangle);
+            this.panelInicial.Region = region;
+            this.Invalidate();
+        }
+        //----------------COLOR Y GRIP DE RECTANGULO INFERIOR
+        protected override void OnPaint(PaintEventArgs e)
+        {
+
+            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(55, 61, 69));
+            e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
+
+            base.OnPaint(e);
+            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
         private void OcultarSubMenus()

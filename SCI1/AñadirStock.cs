@@ -63,6 +63,7 @@ namespace SCI1
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
                     this.cantidadNumericUpDown.Enabled = true;
+                    this.cantidadNumericUpDown.Value = 0;
                     break;
             }
         }
@@ -83,30 +84,23 @@ namespace SCI1
             //cmd = new SqlCommand("SpInventarioIn");
             //cmd.CommandType = CommandType.StoredProcedure;
             //cmd.Parameters.Add(new SqlParameter("@IdArticulo", idArticuloTextBox));
-            int id = int.Parse(this.idArticuloTextBox.Text);
-            this.añadirStockTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
-                id);
-
-            this.CargaDatos();
+            try
+            {
+                int id = int.Parse(this.idArticuloTextBox.Text);
+                this.añadirStockTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
+                    id);
+                MessageBox.Show("¡Se ha añadido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " unidades al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa");
+                this.CargaDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error al añadir al Stock: " + ex.Message.ToString());
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
         }
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void añadirStockBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.añadirStockBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sCIDataSet);
-
-        }
-
-       
     }
 }

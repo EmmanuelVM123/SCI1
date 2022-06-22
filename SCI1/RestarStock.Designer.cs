@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestarStock));
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label cantidadLabel;
             System.Windows.Forms.Label nombreArticuloLabel1;
             System.Windows.Forms.Label idAreaLabel;
             System.Windows.Forms.Label idArticuloLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestarStock));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarFormulario = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.disminuirStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
             this.cantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             this.idAreaTextBox = new System.Windows.Forms.TextBox();
@@ -48,10 +50,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.BtnInsertar = new System.Windows.Forms.Button();
             this.panelDGV = new System.Windows.Forms.Panel();
-            this.sCIDataSet = new SCI1.SCIDataSet();
-            this.disminuirStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.disminuirStockTableAdapter = new SCI1.SCIDataSetTableAdapters.DisminuirStockTableAdapter();
-            this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
             this.disminuirStockDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +59,8 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disminuirStockTableAdapter = new SCI1.SCIDataSetTableAdapters.DisminuirStockTableAdapter();
+            this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
             descripcionLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel1 = new System.Windows.Forms.Label();
@@ -69,12 +69,57 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).BeginInit();
             this.panelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.disminuirStockBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.disminuirStockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disminuirStockDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(7, 51);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 37;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // cantidadLabel
+            // 
+            cantidadLabel.AutoSize = true;
+            cantidadLabel.Location = new System.Drawing.Point(7, 79);
+            cantidadLabel.Name = "cantidadLabel";
+            cantidadLabel.Size = new System.Drawing.Size(52, 13);
+            cantidadLabel.TabIndex = 36;
+            cantidadLabel.Text = "Cantidad:";
+            // 
+            // nombreArticuloLabel1
+            // 
+            nombreArticuloLabel1.AutoSize = true;
+            nombreArticuloLabel1.Location = new System.Drawing.Point(283, 20);
+            nombreArticuloLabel1.Name = "nombreArticuloLabel1";
+            nombreArticuloLabel1.Size = new System.Drawing.Size(85, 13);
+            nombreArticuloLabel1.TabIndex = 35;
+            nombreArticuloLabel1.Text = "Nombre Articulo:";
+            // 
+            // idAreaLabel
+            // 
+            idAreaLabel.AutoSize = true;
+            idAreaLabel.Location = new System.Drawing.Point(4, 17);
+            idAreaLabel.Name = "idAreaLabel";
+            idAreaLabel.Size = new System.Drawing.Size(44, 13);
+            idAreaLabel.TabIndex = 34;
+            idAreaLabel.Text = "Id Area:";
+            // 
+            // idArticuloLabel1
+            // 
+            idArticuloLabel1.AutoSize = true;
+            idArticuloLabel1.Location = new System.Drawing.Point(112, 17);
+            idArticuloLabel1.Name = "idArticuloLabel1";
+            idArticuloLabel1.Size = new System.Drawing.Size(57, 13);
+            idArticuloLabel1.TabIndex = 33;
+            idArticuloLabel1.Text = "Id Articulo:";
             // 
             // panel1
             // 
@@ -106,9 +151,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(35, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 17);
+            this.label1.Size = new System.Drawing.Size(193, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Añadir Stock a artículo";
+            this.label1.Text = "Disminuir Stock a artículo";
             // 
             // panelBotones
             // 
@@ -131,15 +176,6 @@
             this.panelBotones.Size = new System.Drawing.Size(1074, 101);
             this.panelBotones.TabIndex = 12;
             // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(7, 51);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 37;
-            descripcionLabel.Text = "Descripcion:";
-            // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.disminuirStockBindingSource, "Descripcion", true));
@@ -149,14 +185,15 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(567, 20);
             this.descripcionTextBox.TabIndex = 38;
             // 
-            // cantidadLabel
+            // disminuirStockBindingSource
             // 
-            cantidadLabel.AutoSize = true;
-            cantidadLabel.Location = new System.Drawing.Point(7, 79);
-            cantidadLabel.Name = "cantidadLabel";
-            cantidadLabel.Size = new System.Drawing.Size(52, 13);
-            cantidadLabel.TabIndex = 36;
-            cantidadLabel.Text = "Cantidad:";
+            this.disminuirStockBindingSource.DataMember = "DisminuirStock";
+            this.disminuirStockBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cantidadNumericUpDown
             // 
@@ -167,15 +204,6 @@
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.cantidadNumericUpDown.TabIndex = 37;
             // 
-            // nombreArticuloLabel1
-            // 
-            nombreArticuloLabel1.AutoSize = true;
-            nombreArticuloLabel1.Location = new System.Drawing.Point(283, 20);
-            nombreArticuloLabel1.Name = "nombreArticuloLabel1";
-            nombreArticuloLabel1.Size = new System.Drawing.Size(85, 13);
-            nombreArticuloLabel1.TabIndex = 35;
-            nombreArticuloLabel1.Text = "Nombre Articulo:";
-            // 
             // nombreArticuloTextBox
             // 
             this.nombreArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.disminuirStockBindingSource, "NombreArticulo", true));
@@ -185,15 +213,6 @@
             this.nombreArticuloTextBox.Size = new System.Drawing.Size(272, 20);
             this.nombreArticuloTextBox.TabIndex = 36;
             // 
-            // idAreaLabel
-            // 
-            idAreaLabel.AutoSize = true;
-            idAreaLabel.Location = new System.Drawing.Point(4, 17);
-            idAreaLabel.Name = "idAreaLabel";
-            idAreaLabel.Size = new System.Drawing.Size(44, 13);
-            idAreaLabel.TabIndex = 34;
-            idAreaLabel.Text = "Id Area:";
-            // 
             // idAreaTextBox
             // 
             this.idAreaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.disminuirStockBindingSource, "IdArea", true));
@@ -202,15 +221,6 @@
             this.idAreaTextBox.Name = "idAreaTextBox";
             this.idAreaTextBox.Size = new System.Drawing.Size(53, 20);
             this.idAreaTextBox.TabIndex = 35;
-            // 
-            // idArticuloLabel1
-            // 
-            idArticuloLabel1.AutoSize = true;
-            idArticuloLabel1.Location = new System.Drawing.Point(112, 17);
-            idArticuloLabel1.Name = "idArticuloLabel1";
-            idArticuloLabel1.Size = new System.Drawing.Size(57, 13);
-            idArticuloLabel1.TabIndex = 33;
-            idArticuloLabel1.Text = "Id Articulo:";
             // 
             // idArticuloTextBox
             // 
@@ -230,6 +240,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(70, 70);
             this.btnCancelar.TabIndex = 33;
+            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -243,6 +254,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 70);
             this.btnGuardar.TabIndex = 32;
+            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -256,6 +268,7 @@
             this.BtnInsertar.Name = "BtnInsertar";
             this.BtnInsertar.Size = new System.Drawing.Size(70, 70);
             this.BtnInsertar.TabIndex = 31;
+            this.BtnInsertar.Text = "Disminuir";
             this.BtnInsertar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnInsertar.UseVisualStyleBackColor = true;
             this.BtnInsertar.Click += new System.EventHandler(this.BtnInsertar_Click);
@@ -268,39 +281,6 @@
             this.panelDGV.Name = "panelDGV";
             this.panelDGV.Size = new System.Drawing.Size(1074, 500);
             this.panelDGV.TabIndex = 13;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // disminuirStockBindingSource
-            // 
-            this.disminuirStockBindingSource.DataMember = "DisminuirStock";
-            this.disminuirStockBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // disminuirStockTableAdapter
-            // 
-            this.disminuirStockTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AñadirStockTableAdapter = null;
-            this.tableAdapterManager.AreasTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DisminuirStockTableAdapter = this.disminuirStockTableAdapter;
-            this.tableAdapterManager.Inventario11111TableAdapter = null;
-            this.tableAdapterManager.Inventario1111TableAdapter = null;
-            this.tableAdapterManager.Inventario111TableAdapter = null;
-            this.tableAdapterManager.Inventario11TableAdapter = null;
-            this.tableAdapterManager.Inventario1TableAdapter = null;
-            this.tableAdapterManager.Inventario2TableAdapter = null;
-            this.tableAdapterManager.InventarioInsertarTableAdapter = null;
-            this.tableAdapterManager.InventarioInsertTableAdapter = null;
-            this.tableAdapterManager.InventarioTableAdapter = null;
-            this.tableAdapterManager.UnidadMedidaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
             // disminuirStockDataGridView
             // 
@@ -382,6 +362,29 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
+            // disminuirStockTableAdapter
+            // 
+            this.disminuirStockTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AñadirStockTableAdapter = null;
+            this.tableAdapterManager.AreasTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DisminuirStockTableAdapter = this.disminuirStockTableAdapter;
+            this.tableAdapterManager.Inventario11111TableAdapter = null;
+            this.tableAdapterManager.Inventario1111TableAdapter = null;
+            this.tableAdapterManager.Inventario111TableAdapter = null;
+            this.tableAdapterManager.Inventario11TableAdapter = null;
+            this.tableAdapterManager.Inventario1TableAdapter = null;
+            this.tableAdapterManager.Inventario2TableAdapter = null;
+            this.tableAdapterManager.InventarioInsertarTableAdapter = null;
+            this.tableAdapterManager.InventarioInsertTableAdapter = null;
+            this.tableAdapterManager.InventarioTableAdapter = null;
+            this.tableAdapterManager.UnidadMedidaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioTableAdapter = null;
+            // 
             // RestarStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,10 +402,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).EndInit();
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.disminuirStockBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.disminuirStockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disminuirStockDataGridView)).EndInit();
             this.ResumeLayout(false);
 

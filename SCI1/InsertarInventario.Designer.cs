@@ -346,8 +346,10 @@ namespace SCI1
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AñadirStockTableAdapter = null;
             this.tableAdapterManager.AreasTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DisminuirStockTableAdapter = null;
             this.tableAdapterManager.Inventario11111TableAdapter = null;
             this.tableAdapterManager.Inventario1111TableAdapter = null;
             this.tableAdapterManager.Inventario111TableAdapter = null;
@@ -408,6 +410,7 @@ namespace SCI1
             this.BtnInsertar.Name = "BtnInsertar";
             this.BtnInsertar.Size = new System.Drawing.Size(70, 70);
             this.BtnInsertar.TabIndex = 21;
+            this.BtnInsertar.Text = "Nuevo";
             this.BtnInsertar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnInsertar.UseVisualStyleBackColor = true;
             this.BtnInsertar.Click += new System.EventHandler(this.BtnInsertar_Click);
@@ -421,6 +424,7 @@ namespace SCI1
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(70, 70);
             this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -434,6 +438,7 @@ namespace SCI1
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(70, 70);
             this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

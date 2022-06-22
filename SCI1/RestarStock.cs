@@ -60,6 +60,7 @@ namespace SCI1
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
                     this.cantidadNumericUpDown.Enabled = true;
+                    this.cantidadNumericUpDown.Value = 0;
                     break;
             }
         }
@@ -81,7 +82,7 @@ namespace SCI1
                 int id = int.Parse(this.idArticuloTextBox.Text);
                 this.disminuirStockTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
                     id);
-                MessageBox.Show("¡Se ha disminunido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa");
+                MessageBox.Show("¡Se ha disminunido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " unidades al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa");
                 this.CargaDatos();
             }
             catch (Exception ex)

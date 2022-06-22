@@ -50,10 +50,10 @@ namespace SCI1
                     this.btnGuardarI.Enabled = false;
                     this.btnCancelarI.Enabled = false;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = false;
+                    this.idAreaComboBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
-                    this.idUnidadMedidaNumericUpDown.Enabled = false;
+                    this.idUnidadMedidaComboBox.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
                     this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
@@ -62,10 +62,10 @@ namespace SCI1
                     this.btnGuardarI.Enabled = true;
                     this.btnCancelarI.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = true;
+                    this.idAreaComboBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
-                    this.idUnidadMedidaNumericUpDown.Enabled = true;
+                    this.idUnidadMedidaComboBox.Enabled = true;
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
 
@@ -105,9 +105,9 @@ namespace SCI1
                 if (this.Valida())
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventario1TableAdapter.Update(this.idAreaTextBox.Text,
+                    this.inventario1TableAdapter.Update(this.idAreaComboBox.Text,
                    this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,
-                   Convert.ToInt32(this.idUnidadMedidaNumericUpDown.Text),
+                   Convert.ToInt32(this.idUnidadMedidaComboBox.Text),
                    Convert.ToInt32(this.cantidadNormalNumericUpDown.Value),
                    Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                    id);
