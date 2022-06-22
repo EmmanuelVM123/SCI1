@@ -122,41 +122,41 @@
     <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="btnRestarStcok.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button9.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnRestarStcok.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnRestarStcok.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 45</value>
   </data>
-  <data name="button9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="btnRestarStcok.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>35, 0, 0, 0</value>
   </data>
-  <data name="button9.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="btnRestarStcok.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
-  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnRestarStcok.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 45</value>
   </data>
-  <data name="button9.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnRestarStcok.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="button9.Text" xml:space="preserve">
+  <data name="btnRestarStcok.Text" xml:space="preserve">
     <value>Disminuir a existencia</value>
   </data>
-  <data name="&gt;&gt;button9.Name" xml:space="preserve">
-    <value>button9</value>
+  <data name="&gt;&gt;btnRestarStcok.Name" xml:space="preserve">
+    <value>btnRestarStcok</value>
   </data>
-  <data name="&gt;&gt;button9.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnRestarStcok.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnRestarStcok.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnRestarStcok.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="button10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

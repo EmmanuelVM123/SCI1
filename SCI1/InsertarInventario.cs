@@ -19,7 +19,7 @@ namespace SCI1
         }
 
         private void InsertarInventario_Load(object sender, EventArgs e)
-        {
+        {            
             this.CargaDatos();
         }
 
@@ -27,6 +27,7 @@ namespace SCI1
         {
             try
             {
+
                 this.unidadMedidaTableAdapter.Fill(this.sCIDataSet.UnidadMedida);
                 this.areasTableAdapter.Fill(this.sCIDataSet.Areas);
                 this.inventarioInsertTableAdapter.Fill(this.sCIDataSet.InventarioInsert);
@@ -51,11 +52,11 @@ namespace SCI1
                     this.btnCancelar.Enabled = false;
                     this.inventarioDataGridView.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = false;
+                    this.idAreaComboBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
                     this.cantidadNumericUpDown.Enabled = false;
-                    this.idUnidadMedidaTextBox.Enabled = false;
+                    this.idUnidadMedidaComboBox.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
                     this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
@@ -64,15 +65,15 @@ namespace SCI1
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = true;
+                    this.idAreaComboBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
-                    this.idUnidadMedidaTextBox.Enabled = true;
+                    this.idUnidadMedidaComboBox.Enabled = true;
                     this.cantidadNumericUpDown.Enabled = true;                    
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
                     this.descripcionTextBox.Text = "";
-                    this.idAreaTextBox.Text = "";
+                    this.idAreaComboBox.Text = "";
                     this.nombreArticuloTextBox.Text = "";                    
                     this.cantidadNormalNumericUpDown.Value = 0;
                     this.cantidadCriticaNumericUpDown.Value = 0;
@@ -108,10 +109,10 @@ namespace SCI1
                 if (this.Valida())
                 {
                     //int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioInsertTableAdapter.Insert(this.idAreaTextBox.Text,
-                   this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,
-                   Convert.ToInt32(this.idUnidadMedidaTextBox.Text),
+                    this.inventarioInsertTableAdapter.Insert(this.idAreaComboBox.Text,
+                   this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,                   
                    Convert.ToInt32(this.cantidadNumericUpDown.Value),
+                   Convert.ToInt32(this.idUnidadMedidaComboBox.Text),
                    Convert.ToInt32(this.cantidadNormalNumericUpDown.Value),
                    Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value));
                     MessageBox.Show("Los datos fueron insertados correctamente", "Operación exitosa");
@@ -135,5 +136,7 @@ namespace SCI1
         {
             this.Close();
         }
+
+        
     }
 }

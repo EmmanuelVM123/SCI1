@@ -213,7 +213,7 @@ namespace SCI1
             this.panelBotones.Controls.Add(idAreaLabel);
             this.panelBotones.Controls.Add(this.idAreaTextBox);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotones.Location = new System.Drawing.Point(0, 688);
+            this.panelBotones.Location = new System.Drawing.Point(0, 465);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(1100, 100);
             this.panelBotones.TabIndex = 2;
@@ -330,7 +330,7 @@ namespace SCI1
             this.panelDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDGV.Location = new System.Drawing.Point(0, 125);
             this.panelDGV.Name = "panelDGV";
-            this.panelDGV.Size = new System.Drawing.Size(1100, 563);
+            this.panelDGV.Size = new System.Drawing.Size(1100, 340);
             this.panelDGV.TabIndex = 3;
             // 
             // inventarioDataGridView
@@ -362,7 +362,7 @@ namespace SCI1
             this.inventarioDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.inventarioDataGridView.RowHeadersVisible = false;
             this.inventarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventarioDataGridView.Size = new System.Drawing.Size(1100, 563);
+            this.inventarioDataGridView.Size = new System.Drawing.Size(1100, 340);
             this.inventarioDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -439,10 +439,17 @@ namespace SCI1
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AñadirStockTableAdapter = null;
             this.tableAdapterManager.AreasTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Inventario11111TableAdapter = null;
+            this.tableAdapterManager.Inventario1111TableAdapter = null;
+            this.tableAdapterManager.Inventario111TableAdapter = null;
             this.tableAdapterManager.Inventario11TableAdapter = null;
             this.tableAdapterManager.Inventario1TableAdapter = null;
+            this.tableAdapterManager.Inventario2TableAdapter = null;
+            this.tableAdapterManager.InventarioInsertarTableAdapter = null;
+            this.tableAdapterManager.InventarioInsertTableAdapter = null;
             this.tableAdapterManager.InventarioTableAdapter = this.inventarioTableAdapter;
             this.tableAdapterManager.UnidadMedidaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -452,7 +459,7 @@ namespace SCI1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 788);
+            this.ClientSize = new System.Drawing.Size(1100, 565);
             this.Controls.Add(this.panelDGV);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panel2);

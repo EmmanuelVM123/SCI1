@@ -32,7 +32,7 @@ namespace SCI1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.panelMenu = new MetroFramework.Controls.MetroPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnRestarStcok = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -81,17 +81,18 @@ namespace SCI1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.btnRestarStcok);
             this.panel2.Controls.Add(this.button10);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // button9
+            // btnRestarStcok
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnRestarStcok, "btnRestarStcok");
+            this.btnRestarStcok.FlatAppearance.BorderSize = 0;
+            this.btnRestarStcok.Name = "btnRestarStcok";
+            this.btnRestarStcok.UseVisualStyleBackColor = true;
+            this.btnRestarStcok.Click += new System.EventHandler(this.btnRestarStcok_Click);
             // 
             // button10
             // 
@@ -124,6 +125,7 @@ namespace SCI1
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.Name = "button12";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // btnNuevoingreso
             // 
@@ -257,7 +259,7 @@ namespace SCI1
 
         private MetroFramework.Controls.MetroPanel panelMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnRestarStcok;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;

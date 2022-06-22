@@ -22,8 +22,6 @@ namespace SCI1
         private void InventarioCIS_Load(object sender, EventArgs e)
         {
             this.CargaDatos();
-
-
         }
 
         private void CargaDatos()

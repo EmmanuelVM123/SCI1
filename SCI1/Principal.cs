@@ -110,5 +110,15 @@ namespace SCI1
         {
             AbrirFormulario<EliminarArticulo>();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<AñadirStock>(); 
+        }
+
+        private void btnRestarStcok_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<RestarStock>();
+        }
     }
 }
