@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.3.1, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.1\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
@@ -46,8 +49,16 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,8 +68,39 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadirStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirStock.Designer.cs">
+      <DependentUpon>AñadirStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarArticulo.Designer.cs">
+      <DependentUpon>EliminarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarInventario.Designer.cs">
+      <DependentUpon>InsertarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioAMT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioAMT.Designer.cs">
+      <DependentUpon>InventarioAMT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioLBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioLBC.Designer.cs">
+      <DependentUpon>InventarioLBC.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventarioMNT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,13 +133,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestarStock.Designer.cs">
+      <DependentUpon>RestarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCIDataSet.cs">
+      <DependentUpon>SCIDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SCIDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SCIDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AñadirStock.resx">
+      <DependentUpon>AñadirStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarArticulo.resx">
+      <DependentUpon>EliminarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarInventario.resx">
+      <DependentUpon>InsertarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioAMT.resx">
+      <DependentUpon>InventarioAMT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioLBC.resx">
+      <DependentUpon>InventarioLBC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventarioMNT.resx">
       <DependentUpon>InventarioMNT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioSGR.resx">
+      <DependentUpon>InventarioSGR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -117,6 +186,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RestarStock.resx">
+      <DependentUpon>RestarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

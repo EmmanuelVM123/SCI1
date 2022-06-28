@@ -30,14 +30,15 @@ namespace SCI1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
+            this.panelInicial = new System.Windows.Forms.Panel();
             this.panelMenu = new MetroFramework.Controls.MetroPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnRestarStcok = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnNuevoingreso = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.subMenu = new System.Windows.Forms.Panel();
             this.btnAMT = new System.Windows.Forms.Button();
@@ -49,7 +50,8 @@ namespace SCI1
             this.btnInventarioAreas = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new MetroFramework.Controls.MetroPanel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panelInicial.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,6 +59,13 @@ namespace SCI1
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panelInicial
+            // 
+            this.panelInicial.Controls.Add(this.panelContenedor);
+            this.panelInicial.Controls.Add(this.panelMenu);
+            resources.ApplyResources(this.panelInicial, "panelInicial");
+            this.panelInicial.Name = "panelInicial";
             // 
             // panelMenu
             // 
@@ -81,17 +90,18 @@ namespace SCI1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.btnRestarStcok);
             this.panel2.Controls.Add(this.button10);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // button9
+            // btnRestarStcok
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnRestarStcok, "btnRestarStcok");
+            this.btnRestarStcok.FlatAppearance.BorderSize = 0;
+            this.btnRestarStcok.Name = "btnRestarStcok";
+            this.btnRestarStcok.UseVisualStyleBackColor = true;
+            this.btnRestarStcok.Click += new System.EventHandler(this.btnRestarStcok_Click);
             // 
             // button10
             // 
@@ -99,6 +109,7 @@ namespace SCI1
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.Name = "button10";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button8
             // 
@@ -112,7 +123,7 @@ namespace SCI1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button13);
+            this.panel1.Controls.Add(this.btnNuevoingreso);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -123,14 +134,16 @@ namespace SCI1
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.Name = "button12";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
+            // btnNuevoingreso
             // 
-            this.button13.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.Name = "button13";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnNuevoingreso.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.btnNuevoingreso, "btnNuevoingreso");
+            this.btnNuevoingreso.FlatAppearance.BorderSize = 0;
+            this.btnNuevoingreso.Name = "btnNuevoingreso";
+            this.btnNuevoingreso.UseVisualStyleBackColor = false;
+            this.btnNuevoingreso.Click += new System.EventHandler(this.btnNuevoingreso_Click);
             // 
             // button1
             // 
@@ -157,6 +170,7 @@ namespace SCI1
             this.btnAMT.FlatAppearance.BorderSize = 0;
             this.btnAMT.Name = "btnAMT";
             this.btnAMT.UseVisualStyleBackColor = true;
+            this.btnAMT.Click += new System.EventHandler(this.btnAMT_Click);
             // 
             // btnLBC
             // 
@@ -164,6 +178,7 @@ namespace SCI1
             this.btnLBC.FlatAppearance.BorderSize = 0;
             this.btnLBC.Name = "btnLBC";
             this.btnLBC.UseVisualStyleBackColor = true;
+            this.btnLBC.Click += new System.EventHandler(this.btnLBC_Click);
             // 
             // btnSGR
             // 
@@ -171,6 +186,7 @@ namespace SCI1
             this.btnSGR.FlatAppearance.BorderSize = 0;
             this.btnSGR.Name = "btnSGR";
             this.btnSGR.UseVisualStyleBackColor = true;
+            this.btnSGR.MouseCaptureChanged += new System.EventHandler(this.btnSGR_Click);
             // 
             // btnMNT
             // 
@@ -220,23 +236,18 @@ namespace SCI1
             // panelContenedor
             // 
             resources.ApplyResources(this.panelContenedor, "panelContenedor");
-            this.panelContenedor.HorizontalScrollbarBarColor = true;
-            this.panelContenedor.HorizontalScrollbarHighlightOnWheel = false;
-            this.panelContenedor.HorizontalScrollbarSize = 10;
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.VerticalScrollbarBarColor = true;
-            this.panelContenedor.VerticalScrollbarHighlightOnWheel = false;
-            this.panelContenedor.VerticalScrollbarSize = 10;
             // 
             // FormularioPrincipal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.panelInicial);
             this.Name = "FormularioPrincipal";
             this.Opacity = 0.99D;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormularioPrincipal_Load);
+            this.panelInicial.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -249,14 +260,15 @@ namespace SCI1
 
         #endregion
 
+        private System.Windows.Forms.Panel panelInicial;
         private MetroFramework.Controls.MetroPanel panelMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnRestarStcok;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnNuevoingreso;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel subMenu;
         private System.Windows.Forms.Button btnAMT;
@@ -268,7 +280,7 @@ namespace SCI1
         private System.Windows.Forms.Button btnInventarioAreas;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroPanel panelContenedor;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }
 

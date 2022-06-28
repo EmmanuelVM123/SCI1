@@ -1,7 +1,7 @@
 ﻿
 namespace SCI1
 {
-    partial class InventarioITN
+    partial class InventarioLBC
     {
         /// <summary>
         /// Required designer variable.
@@ -37,35 +37,34 @@ namespace SCI1
             System.Windows.Forms.Label idArticuloLabel;
             System.Windows.Forms.Label idUnidadMedidaLabel;
             System.Windows.Forms.Label idAreaLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventarioITN));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventarioLBC));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrarFormulario = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.idUnidadMedidaComboBox = new System.Windows.Forms.ComboBox();
-            this.inventario1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventario1111BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sCIDataSet = new SCI1.SCIDataSet();
             this.idAreaComboBox = new System.Windows.Forms.ComboBox();
-            this.btnCancelarI = new System.Windows.Forms.Button();
-            this.btnGuardarI = new System.Windows.Forms.Button();
-            this.BtnEditarI = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.cantidadCriticaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.cantidadNormalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             this.idArticuloTextBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrarFormulario = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelDGV = new System.Windows.Forms.Panel();
             this.inventarioDataGridView = new System.Windows.Forms.DataGridView();
             this.idAreaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUnidadMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadNormalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadCriticaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventario1TableAdapter = new SCI1.SCIDataSetTableAdapters.Inventario1TableAdapter();
+            this.inventario1111TableAdapter = new SCI1.SCIDataSetTableAdapters.Inventario1111TableAdapter();
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             descripcionLabel = new System.Windows.Forms.Label();
@@ -75,13 +74,13 @@ namespace SCI1
             idArticuloLabel = new System.Windows.Forms.Label();
             idUnidadMedidaLabel = new System.Windows.Forms.Label();
             idAreaLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).BeginInit();
             this.panelBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventario1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventario1111BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -135,169 +134,20 @@ namespace SCI1
             // idUnidadMedidaLabel
             // 
             idUnidadMedidaLabel.AutoSize = true;
-            idUnidadMedidaLabel.Location = new System.Drawing.Point(8, 78);
+            idUnidadMedidaLabel.Location = new System.Drawing.Point(13, 80);
             idUnidadMedidaLabel.Name = "idUnidadMedidaLabel";
             idUnidadMedidaLabel.Size = new System.Drawing.Size(44, 13);
-            idUnidadMedidaLabel.TabIndex = 31;
+            idUnidadMedidaLabel.TabIndex = 27;
             idUnidadMedidaLabel.Text = "Unidad:";
             // 
             // idAreaLabel
             // 
             idAreaLabel.AutoSize = true;
-            idAreaLabel.Location = new System.Drawing.Point(140, 14);
+            idAreaLabel.Location = new System.Drawing.Point(145, 16);
             idAreaLabel.Name = "idAreaLabel";
             idAreaLabel.Size = new System.Drawing.Size(32, 13);
-            idAreaLabel.TabIndex = 30;
+            idAreaLabel.TabIndex = 26;
             idAreaLabel.Text = "Area:";
-            // 
-            // panelBotones
-            // 
-            this.panelBotones.Controls.Add(idUnidadMedidaLabel);
-            this.panelBotones.Controls.Add(this.idUnidadMedidaComboBox);
-            this.panelBotones.Controls.Add(idAreaLabel);
-            this.panelBotones.Controls.Add(this.idAreaComboBox);
-            this.panelBotones.Controls.Add(this.btnCancelarI);
-            this.panelBotones.Controls.Add(this.btnGuardarI);
-            this.panelBotones.Controls.Add(this.BtnEditarI);
-            this.panelBotones.Controls.Add(descripcionLabel);
-            this.panelBotones.Controls.Add(this.descripcionTextBox);
-            this.panelBotones.Controls.Add(cantidadCriticaLabel);
-            this.panelBotones.Controls.Add(this.cantidadCriticaNumericUpDown);
-            this.panelBotones.Controls.Add(cantidadNormalLabel);
-            this.panelBotones.Controls.Add(this.cantidadNormalNumericUpDown);
-            this.panelBotones.Controls.Add(nombreArticuloLabel);
-            this.panelBotones.Controls.Add(this.nombreArticuloTextBox);
-            this.panelBotones.Controls.Add(idArticuloLabel);
-            this.panelBotones.Controls.Add(this.idArticuloTextBox);
-            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotones.Location = new System.Drawing.Point(0, 688);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(1100, 100);
-            this.panelBotones.TabIndex = 3;
-            // 
-            // idUnidadMedidaComboBox
-            // 
-            this.idUnidadMedidaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "IdUnidadMedida", true));
-            this.idUnidadMedidaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idUnidadMedidaComboBox.FormattingEnabled = true;
-            this.idUnidadMedidaComboBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.idUnidadMedidaComboBox.Location = new System.Drawing.Point(75, 75);
-            this.idUnidadMedidaComboBox.Name = "idUnidadMedidaComboBox";
-            this.idUnidadMedidaComboBox.Size = new System.Drawing.Size(121, 21);
-            this.idUnidadMedidaComboBox.TabIndex = 33;
-            // 
-            // inventario1BindingSource
-            // 
-            this.inventario1BindingSource.DataMember = "Inventario1";
-            this.inventario1BindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // idAreaComboBox
-            // 
-            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "IdArea", true));
-            this.idAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idAreaComboBox.FormattingEnabled = true;
-            this.idAreaComboBox.Items.AddRange(new object[] {
-            "CIS",
-            "ITN",
-            "MNT",
-            "SGR",
-            "LBC",
-            "AMT"});
-            this.idAreaComboBox.Location = new System.Drawing.Point(178, 11);
-            this.idAreaComboBox.Name = "idAreaComboBox";
-            this.idAreaComboBox.Size = new System.Drawing.Size(88, 21);
-            this.idAreaComboBox.TabIndex = 32;
-            // 
-            // btnCancelarI
-            // 
-            this.btnCancelarI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarI.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarI.Image")));
-            this.btnCancelarI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelarI.Location = new System.Drawing.Point(1020, 13);
-            this.btnCancelarI.Name = "btnCancelarI";
-            this.btnCancelarI.Size = new System.Drawing.Size(70, 70);
-            this.btnCancelarI.TabIndex = 23;
-            this.btnCancelarI.Text = "Cancelar";
-            this.btnCancelarI.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelarI.UseVisualStyleBackColor = true;
-            this.btnCancelarI.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGuardarI
-            // 
-            this.btnGuardarI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardarI.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarI.Image")));
-            this.btnGuardarI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardarI.Location = new System.Drawing.Point(944, 13);
-            this.btnGuardarI.Name = "btnGuardarI";
-            this.btnGuardarI.Size = new System.Drawing.Size(70, 70);
-            this.btnGuardarI.TabIndex = 22;
-            this.btnGuardarI.Text = "Guardar";
-            this.btnGuardarI.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuardarI.UseVisualStyleBackColor = true;
-            this.btnGuardarI.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // BtnEditarI
-            // 
-            this.BtnEditarI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnEditarI.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditarI.Image")));
-            this.BtnEditarI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnEditarI.Location = new System.Drawing.Point(868, 13);
-            this.BtnEditarI.Name = "BtnEditarI";
-            this.BtnEditarI.Size = new System.Drawing.Size(70, 70);
-            this.BtnEditarI.TabIndex = 21;
-            this.BtnEditarI.Text = "Editar";
-            this.BtnEditarI.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnEditarI.UseVisualStyleBackColor = true;
-            this.BtnEditarI.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
-            // descripcionTextBox
-            // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(86, 47);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(573, 20);
-            this.descripcionTextBox.TabIndex = 16;
-            // 
-            // cantidadCriticaNumericUpDown
-            // 
-            this.cantidadCriticaNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventario1BindingSource, "CantidadCritica", true));
-            this.cantidadCriticaNumericUpDown.Location = new System.Drawing.Point(539, 78);
-            this.cantidadCriticaNumericUpDown.Name = "cantidadCriticaNumericUpDown";
-            this.cantidadCriticaNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.cantidadCriticaNumericUpDown.TabIndex = 14;
-            // 
-            // cantidadNormalNumericUpDown
-            // 
-            this.cantidadNormalNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventario1BindingSource, "CantidadNormal", true));
-            this.cantidadNormalNumericUpDown.Location = new System.Drawing.Point(310, 78);
-            this.cantidadNormalNumericUpDown.Name = "cantidadNormalNumericUpDown";
-            this.cantidadNormalNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.cantidadNormalNumericUpDown.TabIndex = 12;
-            // 
-            // nombreArticuloTextBox
-            // 
-            this.nombreArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "NombreArticulo", true));
-            this.nombreArticuloTextBox.Location = new System.Drawing.Point(330, 13);
-            this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
-            this.nombreArticuloTextBox.Size = new System.Drawing.Size(329, 20);
-            this.nombreArticuloTextBox.TabIndex = 9;
-            // 
-            // idArticuloTextBox
-            // 
-            this.idArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1BindingSource, "IdArticulo", true));
-            this.idArticuloTextBox.Enabled = false;
-            this.idArticuloTextBox.Location = new System.Drawing.Point(34, 11);
-            this.idArticuloTextBox.Name = "idArticuloTextBox";
-            this.idArticuloTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idArticuloTextBox.TabIndex = 8;
             // 
             // panel1
             // 
@@ -307,8 +157,8 @@ namespace SCI1
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 25);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(1084, 25);
+            this.panel1.TabIndex = 3;
             // 
             // btnCerrarFormulario
             // 
@@ -329,17 +179,169 @@ namespace SCI1
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(35, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(181, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Intendencia";
+            this.label1.Text = "Laboratorio de cómputo";
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1100, 100);
-            this.panel2.TabIndex = 5;
+            this.panel2.Size = new System.Drawing.Size(1084, 100);
+            this.panel2.TabIndex = 4;
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.Controls.Add(idUnidadMedidaLabel);
+            this.panelBotones.Controls.Add(this.idUnidadMedidaComboBox);
+            this.panelBotones.Controls.Add(idAreaLabel);
+            this.panelBotones.Controls.Add(this.idAreaComboBox);
+            this.panelBotones.Controls.Add(this.btnCancelar);
+            this.panelBotones.Controls.Add(this.btnGuardar);
+            this.panelBotones.Controls.Add(this.BtnEditar);
+            this.panelBotones.Controls.Add(descripcionLabel);
+            this.panelBotones.Controls.Add(this.descripcionTextBox);
+            this.panelBotones.Controls.Add(cantidadCriticaLabel);
+            this.panelBotones.Controls.Add(this.cantidadCriticaNumericUpDown);
+            this.panelBotones.Controls.Add(cantidadNormalLabel);
+            this.panelBotones.Controls.Add(this.cantidadNormalNumericUpDown);
+            this.panelBotones.Controls.Add(nombreArticuloLabel);
+            this.panelBotones.Controls.Add(this.nombreArticuloTextBox);
+            this.panelBotones.Controls.Add(idArticuloLabel);
+            this.panelBotones.Controls.Add(this.idArticuloTextBox);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBotones.Location = new System.Drawing.Point(0, 400);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(1084, 100);
+            this.panelBotones.TabIndex = 5;
+            // 
+            // idUnidadMedidaComboBox
+            // 
+            this.idUnidadMedidaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.inventario1111BindingSource, "IdUnidadMedida", true));
+            this.idUnidadMedidaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1111BindingSource, "IdUnidadMedida", true));
+            this.idUnidadMedidaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idUnidadMedidaComboBox.FormattingEnabled = true;
+            this.idUnidadMedidaComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.idUnidadMedidaComboBox.Location = new System.Drawing.Point(80, 77);
+            this.idUnidadMedidaComboBox.Name = "idUnidadMedidaComboBox";
+            this.idUnidadMedidaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.idUnidadMedidaComboBox.TabIndex = 29;
+            // 
+            // inventario1111BindingSource
+            // 
+            this.inventario1111BindingSource.DataMember = "Inventario1111";
+            this.inventario1111BindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // idAreaComboBox
+            // 
+            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.inventario1111BindingSource, "IdArea", true));
+            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1111BindingSource, "IdArea", true));
+            this.idAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idAreaComboBox.FormattingEnabled = true;
+            this.idAreaComboBox.Items.AddRange(new object[] {
+            "CIS",
+            "ITN",
+            "MNT",
+            "SGR",
+            "LBC",
+            "AMT"});
+            this.idAreaComboBox.Location = new System.Drawing.Point(183, 13);
+            this.idAreaComboBox.Name = "idAreaComboBox";
+            this.idAreaComboBox.Size = new System.Drawing.Size(88, 21);
+            this.idAreaComboBox.TabIndex = 28;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(1004, 13);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(70, 70);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGuardar.Location = new System.Drawing.Point(928, 13);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(70, 70);
+            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // BtnEditar
+            // 
+            this.BtnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditar.Image")));
+            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnEditar.Location = new System.Drawing.Point(852, 13);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(70, 70);
+            this.BtnEditar.TabIndex = 21;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1111BindingSource, "Descripcion", true));
+            this.descripcionTextBox.Location = new System.Drawing.Point(86, 47);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(573, 20);
+            this.descripcionTextBox.TabIndex = 16;
+            // 
+            // cantidadCriticaNumericUpDown
+            // 
+            this.cantidadCriticaNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventario1111BindingSource, "CantidadCritica", true));
+            this.cantidadCriticaNumericUpDown.Location = new System.Drawing.Point(539, 78);
+            this.cantidadCriticaNumericUpDown.Name = "cantidadCriticaNumericUpDown";
+            this.cantidadCriticaNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.cantidadCriticaNumericUpDown.TabIndex = 14;
+            // 
+            // cantidadNormalNumericUpDown
+            // 
+            this.cantidadNormalNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventario1111BindingSource, "CantidadNormal", true));
+            this.cantidadNormalNumericUpDown.Location = new System.Drawing.Point(310, 78);
+            this.cantidadNormalNumericUpDown.Name = "cantidadNormalNumericUpDown";
+            this.cantidadNormalNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.cantidadNormalNumericUpDown.TabIndex = 12;
+            // 
+            // nombreArticuloTextBox
+            // 
+            this.nombreArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1111BindingSource, "NombreArticulo", true));
+            this.nombreArticuloTextBox.Location = new System.Drawing.Point(330, 13);
+            this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
+            this.nombreArticuloTextBox.Size = new System.Drawing.Size(329, 20);
+            this.nombreArticuloTextBox.TabIndex = 9;
+            // 
+            // idArticuloTextBox
+            // 
+            this.idArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventario1111BindingSource, "IdArticulo", true));
+            this.idArticuloTextBox.Enabled = false;
+            this.idArticuloTextBox.Location = new System.Drawing.Point(34, 11);
+            this.idArticuloTextBox.Name = "idArticuloTextBox";
+            this.idArticuloTextBox.ReadOnly = true;
+            this.idArticuloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idArticuloTextBox.TabIndex = 8;
             // 
             // panelDGV
             // 
@@ -347,7 +349,7 @@ namespace SCI1
             this.panelDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDGV.Location = new System.Drawing.Point(0, 125);
             this.panelDGV.Name = "panelDGV";
-            this.panelDGV.Size = new System.Drawing.Size(1100, 563);
+            this.panelDGV.Size = new System.Drawing.Size(1084, 275);
             this.panelDGV.TabIndex = 6;
             // 
             // inventarioDataGridView
@@ -366,12 +368,11 @@ namespace SCI1
             this.idArticuloDataGridViewTextBoxColumn,
             this.nombreArticuloDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
-            this.cantidadDataGridViewTextBoxColumn,
             this.idUnidadMedidaDataGridViewTextBoxColumn,
             this.cantidadNormalDataGridViewTextBoxColumn,
             this.cantidadCriticaDataGridViewTextBoxColumn});
             this.inventarioDataGridView.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inventarioDataGridView.DataSource = this.inventario1BindingSource;
+            this.inventarioDataGridView.DataSource = this.inventario1111BindingSource;
             this.inventarioDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inventarioDataGridView.Location = new System.Drawing.Point(0, 0);
             this.inventarioDataGridView.Name = "inventarioDataGridView";
@@ -379,56 +380,48 @@ namespace SCI1
             this.inventarioDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.inventarioDataGridView.RowHeadersVisible = false;
             this.inventarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventarioDataGridView.Size = new System.Drawing.Size(1100, 563);
+            this.inventarioDataGridView.Size = new System.Drawing.Size(1084, 275);
             this.inventarioDataGridView.TabIndex = 0;
             // 
             // idAreaDataGridViewTextBoxColumn
             // 
             this.idAreaDataGridViewTextBoxColumn.DataPropertyName = "IdArea";
-            this.idAreaDataGridViewTextBoxColumn.HeaderText = "IdArea";
+            this.idAreaDataGridViewTextBoxColumn.HeaderText = "Área";
             this.idAreaDataGridViewTextBoxColumn.Name = "idAreaDataGridViewTextBoxColumn";
             this.idAreaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idAreaDataGridViewTextBoxColumn.Width = 63;
+            this.idAreaDataGridViewTextBoxColumn.Width = 54;
             // 
             // idArticuloDataGridViewTextBoxColumn
             // 
             this.idArticuloDataGridViewTextBoxColumn.DataPropertyName = "IdArticulo";
-            this.idArticuloDataGridViewTextBoxColumn.HeaderText = "IdArticulo";
+            this.idArticuloDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idArticuloDataGridViewTextBoxColumn.Name = "idArticuloDataGridViewTextBoxColumn";
             this.idArticuloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idArticuloDataGridViewTextBoxColumn.Width = 76;
+            this.idArticuloDataGridViewTextBoxColumn.Width = 43;
             // 
             // nombreArticuloDataGridViewTextBoxColumn
             // 
             this.nombreArticuloDataGridViewTextBoxColumn.DataPropertyName = "NombreArticulo";
-            this.nombreArticuloDataGridViewTextBoxColumn.HeaderText = "NombreArticulo";
+            this.nombreArticuloDataGridViewTextBoxColumn.HeaderText = "Artículo";
             this.nombreArticuloDataGridViewTextBoxColumn.Name = "nombreArticuloDataGridViewTextBoxColumn";
             this.nombreArticuloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreArticuloDataGridViewTextBoxColumn.Width = 104;
+            this.nombreArticuloDataGridViewTextBoxColumn.Width = 69;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descripcionDataGridViewTextBoxColumn.Width = 88;
             // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 74;
-            // 
             // idUnidadMedidaDataGridViewTextBoxColumn
             // 
             this.idUnidadMedidaDataGridViewTextBoxColumn.DataPropertyName = "IdUnidadMedida";
-            this.idUnidadMedidaDataGridViewTextBoxColumn.HeaderText = "IdUnidadMedida";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.HeaderText = "Medida";
             this.idUnidadMedidaDataGridViewTextBoxColumn.Name = "idUnidadMedidaDataGridViewTextBoxColumn";
             this.idUnidadMedidaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idUnidadMedidaDataGridViewTextBoxColumn.Width = 110;
+            this.idUnidadMedidaDataGridViewTextBoxColumn.Width = 67;
             // 
             // cantidadNormalDataGridViewTextBoxColumn
             // 
@@ -446,9 +439,9 @@ namespace SCI1
             this.cantidadCriticaDataGridViewTextBoxColumn.ReadOnly = true;
             this.cantidadCriticaDataGridViewTextBoxColumn.Width = 103;
             // 
-            // inventario1TableAdapter
+            // inventario1111TableAdapter
             // 
-            this.inventario1TableAdapter.ClearBeforeFill = true;
+            this.inventario1111TableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -457,10 +450,10 @@ namespace SCI1
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.DisminuirStockTableAdapter = null;
             this.tableAdapterManager.Inventario11111TableAdapter = null;
-            this.tableAdapterManager.Inventario1111TableAdapter = null;
+            this.tableAdapterManager.Inventario1111TableAdapter = this.inventario1111TableAdapter;
             this.tableAdapterManager.Inventario111TableAdapter = null;
             this.tableAdapterManager.Inventario11TableAdapter = null;
-            this.tableAdapterManager.Inventario1TableAdapter = this.inventario1TableAdapter;
+            this.tableAdapterManager.Inventario1TableAdapter = null;
             this.tableAdapterManager.Inventario2TableAdapter = null;
             this.tableAdapterManager.InventarioInsertarTableAdapter = null;
             this.tableAdapterManager.InventarioInsertTableAdapter = null;
@@ -473,28 +466,28 @@ namespace SCI1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // InventarioITN
+            // InventarioLBC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 788);
+            this.ClientSize = new System.Drawing.Size(1084, 500);
             this.Controls.Add(this.panelDGV);
+            this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "InventarioITN";
-            this.Text = "InventarioITN";
-            this.Load += new System.EventHandler(this.InventarioITN_Load);
-            this.panelBotones.ResumeLayout(false);
-            this.panelBotones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventario1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
+            this.Name = "InventarioLBC";
+            this.Text = "InventarioLBC";
+            this.Load += new System.EventHandler(this.InventarioLBC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).EndInit();
+            this.panelBotones.ResumeLayout(false);
+            this.panelBotones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventario1111BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -504,34 +497,33 @@ namespace SCI1
 
         #endregion
 
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnCerrarFormulario;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelBotones;
-        private System.Windows.Forms.Button btnCancelarI;
-        private System.Windows.Forms.Button btnGuardarI;
-        private System.Windows.Forms.Button BtnEditarI;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.NumericUpDown cantidadCriticaNumericUpDown;
         private System.Windows.Forms.NumericUpDown cantidadNormalNumericUpDown;
         private System.Windows.Forms.TextBox nombreArticuloTextBox;
         private System.Windows.Forms.TextBox idArticuloTextBox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox btnCerrarFormulario;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelDGV;
         private System.Windows.Forms.DataGridView inventarioDataGridView;
         private SCIDataSet sCIDataSet;
-        private System.Windows.Forms.BindingSource inventario1BindingSource;
-        private SCIDataSetTableAdapters.Inventario1TableAdapter inventario1TableAdapter;
+        private System.Windows.Forms.BindingSource inventario1111BindingSource;
+        private SCIDataSetTableAdapters.Inventario1111TableAdapter inventario1111TableAdapter;
         private SCIDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idAreaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idArticuloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreArticuloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUnidadMedidaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadNormalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadCriticaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox idUnidadMedidaComboBox;
         private System.Windows.Forms.ComboBox idAreaComboBox;
     }

@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public partial class InventarioCIS : Form
+    public partial class InsertarInventario : Form
     {
         string Modo = "";
-
-        public InventarioCIS()
+        public InsertarInventario()
         {
             InitializeComponent();
         }
 
-        private void InventarioCIS_Load(object sender, EventArgs e)
-        {
+        private void InsertarInventario_Load(object sender, EventArgs e)
+        {            
             this.CargaDatos();
         }
 
@@ -28,7 +27,10 @@ namespace SCI1
         {
             try
             {
-                this.inventarioTableAdapter.Fill(this.sCIDataSet.Inventario);
+
+                this.unidadMedidaTableAdapter.Fill(this.sCIDataSet.UnidadMedida);
+                this.areasTableAdapter.Fill(this.sCIDataSet.Areas);
+                this.inventarioInsertTableAdapter.Fill(this.sCIDataSet.InventarioInsert);
                 this.ModoEdicion("Lectura");
 
             }
@@ -45,37 +47,46 @@ namespace SCI1
             switch (modo)
             {
                 case "Lectura":
-                    this.BtnEditar.Enabled = true;
+                    this.BtnInsertar.Enabled = true;
                     this.btnGuardar.Enabled = false;
                     this.btnCancelar.Enabled = false;
+                    this.inventarioDataGridView.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
                     this.idAreaComboBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
+                    this.cantidadNumericUpDown.Enabled = false;
                     this.idUnidadMedidaComboBox.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
-                    this.cantidadCriticaNumericUpDown.Enabled = false;                    
+                    this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
-                case "Modificar":
-                    this.BtnEditar.Enabled = false;
+                case "Insertar":
+                    this.BtnInsertar.Enabled = false;
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
-                    this.idArticuloTextBox.Enabled = true;
+                    this.idArticuloTextBox.Enabled = false;
                     this.idAreaComboBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
                     this.idUnidadMedidaComboBox.Enabled = true;
+                    this.cantidadNumericUpDown.Enabled = true;                    
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
+                    this.descripcionTextBox.Text = "";
+                    this.idAreaComboBox.Text = "";
+                    this.nombreArticuloTextBox.Text = "";                    
+                    this.cantidadNormalNumericUpDown.Value = 0;
+                    this.cantidadCriticaNumericUpDown.Value = 0;
 
                     break;
             }
         }
+
         private bool Valida()
         {
             this.errorProvider1.Clear();
             bool validado = true;
-            if (this.nombreArticuloTextBox.Text.Trim() == "" )
+            if (this.nombreArticuloTextBox.Text.Trim() == "")
             {
                 this.errorProvider1.SetError(this.nombreArticuloTextBox, "¡Campo requerido!");
             }
@@ -85,23 +96,10 @@ namespace SCI1
             }
             return validado;
         }
-
-        private void btnCerrarFormulario_Click(object sender, EventArgs e)
+        private void BtnInsertar_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            this.ModoEdicion("Insertar");
 
-        private void inventarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.inventarioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sCIDataSet);
-
-        }
-
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            this.ModoEdicion("Modificar");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -110,28 +108,35 @@ namespace SCI1
             {
                 if (this.Valida())
                 {
-                    int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioTableAdapter.Update(this.idAreaComboBox.Text,
-                   this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,
+                    //int id = int.Parse(this.idArticuloTextBox.Text);
+                    this.inventarioInsertTableAdapter.Insert(this.idAreaComboBox.Text,
+                   this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,                   
+                   Convert.ToInt32(this.cantidadNumericUpDown.Value),
                    Convert.ToInt32(this.idUnidadMedidaComboBox.Text),
                    Convert.ToInt32(this.cantidadNormalNumericUpDown.Value),
-                   Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
-                   id);
-                    MessageBox.Show("Los datos fueron actualizados correctamente", "Operación exitosa");
+                   Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value));
+                    MessageBox.Show("Los datos fueron insertados correctamente", "Operación exitosa");
                     this.CargaDatos();
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Actualizar los campos: " + ex.Message.ToString());
+                MessageBox.Show("Ha ocurrido un error al Insertar los datos: " + ex.Message.ToString(), "Operación fallida: ");
 
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.CargaDatos();            
+            this.CargaDatos();
         }
+
+        private void btnCerrarFormulario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }

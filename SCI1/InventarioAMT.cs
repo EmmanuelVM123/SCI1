@@ -10,25 +10,25 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public partial class InventarioCIS : Form
+    public partial class InventarioAMT : Form
     {
         string Modo = "";
-
-        public InventarioCIS()
+        public InventarioAMT()
         {
             InitializeComponent();
         }
 
-        private void InventarioCIS_Load(object sender, EventArgs e)
+        private void InventarioAMT_Load(object sender, EventArgs e)
         {
             this.CargaDatos();
+
         }
 
         private void CargaDatos()
         {
             try
             {
-                this.inventarioTableAdapter.Fill(this.sCIDataSet.Inventario);
+                this.inventario11111TableAdapter.Fill(this.sCIDataSet.Inventario11111);
                 this.ModoEdicion("Lectura");
 
             }
@@ -54,13 +54,13 @@ namespace SCI1
                     this.descripcionTextBox.Enabled = false;
                     this.idUnidadMedidaComboBox.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
-                    this.cantidadCriticaNumericUpDown.Enabled = false;                    
+                    this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
                 case "Modificar":
                     this.BtnEditar.Enabled = false;
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
-                    this.idArticuloTextBox.Enabled = true;
+                    this.idArticuloTextBox.Enabled = false;
                     this.idAreaComboBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
@@ -71,11 +71,12 @@ namespace SCI1
                     break;
             }
         }
+
         private bool Valida()
         {
             this.errorProvider1.Clear();
             bool validado = true;
-            if (this.nombreArticuloTextBox.Text.Trim() == "" )
+            if (this.nombreArticuloTextBox.Text.Trim() == "")
             {
                 this.errorProvider1.SetError(this.nombreArticuloTextBox, "¡Campo requerido!");
             }
@@ -84,19 +85,6 @@ namespace SCI1
                 this.errorProvider1.SetError(this.descripcionTextBox, "¡Campo requerido!");
             }
             return validado;
-        }
-
-        private void btnCerrarFormulario_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void inventarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.inventarioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sCIDataSet);
-
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -111,7 +99,7 @@ namespace SCI1
                 if (this.Valida())
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioTableAdapter.Update(this.idAreaComboBox.Text,
+                    this.inventario11111TableAdapter.Update(this.idAreaComboBox.Text,
                    this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,
                    Convert.ToInt32(this.idUnidadMedidaComboBox.Text),
                    Convert.ToInt32(this.cantidadNormalNumericUpDown.Value),
@@ -131,7 +119,12 @@ namespace SCI1
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.CargaDatos();            
+            this.CargaDatos();
+        }
+
+        private void btnCerrarFormulario_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
