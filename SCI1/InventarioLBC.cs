@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public partial class InventarioCIS : Form
+    public partial class InventarioLBC : Form
     {
         string Modo = "";
-        public InventarioCIS()
+        public InventarioLBC()
         {
             InitializeComponent();
         }
-
         private void CargaDatos()
         {
-            this.inventarioCISTableAdapter.Fill(this.sCIDataSet.InventarioCIS);
+            this.inventarioLBCTableAdapter.Fill(this.sCIDataSet.InventarioLBC);
             this.ModoEdicion("Lectura");
         }
-        private void InventarioCIS_Load(object sender, EventArgs e)
+        private void InventarioLBC_Load(object sender, EventArgs e)
         {
             this.CargaDatos();
         }
@@ -96,7 +95,7 @@ namespace SCI1
                 if (this.Valida())
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioCISTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
+                    this.inventarioLBCTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                         id);
                     MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
                     this.CargaDatos();
@@ -112,5 +111,7 @@ namespace SCI1
         {
             this.CargaDatos();
         }
+
+
     }
 }

@@ -10,22 +10,23 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public partial class InventarioCIS : Form
+    public partial class NuevoArticulo : Form
     {
         string Modo = "";
-        public InventarioCIS()
+        public NuevoArticulo()
         {
             InitializeComponent();
         }
 
-        private void CargaDatos()
-        {
-            this.inventarioCISTableAdapter.Fill(this.sCIDataSet.InventarioCIS);
-            this.ModoEdicion("Lectura");
-        }
-        private void InventarioCIS_Load(object sender, EventArgs e)
+        private void NuevoArticulo_Load(object sender, EventArgs e)
         {
             this.CargaDatos();
+            
+        }
+        private void CargaDatos()
+        {
+            this.inventarioCrearTableAdapter.Fill(this.sCIDataSet.InventarioCrear);
+            this.ModoEdicion("Lectura");
         }
         private void ModoEdicion(string modo)
         {
@@ -33,7 +34,7 @@ namespace SCI1
             switch (modo)
             {
                 case "Lectura":
-                    this.btnEditar.Enabled = true;
+                    this.btnAgregar.Enabled = true;
                     this.btnGuardar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.idArticuloTextBox.Enabled = false;
@@ -41,11 +42,12 @@ namespace SCI1
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
                     this.idUnidadMedidaComboBox.Enabled = false;
+                    this.cantidadNumericUpDown.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
                     this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
-                case "Actualizar":
-                    this.btnEditar.Enabled = false;
+                case "Agregar":
+                    this.btnAgregar.Enabled = false;
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
@@ -53,6 +55,7 @@ namespace SCI1
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
                     this.idUnidadMedidaComboBox.Enabled = true;
+                    this.cantidadNumericUpDown.Enabled = true;
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
                     break;
@@ -72,6 +75,11 @@ namespace SCI1
                 validado = false;
                 this.errorProvider1.SetError(this.descripcionTextBox, "Campo requerido");
             }
+            if (this.cantidadNumericUpDown.Value == 0)
+            {
+                validado = false;
+                this.errorProvider1.SetError(this.cantidadNumericUpDown, "La cantidad debe ser mayor de 0");
+            }
             return validado;
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -84,9 +92,9 @@ namespace SCI1
             this.CargaDatos();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            this.ModoEdicion("Actualizar");
+            this.ModoEdicion("Agregar");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -94,11 +102,9 @@ namespace SCI1
             try
             {
                 if (this.Valida())
-                {
-                    int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioCISTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
-                        id);
-                    MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
+                {                    
+                    this.inventarioCrearTableAdapter.Insert(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.cantidadNumericUpDown.Value),Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value));
+                    MessageBox.Show("Se ha agregado el artículo: " + this.nombreArticuloTextBox.Text + " con " + this.cantidadNumericUpDown.Value + " unidad(es)", "Operación exitosa");
                     this.CargaDatos();
                 }
             }

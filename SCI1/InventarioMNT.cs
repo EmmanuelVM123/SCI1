@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    
     public partial class InventarioMNT : Form
     {
         string Modo = "";
@@ -18,80 +17,75 @@ namespace SCI1
         {
             InitializeComponent();
         }
-
-        private void InventarioMNT_Load(object sender, EventArgs e)
-        {
-           
-            this.CargaDatos();
-        }
-
         private void CargaDatos()
         {
-            try
-            {
-                this.inventario11TableAdapter.Fill(this.sCIDataSet.Inventario11);
-                this.ModoEdicion("Lectura");
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Ha ocurrido un error al cargar los datos: " + ex.Message.ToString());
-            }
+            this.inventarioMNTTableAdapter.Fill(this.sCIDataSet.InventarioMNT);
+            this.ModoEdicion("Lectura");
         }
-
+        private void InventarioMNT_Load(object sender, EventArgs e)
+        {
+            this.CargaDatos();
+        }
         private void ModoEdicion(string modo)
         {
             this.Modo = modo;
             switch (modo)
             {
                 case "Lectura":
-                    this.BtnEditar.Enabled = true;
+                    this.btnEditar.Enabled = true;
                     this.btnGuardar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = false;
+                    this.idAreaComboBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
-                    this.idUnidadMedidaNumericUpDown.Enabled = false;
+                    this.idUnidadMedidaComboBox.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
                     this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
-                case "Modificar":
-                    this.BtnEditar.Enabled = false;
+                case "Actualizar":
+                    this.btnEditar.Enabled = false;
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
-                    this.idArticuloTextBox.Enabled = true;
-                    this.idAreaTextBox.Enabled = true;
+                    this.idArticuloTextBox.Enabled = false;
+                    this.idAreaComboBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
-                    this.idUnidadMedidaNumericUpDown.Enabled = true;
+                    this.idUnidadMedidaComboBox.Enabled = true;
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
-
                     break;
             }
         }
-
         private bool Valida()
         {
             this.errorProvider1.Clear();
             bool validado = true;
             if (this.nombreArticuloTextBox.Text.Trim() == "")
             {
-                this.errorProvider1.SetError(this.nombreArticuloTextBox, "¡Campo requerido!");
+                validado = false;
+                this.errorProvider1.SetError(this.nombreArticuloTextBox, "Campo requerido");
             }
             if (this.descripcionTextBox.Text.Trim() == "")
             {
-                this.errorProvider1.SetError(this.descripcionTextBox, "¡Campo requerido!");
+                validado = false;
+                this.errorProvider1.SetError(this.descripcionTextBox, "Campo requerido");
             }
             return validado;
         }
-
-        private void BtnEditar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.ModoEdicion("Modificar");
-            Focus();
+            this.Close();
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            this.CargaDatos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.ModoEdicion("Actualizar");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -101,32 +95,21 @@ namespace SCI1
                 if (this.Valida())
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventario11TableAdapter.Update(this.idAreaTextBox.Text,
-                   this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text,
-                   Convert.ToInt32(this.idUnidadMedidaNumericUpDown.Text),
-                   Convert.ToInt32(this.cantidadNormalNumericUpDown.Value),
-                   Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
-                   id);
-                    MessageBox.Show("Los datos fueron actualizados correctamente", "Operación exitosa");
+                    this.inventarioMNTTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
+                        id);
+                    MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
                     this.CargaDatos();
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Actualizar los campos: " + ex.Message.ToString());
-
+                MessageBox.Show("Ha ocurrido un error al actualizar los campos " + ex.Message.ToString());
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
-        }
-
-        private void btnCerrarFormulario_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
