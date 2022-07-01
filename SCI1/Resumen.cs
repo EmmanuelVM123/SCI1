@@ -72,23 +72,12 @@ namespace SCI1
 
         private void Resumen_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sCIDataSet.ArticuloARequisitar' Puede moverla o quitarla según sea necesario.
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
-
         }
-
-        public void TablaDeAgregarDatos(DataGridViewRow fila)
-        {
-            String Cantidad = fila.Cells["Cantidad"].Value.ToString();
-            String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString();
-            String IdUnidadDeMedida = fila.Cells["IdUnidadDeMedida"].Value.ToString();
-        }
-
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
         }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -111,12 +100,31 @@ namespace SCI1
                 {
                     this.dataGridView2.Rows.Add(row.Cells[6].Value.ToString(), row.Cells[6].Value.ToString(), row.Cells[3].Value.ToString());
                 }
+
+                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido error en el evento 'Doble clic a la celda'" + ex.Message.ToString(), "Error" );
             }
         }
+        public void TablaDeAgregarDatos(DataGridViewRow fila)
+        {
+            String Cantidad = fila.Cells["Cantidad"].Value.ToString();
+            String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString();
+            String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString();
+
+            this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo});
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+           DataGridViewRow fila = dataGridView1.SelectedRows[0] as DataGridViewRow;
+            TablaDeAgregarDatos(fila);
+            
+            
+        }
+
     }
 
     internal interface VarDatosEntreForm

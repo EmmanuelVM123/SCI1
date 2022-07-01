@@ -50,7 +50,7 @@ namespace SCI1
             {
                 panelAreas.Visible &= false;
             }
-            this.btnIAreas.BackColor = Color.FromArgb(240, 128, 128);
+            //this.btnIAreas.BackColor = Color.FromArgb(240, 128, 128);
         }
 
         private void btnAltas_Click(object sender, EventArgs e)
@@ -141,25 +141,25 @@ namespace SCI1
         private void CerrarFormularios(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms["InventarioCIS"] == null)
-                this.btnCIS.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnCIS.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioITN"] == null)
-                this.btnITN.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnITN.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioMNT"] == null)
-                this.btnMNT.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnMNT.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioSGR"] == null)
-                this.btnSGR.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnSGR.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioLBC"] == null)
-                this.btnLBC.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnLBC.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioAMT"] == null)
-                this.btnAMT.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnAMT.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["NuevoArticulo"] == null)
-                this.btnAñadirArticulo.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnAñadirArticulo.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["AñadirStock"] == null)
-                this.btnAñadirExistencia.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnAñadirExistencia.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["EliminarArticulo"] == null)
-                this.btnEliminarArticulo.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnEliminarArticulo.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["DisminuirStock"] == null)
-                this.btnDisminuirExistencia.BackColor = Color.FromArgb(248, 249, 249);
+                this.btnDisminuirExistencia.BackColor = Color.FromArgb(240, 240, 240);
         }
 
         //private void SistemaControlInventario_Load(object sender, EventArgs e)
