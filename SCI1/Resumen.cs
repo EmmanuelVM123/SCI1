@@ -79,37 +79,37 @@ namespace SCI1
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
         }
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int Cantidad = Convert.ToInt32(this.dataGridView1.SelectedRows[0].Cells[5].Value);
-                //if (this.IdUnidadMedida.ToString() == "1")
-                //{
-                //    Convert.ToString(this.IdUnidadMedida.Equals("Pzs"));
-                //}
-                int IdUnidadMedida = Convert.ToInt32(this.dataGridView1.SelectedRows[0].Cells[6].Value);
-                string NombreArticulo = this.dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+        //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    try
+        //    {
+        //        int Cantidad = Convert.ToInt32(this.dataGridView1.SelectedRows[0].Cells[5].Value);
+        //        //if (this.IdUnidadMedida.ToString() == "1")
+        //        //{
+        //        //    Convert.ToString(this.IdUnidadMedida.Equals("Pzs"));
+        //        //}
+        //        int IdUnidadMedida = Convert.ToInt32(this.dataGridView1.SelectedRows[0].Cells[6].Value);
+        //        string NombreArticulo = this.dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
 
-                MessageBox.Show(
-                    $"Cantidad: {Cantidad}\nMedida: {IdUnidadMedida}\nArtículo: {NombreArticulo}"
-                    );
+        //        MessageBox.Show(
+        //            $"Cantidad: {Cantidad}\nMedida: {IdUnidadMedida}\nArtículo: {NombreArticulo}"
+        //            );
 
-                // this.dataGridView2.Rows.Add(Convert.ToInt32(this.Cantidad.ToString()), Convert.ToInt32(this.IdUnidadMedida.ToString()), this.NombreArticulo.ToString());
+        //        // this.dataGridView2.Rows.Add(Convert.ToInt32(this.Cantidad.ToString()), Convert.ToInt32(this.IdUnidadMedida.ToString()), this.NombreArticulo.ToString());
 
-                foreach (DataGridViewRow row  in this.dataGridView1.Rows)
-                {
-                    this.dataGridView2.Rows.Add(row.Cells[6].Value.ToString(), row.Cells[6].Value.ToString(), row.Cells[3].Value.ToString());
-                }
+        //        foreach (DataGridViewRow row  in this.dataGridView1.Rows)
+        //        {
+        //            this.dataGridView2.Rows.Add(row.Cells[6].Value.ToString(), row.Cells[6].Value.ToString(), row.Cells[3].Value.ToString());
+        //        }
 
                 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocurrido error en el evento 'Doble clic a la celda'" + ex.Message.ToString(), "Error" );
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Ha ocurrido error en el evento 'Doble clic a la celda'" + ex.Message.ToString(), "Error" );
+        //    }
+        //}
         public void TablaDeAgregarDatos(DataGridViewRow fila)
         {
             bool DatosEnDGV = false;
