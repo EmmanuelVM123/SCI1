@@ -13,6 +13,7 @@ namespace SCI1
 {
     public partial class Resumen : Form, VarDatosEntreForm 
     {
+        int n;
         public Resumen()
         {
             InitializeComponent();
@@ -111,11 +112,27 @@ namespace SCI1
         }
         public void TablaDeAgregarDatos(DataGridViewRow fila)
         {
-            String Cantidad = fila.Cells["Cantidad"].Value.ToString();
-            String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString();
-            String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString();
+            bool DatosEnDGV = false;
+            String valorElemento = fila.Cells["NombreArticulo"].Value.ToString();
 
-            this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo});
+            foreach (DataGridViewRow fila2 in dataGridView2.Rows)
+            {
+                if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
+                {
+                    MessageBox.Show("No se puede agregar un artículo que ya está en la lista a solicitar", "Artículo repetido");
+                    DatosEnDGV = true;
+                    break;
+                }
+            }
+
+            if (DatosEnDGV != true)
+            {
+                String Cantidad = fila.Cells["Cantidad"].Value.ToString();
+                String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString();
+                String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString();
+
+                this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -125,6 +142,20 @@ namespace SCI1
             
         }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            n = e.RowIndex;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.RemoveAt(n);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+        }
     }
 
     internal interface VarDatosEntreForm
