@@ -25,6 +25,8 @@ namespace SCI1
         }
         private void InventarioCIS_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sCIDataSet.InventarioCIS' Puede moverla o quitarla según sea necesario.
+            this.inventarioCISTableAdapter.Fill(this.sCIDataSet.InventarioCIS);
             this.CargaDatos();
         }
         private void ModoEdicion(string modo)
@@ -33,26 +35,26 @@ namespace SCI1
             switch (modo)
             {
                 case "Lectura":
-                    this.btnEditar.Enabled = true;
+                    this.BtnEditar.Enabled = true;
                     this.btnGuardar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaComboBox.Enabled = false;
+                    this.idAreaTextBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
-                    this.idUnidadMedidaComboBox.Enabled = false;
+                    this.idUnidadMedidaNumericUpDown.Enabled = false;
                     this.cantidadNormalNumericUpDown.Enabled = false;
                     this.cantidadCriticaNumericUpDown.Enabled = false;
                     break;
                 case "Actualizar":
-                    this.btnEditar.Enabled = false;
+                    this.BtnEditar.Enabled = false;
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaComboBox.Enabled = true;
+                    this.idAreaTextBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
-                    this.idUnidadMedidaComboBox.Enabled = true;
+                    this.idUnidadMedidaNumericUpDown.Enabled = true;
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
                     break;
@@ -84,7 +86,7 @@ namespace SCI1
             this.CargaDatos();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             this.ModoEdicion("Actualizar");
         }
@@ -96,7 +98,7 @@ namespace SCI1
                 if (this.Valida())
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioCISTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
+                    this.inventarioCISTableAdapter.Update(this.idAreaTextBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaNumericUpDown.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                         id);
                     MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
                     this.CargaDatos();

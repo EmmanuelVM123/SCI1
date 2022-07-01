@@ -37,7 +37,6 @@ namespace SCI1
             System.Windows.Forms.Label cantidadNormalLabel;
             System.Windows.Forms.Label cantidadCriticaLabel;
             System.Windows.Forms.Label descripcionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventarioCIS));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarFormulario = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,8 +46,6 @@ namespace SCI1
             this.btnGuardar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
-            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
             this.cantidadCriticaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.cantidadNormalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.idUnidadMedidaNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -57,17 +54,18 @@ namespace SCI1
             this.idAreaTextBox = new System.Windows.Forms.TextBox();
             this.panelDGV = new System.Windows.Forms.Panel();
             this.inventarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.inventarioTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioTableAdapter();
-            this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
+            this.sCIDataSet = new SCI1.SCIDataSet();
+            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventarioCISTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioCISTableAdapter();
+            this.idAreaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUnidadMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadNormalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadCriticaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idAreaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
@@ -78,14 +76,14 @@ namespace SCI1
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).BeginInit();
             this.panelBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idUnidadMedidaNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idAreaLabel
@@ -165,14 +163,13 @@ namespace SCI1
             // btnCerrarFormulario
             // 
             this.btnCerrarFormulario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarFormulario.Image")));
             this.btnCerrarFormulario.Location = new System.Drawing.Point(1, 2);
             this.btnCerrarFormulario.Name = "btnCerrarFormulario";
             this.btnCerrarFormulario.Size = new System.Drawing.Size(20, 20);
             this.btnCerrarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrarFormulario.TabIndex = 1;
             this.btnCerrarFormulario.TabStop = false;
-            this.btnCerrarFormulario.Click += new System.EventHandler(this.btnCerrarFormulario_Click);
+            this.btnCerrarFormulario.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label1
             // 
@@ -221,7 +218,6 @@ namespace SCI1
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancelar.Location = new System.Drawing.Point(1020, 13);
             this.btnCancelar.Name = "btnCancelar";
@@ -234,7 +230,6 @@ namespace SCI1
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnGuardar.Location = new System.Drawing.Point(944, 13);
             this.btnGuardar.Name = "btnGuardar";
@@ -247,7 +242,6 @@ namespace SCI1
             // BtnEditar
             // 
             this.BtnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditar.Image")));
             this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnEditar.Location = new System.Drawing.Point(868, 13);
             this.BtnEditar.Name = "BtnEditar";
@@ -259,25 +253,13 @@ namespace SCI1
             // 
             // descripcionTextBox
             // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "Descripcion", true));
             this.descripcionTextBox.Location = new System.Drawing.Point(86, 47);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(573, 20);
             this.descripcionTextBox.TabIndex = 16;
             // 
-            // inventarioBindingSource
-            // 
-            this.inventarioBindingSource.DataMember = "Inventario";
-            this.inventarioBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cantidadCriticaNumericUpDown
             // 
-            this.cantidadCriticaNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventarioBindingSource, "CantidadCritica", true));
             this.cantidadCriticaNumericUpDown.Location = new System.Drawing.Point(539, 78);
             this.cantidadCriticaNumericUpDown.Name = "cantidadCriticaNumericUpDown";
             this.cantidadCriticaNumericUpDown.Size = new System.Drawing.Size(120, 20);
@@ -285,7 +267,6 @@ namespace SCI1
             // 
             // cantidadNormalNumericUpDown
             // 
-            this.cantidadNormalNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventarioBindingSource, "CantidadNormal", true));
             this.cantidadNormalNumericUpDown.Location = new System.Drawing.Point(310, 78);
             this.cantidadNormalNumericUpDown.Name = "cantidadNormalNumericUpDown";
             this.cantidadNormalNumericUpDown.Size = new System.Drawing.Size(120, 20);
@@ -293,7 +274,6 @@ namespace SCI1
             // 
             // idUnidadMedidaNumericUpDown
             // 
-            this.idUnidadMedidaNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.inventarioBindingSource, "IdUnidadMedida", true));
             this.idUnidadMedidaNumericUpDown.Location = new System.Drawing.Point(76, 76);
             this.idUnidadMedidaNumericUpDown.Name = "idUnidadMedidaNumericUpDown";
             this.idUnidadMedidaNumericUpDown.Size = new System.Drawing.Size(120, 20);
@@ -301,7 +281,6 @@ namespace SCI1
             // 
             // nombreArticuloTextBox
             // 
-            this.nombreArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "NombreArticulo", true));
             this.nombreArticuloTextBox.Location = new System.Drawing.Point(330, 13);
             this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
             this.nombreArticuloTextBox.Size = new System.Drawing.Size(329, 20);
@@ -309,7 +288,6 @@ namespace SCI1
             // 
             // idArticuloTextBox
             // 
-            this.idArticuloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "IdArticulo", true));
             this.idArticuloTextBox.Enabled = false;
             this.idArticuloTextBox.Location = new System.Drawing.Point(34, 11);
             this.idArticuloTextBox.Name = "idArticuloTextBox";
@@ -318,7 +296,6 @@ namespace SCI1
             // 
             // idAreaTextBox
             // 
-            this.idAreaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "IdArea", true));
             this.idAreaTextBox.Location = new System.Drawing.Point(188, 12);
             this.idAreaTextBox.Name = "idAreaTextBox";
             this.idAreaTextBox.Size = new System.Drawing.Size(75, 20);
@@ -345,16 +322,16 @@ namespace SCI1
             this.inventarioDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.inventarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.idAreaDataGridViewTextBoxColumn,
+            this.idArticuloDataGridViewTextBoxColumn,
+            this.nombreArticuloDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.idUnidadMedidaDataGridViewTextBoxColumn,
+            this.cantidadNormalDataGridViewTextBoxColumn,
+            this.cantidadCriticaDataGridViewTextBoxColumn});
             this.inventarioDataGridView.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inventarioDataGridView.DataSource = this.inventarioBindingSource;
+            this.inventarioDataGridView.DataSource = this.inventarioCISBindingSource;
             this.inventarioDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inventarioDataGridView.Location = new System.Drawing.Point(0, 0);
             this.inventarioDataGridView.Name = "inventarioDataGridView";
@@ -365,88 +342,87 @@ namespace SCI1
             this.inventarioDataGridView.Size = new System.Drawing.Size(1100, 563);
             this.inventarioDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdArea";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Área";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 54;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdArticulo";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 41;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombreArticulo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 69;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Descripcion";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 88;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Cantidad";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdUnidadMedida";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Medida";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 67;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CantidadNormal";
-            this.dataGridViewTextBoxColumn7.HeaderText = "CantidadNormal";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 107;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CantidadCritica";
-            this.dataGridViewTextBoxColumn8.HeaderText = "CantidadCritica";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 103;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // inventarioTableAdapter
+            // sCIDataSet
             // 
-            this.inventarioTableAdapter.ClearBeforeFill = true;
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tableAdapterManager
+            // inventarioCISBindingSource
             // 
-            this.tableAdapterManager.AreasTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Inventario11TableAdapter = null;
-            this.tableAdapterManager.Inventario1TableAdapter = null;
-            this.tableAdapterManager.InventarioTableAdapter = this.inventarioTableAdapter;
-            this.tableAdapterManager.UnidadMedidaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuarioTableAdapter = null;
+            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
+            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // inventarioCISTableAdapter
+            // 
+            this.inventarioCISTableAdapter.ClearBeforeFill = true;
+            // 
+            // idAreaDataGridViewTextBoxColumn
+            // 
+            this.idAreaDataGridViewTextBoxColumn.DataPropertyName = "IdArea";
+            this.idAreaDataGridViewTextBoxColumn.HeaderText = "IdArea";
+            this.idAreaDataGridViewTextBoxColumn.Name = "idAreaDataGridViewTextBoxColumn";
+            this.idAreaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAreaDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // idArticuloDataGridViewTextBoxColumn
+            // 
+            this.idArticuloDataGridViewTextBoxColumn.DataPropertyName = "IdArticulo";
+            this.idArticuloDataGridViewTextBoxColumn.HeaderText = "IdArticulo";
+            this.idArticuloDataGridViewTextBoxColumn.Name = "idArticuloDataGridViewTextBoxColumn";
+            this.idArticuloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idArticuloDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // nombreArticuloDataGridViewTextBoxColumn
+            // 
+            this.nombreArticuloDataGridViewTextBoxColumn.DataPropertyName = "NombreArticulo";
+            this.nombreArticuloDataGridViewTextBoxColumn.HeaderText = "NombreArticulo";
+            this.nombreArticuloDataGridViewTextBoxColumn.Name = "nombreArticuloDataGridViewTextBoxColumn";
+            this.nombreArticuloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreArticuloDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // idUnidadMedidaDataGridViewTextBoxColumn
+            // 
+            this.idUnidadMedidaDataGridViewTextBoxColumn.DataPropertyName = "IdUnidadMedida";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.HeaderText = "IdUnidadMedida";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.Name = "idUnidadMedidaDataGridViewTextBoxColumn";
+            this.idUnidadMedidaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUnidadMedidaDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // cantidadNormalDataGridViewTextBoxColumn
+            // 
+            this.cantidadNormalDataGridViewTextBoxColumn.DataPropertyName = "CantidadNormal";
+            this.cantidadNormalDataGridViewTextBoxColumn.HeaderText = "CantidadNormal";
+            this.cantidadNormalDataGridViewTextBoxColumn.Name = "cantidadNormalDataGridViewTextBoxColumn";
+            this.cantidadNormalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadNormalDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // cantidadCriticaDataGridViewTextBoxColumn
+            // 
+            this.cantidadCriticaDataGridViewTextBoxColumn.DataPropertyName = "CantidadCritica";
+            this.cantidadCriticaDataGridViewTextBoxColumn.HeaderText = "CantidadCritica";
+            this.cantidadCriticaDataGridViewTextBoxColumn.Name = "cantidadCriticaDataGridViewTextBoxColumn";
+            this.cantidadCriticaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadCriticaDataGridViewTextBoxColumn.Width = 103;
             // 
             // InventarioCIS
             // 
@@ -466,14 +442,14 @@ namespace SCI1
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).EndInit();
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idUnidadMedidaNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,19 +462,7 @@ namespace SCI1
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Panel panelDGV;
         private System.Windows.Forms.PictureBox btnCerrarFormulario;
-        private SCIDataSet sCIDataSet;
-        private System.Windows.Forms.BindingSource inventarioBindingSource;
-        private SCIDataSetTableAdapters.InventarioTableAdapter inventarioTableAdapter;
-        private SCIDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView inventarioDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button BtnEditar;
@@ -510,5 +474,16 @@ namespace SCI1
         private System.Windows.Forms.TextBox idArticuloTextBox;
         private System.Windows.Forms.TextBox idAreaTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private SCIDataSet sCIDataSet;
+        private System.Windows.Forms.BindingSource inventarioCISBindingSource;
+        private SCIDataSetTableAdapters.InventarioCISTableAdapter inventarioCISTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAreaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idArticuloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreArticuloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUnidadMedidaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadNormalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadCriticaDataGridViewTextBoxColumn;
     }
 }
