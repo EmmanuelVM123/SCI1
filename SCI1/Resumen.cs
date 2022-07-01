@@ -119,7 +119,7 @@ namespace SCI1
             {
                 if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
                 {
-                    MessageBox.Show("No se puede agregar un artículo que ya está en la lista a solicitar", "Artículo repetido");
+                    MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido");
                     DatosEnDGV = true;
                     break;
                 }

@@ -58,13 +58,31 @@ namespace SCI1
                     this.cantidadNumericUpDown.Enabled = true;
                     this.cantidadNormalNumericUpDown.Enabled = true;
                     this.cantidadCriticaNumericUpDown.Enabled = true;
+                    this.idArticuloTextBox.Clear();
+                    this.nombreArticuloTextBox.Clear();
+                    this.descripcionTextBox.Clear();
+                    this.cantidadNumericUpDown.Value = 0;
+                    this.cantidadNormalNumericUpDown.Value = 0;
+                    this.cantidadCriticaNumericUpDown.Value = 0;
                     break;
             }
         }
-        private bool Valida()
+        private bool Valida( /*DataGridViewRow fila*/)
         {
             this.errorProvider1.Clear();
             bool validado = true;
+            //String valorElemento = fila.Cells["NombreArticulo"].Value.ToString();
+
+            //foreach (DataGridViewRow fila2 in inventarioITNDataGridView.Rows)
+            //{
+            //    if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
+            //    {
+            //        MessageBox.Show("El nombre de este artículo ya existe en el inventario" , "Revise y corrige");
+            //        validado = false;
+            //        break;
+            //    }
+            //}
+
             if (this.nombreArticuloTextBox.Text.Trim() == "")
             {
                 validado = false;
@@ -98,7 +116,8 @@ namespace SCI1
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
+        { 
+            
             try
             {
                 if (this.Valida())
