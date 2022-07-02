@@ -39,7 +39,7 @@ namespace SCI1
                     this.btnGuardar.Enabled = false;
                     this.btnCancelar.Enabled = false;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = false;
+                    this.idAreaComboBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
                     this.descripcionTextBox.Enabled = false;
                     this.idUnidadMedidaNumericUpDown.Enabled = false;
@@ -51,7 +51,7 @@ namespace SCI1
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaTextBox.Enabled = true;
+                    this.idAreaComboBox.Enabled = true;
                     this.nombreArticuloTextBox.Enabled = true;
                     this.descripcionTextBox.Enabled = true;
                     this.idUnidadMedidaNumericUpDown.Enabled = true;
@@ -98,7 +98,7 @@ namespace SCI1
                 if (this.Valida())
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
-                    this.inventarioCISTableAdapter.Update(this.idAreaTextBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaNumericUpDown.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
+                    this.inventarioCISTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaNumericUpDown.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                         id);
                     MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
                     this.CargaDatos();

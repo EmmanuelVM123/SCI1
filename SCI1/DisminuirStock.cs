@@ -50,10 +50,11 @@ namespace SCI1
                     this.btnCancelar.Enabled = true;
                     this.btnRecargar.Enabled = false;
                     this.idArticuloTextBox.Enabled = false;
-                    this.idAreaComboBox.Enabled = true;
-                    this.nombreArticuloTextBox.Enabled = true;
-                    this.descripcionTextBox.Enabled = true;
+                    this.idAreaComboBox.Enabled = false;
+                    this.nombreArticuloTextBox.Enabled = false;
+                    this.descripcionTextBox.Enabled = false;
                     this.cantidadNumericUpDown.Enabled = true;
+                    this.cantidadNumericUpDown.Value = 0;
                     break;
             }
         }

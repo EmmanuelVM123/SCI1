@@ -64,6 +64,7 @@ namespace SCI1
                     this.cantidadNumericUpDown.Value = 0;
                     this.cantidadNormalNumericUpDown.Value = 0;
                     this.cantidadCriticaNumericUpDown.Value = 0;
+                    this.btnRecargar.Enabled = false;
                     break;
             }
         }

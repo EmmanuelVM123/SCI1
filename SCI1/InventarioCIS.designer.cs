@@ -51,13 +51,8 @@ namespace SCI1
             this.idUnidadMedidaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             this.idArticuloTextBox = new System.Windows.Forms.TextBox();
-            this.idAreaTextBox = new System.Windows.Forms.TextBox();
             this.panelDGV = new System.Windows.Forms.Panel();
             this.inventarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
-            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventarioCISTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioCISTableAdapter();
             this.idAreaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreArticuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +61,12 @@ namespace SCI1
             this.idUnidadMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadNormalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadCriticaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.inventarioCISTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioCISTableAdapter();
+            this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
+            this.idAreaComboBox = new System.Windows.Forms.ComboBox();
             idAreaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
@@ -81,9 +82,9 @@ namespace SCI1
             ((System.ComponentModel.ISupportInitialize)(this.idUnidadMedidaNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // idAreaLabel
@@ -192,6 +193,7 @@ namespace SCI1
             // 
             // panelBotones
             // 
+            this.panelBotones.Controls.Add(this.idAreaComboBox);
             this.panelBotones.Controls.Add(this.btnCancelar);
             this.panelBotones.Controls.Add(this.btnGuardar);
             this.panelBotones.Controls.Add(this.BtnEditar);
@@ -208,7 +210,6 @@ namespace SCI1
             this.panelBotones.Controls.Add(idArticuloLabel);
             this.panelBotones.Controls.Add(this.idArticuloTextBox);
             this.panelBotones.Controls.Add(idAreaLabel);
-            this.panelBotones.Controls.Add(this.idAreaTextBox);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBotones.Location = new System.Drawing.Point(0, 688);
             this.panelBotones.Name = "panelBotones";
@@ -294,13 +295,6 @@ namespace SCI1
             this.idArticuloTextBox.Size = new System.Drawing.Size(100, 20);
             this.idArticuloTextBox.TabIndex = 8;
             // 
-            // idAreaTextBox
-            // 
-            this.idAreaTextBox.Location = new System.Drawing.Point(188, 12);
-            this.idAreaTextBox.Name = "idAreaTextBox";
-            this.idAreaTextBox.Size = new System.Drawing.Size(75, 20);
-            this.idAreaTextBox.TabIndex = 7;
-            // 
             // panelDGV
             // 
             this.panelDGV.Controls.Add(this.inventarioDataGridView);
@@ -341,24 +335,6 @@ namespace SCI1
             this.inventarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioDataGridView.Size = new System.Drawing.Size(1100, 563);
             this.inventarioDataGridView.TabIndex = 0;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inventarioCISBindingSource
-            // 
-            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
-            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // inventarioCISTableAdapter
-            // 
-            this.inventarioCISTableAdapter.ClearBeforeFill = true;
             // 
             // idAreaDataGridViewTextBoxColumn
             // 
@@ -424,6 +400,56 @@ namespace SCI1
             this.cantidadCriticaDataGridViewTextBoxColumn.ReadOnly = true;
             this.cantidadCriticaDataGridViewTextBoxColumn.Width = 103;
             // 
+            // inventarioCISBindingSource
+            // 
+            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
+            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // inventarioCISTableAdapter
+            // 
+            this.inventarioCISTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AreasTableAdapter = null;
+            this.tableAdapterManager.ArticuloARequisitar = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Inventario_TableAdapter = null;
+            this.tableAdapterManager.InventarioAMTTableAdapter = null;
+            this.tableAdapterManager.InventarioCISTableAdapter = this.inventarioCISTableAdapter;
+            this.tableAdapterManager.InventarioCrearTableAdapter = null;
+            this.tableAdapterManager.InventarioITNTableAdapter = null;
+            this.tableAdapterManager.InventarioLBCTableAdapter = null;
+            this.tableAdapterManager.InventarioMNTTableAdapter = null;
+            this.tableAdapterManager.InventarioSGRTableAdapter = null;
+            this.tableAdapterManager.InventarioTableAdapter = null;
+            this.tableAdapterManager.UnidadMedidaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioTableAdapter = null;
+            // 
+            // idAreaComboBox
+            // 
+            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioCISBindingSource, "IdArea", true));
+            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.inventarioCISBindingSource, "IdArea", true));
+            this.idAreaComboBox.DataSource = this.inventarioCISBindingSource;
+            this.idAreaComboBox.DisplayMember = "IdArea";
+            this.idAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idAreaComboBox.FormattingEnabled = true;
+            this.idAreaComboBox.Location = new System.Drawing.Point(183, 10);
+            this.idAreaComboBox.Name = "idAreaComboBox";
+            this.idAreaComboBox.Size = new System.Drawing.Size(88, 21);
+            this.idAreaComboBox.TabIndex = 24;
+            this.idAreaComboBox.ValueMember = "IdArea";
+            // 
             // InventarioCIS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,9 +473,9 @@ namespace SCI1
             ((System.ComponentModel.ISupportInitialize)(this.idUnidadMedidaNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,7 +498,6 @@ namespace SCI1
         private System.Windows.Forms.NumericUpDown idUnidadMedidaNumericUpDown;
         private System.Windows.Forms.TextBox nombreArticuloTextBox;
         private System.Windows.Forms.TextBox idArticuloTextBox;
-        private System.Windows.Forms.TextBox idAreaTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private SCIDataSet sCIDataSet;
         private System.Windows.Forms.BindingSource inventarioCISBindingSource;
@@ -485,5 +510,7 @@ namespace SCI1
         private System.Windows.Forms.DataGridViewTextBoxColumn idUnidadMedidaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadNormalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadCriticaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox idAreaComboBox;
+        private SCIDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

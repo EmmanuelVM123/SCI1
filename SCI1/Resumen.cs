@@ -136,8 +136,15 @@ namespace SCI1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-           DataGridViewRow fila = dataGridView1.SelectedRows[0] as DataGridViewRow;
-            TablaDeAgregarDatos(fila);
+            try
+            {
+                DataGridViewRow fila = dataGridView1.SelectedRows[0] as DataGridViewRow;
+                TablaDeAgregarDatos(fila);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido el siguiente error al solicitar artículo(s): " + ex.Message.ToString(), "Error al solicitar");
+            }
             
             
         }
@@ -149,7 +156,14 @@ namespace SCI1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.RemoveAt(n);
+            try
+            {
+                dataGridView2.Rows.RemoveAt(n);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocuurrido un error al remover una fila" + ex.Message.ToString() , "Error al remover");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
