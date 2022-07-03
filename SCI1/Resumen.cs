@@ -170,6 +170,18 @@ namespace SCI1
         {
             dataGridView2.Rows.Clear();
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "IdArticulo")
+            {
+                if(Convert.ToInt32(e.Value) <= 5)
+                {
+                    e.CellStyle.ForeColor = Color.Red;
+                    e.CellStyle .BackColor = Color.Green;
+                }
+            }
+        }
     }
 
     internal interface VarDatosEntreForm

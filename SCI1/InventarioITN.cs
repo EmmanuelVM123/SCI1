@@ -111,5 +111,10 @@ namespace SCI1
         {
             this.CargaDatos();
         }
+
+        private void inventarioITNDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+           
+        }
     }
 }

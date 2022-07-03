@@ -40,17 +40,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.cantidadCriticaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.inventarioITNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
             this.cantidadNormalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.idUnidadMedidaComboBox = new System.Windows.Forms.ComboBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
             this.idAreaComboBox = new System.Windows.Forms.ComboBox();
             this.idArticuloTextBox = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.panelDGV = new System.Windows.Forms.Panel();
             this.inventarioITNDataGridView = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.IdArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,15 +65,9 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventarioITNBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.inventarioITNTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioITNTableAdapter();
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             cantidadCriticaLabel = new System.Windows.Forms.Label();
             cantidadNormalLabel = new System.Windows.Forms.Label();
             idUnidadMedidaLabel = new System.Windows.Forms.Label();
@@ -76,16 +76,16 @@
             idAreaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioITNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioITNDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioITNBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // cantidadCriticaLabel
@@ -179,6 +179,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Intendencia";
             // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = global::SCI1.Properties.Resources.Reload_2_2_icon2;
+            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRecargar.TabIndex = 1;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
+            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // panelBotones
             // 
             this.panelBotones.Controls.Add(cantidadCriticaLabel);
@@ -217,6 +242,16 @@
             this.cantidadCriticaNumericUpDown.Name = "cantidadCriticaNumericUpDown";
             this.cantidadCriticaNumericUpDown.Size = new System.Drawing.Size(96, 20);
             this.cantidadCriticaNumericUpDown.TabIndex = 16;
+            // 
+            // inventarioITNBindingSource
+            // 
+            this.inventarioITNBindingSource.DataMember = "InventarioITN";
+            this.inventarioITNBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cantidadNormalNumericUpDown
             // 
@@ -293,6 +328,54 @@
             this.idArticuloTextBox.Size = new System.Drawing.Size(73, 20);
             this.idArticuloTextBox.TabIndex = 4;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Image = global::SCI1.Properties.Resources.Windows_Close_Program_icon;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(927, 37);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 85);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.Image = global::SCI1.Properties.Resources.Save_icon;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGuardar.Location = new System.Drawing.Point(846, 37);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 85);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Image = global::SCI1.Properties.Resources.Apps_menu_editor_icon;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.Location = new System.Drawing.Point(765, 37);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 85);
+            this.btnEditar.TabIndex = 0;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // panelDGV
             // 
             this.panelDGV.Controls.Add(this.inventarioITNDataGridView);
@@ -350,10 +433,7 @@
             this.inventarioITNDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioITNDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioITNDataGridView.TabIndex = 0;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.inventarioITNDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioITNDataGridView_CellFormatting);
             // 
             // IdArea
             // 
@@ -419,15 +499,9 @@
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 127;
             // 
-            // inventarioITNBindingSource
+            // errorProvider1
             // 
-            this.inventarioITNBindingSource.DataMember = "InventarioITN";
-            this.inventarioITNBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.errorProvider1.ContainerControl = this;
             // 
             // inventarioITNTableAdapter
             // 
@@ -436,88 +510,20 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AreasTableAdapter = null;
+            this.tableAdapterManager.ArticuloARequisitar = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.Inventario_TableAdapter = null;
+            this.tableAdapterManager.InventarioAMTTableAdapter = null;
             this.tableAdapterManager.InventarioCISTableAdapter = null;
+            this.tableAdapterManager.InventarioCrearTableAdapter = null;
             this.tableAdapterManager.InventarioITNTableAdapter = this.inventarioITNTableAdapter;
+            this.tableAdapterManager.InventarioLBCTableAdapter = null;
             this.tableAdapterManager.InventarioMNTTableAdapter = null;
+            this.tableAdapterManager.InventarioSGRTableAdapter = null;
             this.tableAdapterManager.InventarioTableAdapter = null;
             this.tableAdapterManager.UnidadMedidaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Image = global::SCI1.Properties.Resources.Windows_Close_Program_icon;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(927, 37);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 85);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.Image = global::SCI1.Properties.Resources.Save_icon;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(846, 37);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 85);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.Image = global::SCI1.Properties.Resources.Apps_menu_editor_icon;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(765, 37);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 85);
-            this.btnEditar.TabIndex = 0;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = global::SCI1.Properties.Resources.Reload_2_2_icon2;
-            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRecargar.TabIndex = 1;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
-            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // InventarioITN
             // 
@@ -533,17 +539,17 @@
             this.Load += new System.EventHandler(this.InventarioITN_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioITNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioITNDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioITNBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
