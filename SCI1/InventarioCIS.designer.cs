@@ -38,10 +38,12 @@ namespace SCI1
             System.Windows.Forms.Label cantidadCriticaLabel;
             System.Windows.Forms.Label descripcionLabel;
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrarFormulario = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.idAreaComboBox = new System.Windows.Forms.ComboBox();
+            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
@@ -61,12 +63,11 @@ namespace SCI1
             this.idUnidadMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadNormalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadCriticaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.inventarioCISTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioCISTableAdapter();
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
-            this.idAreaComboBox = new System.Windows.Forms.ComboBox();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             idAreaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
@@ -75,16 +76,17 @@ namespace SCI1
             cantidadCriticaLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).BeginInit();
             this.panelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idUnidadMedidaNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // idAreaLabel
@@ -153,24 +155,14 @@ namespace SCI1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
-            this.panel1.Controls.Add(this.btnCerrarFormulario);
+            this.panel1.Controls.Add(this.btnRecargar);
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 25);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCerrarFormulario
-            // 
-            this.btnCerrarFormulario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarFormulario.Location = new System.Drawing.Point(1, 2);
-            this.btnCerrarFormulario.Name = "btnCerrarFormulario";
-            this.btnCerrarFormulario.Size = new System.Drawing.Size(20, 20);
-            this.btnCerrarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarFormulario.TabIndex = 1;
-            this.btnCerrarFormulario.TabStop = false;
-            this.btnCerrarFormulario.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label1
             // 
@@ -215,6 +207,30 @@ namespace SCI1
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(1100, 100);
             this.panelBotones.TabIndex = 2;
+            // 
+            // idAreaComboBox
+            // 
+            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioCISBindingSource, "IdArea", true));
+            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.inventarioCISBindingSource, "IdArea", true));
+            this.idAreaComboBox.DataSource = this.inventarioCISBindingSource;
+            this.idAreaComboBox.DisplayMember = "IdArea";
+            this.idAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idAreaComboBox.FormattingEnabled = true;
+            this.idAreaComboBox.Location = new System.Drawing.Point(183, 10);
+            this.idAreaComboBox.Name = "idAreaComboBox";
+            this.idAreaComboBox.Size = new System.Drawing.Size(88, 21);
+            this.idAreaComboBox.TabIndex = 24;
+            this.idAreaComboBox.ValueMember = "IdArea";
+            // 
+            // inventarioCISBindingSource
+            // 
+            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
+            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCancelar
             // 
@@ -400,16 +416,6 @@ namespace SCI1
             this.cantidadCriticaDataGridViewTextBoxColumn.ReadOnly = true;
             this.cantidadCriticaDataGridViewTextBoxColumn.Width = 103;
             // 
-            // inventarioCISBindingSource
-            // 
-            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
-            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -436,19 +442,28 @@ namespace SCI1
             this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // idAreaComboBox
+            // btnRecargar
             // 
-            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioCISBindingSource, "IdArea", true));
-            this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.inventarioCISBindingSource, "IdArea", true));
-            this.idAreaComboBox.DataSource = this.inventarioCISBindingSource;
-            this.idAreaComboBox.DisplayMember = "IdArea";
-            this.idAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idAreaComboBox.FormattingEnabled = true;
-            this.idAreaComboBox.Location = new System.Drawing.Point(183, 10);
-            this.idAreaComboBox.Name = "idAreaComboBox";
-            this.idAreaComboBox.Size = new System.Drawing.Size(88, 21);
-            this.idAreaComboBox.TabIndex = 24;
-            this.idAreaComboBox.ValueMember = "IdArea";
+            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = global::SCI1.Properties.Resources.Reload_2_2_icon2;
+            this.btnRecargar.Location = new System.Drawing.Point(1075, 0);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRecargar.TabIndex = 3;
+            this.btnRecargar.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
+            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.TabStop = false;
             // 
             // InventarioCIS
             // 
@@ -465,17 +480,18 @@ namespace SCI1
             this.Load += new System.EventHandler(this.InventarioCIS_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarFormulario)).EndInit();
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idUnidadMedidaNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,7 +503,6 @@ namespace SCI1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Panel panelDGV;
-        private System.Windows.Forms.PictureBox btnCerrarFormulario;
         private System.Windows.Forms.DataGridView inventarioDataGridView;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
@@ -512,5 +527,7 @@ namespace SCI1
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadCriticaDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox idAreaComboBox;
         private SCIDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.PictureBox btnRecargar;
+        private System.Windows.Forms.PictureBox btnCerrar;
     }
 }
