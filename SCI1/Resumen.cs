@@ -156,14 +156,16 @@ namespace SCI1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                dataGridView2.Rows.RemoveAt(n);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocuurrido un error al remover una fila" + ex.Message.ToString() , "Error al remover");
-            }
+            dataGridView2.Rows.RemoveAt(n);
+
+            //try
+            //{
+            //    dataGridView2.Rows.RemoveAt(n);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Ha ocuurrido un error al remover una fila" + ex.Message.ToString() , "Error al remover");
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)

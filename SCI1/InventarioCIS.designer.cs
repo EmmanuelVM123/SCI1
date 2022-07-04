@@ -36,17 +36,17 @@
             System.Windows.Forms.Label idUnidadMedidaLabel;
             System.Windows.Forms.Label cantidadNormalLabel;
             System.Windows.Forms.Label cantidadCriticaLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label idAreaLabel1;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
             this.cantidadCriticaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
             this.cantidadNormalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.idUnidadMedidaComboBox = new System.Windows.Forms.ComboBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
@@ -69,9 +69,7 @@
             this.inventarioCISTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioCISTableAdapter();
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioTableAdapter();
-            this.idAreaComboBox1 = new System.Windows.Forms.ComboBox();
             idArticuloLabel = new System.Windows.Forms.Label();
             idAreaLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
@@ -79,19 +77,18 @@
             idUnidadMedidaLabel = new System.Windows.Forms.Label();
             cantidadNormalLabel = new System.Windows.Forms.Label();
             cantidadCriticaLabel = new System.Windows.Forms.Label();
-            idAreaLabel1 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idArticuloLabel
@@ -212,8 +209,6 @@
             // 
             // panelBotones
             // 
-            this.panelBotones.Controls.Add(idAreaLabel1);
-            this.panelBotones.Controls.Add(this.idAreaComboBox1);
             this.panelBotones.Controls.Add(cantidadCriticaLabel);
             this.panelBotones.Controls.Add(this.cantidadCriticaNumericUpDown);
             this.panelBotones.Controls.Add(cantidadNormalLabel);
@@ -237,6 +232,16 @@
             this.panelBotones.Size = new System.Drawing.Size(1014, 150);
             this.panelBotones.TabIndex = 1;
             // 
+            // inventarioBindingSource
+            // 
+            this.inventarioBindingSource.DataMember = "Inventario";
+            this.inventarioBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cantidadCriticaNumericUpDown
             // 
             this.cantidadCriticaNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -255,11 +260,6 @@
             // 
             this.inventarioCISBindingSource.DataMember = "InventarioCIS";
             this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cantidadNormalNumericUpDown
             // 
@@ -403,14 +403,14 @@
             this.inventarioCISDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.inventarioCISDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inventarioCISDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inventarioCISDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventarioCISDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.inventarioCISDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventarioCISDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdArea,
@@ -428,14 +428,14 @@
             this.inventarioCISDataGridView.Name = "inventarioCISDataGridView";
             this.inventarioCISDataGridView.ReadOnly = true;
             this.inventarioCISDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inventarioCISDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventarioCISDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.inventarioCISDataGridView.RowHeadersVisible = false;
             this.inventarioCISDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventarioCISDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -448,7 +448,7 @@
             this.IdArea.HeaderText = "Área";
             this.IdArea.Name = "IdArea";
             this.IdArea.ReadOnly = true;
-            this.IdArea.Width = 65;
+            this.IdArea.Width = 64;
             // 
             // IdArticulo
             // 
@@ -456,7 +456,7 @@
             this.IdArticulo.HeaderText = "ID";
             this.IdArticulo.Name = "IdArticulo";
             this.IdArticulo.ReadOnly = true;
-            this.IdArticulo.Width = 47;
+            this.IdArticulo.Width = 46;
             // 
             // NombreArticulo
             // 
@@ -464,7 +464,7 @@
             this.NombreArticulo.HeaderText = "Artículo";
             this.NombreArticulo.Name = "NombreArticulo";
             this.NombreArticulo.ReadOnly = true;
-            this.NombreArticulo.Width = 84;
+            this.NombreArticulo.Width = 83;
             // 
             // Descripcion
             // 
@@ -472,7 +472,7 @@
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 115;
+            this.Descripcion.Width = 114;
             // 
             // Cantidad
             // 
@@ -480,7 +480,7 @@
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 94;
+            this.Cantidad.Width = 93;
             // 
             // IdUnidadMedida
             // 
@@ -488,7 +488,7 @@
             this.IdUnidadMedida.HeaderText = "Medida";
             this.IdUnidadMedida.Name = "IdUnidadMedida";
             this.IdUnidadMedida.ReadOnly = true;
-            this.IdUnidadMedida.Width = 84;
+            this.IdUnidadMedida.Width = 83;
             // 
             // CantidadNormal
             // 
@@ -504,7 +504,7 @@
             this.CantidadCritica.HeaderText = "Cantidad crítica";
             this.CantidadCritica.Name = "CantidadCritica";
             this.CantidadCritica.ReadOnly = true;
-            this.CantidadCritica.Width = 128;
+            this.CantidadCritica.Width = 127;
             // 
             // inventarioCISTableAdapter
             // 
@@ -532,35 +532,9 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // inventarioBindingSource
-            // 
-            this.inventarioBindingSource.DataMember = "Inventario";
-            this.inventarioBindingSource.DataSource = this.sCIDataSet;
-            // 
             // inventarioTableAdapter
             // 
             this.inventarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // idAreaLabel1
-            // 
-            idAreaLabel1.AutoSize = true;
-            idAreaLabel1.Location = new System.Drawing.Point(603, 13);
-            idAreaLabel1.Name = "idAreaLabel1";
-            idAreaLabel1.Size = new System.Drawing.Size(44, 13);
-            idAreaLabel1.TabIndex = 17;
-            idAreaLabel1.Text = "Id Area:";
-            // 
-            // idAreaComboBox1
-            // 
-            this.idAreaComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "IdArea", true));
-            this.idAreaComboBox1.DataSource = this.inventarioBindingSource;
-            this.idAreaComboBox1.DisplayMember = "IdArea";
-            this.idAreaComboBox1.FormattingEnabled = true;
-            this.idAreaComboBox1.Location = new System.Drawing.Point(653, 10);
-            this.idAreaComboBox1.Name = "idAreaComboBox1";
-            this.idAreaComboBox1.Size = new System.Drawing.Size(121, 21);
-            this.idAreaComboBox1.TabIndex = 18;
-            this.idAreaComboBox1.ValueMember = "IdArea";
             // 
             // InventarioCIS
             // 
@@ -580,14 +554,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -626,6 +600,5 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.BindingSource inventarioBindingSource;
         private SCIDataSetTableAdapters.InventarioTableAdapter inventarioTableAdapter;
-        private System.Windows.Forms.ComboBox idAreaComboBox1;
     }
 }
