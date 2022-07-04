@@ -79,37 +79,7 @@ namespace SCI1
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
         }
-        //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    try
-        //    {
-        //        int Cantidad = Convert.ToInt32(this.dataGridView1.SelectedRows[0].Cells[5].Value);
-        //        //if (this.IdUnidadMedida.ToString() == "1")
-        //        //{
-        //        //    Convert.ToString(this.IdUnidadMedida.Equals("Pzs"));
-        //        //}
-        //        int IdUnidadMedida = Convert.ToInt32(this.dataGridView1.SelectedRows[0].Cells[6].Value);
-        //        string NombreArticulo = this.dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-
-        //        MessageBox.Show(
-        //            $"Cantidad: {Cantidad}\nMedida: {IdUnidadMedida}\nArtículo: {NombreArticulo}"
-        //            );
-
-        //        // this.dataGridView2.Rows.Add(Convert.ToInt32(this.Cantidad.ToString()), Convert.ToInt32(this.IdUnidadMedida.ToString()), this.NombreArticulo.ToString());
-
-        //        foreach (DataGridViewRow row  in this.dataGridView1.Rows)
-        //        {
-        //            this.dataGridView2.Rows.Add(row.Cells[6].Value.ToString(), row.Cells[6].Value.ToString(), row.Cells[3].Value.ToString());
-        //        }
-
-                
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Ha ocurrido error en el evento 'Doble clic a la celda'" + ex.Message.ToString(), "Error" );
-        //    }
-        //}
+        
         public void TablaDeAgregarDatos(DataGridViewRow fila)
         {
             bool DatosEnDGV = false;
@@ -156,33 +126,21 @@ namespace SCI1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.RemoveAt(n);
+            
 
-            //try
-            //{
-            //    dataGridView2.Rows.RemoveAt(n);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Ha ocuurrido un error al remover una fila" + ex.Message.ToString() , "Error al remover");
-            //}
+            try
+            {
+                dataGridView2.Rows.RemoveAt(n);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocuurrido un error al remover una fila: " + ex.Message.ToString(), "Error al remover");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
-        }
-
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "IdArticulo")
-            {
-                if(Convert.ToInt32(e.Value) <= 5)
-                {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle .BackColor = Color.Green;
-                }
-            }
         }
     }
 
