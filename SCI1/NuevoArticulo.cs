@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SCI1
 {
     public partial class NuevoArticulo : Form
@@ -37,6 +38,7 @@ namespace SCI1
                     this.btnAgregar.Enabled = true;
                     this.btnGuardar.Enabled = false;
                     this.btnCancelar.Enabled = false;
+                    this.btnRecargar.Enabled = true;
                     this.idArticuloTextBox.Enabled = false;
                     this.idAreaComboBox.Enabled = false;
                     this.nombreArticuloTextBox.Enabled = false;
@@ -68,21 +70,10 @@ namespace SCI1
                     break;
             }
         }
-        private bool Valida( /*DataGridViewRow fila*/)
+        private bool Valida()
         {
             this.errorProvider1.Clear();
             bool validado = true;
-            //String valorElemento = fila.Cells["NombreArticulo"].Value.ToString();
-
-            //foreach (DataGridViewRow fila2 in inventarioITNDataGridView.Rows)
-            //{
-            //    if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
-            //    {
-            //        MessageBox.Show("El nombre de este artículo ya existe en el inventario" , "Revise y corrige");
-            //        validado = false;
-            //        break;
-            //    }
-            //}
 
             if (this.nombreArticuloTextBox.Text.Trim() == "")
             {

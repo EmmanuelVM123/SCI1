@@ -113,7 +113,7 @@ namespace SCI1
         public void TablaDeAgregarDatos(DataGridViewRow fila)
         {
             bool DatosEnDGV = false;
-            String valorElemento = fila.Cells["NombreArticulo"].Value.ToString();
+            String valorElemento = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
 
             foreach (DataGridViewRow fila2 in dataGridView2.Rows)
             {
@@ -127,9 +127,9 @@ namespace SCI1
 
             if (DatosEnDGV != true)
             {
-                String Cantidad = fila.Cells["Cantidad"].Value.ToString();
-                String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString();
-                String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString();
+                String Cantidad = fila.Cells["Cantidad"].Value.ToString().ToUpper();
+                String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
+                String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString().ToUpper();
 
                 this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
             }
