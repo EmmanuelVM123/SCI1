@@ -139,7 +139,7 @@ namespace SCI1
         }
         private void btnResumen_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Resumen>();
+            AbrirFormulario<EnviarRequisicon>();
             this.btnResumen.BackColor = Color.FromArgb(240, 128, 128);
         }
 
@@ -169,11 +169,10 @@ namespace SCI1
                 this.btnResumen.BackColor = Color.FromArgb(240, 240, 240);
         }
 
-        //private void SistemaControlInventario_Load(object sender, EventArgs e)
-        //{
-        //    //this.btnCIS_Click(sender, e);
-        //    //MessageBox.Show("¡Hola! Bienvenido al Sistema de control de inventario ITSAV Unidad Académica Lerdo de Tejada");
-           
-        //}
+        private void SistemaControlInventario_Load_1(object sender, EventArgs e)
+        {
+            this.btnResumen_Click(sender, e);
+            MessageBox.Show("¡Hola! Bienvenido al Sistema de control de inventario ITSAV Unidad Académica Lerdo de Tejada");
+        }
     }
 }

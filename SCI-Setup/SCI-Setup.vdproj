@@ -33,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F796DFAD5624A84A1E089E66B4F0202A"
-        "OwnerKey" = "8:_1E90224378984DD58DCA0840D2910E0D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_FDEC8337CDFC4694BF59E9B01832F53E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -53,12 +47,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1E90224378984DD58DCA0840D2910E0D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F796DFAD5624A84A1E089E66B4F0202A"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -175,37 +163,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F796DFAD5624A84A1E089E66B4F0202A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Autonomo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F796DFAD5624A84A1E089E66B4F0202A"
-                    {
-                    "Name" = "8:Autonomo.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Autonomo.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_BAF60E917D56469AADBE664A1D86CAFC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FDEC8337CDFC4694BF59E9B01832F53E"
             {
             "SourcePath" = "8:..\\..\\..\\..\\Downloads\\Itsav2.ico"
@@ -281,26 +238,26 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:SCI-Setup"
+        "ProductName" = "8:Sistema de Contro de Inventario - Setup"
         "ProductCode" = "8:{C87F0743-B475-4D8E-88B2-12155D46C5AF}"
-        "PackageCode" = "8:{2DECFAAE-B38D-41E8-B233-2E4E6F628FBC}"
+        "PackageCode" = "8:{ED3E3BBA-FE12-4CC8-BA1E-1AC7EFD8CAE9}"
         "UpgradeCode" = "8:{D91C9FDE-F82C-4467-A520-B6076DF0472C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
+        "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Default Company Name"
-        "ARPHELPTELEPHONE" = "8:"
+        "ARPHELPTELEPHONE" = "8:2845517244"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:SCI-Setup"
-        "Subject" = "8:"
+        "Title" = "8:Sistema de Contro de Inventario - Setup"
+        "Subject" = "8:Este instalador proporciona los archivos para el ejecución de un Sistema de Control de Inventario para llevar la gestión de inventario y solicitar una requisición, así como enviarla por correo electrónico"
         "ARPCONTACT" = "8:Emmanuel Villalba Malaga"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Sistema de control de inventario"
-        "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPURLINFOABOUT" = "8:https://itsav.edu.mx"
+        "ARPPRODUCTICON" = "8:_FDEC8337CDFC4694BF59E9B01832F53E"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"

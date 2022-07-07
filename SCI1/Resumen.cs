@@ -17,7 +17,6 @@ namespace SCI1
         public Resumen()
         {
             InitializeComponent();
-            this.tbxArticulo.Focus();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -87,6 +86,7 @@ namespace SCI1
 
             foreach (DataGridViewRow fila2 in dataGridView2.Rows)
             {
+
                 if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
                 {
                     MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido");

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SistemaControlInventario));
             this.panelInicial = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLateral = new System.Windows.Forms.Panel();
             this.panelBajas = new System.Windows.Forms.Panel();
             this.btnDisminuirExistencia = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.panelUsuarioResumen = new System.Windows.Forms.Panel();
             this.btnResumen = new System.Windows.Forms.Button();
             this.panelUsuario = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelInicial.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             this.panelLateral.SuspendLayout();
@@ -69,7 +69,7 @@
             this.panelInicial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInicial.Location = new System.Drawing.Point(0, 0);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(1264, 775);
+            this.panelInicial.Size = new System.Drawing.Size(1584, 861);
             this.panelInicial.TabIndex = 0;
             // 
             // panelContenedor
@@ -80,8 +80,20 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(250, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1014, 775);
+            this.panelContenedor.Size = new System.Drawing.Size(1334, 861);
             this.panelContenedor.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(258, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(919, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bienvenid@ al Sistema de Control de Inventario ITSAV UA Lerdo";
             // 
             // panelLateral
             // 
@@ -96,7 +108,7 @@
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(250, 775);
+            this.panelLateral.Size = new System.Drawing.Size(250, 861);
             this.panelLateral.TabIndex = 0;
             // 
             // panelBajas
@@ -118,7 +130,7 @@
             this.btnDisminuirExistencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDisminuirExistencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDisminuirExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisminuirExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisminuirExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisminuirExistencia.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Package_download;
             this.btnDisminuirExistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDisminuirExistencia.Location = new System.Drawing.Point(0, 40);
@@ -139,7 +151,7 @@
             this.btnEliminarArticulo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnEliminarArticulo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEliminarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarArticulo.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Package_delete;
             this.btnEliminarArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarArticulo.Location = new System.Drawing.Point(0, 0);
@@ -160,7 +172,7 @@
             this.btnBajas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnBajas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnBajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBajas.Image = global::SCI1.Properties.Resources.data_download_icon__1_;
             this.btnBajas.Location = new System.Drawing.Point(0, 600);
             this.btnBajas.Name = "btnBajas";
@@ -192,7 +204,7 @@
             this.btnAñadirExistencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAñadirExistencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAñadirExistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAñadirExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadirExistencia.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Package_upload;
             this.btnAñadirExistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadirExistencia.Location = new System.Drawing.Point(0, 40);
@@ -213,7 +225,7 @@
             this.btnAñadirArticulo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAñadirArticulo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAñadirArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAñadirArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadirArticulo.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Package_add;
             this.btnAñadirArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadirArticulo.Location = new System.Drawing.Point(0, 0);
@@ -234,7 +246,7 @@
             this.btnAltas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAltas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAltas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltas.Image = global::SCI1.Properties.Resources.data_upload_icon;
             this.btnAltas.Location = new System.Drawing.Point(0, 480);
             this.btnAltas.Name = "btnAltas";
@@ -271,7 +283,7 @@
             this.btnAMT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAMT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAMT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAMT.Image = global::SCI1.Properties.Resources.Iconshock_Real_Vista_Project_Managment_Data_management;
             this.btnAMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAMT.Location = new System.Drawing.Point(0, 200);
@@ -292,7 +304,7 @@
             this.btnLBC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnLBC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnLBC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLBC.Image = global::SCI1.Properties.Resources.Zhoolego_Material_Control_Panel;
             this.btnLBC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLBC.Location = new System.Drawing.Point(0, 160);
@@ -313,7 +325,7 @@
             this.btnSGR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSGR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnSGR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSGR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSGR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSGR.Image = global::SCI1.Properties.Resources.Graphicloads_Seo_Services_Services_portfolio;
             this.btnSGR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSGR.Location = new System.Drawing.Point(0, 120);
@@ -334,7 +346,7 @@
             this.btnMNT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMNT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnMNT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMNT.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_8_Maintenance;
             this.btnMNT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMNT.Location = new System.Drawing.Point(0, 80);
@@ -355,7 +367,7 @@
             this.btnITN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnITN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnITN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnITN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnITN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnITN.Image = global::SCI1.Properties.Resources.Atyourservice_Service_Categories_Cleaning;
             this.btnITN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnITN.Location = new System.Drawing.Point(0, 40);
@@ -390,7 +402,7 @@
             this.btnCIS.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCIS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCIS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCIS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCIS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCIS.Image = global::SCI1.Properties.Resources.Aha_Soft_Free_Large_Boss_Teacher;
             this.btnCIS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCIS.Location = new System.Drawing.Point(0, 0);
@@ -411,7 +423,7 @@
             this.btnIAreas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnIAreas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnIAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIAreas.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Inventory_maintenance;
             this.btnIAreas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnIAreas.Location = new System.Drawing.Point(0, 200);
@@ -442,7 +454,7 @@
             this.btnResumen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnResumen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnResumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumen.Image = global::SCI1.Properties.Resources.icons8_resume_32;
             this.btnResumen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnResumen.Location = new System.Drawing.Point(0, 160);
@@ -464,32 +476,19 @@
             this.panelUsuario.Size = new System.Drawing.Size(250, 160);
             this.panelUsuario.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(919, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenid@ al Sistema de Control de Inventario ITSAV UA Lerdo";
-            // 
             // SistemaControlInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 775);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.panelInicial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1100, 480);
+            this.MinimumSize = new System.Drawing.Size(1364, 718);
             this.Name = "SistemaControlInventario";
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SistemaControlInventario";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            //this.Load += new System.EventHandler(this.SistemaControlInventario_Load);
+            this.Load += new System.EventHandler(this.SistemaControlInventario_Load_1);
             this.panelInicial.ResumeLayout(false);
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
