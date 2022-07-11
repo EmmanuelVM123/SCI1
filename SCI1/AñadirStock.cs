@@ -59,6 +59,17 @@ namespace SCI1
                     break;
             }
         }
+        private bool Valida()
+        {
+            this.errorProvider1.Clear();
+            bool validado = true;
+            if (this.cantidadNumericUpDown.Text == "0")
+            {
+                validado = false;
+                this.errorProvider1.SetError(this.cantidadNumericUpDown, "Añada al menos 1 unidad al artículo ");
+            }
+            return validado;
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -79,11 +90,14 @@ namespace SCI1
         {
             try
             {
-                int id = int.Parse(this.idArticuloTextBox.Text);
-                this.inventarioTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
-                    id);
-                MessageBox.Show("¡Se ha(n) añadido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " unidad(es) al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa");
-                this.CargaDatos();
+                if (Valida())
+                {
+                    int id = int.Parse(this.idArticuloTextBox.Text);
+                    this.inventarioTableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
+                        id);
+                    MessageBox.Show("¡Se ha(n) añadido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " unidad(es) al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa");
+                    this.CargaDatos();
+                }
             }
             catch (Exception ex)
             {

@@ -38,6 +38,7 @@
             System.Windows.Forms.Label idArticuloLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
@@ -173,7 +174,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(45, 3);
+            this.label1.Location = new System.Drawing.Point(50, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 2;
@@ -397,7 +398,7 @@
             this.inventarioITNDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -414,26 +415,33 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.inventarioITNDataGridView.DataSource = this.inventarioITNBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.inventarioITNDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.inventarioITNDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inventarioITNDataGridView.EnableHeadersVisualStyles = false;
             this.inventarioITNDataGridView.Location = new System.Drawing.Point(0, 0);
             this.inventarioITNDataGridView.Name = "inventarioITNDataGridView";
             this.inventarioITNDataGridView.ReadOnly = true;
             this.inventarioITNDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inventarioITNDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventarioITNDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.inventarioITNDataGridView.RowHeadersVisible = false;
             this.inventarioITNDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventarioITNDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioITNDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioITNDataGridView.TabIndex = 0;
-            this.inventarioITNDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioITNDataGridView_CellFormatting);
             // 
             // IdArea
             // 
@@ -441,7 +449,7 @@
             this.IdArea.HeaderText = "Area";
             this.IdArea.Name = "IdArea";
             this.IdArea.ReadOnly = true;
-            this.IdArea.Width = 64;
+            this.IdArea.Width = 66;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -449,7 +457,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 46;
+            this.dataGridViewTextBoxColumn2.Width = 48;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -457,7 +465,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 83;
+            this.dataGridViewTextBoxColumn3.Width = 89;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -465,7 +473,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Descripcion";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 114;
+            this.dataGridViewTextBoxColumn4.Width = 122;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -473,7 +481,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 93;
+            this.dataGridViewTextBoxColumn5.Width = 98;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -481,7 +489,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Medida";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 83;
+            this.dataGridViewTextBoxColumn6.Width = 86;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -489,7 +497,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Cantidad normal";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 132;
+            this.dataGridViewTextBoxColumn7.Width = 141;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -497,7 +505,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad crítica";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 127;
+            this.dataGridViewTextBoxColumn8.Width = 136;
             // 
             // errorProvider1
             // 

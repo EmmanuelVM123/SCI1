@@ -96,7 +96,7 @@ namespace SCI1
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventarioITNTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
-                        id);
+                        id);                    
                     MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
                     this.CargaDatos();
                 }
@@ -110,11 +110,7 @@ namespace SCI1
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
-        }
 
-        private void inventarioITNDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-           
         }
     }
 }

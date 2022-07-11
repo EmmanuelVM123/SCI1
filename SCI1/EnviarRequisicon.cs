@@ -22,6 +22,15 @@ namespace SCI1
             this.Close();
         }
 
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            if (fontDialog1.ShowDialog()==DialogResult.OK )
+            {
+                this.label1.Font = fontDialog1.Font;
+                
+               
+            }
+        }
     }
 
     internal interface IResumen

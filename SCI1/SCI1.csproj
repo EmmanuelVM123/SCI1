@@ -332,6 +332,7 @@
     <None Include="Resources\Me parace bien.jpg" />
     <None Include="Resources\Oración.jpg" />
     <None Include="Resources\icons8-agregar-enlace-40.png" />
+    <None Include="Resources\icons8-aumentar-fuente-50.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />

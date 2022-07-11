@@ -172,7 +172,7 @@ namespace SCI1
         private void SistemaControlInventario_Load_1(object sender, EventArgs e)
         {
             this.btnResumen_Click(sender, e);
-            MessageBox.Show("¡Hola! Bienvenido al Sistema de control de inventario ITSAV Unidad Académica Lerdo de Tejada");
+            //MessageBox.Show("¡Hola! Bienvenido al Sistema de control de inventario ITSAV Unidad Académica Lerdo de Tejada");
         }
     }
 }

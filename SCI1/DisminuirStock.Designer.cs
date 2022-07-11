@@ -62,6 +62,7 @@
             this.cantidadNormalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadCriticaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventario_TableAdapter = new SCI1.SCIDataSetTableAdapters.Inventario_TableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             cantidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cantidadLabel
@@ -437,6 +439,10 @@
             // 
             this.inventario_TableAdapter.ClearBeforeFill = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // DisminuirStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,6 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,5 +499,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadNormalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadCriticaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource inventarioBindingSource1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

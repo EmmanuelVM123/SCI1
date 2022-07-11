@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SistemaControlInventario));
             this.panelInicial = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelLateral = new System.Windows.Forms.Panel();
             this.panelBajas = new System.Windows.Forms.Panel();
             this.btnDisminuirExistencia = new System.Windows.Forms.Button();
@@ -54,7 +53,6 @@
             this.btnResumen = new System.Windows.Forms.Button();
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.panelInicial.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
             this.panelLateral.SuspendLayout();
             this.panelBajas.SuspendLayout();
             this.panelAltas.SuspendLayout();
@@ -76,24 +74,11 @@
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelContenedor.Controls.Add(this.label1);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(250, 0);
+            this.panelContenedor.Location = new System.Drawing.Point(260, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1334, 861);
+            this.panelContenedor.Size = new System.Drawing.Size(1324, 861);
             this.panelContenedor.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(258, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(919, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenid@ al Sistema de Control de Inventario ITSAV UA Lerdo";
             // 
             // panelLateral
             // 
@@ -108,7 +93,7 @@
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(250, 861);
+            this.panelLateral.Size = new System.Drawing.Size(260, 861);
             this.panelLateral.TabIndex = 0;
             // 
             // panelBajas
@@ -116,9 +101,9 @@
             this.panelBajas.Controls.Add(this.btnDisminuirExistencia);
             this.panelBajas.Controls.Add(this.btnEliminarArticulo);
             this.panelBajas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBajas.Location = new System.Drawing.Point(0, 640);
+            this.panelBajas.Location = new System.Drawing.Point(0, 764);
             this.panelBajas.Name = "panelBajas";
-            this.panelBajas.Size = new System.Drawing.Size(250, 80);
+            this.panelBajas.Size = new System.Drawing.Size(243, 100);
             this.panelBajas.TabIndex = 6;
             this.panelBajas.Visible = false;
             // 
@@ -133,9 +118,9 @@
             this.btnDisminuirExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisminuirExistencia.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Package_download;
             this.btnDisminuirExistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDisminuirExistencia.Location = new System.Drawing.Point(0, 40);
+            this.btnDisminuirExistencia.Location = new System.Drawing.Point(0, 50);
             this.btnDisminuirExistencia.Name = "btnDisminuirExistencia";
-            this.btnDisminuirExistencia.Size = new System.Drawing.Size(250, 40);
+            this.btnDisminuirExistencia.Size = new System.Drawing.Size(243, 50);
             this.btnDisminuirExistencia.TabIndex = 11;
             this.btnDisminuirExistencia.Tag = "Disminuir existencia";
             this.btnDisminuirExistencia.Text = "Disminuir existencia";
@@ -156,7 +141,7 @@
             this.btnEliminarArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarArticulo.Location = new System.Drawing.Point(0, 0);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
-            this.btnEliminarArticulo.Size = new System.Drawing.Size(250, 40);
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(243, 50);
             this.btnEliminarArticulo.TabIndex = 10;
             this.btnEliminarArticulo.Tag = "Eliminar artículo";
             this.btnEliminarArticulo.Text = "Eliminar artículo";
@@ -174,9 +159,9 @@
             this.btnBajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBajas.Image = global::SCI1.Properties.Resources.data_download_icon__1_;
-            this.btnBajas.Location = new System.Drawing.Point(0, 600);
+            this.btnBajas.Location = new System.Drawing.Point(0, 714);
             this.btnBajas.Name = "btnBajas";
-            this.btnBajas.Size = new System.Drawing.Size(250, 40);
+            this.btnBajas.Size = new System.Drawing.Size(243, 50);
             this.btnBajas.TabIndex = 5;
             this.btnBajas.Tag = "Bajas";
             this.btnBajas.Text = "Bajas";
@@ -190,9 +175,9 @@
             this.panelAltas.Controls.Add(this.btnAñadirExistencia);
             this.panelAltas.Controls.Add(this.btnAñadirArticulo);
             this.panelAltas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAltas.Location = new System.Drawing.Point(0, 520);
+            this.panelAltas.Location = new System.Drawing.Point(0, 614);
             this.panelAltas.Name = "panelAltas";
-            this.panelAltas.Size = new System.Drawing.Size(250, 80);
+            this.panelAltas.Size = new System.Drawing.Size(243, 100);
             this.panelAltas.TabIndex = 4;
             this.panelAltas.Visible = false;
             // 
@@ -207,9 +192,9 @@
             this.btnAñadirExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadirExistencia.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Package_upload;
             this.btnAñadirExistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAñadirExistencia.Location = new System.Drawing.Point(0, 40);
+            this.btnAñadirExistencia.Location = new System.Drawing.Point(0, 50);
             this.btnAñadirExistencia.Name = "btnAñadirExistencia";
-            this.btnAñadirExistencia.Size = new System.Drawing.Size(250, 40);
+            this.btnAñadirExistencia.Size = new System.Drawing.Size(243, 50);
             this.btnAñadirExistencia.TabIndex = 9;
             this.btnAñadirExistencia.Tag = "Añadir a existencia";
             this.btnAñadirExistencia.Text = "Añadir a existencia";
@@ -230,7 +215,7 @@
             this.btnAñadirArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadirArticulo.Location = new System.Drawing.Point(0, 0);
             this.btnAñadirArticulo.Name = "btnAñadirArticulo";
-            this.btnAñadirArticulo.Size = new System.Drawing.Size(250, 40);
+            this.btnAñadirArticulo.Size = new System.Drawing.Size(243, 50);
             this.btnAñadirArticulo.TabIndex = 8;
             this.btnAñadirArticulo.Tag = "Artículo de nuevo ingreso";
             this.btnAñadirArticulo.Text = "Artículo de nuevo ingreso";
@@ -248,9 +233,9 @@
             this.btnAltas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltas.Image = global::SCI1.Properties.Resources.data_upload_icon;
-            this.btnAltas.Location = new System.Drawing.Point(0, 480);
+            this.btnAltas.Location = new System.Drawing.Point(0, 564);
             this.btnAltas.Name = "btnAltas";
-            this.btnAltas.Size = new System.Drawing.Size(250, 40);
+            this.btnAltas.Size = new System.Drawing.Size(243, 50);
             this.btnAltas.TabIndex = 3;
             this.btnAltas.Tag = "Altas";
             this.btnAltas.Text = "Altas";
@@ -269,9 +254,9 @@
             this.panelAreas.Controls.Add(this.button2);
             this.panelAreas.Controls.Add(this.btnCIS);
             this.panelAreas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAreas.Location = new System.Drawing.Point(0, 240);
+            this.panelAreas.Location = new System.Drawing.Point(0, 264);
             this.panelAreas.Name = "panelAreas";
-            this.panelAreas.Size = new System.Drawing.Size(250, 240);
+            this.panelAreas.Size = new System.Drawing.Size(243, 300);
             this.panelAreas.TabIndex = 2;
             this.panelAreas.Visible = false;
             // 
@@ -286,9 +271,9 @@
             this.btnAMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAMT.Image = global::SCI1.Properties.Resources.Iconshock_Real_Vista_Project_Managment_Data_management;
             this.btnAMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAMT.Location = new System.Drawing.Point(0, 200);
+            this.btnAMT.Location = new System.Drawing.Point(0, 250);
             this.btnAMT.Name = "btnAMT";
-            this.btnAMT.Size = new System.Drawing.Size(250, 40);
+            this.btnAMT.Size = new System.Drawing.Size(243, 50);
             this.btnAMT.TabIndex = 8;
             this.btnAMT.Tag = "Archivo muerto";
             this.btnAMT.Text = "Archivo muerto";
@@ -307,9 +292,9 @@
             this.btnLBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLBC.Image = global::SCI1.Properties.Resources.Zhoolego_Material_Control_Panel;
             this.btnLBC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLBC.Location = new System.Drawing.Point(0, 160);
+            this.btnLBC.Location = new System.Drawing.Point(0, 200);
             this.btnLBC.Name = "btnLBC";
-            this.btnLBC.Size = new System.Drawing.Size(250, 40);
+            this.btnLBC.Size = new System.Drawing.Size(243, 50);
             this.btnLBC.TabIndex = 7;
             this.btnLBC.Tag = "Laboratorio de cómputo";
             this.btnLBC.Text = "Laboratorio de cómputo";
@@ -328,9 +313,9 @@
             this.btnSGR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSGR.Image = global::SCI1.Properties.Resources.Graphicloads_Seo_Services_Services_portfolio;
             this.btnSGR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSGR.Location = new System.Drawing.Point(0, 120);
+            this.btnSGR.Location = new System.Drawing.Point(0, 150);
             this.btnSGR.Name = "btnSGR";
-            this.btnSGR.Size = new System.Drawing.Size(250, 40);
+            this.btnSGR.Size = new System.Drawing.Size(243, 50);
             this.btnSGR.TabIndex = 6;
             this.btnSGR.Tag = "Servicios generales";
             this.btnSGR.Text = "Servicios generales";
@@ -349,9 +334,9 @@
             this.btnMNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMNT.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_8_Maintenance;
             this.btnMNT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMNT.Location = new System.Drawing.Point(0, 80);
+            this.btnMNT.Location = new System.Drawing.Point(0, 100);
             this.btnMNT.Name = "btnMNT";
-            this.btnMNT.Size = new System.Drawing.Size(250, 40);
+            this.btnMNT.Size = new System.Drawing.Size(243, 50);
             this.btnMNT.TabIndex = 5;
             this.btnMNT.Tag = "Mantenimiento";
             this.btnMNT.Text = "Mantenimiento";
@@ -370,9 +355,9 @@
             this.btnITN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnITN.Image = global::SCI1.Properties.Resources.Atyourservice_Service_Categories_Cleaning;
             this.btnITN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnITN.Location = new System.Drawing.Point(0, 40);
+            this.btnITN.Location = new System.Drawing.Point(0, 50);
             this.btnITN.Name = "btnITN";
-            this.btnITN.Size = new System.Drawing.Size(250, 40);
+            this.btnITN.Size = new System.Drawing.Size(243, 50);
             this.btnITN.TabIndex = 4;
             this.btnITN.Tag = "Intendencia";
             this.btnITN.Text = "Intendencia";
@@ -387,9 +372,9 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(0, 40);
+            this.button2.Location = new System.Drawing.Point(0, 50);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 0);
+            this.button2.Size = new System.Drawing.Size(243, 0);
             this.button2.TabIndex = 3;
             this.button2.Tag = "Inventario por áreas";
             this.button2.Text = "Inventario por áreas";
@@ -407,7 +392,7 @@
             this.btnCIS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCIS.Location = new System.Drawing.Point(0, 0);
             this.btnCIS.Name = "btnCIS";
-            this.btnCIS.Size = new System.Drawing.Size(250, 40);
+            this.btnCIS.Size = new System.Drawing.Size(243, 50);
             this.btnCIS.TabIndex = 2;
             this.btnCIS.Tag = "Coordinación | Ingresos propios | Servicios Escolares";
             this.btnCIS.Text = "Coordinación | Ingresos propios | Servicios Escolares";
@@ -426,9 +411,9 @@
             this.btnIAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIAreas.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Inventory_maintenance;
             this.btnIAreas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIAreas.Location = new System.Drawing.Point(0, 200);
+            this.btnIAreas.Location = new System.Drawing.Point(0, 214);
             this.btnIAreas.Name = "btnIAreas";
-            this.btnIAreas.Size = new System.Drawing.Size(250, 40);
+            this.btnIAreas.Size = new System.Drawing.Size(243, 50);
             this.btnIAreas.TabIndex = 1;
             this.btnIAreas.Tag = "Inventario por áreas";
             this.btnIAreas.Text = "   Inventario por áreas";
@@ -443,7 +428,7 @@
             this.panelUsuarioResumen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsuarioResumen.Location = new System.Drawing.Point(0, 0);
             this.panelUsuarioResumen.Name = "panelUsuarioResumen";
-            this.panelUsuarioResumen.Size = new System.Drawing.Size(250, 200);
+            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 214);
             this.panelUsuarioResumen.TabIndex = 0;
             // 
             // btnResumen
@@ -456,10 +441,9 @@
             this.btnResumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumen.Image = global::SCI1.Properties.Resources.icons8_resume_32;
-            this.btnResumen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnResumen.Location = new System.Drawing.Point(0, 160);
             this.btnResumen.Name = "btnResumen";
-            this.btnResumen.Size = new System.Drawing.Size(250, 40);
+            this.btnResumen.Size = new System.Drawing.Size(243, 50);
             this.btnResumen.TabIndex = 2;
             this.btnResumen.Tag = "Inventario por áreas";
             this.btnResumen.Text = "       Resumen";
@@ -473,7 +457,7 @@
             this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsuario.Location = new System.Drawing.Point(0, 0);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(250, 160);
+            this.panelUsuario.Size = new System.Drawing.Size(243, 160);
             this.panelUsuario.TabIndex = 0;
             // 
             // SistemaControlInventario
@@ -490,8 +474,6 @@
             this.Text = "SistemaControlInventario";
             this.Load += new System.EventHandler(this.SistemaControlInventario_Load_1);
             this.panelInicial.ResumeLayout(false);
-            this.panelContenedor.ResumeLayout(false);
-            this.panelContenedor.PerformLayout();
             this.panelLateral.ResumeLayout(false);
             this.panelBajas.ResumeLayout(false);
             this.panelAltas.ResumeLayout(false);
@@ -526,6 +508,5 @@
         private System.Windows.Forms.Button btnEliminarArticulo;
         private System.Windows.Forms.Button btnResumen;
         private System.Windows.Forms.Panel panelUsuario;
-        private System.Windows.Forms.Label label1;
     }
 }

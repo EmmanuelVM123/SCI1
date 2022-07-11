@@ -63,6 +63,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventarioTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioTableAdapter();
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             descripcionLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
             idAreaLabel = new System.Windows.Forms.Label();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -441,6 +443,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AreasTableAdapter = null;
+            this.tableAdapterManager.ArticuloARequisitar = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.Inventario_TableAdapter = null;
@@ -455,6 +458,10 @@
             this.tableAdapterManager.UnidadMedidaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AñadirStock
             // 
@@ -479,6 +486,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +520,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
