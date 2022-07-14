@@ -31,6 +31,67 @@ namespace SCI1
                
             }
         }
+
+        private void txtEnviarCorreo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Correo correo = new Correo
+                {
+                    correo = txtCorreo.Text,
+                    contraseña = txtContraseña.Text,
+                    alias = txtAlias.Text,
+                    cuerpo = txtCuerpo.Text,
+                    asunto = txtAsunto.Text,
+                    puerto = Convert.ToInt32(txtPuerto.Text),
+                    smtp = txtSMPT.Text,
+                    destinatarios = new List<string>(),
+                    adjuntos = new List<string>()
+                };
+
+                foreach (DataGridViewRow fila in dgvDestinatario.Rows)
+                {
+                    var des = fila.Cells["correoDestino"].Value;
+                    if (des == null) continue;
+
+                    string destinatario = des.ToString();
+                    if (!string.IsNullOrWhiteSpace(destinatario))
+                    {
+                        correo.destinatarios.Add(destinatario);
+                    }
+                }
+
+                foreach (DataGridViewRow fila in dgvArchivos.Rows)
+                {
+                    string archivo = fila.Cells["adjuntoArchivo"].Value.ToString();
+                    if (!string.IsNullOrWhiteSpace(archivo))
+                    {
+                        correo.adjuntos.Add(archivo);
+                    }
+                }
+
+                if (Correo.Enviar(correo))
+                {
+                    MessageBox.Show("El e-mail fue enviado exitosamente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString());
+            }
+
+        }
+
+        private void btnAdjuntar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "Seleccione Requisición.pdf";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                var archivos = open.FileName;
+                dgvArchivos.Rows.Add(archivos);    
+            }
+        }
     }
 
     internal interface IResumen

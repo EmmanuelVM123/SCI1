@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.gbxEnvio = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAlias = new System.Windows.Forms.TextBox();
             this.txtEnviarCorreo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,22 +48,23 @@
             this.dgvDestinatario = new System.Windows.Forms.DataGridView();
             this.correoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDetallesEnvio = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAdjuntar = new System.Windows.Forms.Button();
+            this.dgvArchivos = new System.Windows.Forms.DataGridView();
             this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adjuntoQuitar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCuerpo = new System.Windows.Forms.TextBox();
+            this.txtAsunto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.gbxEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).BeginInit();
             this.gbxDetallesEnvio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -115,6 +118,8 @@
             // gbxEnvio
             // 
             this.gbxEnvio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxEnvio.Controls.Add(this.label6);
+            this.gbxEnvio.Controls.Add(this.txtAlias);
             this.gbxEnvio.Controls.Add(this.txtEnviarCorreo);
             this.gbxEnvio.Controls.Add(this.label5);
             this.gbxEnvio.Controls.Add(this.label4);
@@ -133,6 +138,23 @@
             this.gbxEnvio.TabStop = false;
             this.gbxEnvio.Text = "Datos de envío";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Alias: ";
+            // 
+            // txtAlias
+            // 
+            this.txtAlias.Location = new System.Drawing.Point(98, 52);
+            this.txtAlias.Name = "txtAlias";
+            this.txtAlias.PasswordChar = '*';
+            this.txtAlias.Size = new System.Drawing.Size(228, 23);
+            this.txtAlias.TabIndex = 9;
+            // 
             // txtEnviarCorreo
             // 
             this.txtEnviarCorreo.Image = global::SCI1.Properties.Resources.Fasticon_Isimple_System_Email_send;
@@ -143,11 +165,12 @@
             this.txtEnviarCorreo.TabIndex = 8;
             this.txtEnviarCorreo.Text = "Enviar correo";
             this.txtEnviarCorreo.UseVisualStyleBackColor = true;
+            this.txtEnviarCorreo.Click += new System.EventHandler(this.txtEnviarCorreo_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 119);
+            this.label5.Location = new System.Drawing.Point(7, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 17);
             this.label5.TabIndex = 7;
@@ -156,7 +179,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 87);
+            this.label4.Location = new System.Drawing.Point(7, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 17);
             this.label4.TabIndex = 6;
@@ -165,7 +188,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 58);
+            this.label3.Location = new System.Drawing.Point(7, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 5;
@@ -173,21 +196,21 @@
             // 
             // txtPuerto
             // 
-            this.txtPuerto.Location = new System.Drawing.Point(98, 113);
+            this.txtPuerto.Location = new System.Drawing.Point(98, 142);
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(64, 23);
             this.txtPuerto.TabIndex = 4;
             // 
             // txtSMPT
             // 
-            this.txtSMPT.Location = new System.Drawing.Point(98, 81);
+            this.txtSMPT.Location = new System.Drawing.Point(98, 110);
             this.txtSMPT.Name = "txtSMPT";
             this.txtSMPT.Size = new System.Drawing.Size(228, 23);
             this.txtSMPT.TabIndex = 3;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(98, 52);
+            this.txtContraseña.Location = new System.Drawing.Point(98, 81);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(228, 23);
@@ -214,14 +237,14 @@
             this.dgvDestinatario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDestinatario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDestinatario.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDestinatario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correoDestino});
@@ -239,11 +262,11 @@
             // 
             this.gbxDetallesEnvio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.gbxDetallesEnvio.Controls.Add(this.button1);
-            this.gbxDetallesEnvio.Controls.Add(this.dataGridView1);
+            this.gbxDetallesEnvio.Controls.Add(this.btnAdjuntar);
+            this.gbxDetallesEnvio.Controls.Add(this.dgvArchivos);
             this.gbxDetallesEnvio.Controls.Add(this.label8);
-            this.gbxDetallesEnvio.Controls.Add(this.textBox4);
-            this.gbxDetallesEnvio.Controls.Add(this.textBox5);
+            this.gbxDetallesEnvio.Controls.Add(this.txtCuerpo);
+            this.gbxDetallesEnvio.Controls.Add(this.txtAsunto);
             this.gbxDetallesEnvio.Controls.Add(this.label9);
             this.gbxDetallesEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gbxDetallesEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,33 +277,34 @@
             this.gbxDetallesEnvio.TabStop = false;
             this.gbxDetallesEnvio.Text = "Detalles de envío";
             // 
-            // button1
+            // btnAdjuntar
             // 
-            this.button1.Image = global::SCI1.Properties.Resources.icons8_agregar_enlace_40;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(85, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(516, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Adjuntar archivo(s)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdjuntar.Image = global::SCI1.Properties.Resources.icons8_adjuntar_50;
+            this.btnAdjuntar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdjuntar.Location = new System.Drawing.Point(85, 405);
+            this.btnAdjuntar.Name = "btnAdjuntar";
+            this.btnAdjuntar.Size = new System.Drawing.Size(516, 45);
+            this.btnAdjuntar.TabIndex = 9;
+            this.btnAdjuntar.Text = "Adjuntar archivo(s)";
+            this.btnAdjuntar.UseVisualStyleBackColor = true;
+            this.btnAdjuntar.Click += new System.EventHandler(this.btnAdjuntar_Click);
             // 
-            // dataGridView1
+            // dgvArchivos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvArchivos.AllowUserToAddRows = false;
+            this.dgvArchivos.AllowUserToDeleteRows = false;
+            this.dgvArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvArchivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvArchivos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArchivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.adjuntoArchivo,
             this.adjuntoQuitar});
-            this.dataGridView1.Location = new System.Drawing.Point(85, 474);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(516, 143);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvArchivos.Location = new System.Drawing.Point(85, 474);
+            this.dgvArchivos.Name = "dgvArchivos";
+            this.dgvArchivos.ReadOnly = true;
+            this.dgvArchivos.Size = new System.Drawing.Size(516, 143);
+            this.dgvArchivos.TabIndex = 6;
             // 
             // adjuntoArchivo
             // 
@@ -303,20 +327,20 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Cuerpo:";
             // 
-            // textBox4
+            // txtCuerpo
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 52);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(503, 260);
-            this.textBox4.TabIndex = 2;
+            this.txtCuerpo.Location = new System.Drawing.Point(98, 52);
+            this.txtCuerpo.Multiline = true;
+            this.txtCuerpo.Name = "txtCuerpo";
+            this.txtCuerpo.Size = new System.Drawing.Size(503, 260);
+            this.txtCuerpo.TabIndex = 2;
             // 
-            // textBox5
+            // txtAsunto
             // 
-            this.textBox5.Location = new System.Drawing.Point(98, 23);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(503, 23);
-            this.textBox5.TabIndex = 1;
+            this.txtAsunto.Location = new System.Drawing.Point(98, 23);
+            this.txtAsunto.Name = "txtAsunto";
+            this.txtAsunto.Size = new System.Drawing.Size(503, 23);
+            this.txtAsunto.TabIndex = 1;
             // 
             // label9
             // 
@@ -326,6 +350,10 @@
             this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Asunto:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // EnviarRequisicon
             // 
@@ -348,7 +376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).EndInit();
             this.gbxDetallesEnvio.ResumeLayout(false);
             this.gbxDetallesEnvio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,13 +401,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDestino;
         private System.Windows.Forms.GroupBox gbxDetallesEnvio;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCuerpo;
+        private System.Windows.Forms.TextBox txtAsunto;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvArchivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoQuitar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdjuntar;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAlias;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

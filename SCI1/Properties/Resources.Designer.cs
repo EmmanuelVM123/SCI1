@@ -483,6 +483,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_adjuntar_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-adjuntar-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_agregar_enlace_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-agregar-enlace-40", resourceCulture);

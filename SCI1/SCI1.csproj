@@ -90,6 +90,7 @@
     <Compile Include="AñadirStock.Designer.cs">
       <DependentUpon>AñadirStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Correo.cs" />
     <Compile Include="DisminuirStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +334,7 @@
     <None Include="Resources\Oración.jpg" />
     <None Include="Resources\icons8-agregar-enlace-40.png" />
     <None Include="Resources\icons8-aumentar-fuente-50.png" />
+    <None Include="Resources\icons8-adjuntar-50.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />
