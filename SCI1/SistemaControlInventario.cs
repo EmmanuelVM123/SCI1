@@ -78,6 +78,17 @@ namespace SCI1
             }
         }
 
+        private void btnResumen_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Resumen>();
+            this.btnResumen.BackColor = Color.FromArgb(240, 128, 128);
+        }
+        private void btnRequisicion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<EnviarRequisicon>();
+            this.btnRequisicion.BackColor = Color.FromArgb(240, 128, 128);
+
+        }
         private void btnCIS_Click(object sender, EventArgs e)
         {
             AbrirFormulario<InventarioCIS>();
@@ -137,14 +148,13 @@ namespace SCI1
             AbrirFormulario<DisminuirStock>();
             this.btnDisminuirExistencia.BackColor = Color.FromArgb(240, 128, 128);
         }
-        private void btnResumen_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<EnviarRequisicon>();
-            this.btnResumen.BackColor = Color.FromArgb(240, 128, 128);
-        }
 
         private void CerrarFormularios(object sender, FormClosedEventArgs e)
         {
+            if (Application.OpenForms["Resumen"] == null)
+                this.btnResumen.BackColor = Color.FromArgb(240, 240, 240);
+            if (Application.OpenForms["EnviarRequisicion"] == null)
+                this.btnRequisicion.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioCIS"] == null)
                 this.btnCIS.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioITN"] == null)
@@ -165,8 +175,6 @@ namespace SCI1
                 this.btnEliminarArticulo.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["DisminuirStock"] == null)
                 this.btnDisminuirExistencia.BackColor = Color.FromArgb(240, 240, 240);
-            if (Application.OpenForms["Resumen"] == null)
-                this.btnResumen.BackColor = Color.FromArgb(240, 240, 240);
         }
 
         private void SistemaControlInventario_Load_1(object sender, EventArgs e)

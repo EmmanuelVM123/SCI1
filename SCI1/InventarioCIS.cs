@@ -97,6 +97,7 @@ namespace SCI1
             {
                 if (this.Valida())
                 {
+                    
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventarioCISTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                         id);

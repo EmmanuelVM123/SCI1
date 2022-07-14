@@ -57,7 +57,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSolicitar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -255,7 +255,7 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnSolicitar);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 248);
@@ -346,15 +346,15 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 77;
             // 
-            // button1
+            // btnSolicitar
             // 
-            this.button1.Location = new System.Drawing.Point(442, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Solicitar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSolicitar.Location = new System.Drawing.Point(442, 202);
+            this.btnSolicitar.Name = "btnSolicitar";
+            this.btnSolicitar.Size = new System.Drawing.Size(90, 29);
+            this.btnSolicitar.TabIndex = 3;
+            this.btnSolicitar.Text = "Solicitar";
+            this.btnSolicitar.UseVisualStyleBackColor = true;
+            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
             // 
             // panel3
             // 
@@ -398,6 +398,7 @@
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -410,6 +411,7 @@
             // 
             this.seleccionar.HeaderText = "Seleccionar";
             this.seleccionar.Name = "seleccionar";
+            this.seleccionar.ReadOnly = true;
             this.seleccionar.Width = 95;
             // 
             // IdArea
@@ -417,6 +419,7 @@
             this.IdArea.DataPropertyName = "IdArea";
             this.IdArea.HeaderText = "Área";
             this.IdArea.Name = "IdArea";
+            this.IdArea.ReadOnly = true;
             this.IdArea.Width = 64;
             // 
             // IdArticulo
@@ -432,6 +435,7 @@
             this.NombreArticulo.DataPropertyName = "NombreArticulo";
             this.NombreArticulo.HeaderText = "Artículo";
             this.NombreArticulo.Name = "NombreArticulo";
+            this.NombreArticulo.ReadOnly = true;
             this.NombreArticulo.Width = 83;
             // 
             // Descripcion
@@ -439,6 +443,7 @@
             this.Descripcion.DataPropertyName = "Descripcion";
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             this.Descripcion.Width = 114;
             // 
             // Cantidad
@@ -446,6 +451,7 @@
             this.Cantidad.DataPropertyName = "Cantidad";
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             this.Cantidad.Width = 93;
             // 
             // IdUnidadMedida
@@ -453,6 +459,7 @@
             this.IdUnidadMedida.DataPropertyName = "IdUnidadMedida";
             this.IdUnidadMedida.HeaderText = "Medida";
             this.IdUnidadMedida.Name = "IdUnidadMedida";
+            this.IdUnidadMedida.ReadOnly = true;
             this.IdUnidadMedida.Width = 83;
             // 
             // CantidadNormal
@@ -460,6 +467,7 @@
             this.CantidadNormal.DataPropertyName = "CantidadNormal";
             this.CantidadNormal.HeaderText = "Cantidad normal";
             this.CantidadNormal.Name = "CantidadNormal";
+            this.CantidadNormal.ReadOnly = true;
             this.CantidadNormal.Width = 132;
             // 
             // CantidadCritica
@@ -467,6 +475,7 @@
             this.CantidadCritica.DataPropertyName = "CantidadCritica";
             this.CantidadCritica.HeaderText = "Cantidad crítica";
             this.CantidadCritica.Name = "CantidadCritica";
+            this.CantidadCritica.ReadOnly = true;
             this.CantidadCritica.Width = 127;
             // 
             // articuloARequisitarBindingSource
@@ -546,7 +555,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUnidadMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadNormal;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadCritica;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSolicitar;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

@@ -33,25 +33,26 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelLateral = new System.Windows.Forms.Panel();
             this.panelBajas = new System.Windows.Forms.Panel();
+            this.panelAltas = new System.Windows.Forms.Panel();
+            this.panelAreas = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelUsuarioResumen = new System.Windows.Forms.Panel();
+            this.panelUsuario = new System.Windows.Forms.Panel();
             this.btnDisminuirExistencia = new System.Windows.Forms.Button();
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
             this.btnBajas = new System.Windows.Forms.Button();
-            this.panelAltas = new System.Windows.Forms.Panel();
             this.btnAñadirExistencia = new System.Windows.Forms.Button();
             this.btnAñadirArticulo = new System.Windows.Forms.Button();
             this.btnAltas = new System.Windows.Forms.Button();
-            this.panelAreas = new System.Windows.Forms.Panel();
             this.btnAMT = new System.Windows.Forms.Button();
             this.btnLBC = new System.Windows.Forms.Button();
             this.btnSGR = new System.Windows.Forms.Button();
             this.btnMNT = new System.Windows.Forms.Button();
             this.btnITN = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnCIS = new System.Windows.Forms.Button();
             this.btnIAreas = new System.Windows.Forms.Button();
-            this.panelUsuarioResumen = new System.Windows.Forms.Panel();
+            this.btnRequisicion = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
-            this.panelUsuario = new System.Windows.Forms.Panel();
             this.panelInicial.SuspendLayout();
             this.panelLateral.SuspendLayout();
             this.panelBajas.SuspendLayout();
@@ -106,6 +107,67 @@
             this.panelBajas.Size = new System.Drawing.Size(243, 100);
             this.panelBajas.TabIndex = 6;
             this.panelBajas.Visible = false;
+            // 
+            // panelAltas
+            // 
+            this.panelAltas.Controls.Add(this.btnAñadirExistencia);
+            this.panelAltas.Controls.Add(this.btnAñadirArticulo);
+            this.panelAltas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAltas.Location = new System.Drawing.Point(0, 614);
+            this.panelAltas.Name = "panelAltas";
+            this.panelAltas.Size = new System.Drawing.Size(243, 100);
+            this.panelAltas.TabIndex = 4;
+            this.panelAltas.Visible = false;
+            // 
+            // panelAreas
+            // 
+            this.panelAreas.Controls.Add(this.btnAMT);
+            this.panelAreas.Controls.Add(this.btnLBC);
+            this.panelAreas.Controls.Add(this.btnSGR);
+            this.panelAreas.Controls.Add(this.btnMNT);
+            this.panelAreas.Controls.Add(this.btnITN);
+            this.panelAreas.Controls.Add(this.button2);
+            this.panelAreas.Controls.Add(this.btnCIS);
+            this.panelAreas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAreas.Location = new System.Drawing.Point(0, 264);
+            this.panelAreas.Name = "panelAreas";
+            this.panelAreas.Size = new System.Drawing.Size(243, 300);
+            this.panelAreas.TabIndex = 2;
+            this.panelAreas.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(0, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(243, 0);
+            this.button2.TabIndex = 3;
+            this.button2.Tag = "Inventario por áreas";
+            this.button2.Text = "Inventario por áreas";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panelUsuarioResumen
+            // 
+            this.panelUsuarioResumen.Controls.Add(this.btnRequisicion);
+            this.panelUsuarioResumen.Controls.Add(this.btnResumen);
+            this.panelUsuarioResumen.Controls.Add(this.panelUsuario);
+            this.panelUsuarioResumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelUsuarioResumen.Location = new System.Drawing.Point(0, 0);
+            this.panelUsuarioResumen.Name = "panelUsuarioResumen";
+            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 214);
+            this.panelUsuarioResumen.TabIndex = 0;
+            // 
+            // panelUsuario
+            // 
+            this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelUsuario.Location = new System.Drawing.Point(0, 0);
+            this.panelUsuario.Name = "panelUsuario";
+            this.panelUsuario.Size = new System.Drawing.Size(243, 112);
+            this.panelUsuario.TabIndex = 0;
             // 
             // btnDisminuirExistencia
             // 
@@ -170,17 +232,6 @@
             this.btnBajas.UseVisualStyleBackColor = true;
             this.btnBajas.Click += new System.EventHandler(this.btnBajas_Click);
             // 
-            // panelAltas
-            // 
-            this.panelAltas.Controls.Add(this.btnAñadirExistencia);
-            this.panelAltas.Controls.Add(this.btnAñadirArticulo);
-            this.panelAltas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAltas.Location = new System.Drawing.Point(0, 614);
-            this.panelAltas.Name = "panelAltas";
-            this.panelAltas.Size = new System.Drawing.Size(243, 100);
-            this.panelAltas.TabIndex = 4;
-            this.panelAltas.Visible = false;
-            // 
             // btnAñadirExistencia
             // 
             this.btnAñadirExistencia.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -243,22 +294,6 @@
             this.btnAltas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAltas.UseVisualStyleBackColor = true;
             this.btnAltas.Click += new System.EventHandler(this.btnAltas_Click);
-            // 
-            // panelAreas
-            // 
-            this.panelAreas.Controls.Add(this.btnAMT);
-            this.panelAreas.Controls.Add(this.btnLBC);
-            this.panelAreas.Controls.Add(this.btnSGR);
-            this.panelAreas.Controls.Add(this.btnMNT);
-            this.panelAreas.Controls.Add(this.btnITN);
-            this.panelAreas.Controls.Add(this.button2);
-            this.panelAreas.Controls.Add(this.btnCIS);
-            this.panelAreas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAreas.Location = new System.Drawing.Point(0, 264);
-            this.panelAreas.Name = "panelAreas";
-            this.panelAreas.Size = new System.Drawing.Size(243, 300);
-            this.panelAreas.TabIndex = 2;
-            this.panelAreas.Visible = false;
             // 
             // btnAMT
             // 
@@ -365,21 +400,6 @@
             this.btnITN.UseVisualStyleBackColor = true;
             this.btnITN.Click += new System.EventHandler(this.btnITN_Click);
             // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(0, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(243, 0);
-            this.button2.TabIndex = 3;
-            this.button2.Tag = "Inventario por áreas";
-            this.button2.Text = "Inventario por áreas";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // btnCIS
             // 
             this.btnCIS.Dock = System.Windows.Forms.DockStyle.Top;
@@ -421,15 +441,26 @@
             this.btnIAreas.UseVisualStyleBackColor = true;
             this.btnIAreas.Click += new System.EventHandler(this.btnIAreas_Click);
             // 
-            // panelUsuarioResumen
+            // btnRequisicion
             // 
-            this.panelUsuarioResumen.Controls.Add(this.btnResumen);
-            this.panelUsuarioResumen.Controls.Add(this.panelUsuario);
-            this.panelUsuarioResumen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUsuarioResumen.Location = new System.Drawing.Point(0, 0);
-            this.panelUsuarioResumen.Name = "panelUsuarioResumen";
-            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 214);
-            this.panelUsuarioResumen.TabIndex = 0;
+            this.btnRequisicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRequisicion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRequisicion.FlatAppearance.BorderSize = 0;
+            this.btnRequisicion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRequisicion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRequisicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRequisicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequisicion.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_5_Product_sale_report;
+            this.btnRequisicion.Location = new System.Drawing.Point(0, 162);
+            this.btnRequisicion.Name = "btnRequisicion";
+            this.btnRequisicion.Size = new System.Drawing.Size(243, 50);
+            this.btnRequisicion.TabIndex = 3;
+            this.btnRequisicion.Tag = "";
+            this.btnRequisicion.Text = "       Requisición";
+            this.btnRequisicion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRequisicion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRequisicion.UseVisualStyleBackColor = true;
+            this.btnRequisicion.Click += new System.EventHandler(this.btnRequisicion_Click);
             // 
             // btnResumen
             // 
@@ -441,24 +472,16 @@
             this.btnResumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumen.Image = global::SCI1.Properties.Resources.icons8_resume_32;
-            this.btnResumen.Location = new System.Drawing.Point(0, 160);
+            this.btnResumen.Location = new System.Drawing.Point(0, 112);
             this.btnResumen.Name = "btnResumen";
             this.btnResumen.Size = new System.Drawing.Size(243, 50);
             this.btnResumen.TabIndex = 2;
-            this.btnResumen.Tag = "Inventario por áreas";
+            this.btnResumen.Tag = "";
             this.btnResumen.Text = "       Resumen";
             this.btnResumen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnResumen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResumen.UseVisualStyleBackColor = true;
             this.btnResumen.Click += new System.EventHandler(this.btnResumen_Click);
-            // 
-            // panelUsuario
-            // 
-            this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUsuario.Location = new System.Drawing.Point(0, 0);
-            this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(243, 160);
-            this.panelUsuario.TabIndex = 0;
             // 
             // SistemaControlInventario
             // 
@@ -508,5 +531,6 @@
         private System.Windows.Forms.Button btnEliminarArticulo;
         private System.Windows.Forms.Button btnResumen;
         private System.Windows.Forms.Panel panelUsuario;
+        private System.Windows.Forms.Button btnRequisicion;
     }
 }

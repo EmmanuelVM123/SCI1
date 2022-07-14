@@ -333,6 +333,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_5_Product_sale_report {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-5-Product-sale-report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_8_Maintenance {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-8-Maintenance", resourceCulture);
@@ -626,6 +636,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap La_Integridad_de_Dios {
             get {
                 object obj = ResourceManager.GetObject("La Integridad de Dios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap limpieza_de_datos {
+            get {
+                object obj = ResourceManager.GetObject("limpieza-de-datos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -81,30 +81,37 @@ namespace SCI1
         
         public void TablaDeAgregarDatos(DataGridViewRow fila)
         {
-            bool DatosEnDGV = false;
-            String valorElemento = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
-
-            foreach (DataGridViewRow fila2 in dataGridView2.Rows)
+            try
             {
+                bool DatosEnDGV = false;
+                String valorElemento = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
 
-                if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
+                foreach (DataGridViewRow fila2 in dataGridView2.Rows)
                 {
-                    MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido");
-                    DatosEnDGV = true;
-                    break;
+
+                    if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
+                    {
+                        MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido");
+                        DatosEnDGV = true;
+                        break;
+                    }
+                }
+
+                if (DatosEnDGV != true)
+                {
+                    String Cantidad = fila.Cells["Cantidad"].Value.ToString().ToUpper();
+                    String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
+                    String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString().ToUpper();
+
+                    this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
                 }
             }
-
-            if (DatosEnDGV != true)
+            catch (Exception ex)
             {
-                String Cantidad = fila.Cells["Cantidad"].Value.ToString().ToUpper();
-                String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
-                String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString().ToUpper();
-
-                this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
+                MessageBox.Show("Error: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSolicitar_Click(object sender, EventArgs e)
         {
             try
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,9 +28,10 @@ namespace SCI1
             {
                 //Instancia SMTP
                 SmtpClient cliente = new SmtpClient(correo.smtp,correo.puerto);
+                cliente.EnableSsl = true;
                 //correo
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(correo.correo,correo.alias);
+                mail.From = new MailAddress(correo.correo, correo.alias);
 
                 //Asunto
                 mail.Subject = correo.asunto;
@@ -71,8 +73,6 @@ namespace SCI1
                 MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString()); ;
                 return false;
             }
-
-            return true;
         }
     }
 }

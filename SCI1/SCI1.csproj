@@ -335,6 +335,8 @@
     <None Include="Resources\icons8-agregar-enlace-40.png" />
     <None Include="Resources\icons8-aumentar-fuente-50.png" />
     <None Include="Resources\icons8-adjuntar-50.png" />
+    <None Include="Resources\limpieza-de-datos.png" />
+    <None Include="Resources\Custom-Icon-Design-Flatastic-5-Product-sale-report.ico" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />

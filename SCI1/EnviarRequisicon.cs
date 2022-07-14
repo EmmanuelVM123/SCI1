@@ -70,14 +70,14 @@ namespace SCI1
                     }
                 }
 
-                if (Correo.Enviar(correo))
+                if (Correo.Enviar(correo) == true)
                 {
-                    MessageBox.Show("El e-mail fue enviado exitosamente");
+                    MessageBox.Show("El e-mail fue enviado exitosamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString());
+                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
 
         }
@@ -91,6 +91,11 @@ namespace SCI1
                 var archivos = open.FileName;
                 dgvArchivos.Rows.Add(archivos);    
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
