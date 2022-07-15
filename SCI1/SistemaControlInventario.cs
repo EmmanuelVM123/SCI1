@@ -50,7 +50,7 @@ namespace SCI1
             {
                 panelAreas.Visible &= false;
             }
-            //this.btnIAreas.BackColor = Color.FromArgb(240, 128, 128);
+            
         }
 
         private void btnAltas_Click(object sender, EventArgs e)
@@ -180,7 +180,6 @@ namespace SCI1
         private void SistemaControlInventario_Load_1(object sender, EventArgs e)
         {
             this.btnResumen_Click(sender, e);
-            //MessageBox.Show("¡Hola! Bienvenido al Sistema de control de inventario ITSAV Unidad Académica Lerdo de Tejada");
         }
     }
 }

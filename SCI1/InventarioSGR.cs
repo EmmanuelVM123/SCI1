@@ -19,8 +19,15 @@ namespace SCI1
         }
         private void CargaDatos()
         {
-            this.inventarioSGRTableAdapter.Fill(this.sCIDataSet.InventarioSGR);
-            this.ModoEdicion("Lectura");
+            try
+            { 
+                this.inventarioSGRTableAdapter.Fill(this.sCIDataSet.InventarioSGR);
+                this.ModoEdicion("Lectura");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void InventarioSGR_Load(object sender, EventArgs e)
         {
@@ -97,13 +104,13 @@ namespace SCI1
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventarioSGRTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                         id);
-                    MessageBox.Show("¡Se han actualizados los datos ", "Operación exitosa");
+                    MessageBox.Show("Se han actualizados los datos", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.CargaDatos();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error al actualizar los campos " + ex.Message.ToString());
+                MessageBox.Show("Ha ocurrido un error al actualizar los campos " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

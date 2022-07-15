@@ -53,7 +53,7 @@ namespace SCI1
                 
                 //Guardar lo cambios el mismo documento
                 hoja.Save();
-                MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa") ;
+                MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information) ;
                 hoja.PrintOutEx();
                 hoja.Close(true, Type.Missing, Type.Missing);
                 excel.Quit();
@@ -66,7 +66,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un Error: " + ex.Message.ToString(), "Error");
+                MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,7 +91,7 @@ namespace SCI1
 
                     if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
                     {
-                        MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido");
+                        MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         DatosEnDGV = true;
                         break;
                     }
@@ -108,7 +108,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al agregar: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnSolicitar_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido el siguiente error al solicitar artículo(s): " + ex.Message.ToString(), "Error al solicitar");
+                MessageBox.Show("Ha ocurrido el siguiente error al solicitar artículo(s): " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
             
@@ -141,7 +141,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocuurrido un error al remover una fila: " + ex.Message.ToString(), "Error al remover");
+                MessageBox.Show("Ha ocuurrido un error al remover una fila: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

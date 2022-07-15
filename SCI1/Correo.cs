@@ -37,6 +37,10 @@ namespace SCI1
                 mail.Subject = correo.asunto;
                 mail.SubjectEncoding = System.Text.Encoding.UTF8;
 
+                //Cuerpo
+                mail.Subject = correo.cuerpo;
+                mail.SubjectEncoding = System.Text.Encoding.UTF8;
+
                 //Destinatarios
                 foreach (var destinatario in correo.destinatarios)
                 {
@@ -70,7 +74,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString()); ;
+                MessageBox.Show("Ha ocurrido un error al enviar el e-mail: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

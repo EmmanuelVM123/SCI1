@@ -34,7 +34,7 @@ namespace SCI1
             catch (Exception ex)
             {
 
-                MessageBox.Show("Ha ocurrido un error al eliminar : " + ex.Message.ToString());
+                MessageBox.Show("Ha ocurrido un error al cargar los datos: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -69,7 +69,7 @@ namespace SCI1
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventarioTableAdapter.Delete(id);
-                    MessageBox.Show("Artículo eliminado exitosamente");
+                    MessageBox.Show("Artículo eliminado exitosamente", "Operación exitosa" , MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.CargaDatos();
                 }
                 else
@@ -79,7 +79,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar el artículo: " + ex.Message.ToString());
+                MessageBox.Show("Error al eliminar el artículo: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -26,8 +26,15 @@ namespace SCI1
         }
         private void CargaDatos()
         {
-            this.inventarioCrearTableAdapter.Fill(this.sCIDataSet.InventarioCrear);
-            this.ModoEdicion("Lectura");
+            try
+            {
+                this.inventarioCrearTableAdapter.Fill(this.sCIDataSet.InventarioCrear);
+                this.ModoEdicion("Lectura");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void ModoEdicion(string modo)
         {
@@ -115,13 +122,13 @@ namespace SCI1
                 if (this.Valida())
                 {                    
                     this.inventarioCrearTableAdapter.Insert(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.cantidadNumericUpDown.Value),Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value));
-                    MessageBox.Show("Se ha agregado el artículo: " + this.nombreArticuloTextBox.Text + " con " + this.cantidadNumericUpDown.Value + " unidad(es)", "Operación exitosa");
+                    MessageBox.Show("Se ha agregado el artículo: " + this.nombreArticuloTextBox.Text + " con " + this.cantidadNumericUpDown.Value + " unidad(es)", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.CargaDatos();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error al actualizar los campos " + ex.Message.ToString());
+                MessageBox.Show("Ha ocurrido un error al actualizar los campos " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

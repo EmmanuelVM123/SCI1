@@ -24,12 +24,7 @@ namespace SCI1
 
         private void btnRecargar_Click(object sender, EventArgs e)
         {
-            if (fontDialog1.ShowDialog()==DialogResult.OK )
-            {
-                this.label1.Font = fontDialog1.Font;
-                
-               
-            }
+
         }
 
         private void txtEnviarCorreo_Click(object sender, EventArgs e)
@@ -77,7 +72,7 @@ namespace SCI1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Error", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
 
         }
