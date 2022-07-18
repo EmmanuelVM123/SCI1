@@ -18,7 +18,7 @@ namespace SCI1
             
         }
 
-        private void AbrirFormulario<MiFormulario>() where MiFormulario : Form, new()
+        public void AbrirFormulario<MiFormulario>() where MiFormulario : Form, new()
         {
             Form formulario;
             formulario = panelContenedor.Controls.OfType<MiFormulario>().FirstOrDefault(); //Busca en la coleción el formulario
@@ -83,7 +83,7 @@ namespace SCI1
             AbrirFormulario<Resumen>();
             this.btnResumen.BackColor = Color.FromArgb(240, 128, 128);
         }
-        private void btnRequisicion_Click(object sender, EventArgs e)
+        public void btnRequisicion_Click(object sender, EventArgs e)
         {
             AbrirFormulario<EnviarRequisicon>();
             this.btnRequisicion.BackColor = Color.FromArgb(240, 128, 128);
@@ -181,5 +181,9 @@ namespace SCI1
         {
             this.btnResumen_Click(sender, e);
         }
+    }
+
+    class panelContenedor
+    {
     }
 }

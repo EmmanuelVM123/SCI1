@@ -63,16 +63,6 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _100548303_583909508901927_4696865476288970752_n {
-            get {
-                object obj = ResourceManager.GetObject("100548303_583909508901927_4696865476288970752_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _2021_01_16_12_24_43 {
             get {
                 object obj = ResourceManager.GetObject("2021-01-16 12.24.43", resourceCulture);
@@ -466,16 +456,6 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap Graphicloads_Seo_Services_Services_portfolio {
             get {
                 object obj = ResourceManager.GetObject("Graphicloads-Seo-Services-Services-portfolio", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Hechos {
-            get {
-                object obj = ResourceManager.GetObject("Hechos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

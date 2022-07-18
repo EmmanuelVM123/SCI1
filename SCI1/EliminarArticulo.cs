@@ -64,7 +64,7 @@ namespace SCI1
         {
             try
             {
-                DialogResult dr = MessageBox.Show("¿Está seguro de eliminar el artículo: " + (this.nombreArticuloTextBox.Text) + "?", "Eliminar ", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show("¿Está seguro de eliminar el artículo: " + (this.nombreArticuloTextBox.Text) + "?", "Eliminar ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);

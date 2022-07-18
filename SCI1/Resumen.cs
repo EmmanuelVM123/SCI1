@@ -73,6 +73,10 @@ namespace SCI1
         private void Resumen_Load(object sender, EventArgs e)
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
+            if (dataGridView1.Rows.Count != 0)
+            {
+                notifyIcon1.BalloonTipTitle = "A";
+            }
         }
         private void btnRecargar_Click(object sender, EventArgs e)
         {

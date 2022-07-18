@@ -36,8 +36,8 @@ namespace SCI1
                     correo = txtCorreo.Text,
                     contraseña = txtContraseña.Text,
                     alias = txtAlias.Text,
-                    cuerpo = txtCuerpo.Text,
                     asunto = txtAsunto.Text,
+                    cuerpo = txtCuerpo.Text,
                     puerto = Convert.ToInt32(txtPuerto.Text),
                     smtp = txtSMPT.Text,
                     destinatarios = new List<string>(),
@@ -80,7 +80,7 @@ namespace SCI1
         private void btnAdjuntar_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Title = "Seleccione Requisición.pdf";
+            open.Title = "Seleccione Requisición";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 var archivos = open.FileName;
@@ -90,7 +90,7 @@ namespace SCI1
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            dgvArchivos.Rows.Clear();
         }
     }
 
