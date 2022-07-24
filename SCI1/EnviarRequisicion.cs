@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public partial class EnviarRequisicon : Form, IResumen
+    public partial class EnviarRequisicion : Form, IResumen
     {
-        public EnviarRequisicon()
+        public EnviarRequisicion()
         {
             InitializeComponent();
         }
@@ -67,12 +67,14 @@ namespace SCI1
 
                 if (Correo.Enviar(correo) == true)
                 {
+                    
+
                     MessageBox.Show("El e-mail fue enviado exitosamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                 MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
 
         }

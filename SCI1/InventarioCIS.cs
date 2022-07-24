@@ -104,12 +104,11 @@ namespace SCI1
             {
                 if (this.Valida())
                 {
-                    
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventarioCISTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
-                        id);
-                    MessageBox.Show("Se han actualizados los datos ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        id);                                    
                     this.CargaDatos();
+                    MessageBox.Show("Se han actualizados los datos ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -118,9 +117,19 @@ namespace SCI1
             }
         }
 
+        private void mostrarNotificacion()
+        {
+            this.notifyIcon1.Text = "SCI ITSAV";
+            this.notifyIcon1.BalloonTipTitle = "Operación cancelada";
+            this.notifyIcon1.BalloonTipText = "...";
+            this.notifyIcon1.BalloonTipIcon = ToolTipIcon.None;
+            this.notifyIcon1.ShowBalloonTip(1500);
+            this.notifyIcon1.Visible = true;
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
+            mostrarNotificacion();
         }
     }
 }

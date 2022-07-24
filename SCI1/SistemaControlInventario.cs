@@ -83,9 +83,9 @@ namespace SCI1
             AbrirFormulario<Resumen>();
             this.btnResumen.BackColor = Color.FromArgb(240, 128, 128);
         }
-        public void btnRequisicion_Click(object sender, EventArgs e)
+        private void btnRequisicion_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<EnviarRequisicon>();
+            AbrirFormulario<EnviarRequisicion>();
             this.btnRequisicion.BackColor = Color.FromArgb(240, 128, 128);
 
         }

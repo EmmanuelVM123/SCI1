@@ -75,8 +75,15 @@ namespace SCI1
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             if (dataGridView1.Rows.Count != 0)
             {
-                notifyIcon1.BalloonTipTitle = "A";
-            }
+                notifyIcon1.Text = "SCI ITSAV";
+                notifyIcon1.BalloonTipTitle = "Hola";
+                notifyIcon1.BalloonTipText = "Saludos";
+                notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+                notifyIcon1.ShowBalloonTip(4000);
+                notifyIcon1.Visible = true;
+
+
+;            }
         }
         private void btnRecargar_Click(object sender, EventArgs e)
         {

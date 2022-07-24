@@ -1,6 +1,6 @@
 ﻿namespace SCI1
 {
-    partial class EnviarRequisicon
+    partial class EnviarRequisicion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.gbxEnvio = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtAlias = new System.Windows.Forms.TextBox();
+            this.txtEnviarCorreo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,27 +49,25 @@
             this.dgvDestinatario = new System.Windows.Forms.DataGridView();
             this.correoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDetallesEnvio = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnAdjuntar = new System.Windows.Forms.Button();
             this.dgvArchivos = new System.Windows.Forms.DataGridView();
+            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adjuntoQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCuerpo = new System.Windows.Forms.TextBox();
             this.txtAsunto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjuntoQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnAdjuntar = new System.Windows.Forms.Button();
-            this.txtEnviarCorreo = new System.Windows.Forms.Button();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.gbxEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).BeginInit();
             this.gbxDetallesEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -90,6 +92,31 @@
             this.label1.Size = new System.Drawing.Size(155, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enviar requisición ";
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = global::SCI1.Properties.Resources.Zhoolego_Material_Control_Panel;
+            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRecargar.TabIndex = 1;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
+            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // gbxEnvio
             // 
@@ -129,6 +156,18 @@
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(228, 23);
             this.txtAlias.TabIndex = 9;
+            // 
+            // txtEnviarCorreo
+            // 
+            this.txtEnviarCorreo.Image = global::SCI1.Properties.Resources.Fasticon_Isimple_System_Email_send;
+            this.txtEnviarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtEnviarCorreo.Location = new System.Drawing.Point(10, 171);
+            this.txtEnviarCorreo.Name = "txtEnviarCorreo";
+            this.txtEnviarCorreo.Size = new System.Drawing.Size(316, 45);
+            this.txtEnviarCorreo.TabIndex = 8;
+            this.txtEnviarCorreo.Text = "Enviar correo";
+            this.txtEnviarCorreo.UseVisualStyleBackColor = true;
+            this.txtEnviarCorreo.Click += new System.EventHandler(this.txtEnviarCorreo_Click);
             // 
             // label5
             // 
@@ -241,6 +280,30 @@
             this.gbxDetallesEnvio.TabStop = false;
             this.gbxDetallesEnvio.Text = "Detalles de envío";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(361, 406);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(240, 45);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnAdjuntar
+            // 
+            this.btnAdjuntar.Image = global::SCI1.Properties.Resources.icons8_adjuntar_50;
+            this.btnAdjuntar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdjuntar.Location = new System.Drawing.Point(85, 405);
+            this.btnAdjuntar.Name = "btnAdjuntar";
+            this.btnAdjuntar.Size = new System.Drawing.Size(240, 45);
+            this.btnAdjuntar.TabIndex = 9;
+            this.btnAdjuntar.Text = "Adjuntar archivo(s)";
+            this.btnAdjuntar.UseVisualStyleBackColor = true;
+            this.btnAdjuntar.Click += new System.EventHandler(this.btnAdjuntar_Click);
+            // 
             // dgvArchivos
             // 
             this.dgvArchivos.AllowUserToAddRows = false;
@@ -257,6 +320,20 @@
             this.dgvArchivos.ReadOnly = true;
             this.dgvArchivos.Size = new System.Drawing.Size(516, 143);
             this.dgvArchivos.TabIndex = 6;
+            // 
+            // adjuntoArchivo
+            // 
+            this.adjuntoArchivo.HeaderText = "Archivos";
+            this.adjuntoArchivo.Name = "adjuntoArchivo";
+            this.adjuntoArchivo.ReadOnly = true;
+            // 
+            // adjuntoQuitar
+            // 
+            this.adjuntoQuitar.HeaderText = "Quitar";
+            this.adjuntoQuitar.Name = "adjuntoQuitar";
+            this.adjuntoQuitar.ReadOnly = true;
+            this.adjuntoQuitar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.adjuntoQuitar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label8
             // 
@@ -295,80 +372,10 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // adjuntoArchivo
+            // notifyIcon1
             // 
-            this.adjuntoArchivo.HeaderText = "Archivos";
-            this.adjuntoArchivo.Name = "adjuntoArchivo";
-            this.adjuntoArchivo.ReadOnly = true;
-            // 
-            // adjuntoQuitar
-            // 
-            this.adjuntoQuitar.HeaderText = "Quitar";
-            this.adjuntoQuitar.Name = "adjuntoQuitar";
-            this.adjuntoQuitar.ReadOnly = true;
-            this.adjuntoQuitar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.adjuntoQuitar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(361, 406);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(240, 45);
-            this.btnLimpiar.TabIndex = 10;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnAdjuntar
-            // 
-            this.btnAdjuntar.Image = global::SCI1.Properties.Resources.icons8_adjuntar_50;
-            this.btnAdjuntar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdjuntar.Location = new System.Drawing.Point(85, 405);
-            this.btnAdjuntar.Name = "btnAdjuntar";
-            this.btnAdjuntar.Size = new System.Drawing.Size(240, 45);
-            this.btnAdjuntar.TabIndex = 9;
-            this.btnAdjuntar.Text = "Adjuntar archivo(s)";
-            this.btnAdjuntar.UseVisualStyleBackColor = true;
-            this.btnAdjuntar.Click += new System.EventHandler(this.btnAdjuntar_Click);
-            // 
-            // txtEnviarCorreo
-            // 
-            this.txtEnviarCorreo.Image = global::SCI1.Properties.Resources.Fasticon_Isimple_System_Email_send;
-            this.txtEnviarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtEnviarCorreo.Location = new System.Drawing.Point(10, 171);
-            this.txtEnviarCorreo.Name = "txtEnviarCorreo";
-            this.txtEnviarCorreo.Size = new System.Drawing.Size(316, 45);
-            this.txtEnviarCorreo.TabIndex = 8;
-            this.txtEnviarCorreo.Text = "Enviar correo";
-            this.txtEnviarCorreo.UseVisualStyleBackColor = true;
-            this.txtEnviarCorreo.Click += new System.EventHandler(this.txtEnviarCorreo_Click);
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = global::SCI1.Properties.Resources.Zhoolego_Material_Control_Panel;
-            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRecargar.TabIndex = 1;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
-            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // EnviarRequisicon
             // 
@@ -384,14 +391,14 @@
             this.Text = " ";
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.gbxEnvio.ResumeLayout(false);
             this.gbxEnvio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).EndInit();
             this.gbxDetallesEnvio.ResumeLayout(false);
             this.gbxDetallesEnvio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,5 +435,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
         private System.Windows.Forms.DataGridViewButtonColumn adjuntoQuitar;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
