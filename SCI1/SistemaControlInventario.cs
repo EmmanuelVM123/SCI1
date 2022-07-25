@@ -179,7 +179,7 @@ namespace SCI1
 
         private void SistemaControlInventario_Load_1(object sender, EventArgs e)
         {
-            this.btnResumen_Click(sender, e);
+            btnResumen_Click(sender, e);
         }
     }
 
