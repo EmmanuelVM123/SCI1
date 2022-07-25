@@ -38,8 +38,8 @@ namespace SCI1
                 mail.SubjectEncoding = System.Text.Encoding.UTF8;
 
                 //Cuerpo
-                mail.Subject = correo.cuerpo;
-                mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                mail.Body = correo.cuerpo;
+                mail.BodyEncoding = System.Text.Encoding.UTF8;
 
                 //Destinatarios
                 foreach (var destinatario in correo.destinatarios)

@@ -346,7 +346,7 @@
             // 
             // txtCuerpo
             // 
-            this.txtCuerpo.Location = new System.Drawing.Point(98, 52);
+            this.txtCuerpo.Location = new System.Drawing.Point(98, 58);
             this.txtCuerpo.Multiline = true;
             this.txtCuerpo.Name = "txtCuerpo";
             this.txtCuerpo.Size = new System.Drawing.Size(503, 260);
@@ -377,7 +377,7 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // EnviarRequisicon
+            // EnviarRequisicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -387,7 +387,7 @@
             this.Controls.Add(this.gbxEnvio);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EnviarRequisicon";
+            this.Name = "EnviarRequisicion";
             this.Text = " ";
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
