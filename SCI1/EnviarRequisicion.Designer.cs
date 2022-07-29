@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
@@ -37,7 +37,7 @@
             this.gbxEnvio = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtAlias = new System.Windows.Forms.TextBox();
-            this.txtEnviarCorreo = new System.Windows.Forms.Button();
+            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,6 +61,9 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.pBarEnviar = new System.Windows.Forms.ProgressBar();
+            this.tProgreso = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -123,7 +126,7 @@
             this.gbxEnvio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxEnvio.Controls.Add(this.label6);
             this.gbxEnvio.Controls.Add(this.txtAlias);
-            this.gbxEnvio.Controls.Add(this.txtEnviarCorreo);
+            this.gbxEnvio.Controls.Add(this.btnEnviarCorreo);
             this.gbxEnvio.Controls.Add(this.label5);
             this.gbxEnvio.Controls.Add(this.label4);
             this.gbxEnvio.Controls.Add(this.label3);
@@ -156,18 +159,19 @@
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(228, 23);
             this.txtAlias.TabIndex = 9;
+            this.txtAlias.Text = "Coordinación Unidad Académica Lerdo de Tejada";
             // 
-            // txtEnviarCorreo
+            // btnEnviarCorreo
             // 
-            this.txtEnviarCorreo.Image = global::SCI1.Properties.Resources.Fasticon_Isimple_System_Email_send;
-            this.txtEnviarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtEnviarCorreo.Location = new System.Drawing.Point(10, 171);
-            this.txtEnviarCorreo.Name = "txtEnviarCorreo";
-            this.txtEnviarCorreo.Size = new System.Drawing.Size(316, 45);
-            this.txtEnviarCorreo.TabIndex = 8;
-            this.txtEnviarCorreo.Text = "Enviar correo";
-            this.txtEnviarCorreo.UseVisualStyleBackColor = true;
-            this.txtEnviarCorreo.Click += new System.EventHandler(this.txtEnviarCorreo_Click);
+            this.btnEnviarCorreo.Image = global::SCI1.Properties.Resources.Fasticon_Isimple_System_Email_send;
+            this.btnEnviarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(10, 171);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(316, 45);
+            this.btnEnviarCorreo.TabIndex = 8;
+            this.btnEnviarCorreo.Text = "Enviar correo";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
             // 
             // label5
             // 
@@ -202,6 +206,7 @@
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(64, 23);
             this.txtPuerto.TabIndex = 4;
+            this.txtPuerto.Text = "25";
             // 
             // txtSMPT
             // 
@@ -209,6 +214,7 @@
             this.txtSMPT.Name = "txtSMPT";
             this.txtSMPT.Size = new System.Drawing.Size(228, 23);
             this.txtSMPT.TabIndex = 3;
+            this.txtSMPT.Text = "smtp.gmail.com";
             // 
             // txtContraseña
             // 
@@ -239,14 +245,14 @@
             this.dgvDestinatario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDestinatario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDestinatario.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDestinatario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correoDestino});
@@ -377,11 +383,26 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // pBarEnviar
+            // 
+            this.pBarEnviar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBarEnviar.Location = new System.Drawing.Point(655, 394);
+            this.pBarEnviar.Name = "pBarEnviar";
+            this.pBarEnviar.Size = new System.Drawing.Size(347, 36);
+            this.pBarEnviar.Step = 1;
+            this.pBarEnviar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pBarEnviar.TabIndex = 10;
+            // 
+            // tProgreso
+            // 
+            this.tProgreso.Tick += new System.EventHandler(this.tProgreso_Tick);
+            // 
             // EnviarRequisicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 681);
+            this.Controls.Add(this.pBarEnviar);
             this.Controls.Add(this.gbxDetallesEnvio);
             this.Controls.Add(this.dgvDestinatario);
             this.Controls.Add(this.gbxEnvio);
@@ -410,7 +431,7 @@
         private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.GroupBox gbxEnvio;
-        private System.Windows.Forms.Button txtEnviarCorreo;
+        private System.Windows.Forms.Button btnEnviarCorreo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -436,5 +457,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
         private System.Windows.Forms.DataGridViewButtonColumn adjuntoQuitar;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ProgressBar pBarEnviar;
+        private System.Windows.Forms.Timer tProgreso;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -51,10 +51,10 @@ namespace SCI1
                 //Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
                 x.Cells[27, 5] = tbxUso.Text;
                 
-                //Guardar lo cambios el mismo documento
+                //Guardar lo cambios en el mismo documento
                 hoja.Save();
                 MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information) ;
-                hoja.PrintOutEx();
+                hoja.PrintOutEx();                
                 hoja.Close(true, Type.Missing, Type.Missing);
                 excel.Quit();
                 this.tbxArea.Clear();
@@ -70,24 +70,39 @@ namespace SCI1
             }
         }
 
-        private void Resumen_Load(object sender, EventArgs e)
+        public void Notificacion()
         {
-            this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             if (dataGridView1.Rows.Count != 0)
             {
-                notifyIcon1.Text = "SCI ITSAV";
-                notifyIcon1.BalloonTipTitle = "Hola";
-                notifyIcon1.BalloonTipText = "Saludos";
+                notifyIcon1.Text = "SCI ITSAV Prueba";
+                notifyIcon1.BalloonTipTitle = "Actualice stock o solicite una Requisición";
+                notifyIcon1.BalloonTipText = "La cantidad de algunos artículos está por debajo de lo normal";
+                notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
+                notifyIcon1.ShowBalloonTip(4000);
+                notifyIcon1.Visible = true;
+                ;
+            }
+            else
+            {
+                notifyIcon1.Text = "SCI ITSAV Prueba";
+                notifyIcon1.BalloonTipTitle = "Excelentes noticias";
+                notifyIcon1.BalloonTipText = "Las cantidades de los artículos en inventario son normales";
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
                 notifyIcon1.ShowBalloonTip(4000);
                 notifyIcon1.Visible = true;
+            }
+        }
 
-
-;            }
+        private void Resumen_Load(object sender, EventArgs e)
+        {
+            this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
+            this.Notificacion();
+            
         }
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
+            this.Notificacion();
         }
         
         public void TablaDeAgregarDatos(DataGridViewRow fila)

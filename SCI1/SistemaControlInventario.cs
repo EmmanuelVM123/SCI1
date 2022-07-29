@@ -15,7 +15,6 @@ namespace SCI1
         public SistemaControlInventario()
         {
             InitializeComponent();
-            
         }
 
         public void AbrirFormulario<MiFormulario>() where MiFormulario : Form, new()
@@ -82,6 +81,7 @@ namespace SCI1
         {
             AbrirFormulario<Resumen>();
             this.btnResumen.BackColor = Color.FromArgb(240, 128, 128);
+            
         }
         private void btnRequisicion_Click(object sender, EventArgs e)
         {

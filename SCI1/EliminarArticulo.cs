@@ -64,12 +64,12 @@ namespace SCI1
         {
             try
             {
-                DialogResult dr = MessageBox.Show("¿Está seguro de eliminar el artículo: " + (this.nombreArticuloTextBox.Text) + "?", "Eliminar ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show("¿Está seguro de eliminar el artículo: " + (this.nombreArticuloTextBox.Text) + "?", "Eliminar ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventarioTableAdapter.Delete(id);
-                    MessageBox.Show("Artículo eliminado exitosamente", "Operación exitosa" , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Artículo eliminado exitosamente", "Operación exitosa" , MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.CargaDatos();
                 }
                 else

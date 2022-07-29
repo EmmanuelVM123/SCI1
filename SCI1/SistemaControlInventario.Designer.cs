@@ -68,7 +68,7 @@
             this.panelInicial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInicial.Location = new System.Drawing.Point(0, 0);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(1370, 749);
+            this.panelInicial.Size = new System.Drawing.Size(1584, 861);
             this.panelInicial.TabIndex = 0;
             // 
             // panelContenedor
@@ -78,7 +78,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(260, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1110, 749);
+            this.panelContenedor.Size = new System.Drawing.Size(1324, 861);
             this.panelContenedor.TabIndex = 1;
             // 
             // panelLateral
@@ -94,7 +94,7 @@
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(260, 749);
+            this.panelLateral.Size = new System.Drawing.Size(260, 861);
             this.panelLateral.TabIndex = 0;
             // 
             // panelBajas
@@ -487,7 +487,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.panelInicial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1364, 718);

@@ -117,19 +117,9 @@ namespace SCI1
             }
         }
 
-        private void mostrarNotificacion()
-        {
-            this.notifyIcon1.Text = "SCI ITSAV";
-            this.notifyIcon1.BalloonTipTitle = "Operación cancelada";
-            this.notifyIcon1.BalloonTipText = "...";
-            this.notifyIcon1.BalloonTipIcon = ToolTipIcon.None;
-            this.notifyIcon1.ShowBalloonTip(1500);
-            this.notifyIcon1.Visible = true;
-        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
-            mostrarNotificacion();
         }
     }
 }

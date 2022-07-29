@@ -94,7 +94,7 @@ namespace SCI1
                     int id = int.Parse(this.idArticuloTextBox.Text);
                     this.inventario_TableAdapter.Update(Convert.ToInt32(this.cantidadNumericUpDown.Value),
                         id);
-                    MessageBox.Show("Se ha(n) disminuido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " unidad(es) al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha(n) disminuido " + Convert.ToInt32(this.cantidadNumericUpDown.Value) + " unidad(es) al artículo: " + this.nombreArticuloTextBox.Text, "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.CargaDatos();
                 }
             }

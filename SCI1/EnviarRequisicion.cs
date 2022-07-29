@@ -12,9 +12,11 @@ namespace SCI1
 {
     public partial class EnviarRequisicion : Form, IResumen
     {
+        private int conteo;
         public EnviarRequisicion()
         {
             InitializeComponent();
+            conteo = 0;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -27,7 +29,12 @@ namespace SCI1
 
         }
 
-        private void txtEnviarCorreo_Click(object sender, EventArgs e)
+        //private void Enviar(sender e)
+        //{
+        //    this.btnEnviarCorreo_Click();
+        //}
+
+        private  void btnEnviarCorreo_Click(object sender, EventArgs e)
         {
             try
             {
@@ -67,10 +74,16 @@ namespace SCI1
 
                 if (Correo.Enviar(correo) == true)
                 {
-                    
-
                     MessageBox.Show("El e-mail fue enviado exitosamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtAsunto.Clear();
+                    this.txtCuerpo.Clear();
+                    this.dgvDestinatario.Rows.Clear();
+                    this.dgvArchivos.Rows.Clear();
+                    this.txtCorreo.Text = "";
+                    this.txtContraseña.Clear();
+                    this.txtAlias.Clear();
                 }
+                
             }
             catch (Exception ex)
             {
@@ -93,6 +106,12 @@ namespace SCI1
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             dgvArchivos.Rows.Clear();
+        }
+
+        private void tProgreso_Tick(object sender, EventArgs e)
+        {
+            conteo++;
+
         }
     }
 
