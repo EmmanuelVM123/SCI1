@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
@@ -52,8 +52,6 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAdjuntar = new System.Windows.Forms.Button();
             this.dgvArchivos = new System.Windows.Forms.DataGridView();
-            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjuntoQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCuerpo = new System.Windows.Forms.TextBox();
             this.txtAsunto = new System.Windows.Forms.TextBox();
@@ -64,6 +62,7 @@
             this.pBarEnviar = new System.Windows.Forms.ProgressBar();
             this.tProgreso = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -107,7 +106,6 @@
             this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRecargar.TabIndex = 1;
             this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnCerrar
             // 
@@ -158,7 +156,7 @@
             this.txtAlias.Location = new System.Drawing.Point(98, 52);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(228, 23);
-            this.txtAlias.TabIndex = 9;
+            this.txtAlias.TabIndex = 2;
             this.txtAlias.Text = "Coordinación Unidad Académica Lerdo de Tejada";
             // 
             // btnEnviarCorreo
@@ -205,7 +203,7 @@
             this.txtPuerto.Location = new System.Drawing.Point(98, 142);
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(64, 23);
-            this.txtPuerto.TabIndex = 4;
+            this.txtPuerto.TabIndex = 5;
             this.txtPuerto.Text = "25";
             // 
             // txtSMPT
@@ -213,7 +211,7 @@
             this.txtSMPT.Location = new System.Drawing.Point(98, 110);
             this.txtSMPT.Name = "txtSMPT";
             this.txtSMPT.Size = new System.Drawing.Size(228, 23);
-            this.txtSMPT.TabIndex = 3;
+            this.txtSMPT.TabIndex = 4;
             this.txtSMPT.Text = "smtp.gmail.com";
             // 
             // txtContraseña
@@ -222,7 +220,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(228, 23);
-            this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.TabIndex = 3;
             // 
             // txtCorreo
             // 
@@ -245,14 +243,14 @@
             this.dgvDestinatario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDestinatario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDestinatario.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDestinatario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correoDestino});
@@ -319,27 +317,12 @@
             this.dgvArchivos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArchivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.adjuntoArchivo,
-            this.adjuntoQuitar});
+            this.adjuntoArchivo});
             this.dgvArchivos.Location = new System.Drawing.Point(85, 474);
             this.dgvArchivos.Name = "dgvArchivos";
             this.dgvArchivos.ReadOnly = true;
             this.dgvArchivos.Size = new System.Drawing.Size(516, 143);
             this.dgvArchivos.TabIndex = 6;
-            // 
-            // adjuntoArchivo
-            // 
-            this.adjuntoArchivo.HeaderText = "Archivos";
-            this.adjuntoArchivo.Name = "adjuntoArchivo";
-            this.adjuntoArchivo.ReadOnly = true;
-            // 
-            // adjuntoQuitar
-            // 
-            this.adjuntoQuitar.HeaderText = "Quitar";
-            this.adjuntoQuitar.Name = "adjuntoQuitar";
-            this.adjuntoQuitar.ReadOnly = true;
-            this.adjuntoQuitar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.adjuntoQuitar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label8
             // 
@@ -396,6 +379,12 @@
             // tProgreso
             // 
             this.tProgreso.Tick += new System.EventHandler(this.tProgreso_Tick);
+            // 
+            // adjuntoArchivo
+            // 
+            this.adjuntoArchivo.HeaderText = "Archivos";
+            this.adjuntoArchivo.Name = "adjuntoArchivo";
+            this.adjuntoArchivo.ReadOnly = true;
             // 
             // EnviarRequisicion
             // 
@@ -454,11 +443,10 @@
         private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
-        private System.Windows.Forms.DataGridViewButtonColumn adjuntoQuitar;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ProgressBar pBarEnviar;
         private System.Windows.Forms.Timer tProgreso;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
     }
 }

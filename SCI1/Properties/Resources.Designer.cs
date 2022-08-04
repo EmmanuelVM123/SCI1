@@ -543,6 +543,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_subir_correo_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-subir-correo-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iconshock_Real_Vista_Project_Managment_Data_management {
             get {
                 object obj = ResourceManager.GetObject("Iconshock-Real-Vista-Project-Managment-Data-management", resourceCulture);

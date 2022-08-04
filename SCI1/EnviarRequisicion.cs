@@ -24,17 +24,7 @@ namespace SCI1
             this.Close();
         }
 
-        private void btnRecargar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void Enviar(sender e)
-        //{
-        //    this.btnEnviarCorreo_Click();
-        //}
-
-        private  void btnEnviarCorreo_Click(object sender, EventArgs e)
+        private async void btnEnviarCorreo_Click(object sender, EventArgs e)
         {
             try
             {

@@ -11,7 +11,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace SCI1
 {
-    public partial class Resumen : Form, VarDatosEntreForm 
+    public partial class Resumen : Form, VarDatosEntreForm
     {
         int n;
         public Resumen()
@@ -23,9 +23,13 @@ namespace SCI1
         {
             this.Close();
         }
-
+        public void ExportarExcel (DataGridView ArtículosARequisitar, ProgressBar Progreso)
+        {
+           
+        }
         private void btnEscribir_Click(object sender, EventArgs e)
         {
+            //ExportarExcel();
             try
             {
                 Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -35,8 +39,13 @@ namespace SCI1
                 Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
                 int counRecords = userRange.Rows.Count;
                 int add = counRecords + 1;
-                
-                
+                int ColumnIndex = 0;
+                foreach (DataGridViewColumn columna in dataGridView2.Columns)
+                {
+                    excel.Cells[14, 2] = columna.Name;
+                }
+
+
                 //Insertar NOMBRE DEL ÁREA SOLICITANTE en la CELDA D9
                 x.Cells[9, 4] = tbxArea.Text;
                 //Insertar FECHA de solicitud en la CELDA D11
@@ -47,16 +56,22 @@ namespace SCI1
                 //Insertar UNIDAD DE MEDIDA en la CELDA C14
                 x.Cells[14, 3] = tbxMedida.Text;
                 //Insertar NOMBRE DE ARTÍCULO en la CELDA D14
-                x.Cells[14, 4] = "*" + tbxArticulo.Text;
+                //foreach (var i in dataGridView1)
+                //{
+                //    x.Cells[14, 4]++;
+                //}
+                //x.Cells[14, 4] = "*" + tbxArticulo.Text;
                 //Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
                 x.Cells[27, 5] = tbxUso.Text;
-                
+
                 //Guardar lo cambios en el mismo documento
                 hoja.Save();
-                MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information) ;
-                hoja.PrintOutEx();                
-                hoja.Close(true, Type.Missing, Type.Missing);
-                excel.Quit();
+                MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                excel.Visible = true;
+                hoja.PrintOutEx();
+
+                //hoja.Close(true, Type.Missing, Type.Missing);
+                //excel.Quit();
                 this.tbxArea.Clear();
                 this.tbxCantidad.Clear();
                 this.tbxMedida.Clear();
@@ -74,17 +89,17 @@ namespace SCI1
         {
             if (dataGridView1.Rows.Count != 0)
             {
-                notifyIcon1.Text = "SCI ITSAV Prueba";
+                notifyIcon1.Text = "SCI ITSAV";
                 notifyIcon1.BalloonTipTitle = "Actualice stock o solicite una Requisición";
                 notifyIcon1.BalloonTipText = "La cantidad de algunos artículos está por debajo de lo normal";
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
                 notifyIcon1.ShowBalloonTip(4000);
                 notifyIcon1.Visible = true;
-                ;
+                
             }
             else
             {
-                notifyIcon1.Text = "SCI ITSAV Prueba";
+                notifyIcon1.Text = "SCI ITSAV";
                 notifyIcon1.BalloonTipTitle = "Excelentes noticias";
                 notifyIcon1.BalloonTipText = "Las cantidades de los artículos en inventario son normales";
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
@@ -96,8 +111,16 @@ namespace SCI1
         private void Resumen_Load(object sender, EventArgs e)
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
-            this.Notificacion();
             
+            this.Notificacion();
+            if (dataGridView1.Rows.Count != 0)
+            {
+                this.btnSolicitar.Enabled = true;
+            }
+            else
+            {
+                this.btnSolicitar.Enabled = false;   
+            }
         }
         private void btnRecargar_Click(object sender, EventArgs e)
         {
@@ -141,8 +164,17 @@ namespace SCI1
         {
             try
             {
-                DataGridViewRow fila = dataGridView1.SelectedRows[0] as DataGridViewRow;
-                TablaDeAgregarDatos(fila);
+                if(dataGridView1.Rows.Count != 0)
+                {
+                    btnSolicitar.Enabled = true;
+                    DataGridViewRow fila = dataGridView1.SelectedRows[0] as DataGridViewRow;
+                    TablaDeAgregarDatos(fila);
+                }
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    btnSolicitar.Enabled = false;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -159,8 +191,6 @@ namespace SCI1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-
             try
             {
                 dataGridView2.Rows.RemoveAt(n);

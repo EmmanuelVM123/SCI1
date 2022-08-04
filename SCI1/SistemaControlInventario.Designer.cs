@@ -442,7 +442,7 @@
             this.btnRequisicion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRequisicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRequisicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRequisicion.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_5_Product_sale_report;
+            this.btnRequisicion.Image = global::SCI1.Properties.Resources.icons8_subir_correo_32;
             this.btnRequisicion.Location = new System.Drawing.Point(0, 162);
             this.btnRequisicion.Name = "btnRequisicion";
             this.btnRequisicion.Size = new System.Drawing.Size(243, 50);

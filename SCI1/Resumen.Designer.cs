@@ -36,8 +36,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resumen));
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbxUso = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,13 +53,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSolicitar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.articuloARequisitarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
+            this.articuloARequisitar = new SCI1.SCIDataSetTableAdapters.ArticuloARequisitar();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRecargar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.IdArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,13 +74,8 @@
             this.IdUnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadNormal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadCritica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.articuloARequisitarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
-            this.articuloARequisitar = new SCI1.SCIDataSetTableAdapters.ArticuloARequisitar();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -85,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloARequisitarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -113,33 +114,9 @@
             this.label1.Text = "Resumen";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = global::SCI1.Properties.Resources.Reload_2_2_icon2;
-            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRecargar.TabIndex = 1;
-            this.btnRecargar.TabStop = false;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
-            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.tbxUso);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbxMedida);
@@ -236,9 +213,9 @@
             // 
             // btnEscribir
             // 
-            this.btnEscribir.Location = new System.Drawing.Point(457, 187);
+            this.btnEscribir.Location = new System.Drawing.Point(12, 187);
             this.btnEscribir.Name = "btnEscribir";
-            this.btnEscribir.Size = new System.Drawing.Size(90, 29);
+            this.btnEscribir.Size = new System.Drawing.Size(535, 29);
             this.btnEscribir.TabIndex = 1;
             this.btnEscribir.Text = "Enviar texto";
             this.btnEscribir.UseVisualStyleBackColor = true;
@@ -325,31 +302,14 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1014, 100);
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Medida";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 73;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 77;
-            // 
             // btnSolicitar
             // 
+            this.btnSolicitar.Enabled = false;
             this.btnSolicitar.Location = new System.Drawing.Point(442, 202);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(90, 29);
@@ -386,7 +346,6 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.seleccionar,
             this.IdArea,
             this.IdArticulo,
             this.NombreArticulo,
@@ -394,7 +353,8 @@
             this.Cantidad,
             this.IdUnidadMedida,
             this.CantidadNormal,
-            this.CantidadCritica});
+            this.CantidadCritica,
+            this.seleccionar});
             this.dataGridView1.DataSource = this.articuloARequisitarBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -409,12 +369,77 @@
             this.dataGridView1.Size = new System.Drawing.Size(1014, 186);
             this.dataGridView1.TabIndex = 1;
             // 
-            // seleccionar
+            // articuloARequisitarBindingSource
             // 
-            this.seleccionar.HeaderText = "Seleccionar";
-            this.seleccionar.Name = "seleccionar";
-            this.seleccionar.ReadOnly = true;
-            this.seleccionar.Width = 95;
+            this.articuloARequisitarBindingSource.DataMember = "ArticuloARequisitar";
+            this.articuloARequisitarBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // articuloARequisitar
+            // 
+            this.articuloARequisitar.ClearBeforeFill = true;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(558, 187);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(444, 29);
+            this.progressBar1.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Medida";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 73;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 77;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.Image = global::SCI1.Properties.Resources.Reload_2_2_icon2;
+            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
+            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRecargar.TabIndex = 1;
+            this.btnRecargar.TabStop = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = global::SCI1.Properties.Resources.pngegg;
+            this.btnCerrar.Location = new System.Drawing.Point(0, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // IdArea
             // 
@@ -462,6 +487,7 @@
             this.IdUnidadMedida.HeaderText = "Medida";
             this.IdUnidadMedida.Name = "IdUnidadMedida";
             this.IdUnidadMedida.ReadOnly = true;
+            this.IdUnidadMedida.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.IdUnidadMedida.Width = 83;
             // 
             // CantidadNormal
@@ -480,25 +506,13 @@
             this.CantidadCritica.ReadOnly = true;
             this.CantidadCritica.Width = 127;
             // 
-            // articuloARequisitarBindingSource
+            // seleccionar
             // 
-            this.articuloARequisitarBindingSource.DataMember = "ArticuloARequisitar";
-            this.articuloARequisitarBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // articuloARequisitar
-            // 
-            this.articuloARequisitar.ClearBeforeFill = true;
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            this.seleccionar.HeaderText = "Seleccionar";
+            this.seleccionar.Name = "seleccionar";
+            this.seleccionar.ReadOnly = true;
+            this.seleccionar.Visible = false;
+            this.seleccionar.Width = 95;
             // 
             // Resumen
             // 
@@ -515,8 +529,6 @@
             this.Load += new System.EventHandler(this.Resumen_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -526,6 +538,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloARequisitarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,7 +568,16 @@
         private SCIDataSetTableAdapters.ArticuloARequisitar articuloARequisitar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn seleccionar;
+        private System.Windows.Forms.Button btnSolicitar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdArticulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreArticulo;
@@ -563,14 +586,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUnidadMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadNormal;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadCritica;
-        private System.Windows.Forms.Button btnSolicitar;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn seleccionar;
     }
 }
