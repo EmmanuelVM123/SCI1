@@ -372,6 +372,7 @@
             this.inventarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioDataGridView.TabIndex = 0;
+            this.inventarioDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioDataGridView_CellFormatting);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -379,7 +380,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Área";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 65;
+            this.dataGridViewTextBoxColumn1.Width = 64;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -387,7 +388,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 47;
+            this.dataGridViewTextBoxColumn2.Width = 46;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -395,7 +396,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 84;
+            this.dataGridViewTextBoxColumn3.Width = 83;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -403,7 +404,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Descripción";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 115;
+            this.dataGridViewTextBoxColumn4.Width = 114;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -411,7 +412,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 94;
+            this.dataGridViewTextBoxColumn5.Width = 93;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -419,7 +420,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Medida";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 84;
+            this.dataGridViewTextBoxColumn6.Width = 83;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -435,7 +436,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad crítica";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 128;
+            this.dataGridViewTextBoxColumn8.Width = 127;
             // 
             // inventarioTableAdapter
             // 

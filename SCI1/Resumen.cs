@@ -40,9 +40,9 @@ namespace SCI1
                 int counRecords = userRange.Rows.Count;
                 int add = counRecords + 1;
                 int ColumnIndex = 0;
-                foreach (DataGridViewColumn columna in dataGridView2.Columns)
+                foreach (DataGridViewColumn columna in dataGridView1.Columns)
                 {
-                    excel.Cells[14, 2] = columna.Name;
+                    excel.Cells[14, 2] = columna.Selected;
                 }
 
 
@@ -56,7 +56,7 @@ namespace SCI1
                 //Insertar UNIDAD DE MEDIDA en la CELDA C14
                 x.Cells[14, 3] = tbxMedida.Text;
                 //Insertar NOMBRE DE ARTÍCULO en la CELDA D14
-                //foreach (var i in dataGridView1)
+                //foreach (DataGridViewColumn i in fila)
                 //{
                 //    x.Cells[14, 4]++;
                 //}
@@ -68,6 +68,7 @@ namespace SCI1
                 hoja.Save();
                 MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 excel.Visible = true;
+                Hide();
                 hoja.PrintOutEx();
 
                 //hoja.Close(true, Type.Missing, Type.Missing);
@@ -89,17 +90,17 @@ namespace SCI1
         {
             if (dataGridView1.Rows.Count != 0)
             {
-                notifyIcon1.Text = "SCI ITSAV";
+                notifyIcon1.Text = "SCI ITSAV \nSolicite una requisición";
                 notifyIcon1.BalloonTipTitle = "Actualice stock o solicite una Requisición";
                 notifyIcon1.BalloonTipText = "La cantidad de algunos artículos está por debajo de lo normal";
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
                 notifyIcon1.ShowBalloonTip(4000);
                 notifyIcon1.Visible = true;
-                
+
             }
             else
             {
-                notifyIcon1.Text = "SCI ITSAV";
+                notifyIcon1.Text = "SCI ITSAV \nTodo en orden";
                 notifyIcon1.BalloonTipTitle = "Excelentes noticias";
                 notifyIcon1.BalloonTipText = "Las cantidades de los artículos en inventario son normales";
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;

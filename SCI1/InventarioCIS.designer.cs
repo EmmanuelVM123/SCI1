@@ -435,6 +435,7 @@
             this.inventarioCISDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioCISDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioCISDataGridView.TabIndex = 0;
+            this.inventarioCISDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioCISDataGridView_CellFormatting);
             // 
             // IdArea
             // 
