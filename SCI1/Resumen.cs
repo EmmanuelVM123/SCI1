@@ -39,11 +39,11 @@ namespace SCI1
                 Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
                 int counRecords = userRange.Rows.Count;
                 int add = counRecords + 1;
-                int ColumnIndex = 0;
-                foreach (DataGridViewColumn columna in dataGridView1.Columns)
-                {
-                    excel.Cells[14, 2] = columna.Selected;
-                }
+                //int ColumnIndex = 0;
+                //foreach (DataGridViewColumn columna in dataGridView1.Columns)
+                //{
+                //    excel.Cells[14, 2] = columna.Selected;
+                //}
 
 
                 //Insertar NOMBRE DEL ÁREA SOLICITANTE en la CELDA D9
@@ -60,7 +60,7 @@ namespace SCI1
                 //{
                 //    x.Cells[14, 4]++;
                 //}
-                //x.Cells[14, 4] = "*" + tbxArticulo.Text;
+                x.Cells[14, 4] = "*" + tbxArticulo.Text;
                 //Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
                 x.Cells[27, 5] = tbxUso.Text;
 
@@ -68,7 +68,6 @@ namespace SCI1
                 hoja.Save();
                 MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 excel.Visible = true;
-                Hide();
                 hoja.PrintOutEx();
 
                 //hoja.Close(true, Type.Missing, Type.Missing);
@@ -90,7 +89,7 @@ namespace SCI1
         {
             if (dataGridView1.Rows.Count != 0)
             {
-                notifyIcon1.Text = "SCI ITSAV \nSolicite una requisición";
+                notifyIcon1.Text = "SCI ITSAV \n*Solicite una requisición \n**Actualice stock";
                 notifyIcon1.BalloonTipTitle = "Actualice stock o solicite una Requisición";
                 notifyIcon1.BalloonTipText = "La cantidad de algunos artículos está por debajo de lo normal";
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
@@ -114,7 +113,7 @@ namespace SCI1
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             
             this.Notificacion();
-            if (dataGridView1.Rows.Count != 0)
+            if (dataGridView1.Rows.Count > 0)
             {
                 this.btnSolicitar.Enabled = true;
             }
@@ -122,11 +121,40 @@ namespace SCI1
             {
                 this.btnSolicitar.Enabled = false;   
             }
+            if (dataGridView2.Rows.Count > 0)
+            {
+                this.btnRemover.Enabled = true;
+                this.btnLimpiar.Enabled = false;
+            }
+            else
+            {
+                this.btnRemover.Enabled = false;
+                this.btnLimpiar.Enabled = false;
+            }
         }
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             this.Notificacion();
+
+            if(dataGridView1.Rows.Count > 0)
+            {
+                this.btnSolicitar.Enabled = true;
+                this.btnLimpiar.Enabled = false;
+            }
+            else
+            {
+                this.btnSolicitar.Enabled = false;
+            }
+            if (dataGridView2.Rows.Count > 0)
+            {
+                this.btnRemover.Enabled = true;
+                this.btnLimpiar.Enabled = false;
+            }
+            else
+            {
+                this.btnRemover.Enabled = false;
+            }
         }
         
         public void TablaDeAgregarDatos(DataGridViewRow fila)
@@ -141,6 +169,7 @@ namespace SCI1
 
                     if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
                     {
+                        //this.errorProvider1.SetError(this.btnSolicitar, "Artículo repetido\nEl artículo '" + this.NombreArticulo.ToString() + "' ya fue agregado");
                         MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         DatosEnDGV = true;
                         break;
@@ -153,7 +182,20 @@ namespace SCI1
                     String NombreArticulo = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
                     String IdUnidadMedida = fila.Cells["IdUnidadMedida"].Value.ToString().ToUpper();
 
-                    this.dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
+                    switch (IdUnidadMedida)
+                    {
+                        case "1":
+                            IdUnidadMedida = "PZS";
+                            break;
+                        case "2":
+                            IdUnidadMedida = "LTS";
+                            break;
+                        case "3":
+                            IdUnidadMedida = "KGS";
+                            break;
+                    }
+
+                    dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
                 }
             }
             catch (Exception ex)
@@ -175,7 +217,9 @@ namespace SCI1
                 {
                     btnSolicitar.Enabled = false;
                 }
-                
+                this.btnRemover.Enabled = true;
+                this.btnLimpiar.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -190,11 +234,16 @@ namespace SCI1
             n = e.RowIndex;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnRemover_Click(object sender, EventArgs e)
         {
             try
             {
                 dataGridView2.Rows.RemoveAt(n);
+                if (dataGridView2.Rows.Count == 0)
+                {
+                    this.btnRemover.Enabled = false;
+                    this.btnLimpiar.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -202,9 +251,14 @@ namespace SCI1
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
+            if (dataGridView2.Rows.Count == 0)
+            {
+                this.btnLimpiar.Enabled = false;
+                this.btnRemover.Enabled = false;
+            }
         }
     }
 
