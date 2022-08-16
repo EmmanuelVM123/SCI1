@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Spreadsheet;
+using SpreadsheetLight;
+using Magnum.FileSystem;
 
 namespace SCI1
 {
@@ -23,66 +27,107 @@ namespace SCI1
         {
             this.Close();
         }
-        public void ExportarExcel (DataGridView ArtículosARequisitar, ProgressBar Progreso)
+        public void ExportarExcel ()
         {
-           
-        }
-        private void btnEscribir_Click(object sender, EventArgs e)
-        {
-            //ExportarExcel();
             try
             {
-                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook hoja = excel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");
-                Microsoft.Office.Interop.Excel.Worksheet x = excel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+                string pathFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/INFORMES LONJA/" + ".xlsx";
+                SLDocument sl = new SLDocument("RR.xlsx");
+                sl.SetCellValue(4,15, "PROBANDO...");
+                sl.SaveAs("TestExcel.xlsx"); 
+               
 
-                Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
-                int counRecords = userRange.Rows.Count;
-                int add = counRecords + 1;
-                //int ColumnIndex = 0;
-                //foreach (DataGridViewColumn columna in dataGridView1.Columns)
+                sl.SaveAs(pathFile);
+
+
+
+
+                //Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+                //Microsoft.Office.Interop.Excel.Workbook hoja = excel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");
+                //Microsoft.Office.Interop.Excel.Worksheet x = excel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+
+                //Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
+                //int counRecords = userRange.Rows.Count;
+                //int add = counRecords + 1;
+                ////int ColumnIndex = 0;
+                //foreach (DataGridViewRow row in dataGridView2.Rows)
                 //{
-                //    excel.Cells[14, 2] = columna.Selected;
+                //    excel.Cells[14, 2] = row.Selected;
                 //}
 
 
-                //Insertar NOMBRE DEL ÁREA SOLICITANTE en la CELDA D9
-                x.Cells[9, 4] = tbxArea.Text;
-                //Insertar FECHA de solicitud en la CELDA D11
-                DateTime fecha = DateTime.Today;
-                x.Cells[11, 4] = fecha.ToShortDateString();
-                //insertar CANTIDAD SOLICITADA en la CELDA B12
-                x.Cells[14, 2] = tbxCantidad.Text;
-                //Insertar UNIDAD DE MEDIDA en la CELDA C14
-                x.Cells[14, 3] = tbxMedida.Text;
-                //Insertar NOMBRE DE ARTÍCULO en la CELDA D14
-                //foreach (DataGridViewColumn i in fila)
-                //{
-                //    x.Cells[14, 4]++;
-                //}
-                x.Cells[14, 4] = "*" + tbxArticulo.Text;
-                //Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
-                x.Cells[27, 5] = tbxUso.Text;
+                ////Insertar NOMBRE DEL ÁREA SOLICITANTE en la CELDA D9
+                //x.Cells[9, 4] = tbxArea.Text;
+                ////Insertar FECHA de solicitud en la CELDA D11
+                //DateTime fecha = DateTime.Today;
+                //x.Cells[11, 4] = fecha.ToShortDateString();
+                ////insertar CANTIDAD SOLICITADA en la CELDA B12
+                //x.Cells[14, 2] = tbxCantidad.Text;
+                ////Insertar UNIDAD DE MEDIDA en la CELDA C14
+                //x.Cells[14, 3] = tbxMedida.Text;
+                ////Insertar NOMBRE DE ARTÍCULO en la CELDA D14
+                ////foreach (DataGridViewColumn i in fila)
+                ////{
+                ////    x.Cells[14, 4]++;
+                ////}
+                ////x.Cells[14, 4] = "*" + tbxArticulo.Text;
+                ////Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
+                //x.Cells[27, 5] = tbxUso.Text;
 
-                //Guardar lo cambios en el mismo documento
-                hoja.Save();
+                ////Guardar lo cambios en el mismo documento
+                //hoja.Save();
                 MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                excel.Visible = true;
-                hoja.PrintOutEx();
+                //excel.Visible = true;
+                //hoja.PrintOutEx();
 
-                //hoja.Close(true, Type.Missing, Type.Missing);
-                //excel.Quit();
-                this.tbxArea.Clear();
-                this.tbxCantidad.Clear();
-                this.tbxMedida.Clear();
-                this.tbxArticulo.Clear();
-                this.tbxUso.Clear();
+                ////hoja.Close(true, Type.Missing, Type.Missing);
+                ////excel.Quit();
+                //this.tbxArea.Clear();
+                //this.tbxCantidad.Clear();
+                //this.tbxMedida.Clear();
+                //this.tbxArticulo.Clear();
+                //this.tbxUso.Clear();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            ExportarExcel();
+
+        }
+
+        public void ExportarDatos(DataGridView dataListado)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook hoja = exportarExcel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");
+            int indiceColumna = 0;
+            StringConverter stringConverter = new StringConverter();
+            stringConverter.ConvertToString(dataListado = dataGridView2);
+            foreach (DataGridViewColumn columna in dataListado.Columns)
+            {
+                indiceColumna++;
+
+                exportarExcel.Cells[1, indiceColumna] = columna.Name;
+            }
+
+            int indiceFila = 0;
+            foreach (DataGridViewRow fila in dataListado.Rows)
+            {
+                indiceFila++;
+                indiceColumna = 0;
+                foreach (DataGridViewColumn columna in dataListado.Columns)
+                {
+                    indiceColumna++;
+                    exportarExcel.Cells[indiceFila + 1, indiceColumna] = fila.Cells[columna.Name].Value;
+                }
+            }
+
+            exportarExcel.Visible = true;
+
         }
 
         public void Notificacion()
@@ -149,7 +194,7 @@ namespace SCI1
             if (dataGridView2.Rows.Count > 0)
             {
                 this.btnRemover.Enabled = true;
-                this.btnLimpiar.Enabled = false;
+                this.btnLimpiar.Enabled = true;
             }
             else
             {

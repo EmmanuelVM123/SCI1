@@ -67,6 +67,7 @@ namespace SCI1
                     MessageBox.Show("El e-mail fue enviado exitosamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtAsunto.Clear();
                     this.txtCuerpo.Clear();
+                    this.btnLimpiar.Enabled = false;
                     this.dgvDestinatario.Rows.Clear();
                     this.dgvArchivos.Rows.Clear();
                     this.txtCorreo.Text = "";
@@ -91,17 +92,33 @@ namespace SCI1
                 var archivos = open.FileName;
                 dgvArchivos.Rows.Add(archivos);    
             }
+            if (dgvArchivos.Rows.Count > 0)
+            {
+                this.btnLimpiar.Enabled = true;
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             dgvArchivos.Rows.Clear();
+            if (dgvArchivos.Rows.Count == 0)
+            {
+                this.btnLimpiar.Enabled = false;
+            }
         }
 
         private void tProgreso_Tick(object sender, EventArgs e)
         {
             conteo++;
 
+        }
+
+        private void EnviarRequisicion_Load(object sender, EventArgs e)
+        {
+            if (dgvArchivos.Rows.Count == 0)
+            {
+                this.btnLimpiar.Enabled = false;
+            }
         }
     }
 

@@ -523,6 +523,36 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_eliminar_propiedad_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eliminar-propiedad-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_insertar_fila_debajo_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-insertar-fila-debajo-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_insertar_fila_debajo_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-insertar-fila-debajo-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_resume_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-resume-32", resourceCulture);
@@ -856,6 +886,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap Oración {
             get {
                 object obj = ResourceManager.GetObject("Oración", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oxygen_Icons_org_Oxygen_Emblems_vcs_update_required {
+            get {
+                object obj = ResourceManager.GetObject("Oxygen-Icons.org-Oxygen-Emblems-vcs-update-required", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
