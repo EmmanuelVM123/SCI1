@@ -70,9 +70,9 @@ namespace SCI1
                     this.btnLimpiar.Enabled = false;
                     this.dgvDestinatario.Rows.Clear();
                     this.dgvArchivos.Rows.Clear();
-                    this.txtCorreo.Text = "";
-                    this.txtContraseña.Clear();
-                    this.txtAlias.Clear();
+                    //this.txtCorreo.Text = "";
+                    //this.txtContraseña.Clear();
+                    //this.txtAlias.Clear();
                 }
                 
             }

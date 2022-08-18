@@ -432,7 +432,7 @@
             this.inventarioITNDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioITNDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioITNDataGridView.TabIndex = 0;
-            this.inventarioITNDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioITNDataGridView_CellFormatting);
+            
             // 
             // idAreaDataGridViewTextBoxColumn
             // 

@@ -31,16 +31,10 @@ namespace SCI1
         {
             try
             {
-                string pathFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/INFORMES LONJA/" + ".xlsx";
+                
                 SLDocument sl = new SLDocument("RR.xlsx");
                 sl.SetCellValue(4,15, "PROBANDO...");
-                sl.SaveAs("TestExcel.xlsx"); 
-               
-
-                sl.SaveAs(pathFile);
-
-
-
+                sl.Save(); 
 
                 //Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
                 //Microsoft.Office.Interop.Excel.Workbook hoja = excel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");

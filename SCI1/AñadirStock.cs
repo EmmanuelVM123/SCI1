@@ -113,12 +113,32 @@ namespace SCI1
 
         private void inventarioDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.inventarioDataGridView.Columns[e.ColumnIndex].Name == "Cantidad")
-                if (Convert.ToInt32(e.Value) <= 2)
+            bool cn = inventarioDataGridView.Columns[e.ColumnIndex].Index == 6;
+            bool cc = inventarioDataGridView.Columns[e.ColumnIndex].Index == 7;
+
+
+
+            if (inventarioDataGridView.Columns[e.ColumnIndex].Index == 4)
+            {
+                if (Convert.ToInt32(e.Value) >= Convert.ToInt32(cn))
                 {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle.BackColor = Color.Orange;
+                    
+                    e.CellStyle.ForeColor = Color.White;
+                    e.CellStyle.BackColor = System.Drawing.Color.SteelBlue;
                 }
+                if (Convert.ToInt32(e.Value) != Convert.ToInt32(cc) && Convert.ToInt32(e.Value) < Convert.ToInt32(cn))
+                {
+                    e.CellStyle.ForeColor = System.Drawing.Color.Red;
+                    e.CellStyle.BackColor = System.Drawing.Color.FloralWhite;
+                }
+                
+                if (Convert.ToInt32(e.Value) < Convert.ToInt32(cn))
+                {
+                    e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
+                    e.CellStyle.BackColor = System.Drawing.Color.LightYellow;
+                }
+                              
+            }
         }
     }
 }

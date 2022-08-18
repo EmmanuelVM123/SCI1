@@ -32,8 +32,6 @@ namespace SCI1
         }
         private void InventarioCIS_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sCIDataSet.Inventario' Puede moverla o quitarla según sea necesario.
-            this.inventarioTableAdapter.Fill(this.sCIDataSet.Inventario);
             this.CargaDatos();
         }
         private void ModoEdicion(string modo)
@@ -120,16 +118,6 @@ namespace SCI1
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
-        }
-
-        private void inventarioCISDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (this.inventarioCISDataGridView.Columns[e.ColumnIndex].Name == "Cantidad")
-                if (Convert.ToInt32(e.Value) <=2)
-                {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle.BackColor = Color.Orange;
-                }
         }
     }
 }

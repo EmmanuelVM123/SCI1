@@ -119,15 +119,5 @@ namespace SCI1
             this.CargaDatos();
 
         }
-
-        private void inventarioITNDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (this.inventarioITNDataGridView.Columns[e.ColumnIndex].Name == "Cantidad")
-                if (Convert.ToInt32(e.Value) <= 3)
-                {
-                    e.CellStyle.ForeColor = Color.Red;
-                    e.CellStyle.BackColor = Color.Orange;
-                }
-        }
     }
 }
