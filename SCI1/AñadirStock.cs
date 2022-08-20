@@ -122,11 +122,10 @@ namespace SCI1
             {
                 if (Convert.ToInt32(e.Value) >= Convert.ToInt32(cn))
                 {
-                    
                     e.CellStyle.ForeColor = Color.White;
                     e.CellStyle.BackColor = System.Drawing.Color.SteelBlue;
                 }
-                if (Convert.ToInt32(e.Value) != Convert.ToInt32(cc) && Convert.ToInt32(e.Value) < Convert.ToInt32(cn))
+                if (Convert.ToInt32(e.Value) == Convert.ToInt32(cc) )
                 {
                     e.CellStyle.ForeColor = System.Drawing.Color.Red;
                     e.CellStyle.BackColor = System.Drawing.Color.FloralWhite;
