@@ -51,6 +51,7 @@
             this.btnITN = new System.Windows.Forms.Button();
             this.btnCIS = new System.Windows.Forms.Button();
             this.btnIAreas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnRequisicion = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -71,7 +72,7 @@
             this.panelInicial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInicial.Location = new System.Drawing.Point(0, 0);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(1584, 861);
+            this.panelInicial.Size = new System.Drawing.Size(1389, 904);
             this.panelInicial.TabIndex = 0;
             // 
             // panelContenedor
@@ -81,7 +82,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(260, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1324, 861);
+            this.panelContenedor.Size = new System.Drawing.Size(1129, 904);
             this.panelContenedor.TabIndex = 1;
             // 
             // panelLateral
@@ -97,7 +98,7 @@
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(260, 861);
+            this.panelLateral.Size = new System.Drawing.Size(260, 904);
             this.panelLateral.TabIndex = 0;
             // 
             // panelBajas
@@ -105,7 +106,7 @@
             this.panelBajas.Controls.Add(this.btnDisminuirExistencia);
             this.panelBajas.Controls.Add(this.btnEliminarArticulo);
             this.panelBajas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBajas.Location = new System.Drawing.Point(0, 764);
+            this.panelBajas.Location = new System.Drawing.Point(0, 810);
             this.panelBajas.Name = "panelBajas";
             this.panelBajas.Size = new System.Drawing.Size(243, 100);
             this.panelBajas.TabIndex = 6;
@@ -116,7 +117,7 @@
             this.panelAltas.Controls.Add(this.btnAñadirExistencia);
             this.panelAltas.Controls.Add(this.btnAñadirArticulo);
             this.panelAltas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAltas.Location = new System.Drawing.Point(0, 614);
+            this.panelAltas.Location = new System.Drawing.Point(0, 660);
             this.panelAltas.Name = "panelAltas";
             this.panelAltas.Size = new System.Drawing.Size(243, 100);
             this.panelAltas.TabIndex = 4;
@@ -132,7 +133,7 @@
             this.panelAreas.Controls.Add(this.button2);
             this.panelAreas.Controls.Add(this.btnCIS);
             this.panelAreas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAreas.Location = new System.Drawing.Point(0, 264);
+            this.panelAreas.Location = new System.Drawing.Point(0, 310);
             this.panelAreas.Name = "panelAreas";
             this.panelAreas.Size = new System.Drawing.Size(243, 300);
             this.panelAreas.TabIndex = 2;
@@ -155,13 +156,14 @@
             // 
             // panelUsuarioResumen
             // 
+            this.panelUsuarioResumen.Controls.Add(this.button1);
             this.panelUsuarioResumen.Controls.Add(this.btnRequisicion);
             this.panelUsuarioResumen.Controls.Add(this.btnResumen);
             this.panelUsuarioResumen.Controls.Add(this.panelUsuario);
             this.panelUsuarioResumen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsuarioResumen.Location = new System.Drawing.Point(0, 0);
             this.panelUsuarioResumen.Name = "panelUsuarioResumen";
-            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 214);
+            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 260);
             this.panelUsuarioResumen.TabIndex = 0;
             // 
             // panelUsuario
@@ -225,7 +227,7 @@
             this.btnBajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBajas.Image = global::SCI1.Properties.Resources.data_download_icon__1_;
-            this.btnBajas.Location = new System.Drawing.Point(0, 714);
+            this.btnBajas.Location = new System.Drawing.Point(0, 760);
             this.btnBajas.Name = "btnBajas";
             this.btnBajas.Size = new System.Drawing.Size(243, 50);
             this.btnBajas.TabIndex = 5;
@@ -288,7 +290,7 @@
             this.btnAltas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltas.Image = global::SCI1.Properties.Resources.data_upload_icon;
-            this.btnAltas.Location = new System.Drawing.Point(0, 564);
+            this.btnAltas.Location = new System.Drawing.Point(0, 610);
             this.btnAltas.Name = "btnAltas";
             this.btnAltas.Size = new System.Drawing.Size(243, 50);
             this.btnAltas.TabIndex = 3;
@@ -435,7 +437,7 @@
             this.btnIAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIAreas.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Inventory_maintenance;
             this.btnIAreas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIAreas.Location = new System.Drawing.Point(0, 214);
+            this.btnIAreas.Location = new System.Drawing.Point(0, 260);
             this.btnIAreas.Name = "btnIAreas";
             this.btnIAreas.Size = new System.Drawing.Size(243, 50);
             this.btnIAreas.TabIndex = 1;
@@ -444,6 +446,26 @@
             this.btnIAreas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIAreas.UseVisualStyleBackColor = true;
             this.btnIAreas.Click += new System.EventHandler(this.btnIAreas_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::SCI1.Properties.Resources.icons8_reporte_de_negocios_32;
+            this.button1.Location = new System.Drawing.Point(0, 212);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(243, 50);
+            this.button1.TabIndex = 4;
+            this.button1.Tag = "";
+            this.button1.Text = "       Reportes";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnRequisicion
             // 
@@ -502,7 +524,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.ClientSize = new System.Drawing.Size(1389, 904);
             this.Controls.Add(this.panelInicial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1364, 718);
@@ -550,5 +572,6 @@
         public System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnRequisicion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

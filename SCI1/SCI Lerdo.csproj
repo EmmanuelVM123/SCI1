@@ -518,6 +518,8 @@
     <None Include="Resources\icons8-eliminar-propiedad-32.png" />
     <None Include="Resources\Logo ITSAV.png" />
     <None Include="Resources\Logo ITSAV1.png" />
+    <None Include="Resources\icons8-reporte-de-negocios-32.png" />
+    <None Include="Resources\icons8-generador-automotriz-32.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />

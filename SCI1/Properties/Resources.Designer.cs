@@ -533,6 +533,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_generador_automotriz_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-generador-automotriz-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_insertar_fila_debajo_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-insertar-fila-debajo-32", resourceCulture);
@@ -546,6 +556,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap icons8_insertar_fila_debajo_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-insertar-fila-debajo-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reporte_de_negocios_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reporte-de-negocios-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -37,22 +37,18 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.tbxUso = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbxMedida = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbxCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbxArea = new System.Windows.Forms.TextBox();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.tbxArticulo = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IdArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,13 +65,16 @@
             this.articuloARequisitar = new SCI1.SCIDataSetTableAdapters.ArticuloARequisitar();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnSolicitar = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panelTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,38 +117,22 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.tbxUso);
+            this.panel1.Controls.Add(this.comboBox4);
+            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.tbxMedida);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.tbxCantidad);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.tbxArea);
             this.panel1.Controls.Add(this.btnEnviar);
-            this.panel1.Controls.Add(this.tbxArticulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1014, 223);
             this.panel1.TabIndex = 4;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(558, 187);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(444, 29);
-            this.progressBar1.TabIndex = 7;
-            // 
-            // tbxUso
-            // 
-            this.tbxUso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxUso.Location = new System.Drawing.Point(49, 151);
-            this.tbxUso.Name = "tbxUso";
-            this.tbxUso.Size = new System.Drawing.Size(560, 20);
-            this.tbxUso.TabIndex = 10;
             // 
             // label6
             // 
@@ -159,14 +142,6 @@
             this.label6.Size = new System.Drawing.Size(142, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Lo anterior para ser utilizado:";
-            // 
-            // tbxMedida
-            // 
-            this.tbxMedida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxMedida.Location = new System.Drawing.Point(343, 91);
-            this.tbxMedida.Name = "tbxMedida";
-            this.tbxMedida.Size = new System.Drawing.Size(272, 20);
-            this.tbxMedida.TabIndex = 8;
             // 
             // label5
             // 
@@ -212,32 +187,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Área solicitante";
             // 
-            // tbxArea
-            // 
-            this.tbxArea.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxArea.Location = new System.Drawing.Point(49, 35);
-            this.tbxArea.Name = "tbxArea";
-            this.tbxArea.Size = new System.Drawing.Size(272, 20);
-            this.tbxArea.TabIndex = 2;
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.Location = new System.Drawing.Point(12, 187);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(535, 29);
-            this.btnEnviar.TabIndex = 1;
-            this.btnEnviar.Text = "Enviar texto";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEscribir_Click);
-            // 
-            // tbxArticulo
-            // 
-            this.tbxArticulo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxArticulo.Location = new System.Drawing.Point(343, 35);
-            this.tbxArticulo.Name = "tbxArticulo";
-            this.tbxArticulo.Size = new System.Drawing.Size(266, 20);
-            this.tbxArticulo.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnLimpiar);
@@ -250,19 +199,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1014, 540);
             this.panel2.TabIndex = 5;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
-            this.btnLimpiar.Location = new System.Drawing.Point(776, 347);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(120, 40);
-            this.btnLimpiar.TabIndex = 6;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // panel4
             // 
@@ -306,6 +242,26 @@
             this.dataGridView2.Size = new System.Drawing.Size(1014, 100);
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Medida";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 73;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 77;
             // 
             // panel3
             // 
@@ -455,25 +411,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dataGridViewTextBoxColumn1
+            // btnLimpiar
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Medida";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 73;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 77;
+            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
+            this.btnLimpiar.Location = new System.Drawing.Point(776, 347);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(120, 40);
+            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnRemover
             // 
@@ -504,6 +453,18 @@
             this.btnSolicitar.UseVisualStyleBackColor = true;
             this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
             // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Image = global::SCI1.Properties.Resources.icons8_generador_automotriz_32;
+            this.btnEnviar.Location = new System.Drawing.Point(182, 177);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(296, 40);
+            this.btnEnviar.TabIndex = 1;
+            this.btnEnviar.Text = "Generar requisición";
+            this.btnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEscribir_Click);
+            // 
             // btnRecargar
             // 
             this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -528,6 +489,50 @@
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "PZS",
+            "KGS",
+            "LTS"});
+            this.comboBox1.Location = new System.Drawing.Point(343, 91);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(266, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(343, 35);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(266, 21);
+            this.comboBox2.TabIndex = 12;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "",
+            "CIS",
+            "ITN",
+            "MNT",
+            "SGR",
+            "LBC",
+            "AMT"});
+            this.comboBox3.Location = new System.Drawing.Point(49, 35);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(272, 21);
+            this.comboBox3.TabIndex = 13;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(49, 150);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(560, 21);
+            this.comboBox4.TabIndex = 14;
             // 
             // Resumen
             // 
@@ -569,15 +574,11 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEnviar;
-        public System.Windows.Forms.TextBox tbxArticulo;
-        public System.Windows.Forms.TextBox tbxArea;
-        public System.Windows.Forms.TextBox tbxMedida;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox tbxCantidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox tbxUso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private SCIDataSet sCIDataSet;
@@ -590,7 +591,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdArticulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreArticulo;
@@ -605,5 +605,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
