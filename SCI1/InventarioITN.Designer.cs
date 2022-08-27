@@ -398,7 +398,7 @@
             this.inventarioITNDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -431,7 +431,7 @@
             this.inventarioITNDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -449,7 +449,7 @@
             this.IdArea.HeaderText = "Area";
             this.IdArea.Name = "IdArea";
             this.IdArea.ReadOnly = true;
-            this.IdArea.Width = 66;
+            this.IdArea.Width = 64;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -457,7 +457,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 48;
+            this.dataGridViewTextBoxColumn2.Width = 46;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -465,7 +465,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 89;
+            this.dataGridViewTextBoxColumn3.Width = 83;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -473,7 +473,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Descripcion";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 122;
+            this.dataGridViewTextBoxColumn4.Width = 114;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -481,7 +481,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 98;
+            this.dataGridViewTextBoxColumn5.Width = 93;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -489,7 +489,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Medida";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 86;
+            this.dataGridViewTextBoxColumn6.Width = 83;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -497,7 +497,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Cantidad normal";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 141;
+            this.dataGridViewTextBoxColumn7.Width = 132;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -505,7 +505,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad crítica";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 136;
+            this.dataGridViewTextBoxColumn8.Width = 127;
             // 
             // errorProvider1
             // 

@@ -44,8 +44,6 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.cantidadCriticaNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sCIDataSet = new SCI1.SCIDataSet();
             this.cantidadNormalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.idUnidadMedidaComboBox = new System.Windows.Forms.ComboBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
@@ -57,6 +55,8 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.panelDGV = new System.Windows.Forms.Panel();
             this.inventarioCISDataGridView = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.IdArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +65,11 @@
             this.IdUnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadNormal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadCritica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventarioCISBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
             this.inventarioCISTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioCISTableAdapter();
             this.tableAdapterManager = new SCI1.SCIDataSetTableAdapters.TableAdapterManager();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.inventarioTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioTableAdapter();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             idArticuloLabel = new System.Windows.Forms.Label();
             idAreaLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
@@ -82,12 +82,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).BeginInit();
             this.panelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // idArticuloLabel
@@ -144,9 +144,9 @@
             cantidadNormalLabel.AutoSize = true;
             cantidadNormalLabel.Location = new System.Drawing.Point(172, 118);
             cantidadNormalLabel.Name = "cantidadNormalLabel";
-            cantidadNormalLabel.Size = new System.Drawing.Size(88, 13);
+            cantidadNormalLabel.Size = new System.Drawing.Size(86, 13);
             cantidadNormalLabel.TabIndex = 13;
-            cantidadNormalLabel.Text = "Cantidad Normal:";
+            cantidadNormalLabel.Text = "Cantidad normal:";
             // 
             // cantidadCriticaLabel
             // 
@@ -154,9 +154,9 @@
             cantidadCriticaLabel.AutoSize = true;
             cantidadCriticaLabel.Location = new System.Drawing.Point(393, 116);
             cantidadCriticaLabel.Name = "cantidadCriticaLabel";
-            cantidadCriticaLabel.Size = new System.Drawing.Size(84, 13);
+            cantidadCriticaLabel.Size = new System.Drawing.Size(83, 13);
             cantidadCriticaLabel.TabIndex = 15;
-            cantidadCriticaLabel.Text = "Cantidad Critica:";
+            cantidadCriticaLabel.Text = "Cantidad critica:";
             // 
             // panelTitulo
             // 
@@ -244,16 +244,6 @@
             this.cantidadCriticaNumericUpDown.Name = "cantidadCriticaNumericUpDown";
             this.cantidadCriticaNumericUpDown.Size = new System.Drawing.Size(96, 20);
             this.cantidadCriticaNumericUpDown.TabIndex = 16;
-            // 
-            // inventarioCISBindingSource
-            // 
-            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
-            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cantidadNormalNumericUpDown
             // 
@@ -435,7 +425,15 @@
             this.inventarioCISDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioCISDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioCISDataGridView.TabIndex = 0;
-            //this.inventarioCISDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioCISDataGridView_CellFormatting);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // IdArea
             // 
@@ -501,6 +499,16 @@
             this.CantidadCritica.ReadOnly = true;
             this.CantidadCritica.Width = 127;
             // 
+            // inventarioCISBindingSource
+            // 
+            this.inventarioCISBindingSource.DataMember = "InventarioCIS";
+            this.inventarioCISBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // inventarioCISTableAdapter
             // 
             this.inventarioCISTableAdapter.ClearBeforeFill = true;
@@ -523,18 +531,9 @@
             this.tableAdapterManager.UpdateOrder = SCI1.SCIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // inventarioTableAdapter
             // 
             this.inventarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // InventarioCIS
             // 
@@ -555,12 +554,12 @@
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadCriticaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadNormalNumericUpDown)).EndInit();
             this.panelDGV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventarioCISDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioCISBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

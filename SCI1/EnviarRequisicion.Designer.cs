@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRecargar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.gbxEnvio = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@
             this.tProgreso = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.gbxEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).BeginInit();
@@ -76,7 +74,6 @@
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panelTitulo.Controls.Add(this.label1);
-            this.panelTitulo.Controls.Add(this.btnRecargar);
             this.panelTitulo.Controls.Add(this.btnCerrar);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
@@ -94,18 +91,6 @@
             this.label1.Size = new System.Drawing.Size(155, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enviar requisición ";
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecargar.Image = global::SCI1.Properties.Resources.Zhoolego_Material_Control_Panel;
-            this.btnRecargar.Location = new System.Drawing.Point(989, 0);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(25, 25);
-            this.btnRecargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRecargar.TabIndex = 1;
-            this.btnRecargar.TabStop = false;
             // 
             // btnCerrar
             // 
@@ -402,7 +387,6 @@
             this.Load += new System.EventHandler(this.EnviarRequisicion_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.gbxEnvio.ResumeLayout(false);
             this.gbxEnvio.PerformLayout();
@@ -418,7 +402,6 @@
 
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.GroupBox gbxEnvio;
         private System.Windows.Forms.Button btnEnviarCorreo;
