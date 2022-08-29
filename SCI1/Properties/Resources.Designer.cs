@@ -853,6 +853,36 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menos {
+            get {
+                object obj = ResourceManager.GetObject("menos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menos1 {
+            get {
+                object obj = ResourceManager.GetObject("menos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menos2 {
+            get {
+                object obj = ResourceManager.GetObject("menos2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -866,6 +896,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap menu2 {
             get {
                 object obj = ResourceManager.GetObject("menu2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minimizar_png {
+            get {
+                object obj = ResourceManager.GetObject("Minimizar png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

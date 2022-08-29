@@ -534,6 +534,10 @@
     <None Include="Resources\Logo ITSAV2.png" />
     <None Include="Resources\icons8-enter-48.png" />
     <None Include="Resources\icons8-abrir-en-popup-32.png" />
+    <None Include="Resources\Minimizar png.png" />
+    <None Include="Resources\menos.png" />
+    <None Include="Resources\menos1.png" />
+    <None Include="Resources\menos2.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />
