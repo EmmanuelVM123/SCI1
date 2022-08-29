@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAriiba = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             this.bntCerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelAriiba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
@@ -125,17 +125,17 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Sistema de Control de Inventario UA Lerdo";
             // 
-            // panel2
+            // panelAriiba
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(195)))), ((int)(((byte)(161)))));
-            this.panel2.Controls.Add(this.btnMinizar);
-            this.panel2.Controls.Add(this.bntCerrar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(767, 30);
-            this.panel2.TabIndex = 6;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panelAriiba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(195)))), ((int)(((byte)(161)))));
+            this.panelAriiba.Controls.Add(this.btnMinizar);
+            this.panelAriiba.Controls.Add(this.bntCerrar);
+            this.panelAriiba.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAriiba.Location = new System.Drawing.Point(0, 0);
+            this.panelAriiba.Name = "panelAriiba";
+            this.panelAriiba.Size = new System.Drawing.Size(767, 30);
+            this.panelAriiba.TabIndex = 6;
+            this.panelAriiba.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelArriba_MouseDown);
             // 
             // panel3
             // 
@@ -198,7 +198,7 @@
             this.bntCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bntCerrar.TabIndex = 5;
             this.bntCerrar.TabStop = false;
-            this.bntCerrar.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.bntCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // InicioSecion
             // 
@@ -215,7 +215,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAriiba);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -227,7 +227,7 @@
             this.Text = "Iniciar Sesión";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelAriiba.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
@@ -248,7 +248,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox bntCerrar;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelAriiba;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox btnMinizar;
     }
