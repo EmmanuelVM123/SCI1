@@ -149,6 +149,8 @@ namespace SCI1
 
         private void Resumen_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sCIDataSet.Inventario' Puede moverla o quitarla según sea necesario.
+            this.inventarioTableAdapter.Fill(this.sCIDataSet.Inventario);
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             
             this.Notificacion();

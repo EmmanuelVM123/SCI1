@@ -282,6 +282,12 @@
     <Compile Include="EnviarRequisicion.Designer.cs">
       <DependentUpon>EnviarRequisicion.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioSecion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSecion.Designer.cs">
+      <DependentUpon>InicioSecion.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventarioAMT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     <EmbeddedResource Include="EnviarRequisicion.resx">
       <DependentUpon>EnviarRequisicion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InicioSecion.resx">
+      <DependentUpon>InicioSecion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventarioAMT.resx">
       <DependentUpon>InventarioAMT.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +441,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pngwing.com %2819%29.png" />
     <None Include="Resources\Use Case Diagram.jpg" />
     <None Include="Resources\Use Case Diagram %284%29.jpg" />
     <None Include="Resources\Use Case Diagram %283%29.jpg" />
@@ -472,6 +482,7 @@
     <None Include="Resources\Amor Eterno.jpg" />
     <None Include="Resources\Así debe de ser.jpg" />
     <None Include="Resources\Cuidado.jpg" />
+    <None Include="Resources\cerrar-sesion %281%29.png" />
     <Content Include="Resources\Custom-Icon-Design-Flatastic-4-Male-user-remove.ico" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-4-Package-add.ico" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-4-Package-delete.ico" />
@@ -520,6 +531,9 @@
     <None Include="Resources\Logo ITSAV1.png" />
     <None Include="Resources\icons8-reporte-de-negocios-32.png" />
     <None Include="Resources\icons8-generador-automotriz-32.png" />
+    <None Include="Resources\Logo ITSAV2.png" />
+    <None Include="Resources\icons8-enter-48.png" />
+    <None Include="Resources\icons8-abrir-en-popup-32.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />

@@ -16,7 +16,7 @@ namespace SCI1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SistemaControlInventario());
+            Application.Run(new InicioSecion());
         }
     }
 }

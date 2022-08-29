@@ -253,6 +253,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerrar_sesion__1_ {
+            get {
+                object obj = ResourceManager.GetObject("cerrar-sesion (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
@@ -473,6 +483,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_abrir_en_popup_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-abrir-en-popup-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_adjuntar_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-adjuntar-50", resourceCulture);
@@ -526,6 +546,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap icons8_eliminar_propiedad_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eliminar-propiedad-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_enter_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-enter-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -716,6 +746,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap Logo_ITSAV11 {
             get {
                 object obj = ResourceManager.GetObject("Logo ITSAV11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_ITSAV2 {
+            get {
+                object obj = ResourceManager.GetObject("Logo ITSAV2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -996,6 +1036,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap pngegg {
             get {
                 object obj = ResourceManager.GetObject("pngegg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__19_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (19)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
