@@ -69,7 +69,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(335, 132);
             this.label1.Name = "label1";
@@ -108,7 +107,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(335, 198);
             this.label2.Name = "label2";

@@ -155,6 +155,7 @@ namespace SCI1
         }
         private void CerrarSesion(object sender, FormClosedEventArgs e)
         {
+            this.errorProvider.Clear();
             txtUsuario.Text = "Usuario";
             txtUsuario.ForeColor = Color.Silver;
 
