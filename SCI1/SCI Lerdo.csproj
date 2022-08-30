@@ -538,6 +538,7 @@
     <None Include="Resources\menos.png" />
     <None Include="Resources\menos1.png" />
     <None Include="Resources\menos2.png" />
+    <None Include="Resources\icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />

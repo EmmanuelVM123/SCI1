@@ -181,6 +181,14 @@ namespace SCI1
         {
             btnResumen_Click(sender, e);
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está segur@ de cerrar la sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 
     class panelContenedor

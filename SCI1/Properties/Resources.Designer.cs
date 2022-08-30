@@ -523,6 +523,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cierre_de_sesión_redondeado_hacia_la_izquierda_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_dinámica_negativa_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dinámica-negativa-64", resourceCulture);

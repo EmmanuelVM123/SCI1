@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
 using System.Runtime.InteropServices;
 
 namespace SCI1
@@ -21,11 +20,14 @@ namespace SCI1
             InitializeComponent();
             conexion = "Server=EVM\\EVM;DataBase= SCI; integrated security = true";
         }
+        #region Arrastre
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        #endregion
+
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
@@ -119,47 +121,35 @@ namespace SCI1
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-
-            
-            if (txtUsuario.Text!= "Usuario")
+            try
             {
-                if (txtContraseña.Text != "Contraseña")
+                if (txtUsuario.Text != "Usuario")
                 {
-                    var validarSesion = IniciarSesion(txtUsuario.Text, txtContraseña.Text);
-                    if (validarSesion == true)
+                    if (txtContraseña.Text != "Contraseña")
                     {
-                        SistemaControlInventario SCI = new SistemaControlInventario();
-                        this.Hide();
-                        SCI.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario o contraseña no coinciden", "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        var validarSesion = IniciarSesion(txtUsuario.Text, txtContraseña.Text);
+                        if (validarSesion == true)
+                        {
+                            SistemaControlInventario SCI = new SistemaControlInventario();
+                            this.Hide();
+                            SCI.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario o contraseña no coinciden", "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
+                else
+                {
+                    this.Valida();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                this.Valida();
+                MessageBox.Show("Ha ocurrido un error inesperado: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
-
-
-            //if (this.Valida())
-            //{
-            ////Validar desde la base de datos si existen las credenciales
-            ////this.usuarioTableAdapter.Fill(this.sciDataSet.Usuario, this.txtUsuario.Text.Trim(), this.txtContraseña.Text.Trim());
-            //    if (this.sciDataSet.Usuario.Rows.Count > 0)
-            //    {
-            //        SistemaControlInventario SCI = new SistemaControlInventario();
-            //        this.Hide();
-            //        SCI.ShowDialog();
-            //        this.Close();
-            //    }
-            //}
-
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
