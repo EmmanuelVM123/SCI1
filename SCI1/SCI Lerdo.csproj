@@ -441,6 +441,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\usuario %281%29.png" />
+    <None Include="Resources\usuario.png" />
     <None Include="Resources\pngwing.com %2819%29.png" />
     <None Include="Resources\Use Case Diagram.jpg" />
     <None Include="Resources\Use Case Diagram %284%29.jpg" />
@@ -483,6 +485,8 @@
     <None Include="Resources\Así debe de ser.jpg" />
     <None Include="Resources\Cuidado.jpg" />
     <None Include="Resources\cerrar-sesion %281%29.png" />
+    <None Include="Resources\contrasenas.png" />
+    <None Include="Resources\contrasenas %281%29.png" />
     <Content Include="Resources\Custom-Icon-Design-Flatastic-4-Male-user-remove.ico" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-4-Package-add.ico" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-4-Package-delete.ico" />

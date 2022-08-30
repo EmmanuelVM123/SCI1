@@ -50,7 +50,7 @@
             this.btnCIS = new System.Windows.Forms.Button();
             this.btnIAreas = new System.Windows.Forms.Button();
             this.panelUsuarioResumen = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.btnRequisicion = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
             this.panelUsuario = new System.Windows.Forms.Panel();
@@ -430,7 +430,7 @@
             // 
             // panelUsuarioResumen
             // 
-            this.panelUsuarioResumen.Controls.Add(this.button1);
+            this.panelUsuarioResumen.Controls.Add(this.btnReportes);
             this.panelUsuarioResumen.Controls.Add(this.btnRequisicion);
             this.panelUsuarioResumen.Controls.Add(this.btnResumen);
             this.panelUsuarioResumen.Controls.Add(this.panelUsuario);
@@ -440,25 +440,26 @@
             this.panelUsuarioResumen.Size = new System.Drawing.Size(260, 260);
             this.panelUsuarioResumen.TabIndex = 0;
             // 
-            // button1
+            // btnReportes
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::SCI1.Properties.Resources.icons8_reporte_de_negocios_32;
-            this.button1.Location = new System.Drawing.Point(0, 212);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 50);
-            this.button1.TabIndex = 4;
-            this.button1.Tag = "";
-            this.button1.Text = "       Reportes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Image = global::SCI1.Properties.Resources.icons8_reporte_de_negocios_32;
+            this.btnReportes.Location = new System.Drawing.Point(0, 212);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(260, 50);
+            this.btnReportes.TabIndex = 4;
+            this.btnReportes.Tag = "";
+            this.btnReportes.Text = "       Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnRequisicion
             // 
@@ -589,7 +590,7 @@
         public System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnRequisicion;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

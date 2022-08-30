@@ -16,7 +16,10 @@ namespace SCI1
         {
             InitializeComponent();
         }
-
+        private void SistemaControlInventario_Load_1(object sender, EventArgs e)
+        {
+            btnResumen_Click(sender, e);
+        }
         public void AbrirFormulario<MiFormulario>() where MiFormulario : Form, new()
         {
             Form formulario;
@@ -89,6 +92,11 @@ namespace SCI1
             this.btnRequisicion.BackColor = Color.FromArgb(240, 128, 128);
 
         }
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+
+            this.btnReportes.BackColor = Color.FromArgb(240, 128, 128);
+        }
         private void btnCIS_Click(object sender, EventArgs e)
         {
             AbrirFormulario<InventarioCIS>();
@@ -155,6 +163,8 @@ namespace SCI1
                 this.btnResumen.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["EnviarRequisicion"] == null)
                 this.btnRequisicion.BackColor = Color.FromArgb(240, 240, 240);
+            if (Application.OpenForms["Reportes"] == null)
+                this.btnReportes.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioCIS"] == null)
                 this.btnCIS.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["InventarioITN"] == null)
@@ -175,11 +185,6 @@ namespace SCI1
                 this.btnEliminarArticulo.BackColor = Color.FromArgb(240, 240, 240);
             if (Application.OpenForms["DisminuirStock"] == null)
                 this.btnDisminuirExistencia.BackColor = Color.FromArgb(240, 240, 240);
-        }
-
-        private void SistemaControlInventario_Load_1(object sender, EventArgs e)
-        {
-            btnResumen_Click(sender, e);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

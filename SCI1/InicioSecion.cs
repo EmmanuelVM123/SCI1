@@ -131,9 +131,11 @@ namespace SCI1
                         if (validarSesion == true)
                         {
                             SistemaControlInventario SCI = new SistemaControlInventario();
+                            SCI.Show();
+                            SCI.FormClosed += CerrarSesion;
                             this.Hide();
-                            SCI.ShowDialog();
-                            this.Show();
+
+                            
                         }
                         else
                         {
@@ -151,18 +153,25 @@ namespace SCI1
                 MessageBox.Show("Ha ocurrido un error inesperado: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void CerrarSesion(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
-        }
+            txtUsuario.Text = "Usuario";
+            txtUsuario.ForeColor = Color.Silver;
 
+            txtContraseña.Text = "Contraseña";
+            txtContraseña.ForeColor = Color.Silver;
+            txtContraseña.UseSystemPasswordChar = false;
+            this.Show();
+        }
         private void panelArriba_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         private void btnMinizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;

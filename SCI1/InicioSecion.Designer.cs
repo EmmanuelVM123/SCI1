@@ -41,12 +41,17 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnMinizar = new System.Windows.Forms.PictureBox();
             this.bntCerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelAriiba.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +144,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(254, 30);
             this.panel3.Name = "panel3";
@@ -156,10 +163,10 @@
             this.btnAcceder.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAcceder.Image = global::SCI1.Properties.Resources.icons8_abrir_en_popup_32;
             this.btnAcceder.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAcceder.Location = new System.Drawing.Point(450, 231);
+            this.btnAcceder.Location = new System.Drawing.Point(450, 229);
             this.btnAcceder.Name = "btnAcceder";
             this.btnAcceder.Size = new System.Drawing.Size(157, 40);
-            this.btnAcceder.TabIndex = 3;
+            this.btnAcceder.TabIndex = 0;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAcceder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -175,6 +182,28 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox3.Image = global::SCI1.Properties.Resources.contrasenas__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(21, 157);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox2.Image = global::SCI1.Properties.Resources.usuario__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 80);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // btnMinizar
             // 
@@ -228,7 +257,10 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelAriiba.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
             this.ResumeLayout(false);
@@ -251,5 +283,7 @@
         private System.Windows.Forms.Panel panelAriiba;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox btnMinizar;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
