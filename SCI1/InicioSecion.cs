@@ -29,23 +29,7 @@ namespace SCI1
         #endregion
 
 
-        private void txtUsuario_Enter(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "Usuario")
-            {
-                txtUsuario.Text = "";
-                txtUsuario.ForeColor = Color.White;
-            }
-        }
-
-        private void txtUsuario_Leave(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "")
-            {
-                txtUsuario.Text = "Usuario";
-                txtUsuario.ForeColor = Color.Silver;
-            }
-        }
+        
 
         private void txtContraseña_Enter(object sender, EventArgs e)
         {
@@ -156,8 +140,8 @@ namespace SCI1
         private void CerrarSesion(object sender, FormClosedEventArgs e)
         {
             this.errorProvider.Clear();
-            txtUsuario.Text = "Usuario";
-            txtUsuario.ForeColor = Color.Silver;
+            cbxUsuario.Text = "Usuario";
+            cbxUsuario.ForeColor = Color.Silver;
 
             txtContraseña.Text = "Contraseña";
             txtContraseña.ForeColor = Color.Silver;

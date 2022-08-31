@@ -32,6 +32,7 @@
             this.panelInicial = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelBajas = new System.Windows.Forms.Panel();
             this.btnDisminuirExistencia = new System.Windows.Forms.Button();
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.btnResumen = new System.Windows.Forms.Button();
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panelInicial.SuspendLayout();
             this.panelLateral.SuspendLayout();
             this.panelBajas.SuspendLayout();
@@ -73,7 +73,7 @@
             this.panelInicial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInicial.Location = new System.Drawing.Point(0, 0);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(1389, 1004);
+            this.panelInicial.Size = new System.Drawing.Size(1370, 749);
             this.panelInicial.TabIndex = 0;
             // 
             // panelContenedor
@@ -83,7 +83,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(260, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1129, 1004);
+            this.panelContenedor.Size = new System.Drawing.Size(1110, 749);
             this.panelContenedor.TabIndex = 1;
             // 
             // panelLateral
@@ -100,8 +100,23 @@
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(260, 1004);
+            this.panelLateral.Size = new System.Drawing.Size(260, 749);
             this.panelLateral.TabIndex = 0;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Image = global::SCI1.Properties.Resources.icons8_cierre_de_sesión_redondeado_hacia_la_izquierda_64;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 910);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(243, 71);
+            this.btnCerrarSesion.TabIndex = 7;
+            this.btnCerrarSesion.Text = "Cerrar sesión";
+            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panelBajas
             // 
@@ -110,7 +125,7 @@
             this.panelBajas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBajas.Location = new System.Drawing.Point(0, 810);
             this.panelBajas.Name = "panelBajas";
-            this.panelBajas.Size = new System.Drawing.Size(260, 100);
+            this.panelBajas.Size = new System.Drawing.Size(243, 100);
             this.panelBajas.TabIndex = 6;
             this.panelBajas.Visible = false;
             // 
@@ -127,7 +142,7 @@
             this.btnDisminuirExistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDisminuirExistencia.Location = new System.Drawing.Point(0, 50);
             this.btnDisminuirExistencia.Name = "btnDisminuirExistencia";
-            this.btnDisminuirExistencia.Size = new System.Drawing.Size(260, 50);
+            this.btnDisminuirExistencia.Size = new System.Drawing.Size(243, 50);
             this.btnDisminuirExistencia.TabIndex = 11;
             this.btnDisminuirExistencia.Tag = "Disminuir existencia";
             this.btnDisminuirExistencia.Text = "Disminuir existencia";
@@ -148,7 +163,7 @@
             this.btnEliminarArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarArticulo.Location = new System.Drawing.Point(0, 0);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
-            this.btnEliminarArticulo.Size = new System.Drawing.Size(260, 50);
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(243, 50);
             this.btnEliminarArticulo.TabIndex = 10;
             this.btnEliminarArticulo.Tag = "Eliminar artículo";
             this.btnEliminarArticulo.Text = "Eliminar artículo";
@@ -168,7 +183,7 @@
             this.btnBajas.Image = global::SCI1.Properties.Resources.data_download_icon__1_;
             this.btnBajas.Location = new System.Drawing.Point(0, 760);
             this.btnBajas.Name = "btnBajas";
-            this.btnBajas.Size = new System.Drawing.Size(260, 50);
+            this.btnBajas.Size = new System.Drawing.Size(243, 50);
             this.btnBajas.TabIndex = 5;
             this.btnBajas.Tag = "Bajas";
             this.btnBajas.Text = "Bajas";
@@ -184,7 +199,7 @@
             this.panelAltas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAltas.Location = new System.Drawing.Point(0, 660);
             this.panelAltas.Name = "panelAltas";
-            this.panelAltas.Size = new System.Drawing.Size(260, 100);
+            this.panelAltas.Size = new System.Drawing.Size(243, 100);
             this.panelAltas.TabIndex = 4;
             this.panelAltas.Visible = false;
             // 
@@ -201,7 +216,7 @@
             this.btnAñadirExistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadirExistencia.Location = new System.Drawing.Point(0, 50);
             this.btnAñadirExistencia.Name = "btnAñadirExistencia";
-            this.btnAñadirExistencia.Size = new System.Drawing.Size(260, 50);
+            this.btnAñadirExistencia.Size = new System.Drawing.Size(243, 50);
             this.btnAñadirExistencia.TabIndex = 9;
             this.btnAñadirExistencia.Tag = "Añadir a existencia";
             this.btnAñadirExistencia.Text = "Añadir a existencia";
@@ -222,7 +237,7 @@
             this.btnAñadirArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadirArticulo.Location = new System.Drawing.Point(0, 0);
             this.btnAñadirArticulo.Name = "btnAñadirArticulo";
-            this.btnAñadirArticulo.Size = new System.Drawing.Size(260, 50);
+            this.btnAñadirArticulo.Size = new System.Drawing.Size(243, 50);
             this.btnAñadirArticulo.TabIndex = 8;
             this.btnAñadirArticulo.Tag = "Artículo de nuevo ingreso";
             this.btnAñadirArticulo.Text = "Artículo de nuevo ingreso";
@@ -242,7 +257,7 @@
             this.btnAltas.Image = global::SCI1.Properties.Resources.data_upload_icon;
             this.btnAltas.Location = new System.Drawing.Point(0, 610);
             this.btnAltas.Name = "btnAltas";
-            this.btnAltas.Size = new System.Drawing.Size(260, 50);
+            this.btnAltas.Size = new System.Drawing.Size(243, 50);
             this.btnAltas.TabIndex = 3;
             this.btnAltas.Tag = "Altas";
             this.btnAltas.Text = "Altas";
@@ -263,7 +278,7 @@
             this.panelAreas.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAreas.Location = new System.Drawing.Point(0, 310);
             this.panelAreas.Name = "panelAreas";
-            this.panelAreas.Size = new System.Drawing.Size(260, 300);
+            this.panelAreas.Size = new System.Drawing.Size(243, 300);
             this.panelAreas.TabIndex = 2;
             this.panelAreas.Visible = false;
             // 
@@ -280,7 +295,7 @@
             this.btnAMT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAMT.Location = new System.Drawing.Point(0, 250);
             this.btnAMT.Name = "btnAMT";
-            this.btnAMT.Size = new System.Drawing.Size(260, 50);
+            this.btnAMT.Size = new System.Drawing.Size(243, 50);
             this.btnAMT.TabIndex = 8;
             this.btnAMT.Tag = "Archivo muerto";
             this.btnAMT.Text = "Archivo muerto";
@@ -301,7 +316,7 @@
             this.btnLBC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLBC.Location = new System.Drawing.Point(0, 200);
             this.btnLBC.Name = "btnLBC";
-            this.btnLBC.Size = new System.Drawing.Size(260, 50);
+            this.btnLBC.Size = new System.Drawing.Size(243, 50);
             this.btnLBC.TabIndex = 7;
             this.btnLBC.Tag = "Laboratorio de cómputo";
             this.btnLBC.Text = "Laboratorio de cómputo";
@@ -322,7 +337,7 @@
             this.btnSGR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSGR.Location = new System.Drawing.Point(0, 150);
             this.btnSGR.Name = "btnSGR";
-            this.btnSGR.Size = new System.Drawing.Size(260, 50);
+            this.btnSGR.Size = new System.Drawing.Size(243, 50);
             this.btnSGR.TabIndex = 6;
             this.btnSGR.Tag = "Servicios generales";
             this.btnSGR.Text = "Servicios generales";
@@ -343,7 +358,7 @@
             this.btnMNT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMNT.Location = new System.Drawing.Point(0, 100);
             this.btnMNT.Name = "btnMNT";
-            this.btnMNT.Size = new System.Drawing.Size(260, 50);
+            this.btnMNT.Size = new System.Drawing.Size(243, 50);
             this.btnMNT.TabIndex = 5;
             this.btnMNT.Tag = "Mantenimiento";
             this.btnMNT.Text = "Mantenimiento";
@@ -364,7 +379,7 @@
             this.btnITN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnITN.Location = new System.Drawing.Point(0, 50);
             this.btnITN.Name = "btnITN";
-            this.btnITN.Size = new System.Drawing.Size(260, 50);
+            this.btnITN.Size = new System.Drawing.Size(243, 50);
             this.btnITN.TabIndex = 4;
             this.btnITN.Tag = "Intendencia";
             this.btnITN.Text = "Intendencia";
@@ -381,7 +396,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(0, 50);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 0);
+            this.button2.Size = new System.Drawing.Size(243, 0);
             this.button2.TabIndex = 3;
             this.button2.Tag = "Inventario por áreas";
             this.button2.Text = "Inventario por áreas";
@@ -399,7 +414,7 @@
             this.btnCIS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCIS.Location = new System.Drawing.Point(0, 0);
             this.btnCIS.Name = "btnCIS";
-            this.btnCIS.Size = new System.Drawing.Size(260, 50);
+            this.btnCIS.Size = new System.Drawing.Size(243, 50);
             this.btnCIS.TabIndex = 2;
             this.btnCIS.Tag = "Coordinación | Ingresos propios | Servicios Escolares";
             this.btnCIS.Text = "Coordinación | Ingresos propios | Servicios Escolares";
@@ -420,7 +435,7 @@
             this.btnIAreas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnIAreas.Location = new System.Drawing.Point(0, 260);
             this.btnIAreas.Name = "btnIAreas";
-            this.btnIAreas.Size = new System.Drawing.Size(260, 50);
+            this.btnIAreas.Size = new System.Drawing.Size(243, 50);
             this.btnIAreas.TabIndex = 1;
             this.btnIAreas.Tag = "Inventario por áreas";
             this.btnIAreas.Text = "   Inventario por áreas";
@@ -437,7 +452,7 @@
             this.panelUsuarioResumen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsuarioResumen.Location = new System.Drawing.Point(0, 0);
             this.panelUsuarioResumen.Name = "panelUsuarioResumen";
-            this.panelUsuarioResumen.Size = new System.Drawing.Size(260, 260);
+            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 260);
             this.panelUsuarioResumen.TabIndex = 0;
             // 
             // btnReportes
@@ -452,7 +467,7 @@
             this.btnReportes.Image = global::SCI1.Properties.Resources.icons8_reporte_de_negocios_32;
             this.btnReportes.Location = new System.Drawing.Point(0, 212);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(260, 50);
+            this.btnReportes.Size = new System.Drawing.Size(243, 50);
             this.btnReportes.TabIndex = 4;
             this.btnReportes.Tag = "";
             this.btnReportes.Text = "       Reportes";
@@ -473,7 +488,7 @@
             this.btnRequisicion.Image = global::SCI1.Properties.Resources.icons8_subir_correo_32;
             this.btnRequisicion.Location = new System.Drawing.Point(0, 162);
             this.btnRequisicion.Name = "btnRequisicion";
-            this.btnRequisicion.Size = new System.Drawing.Size(260, 50);
+            this.btnRequisicion.Size = new System.Drawing.Size(243, 50);
             this.btnRequisicion.TabIndex = 3;
             this.btnRequisicion.Tag = "";
             this.btnRequisicion.Text = "       Requisición";
@@ -494,7 +509,7 @@
             this.btnResumen.Image = global::SCI1.Properties.Resources.icons8_resume_32;
             this.btnResumen.Location = new System.Drawing.Point(0, 112);
             this.btnResumen.Name = "btnResumen";
-            this.btnResumen.Size = new System.Drawing.Size(260, 50);
+            this.btnResumen.Size = new System.Drawing.Size(243, 50);
             this.btnResumen.TabIndex = 2;
             this.btnResumen.Tag = "";
             this.btnResumen.Text = "       Resumen";
@@ -509,7 +524,7 @@
             this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsuario.Location = new System.Drawing.Point(0, 0);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(260, 112);
+            this.panelUsuario.Size = new System.Drawing.Size(243, 112);
             this.panelUsuario.TabIndex = 0;
             // 
             // pictureBox1
@@ -518,31 +533,16 @@
             this.pictureBox1.Image = global::SCI1.Properties.Resources.Logo_ITSAV11;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 112);
+            this.pictureBox1.Size = new System.Drawing.Size(243, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Image = global::SCI1.Properties.Resources.icons8_cierre_de_sesión_redondeado_hacia_la_izquierda_64;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 933);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(260, 71);
-            this.btnCerrarSesion.TabIndex = 7;
-            this.btnCerrarSesion.Text = "Cerrar sesión";
-            this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // SistemaControlInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1389, 1004);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelInicial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1364, 718);
@@ -550,6 +550,7 @@
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SistemaControlInventario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SistemaControlInventario_Load_1);
             this.panelInicial.ResumeLayout(false);
             this.panelLateral.ResumeLayout(false);
