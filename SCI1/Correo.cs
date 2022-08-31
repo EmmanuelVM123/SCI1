@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    class Correo
+    public class Correo
     {
         public string correo { get; set; }
         public string alias { get; set; }
@@ -19,10 +19,11 @@ namespace SCI1
         public string contraseña { get; set; }
         public int puerto { get; set; }
         public string smtp { get; set; }
+        //public string destinatario { get; set; }
         public List<string> destinatarios { get; set; }
         public List<string> adjuntos { get; set; }
 
-        public static bool Enviar(Correo correo)
+        public static bool Envio(Correo correo)
         {
             try
             {
@@ -40,6 +41,10 @@ namespace SCI1
                 //Cuerpo
                 mail.Body = correo.cuerpo;
                 mail.BodyEncoding = System.Text.Encoding.UTF8;
+
+                ////Destinatario para recuperar contraseña
+                //string correodestinatario = correo.destinatario;
+                
 
                 //Destinatarios
                 foreach (var destinatario in correo.destinatarios)

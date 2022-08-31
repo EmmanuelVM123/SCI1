@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public partial class EnviarRequisicion : Form, IResumen
+    public partial class EnviarRequisicion : Form
     {
         private int conteo;
         public EnviarRequisicion()
@@ -24,7 +24,7 @@ namespace SCI1
             this.Close();
         }
 
-        private async void btnEnviarCorreo_Click(object sender, EventArgs e)
+        private void btnEnviarCorreo_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace SCI1
                     }
                 }
 
-                if (Correo.Enviar(correo) == true)
+                if (Correo.Envio(correo) == true)
                 {
                     MessageBox.Show("El e-mail fue enviado exitosamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtAsunto.Clear();
@@ -74,11 +74,11 @@ namespace SCI1
                     //this.txtContraseña.Clear();
                     //this.txtAlias.Clear();
                 }
-                
+
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                MessageBox.Show("Error al enviar e-mail: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -90,7 +90,7 @@ namespace SCI1
             if (open.ShowDialog() == DialogResult.OK)
             {
                 var archivos = open.FileName;
-                dgvArchivos.Rows.Add(archivos);    
+                dgvArchivos.Rows.Add(archivos);
             }
             if (dgvArchivos.Rows.Count > 0)
             {
@@ -120,10 +120,5 @@ namespace SCI1
                 this.btnLimpiar.Enabled = false;
             }
         }
-    }
-
-    internal interface IResumen
-    {
-        
     }
 }

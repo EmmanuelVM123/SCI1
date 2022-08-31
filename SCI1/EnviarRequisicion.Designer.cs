@@ -189,7 +189,7 @@
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(64, 23);
             this.txtPuerto.TabIndex = 5;
-            this.txtPuerto.Text = "25";
+            this.txtPuerto.Text = "587";
             // 
             // txtSMPT
             // 
@@ -206,6 +206,7 @@
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(228, 23);
             this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.Text = "dohhfawxlrpzddlq";
             // 
             // txtCorreo
             // 
@@ -213,6 +214,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(228, 23);
             this.txtCorreo.TabIndex = 1;
+            this.txtCorreo.Text = "ingresospropioslerdo@gmail.com";
             // 
             // label2
             // 

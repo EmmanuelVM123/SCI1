@@ -72,10 +72,10 @@ namespace SCI1
             this.errorProvider.Clear();
             bool resultado = true;
             //Validar el campo Usuario
-            if (this.txtUsuario.Text.Trim() == "" || this.txtUsuario.Text.Trim() == "Usuario")
+            if (this.cbxUsuario.Text.Trim() == "" || this.cbxUsuario.Text.Trim() == "Usuario")
             {
                 resultado = false;
-                this.errorProvider.SetError(this.txtUsuario, "Éste campo es requerido");
+                this.errorProvider.SetError(this.cbxUsuario, "Éste campo es requerido");
             }
 
             //Validar el campo Contraseña
@@ -123,11 +123,11 @@ namespace SCI1
         {
             try
             {
-                if (txtUsuario.Text != "Usuario")
+                if (cbxUsuario.Text != "Usuario")
                 {
                     if (txtContraseña.Text != "Contraseña")
                     {
-                        var validarSesion = IniciarSesion(txtUsuario.Text, txtContraseña.Text);
+                        var validarSesion = IniciarSesion(cbxUsuario.Text, txtContraseña.Text);
                         if (validarSesion == true)
                         {
                             SistemaControlInventario SCI = new SistemaControlInventario();
@@ -176,6 +176,38 @@ namespace SCI1
         private void btnMinizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void linkRecuperarPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RecuperarContraseña RC = new RecuperarContraseña();
+            RC.Show();
+            this.Hide();
+        }
+
+        private void InicioSecion_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'sCIDataSet.Usuario' Puede moverla o quitarla según sea necesario.
+            this.usuarioTableAdapter.Fill(this.sCIDataSet.Usuario);
+
+        }
+
+        private void cbxUsuario_MouseEnter(object sender, EventArgs e)
+        {
+            if (cbxUsuario.Text == "Usuario")
+            {
+                cbxUsuario.Text = "";
+                cbxUsuario.ForeColor = Color.White;
+            }
+        }
+
+        private void cbxUsuario_MouseLeave(object sender, EventArgs e)
+        {
+            if (cbxUsuario.Text == "")
+            {
+                cbxUsuario.Text = "Usuario";
+                cbxUsuario.ForeColor = Color.Silver;
+            }
         }
     }
 }
