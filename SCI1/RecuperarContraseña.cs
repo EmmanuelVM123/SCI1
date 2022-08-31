@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,64 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
+    public abstract class ServidorCorreoMaestro
+    {
+        private SmtpClient smtpClient;
+        protected string remitente { get; set; }
+        protected string contraseña { get; set; }
+        protected string smtp { get; set; }
+        protected int puerto { get; set; }
+        protected bool ssl { get; set; }  
+
+        protected void IniciarClienteSmtp()
+        {
+            smtpClient = new SmtpClient();
+            smtpClient.Credentials = new NetworkCredential(remitente, contraseña);
+            smtpClient.Host = smtp;
+            smtpClient.Port = puerto;
+            smtpClient.EnableSsl = ssl;
+        }
+
+        public void enviarCorreo(string asunto, string cuerpo, List<string> destinatario)
+        {
+            var correoMensaje = new MailMessage();
+            try
+            {
+                correoMensaje.From = new MailAddress(remitente);
+                foreach (string correo in destinatario)
+                {
+                    correoMensaje.To.Add(correo);
+                }
+                correoMensaje.Subject = asunto;
+                correoMensaje.Body = cuerpo;
+                correoMensaje.Priority = MailPriority.Normal;
+                smtpClient.Send(correoMensaje);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                correoMensaje?.Dispose();
+                smtpClient.Dispose();
+            }
+        }
+    }
+
+    class SoporteCorreo:ServidorCorreoMaestro
+    {
+        public SoporteCorreo()
+        {
+            remitente = "larevo30@gmail.com";
+            contraseña = "ewajnupfbzukgkmc";
+            smtp = "smtp.gmail.com";
+            puerto = 587;
+            ssl = true;
+            IniciarClienteSmtp();
+        }
+    }
+
     public partial class RecuperarContraseña : Form
     {
         private readonly string conexion;
@@ -34,7 +94,7 @@ namespace SCI1
             return new SqlConnection(conexion);
         }
 
-        public bool RecuperaContraseña(string correo)
+        public bool RecuperaContraseña(string correoSolicitante)
         {
             using (var conexion = GetConnection())
             {
@@ -42,13 +102,13 @@ namespace SCI1
                 using (var comando = new SqlCommand())
                 {
                     comando.Connection = conexion;
-                    comando.CommandText = "select * from Usuario where Correo=@correo ";
-                    comando.Parameters.AddWithValue("@correo", correo);
+                    comando.CommandText = "select * from Usuario where Correo=@correoSolicitante ";
+                    comando.Parameters.AddWithValue("@correoSolicitante", correoSolicitante);
                     comando.CommandType = CommandType.Text;
                     SqlDataReader reader = comando.ExecuteReader();
-                    if (reader.HasRows)
+                    if (reader.Read() == true)
                     {
-                        return true;
+                        
                     }
                     else
                     {
