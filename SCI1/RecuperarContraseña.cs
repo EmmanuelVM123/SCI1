@@ -14,64 +14,6 @@ using System.Windows.Forms;
 
 namespace SCI1
 {
-    public abstract class ServidorCorreoMaestro
-    {
-        private SmtpClient smtpClient;
-        protected string remitente { get; set; }
-        protected string contraseña { get; set; }
-        protected string smtp { get; set; }
-        protected int puerto { get; set; }
-        protected bool ssl { get; set; }  
-
-        protected void IniciarClienteSmtp()
-        {
-            smtpClient = new SmtpClient();
-            smtpClient.Credentials = new NetworkCredential(remitente, contraseña);
-            smtpClient.Host = smtp;
-            smtpClient.Port = puerto;
-            smtpClient.EnableSsl = ssl;
-        }
-
-        public void enviarCorreo(string asunto, string cuerpo, List<string> destinatario)
-        {
-            var correoMensaje = new MailMessage();
-            try
-            {
-                correoMensaje.From = new MailAddress(remitente);
-                foreach (string correo in destinatario)
-                {
-                    correoMensaje.To.Add(correo);
-                }
-                correoMensaje.Subject = asunto;
-                correoMensaje.Body = cuerpo;
-                correoMensaje.Priority = MailPriority.Normal;
-                smtpClient.Send(correoMensaje);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                correoMensaje?.Dispose();
-                smtpClient.Dispose();
-            }
-        }
-    }
-
-    class SoporteCorreo:ServidorCorreoMaestro
-    {
-        public SoporteCorreo()
-        {
-            remitente = "larevo30@gmail.com";
-            contraseña = "ewajnupfbzukgkmc";
-            smtp = "smtp.gmail.com";
-            puerto = 587;
-            ssl = true;
-            IniciarClienteSmtp();
-        }
-    }
-
     public partial class RecuperarContraseña : Form
     {
         private readonly string conexion;
@@ -94,7 +36,7 @@ namespace SCI1
             return new SqlConnection(conexion);
         }
 
-        public bool RecuperaContraseña(string correoSolicitante)
+        public string RecuperaContraseña(string correoSolicitante)
         {
             using (var conexion = GetConnection())
             {
@@ -108,79 +50,36 @@ namespace SCI1
                     SqlDataReader reader = comando.ExecuteReader();
                     if (reader.Read() == true)
                     {
-                        
+                        string nombreUsuario = reader.GetString(2);
+                        string correoSolicitud = reader.GetString(4);
+                        string contraseña = reader.GetString(3);
+
+                        var servicioCorreo = new SoporteCorreo();
+                        servicioCorreo.enviarCorreo
+                            (
+                                asunto: "Sistema de Recuperacuón de contraseña: Solicitud de recuperación de contraseña",
+                                cuerpo: "¡Hola, " + nombreUsuario + " su Solicitud de Recuperación de Contraseña ha sido exitosa!\n" + "Su contraseña de ingreso es: " + contraseña + "\nSin embargo, se le recomienda cambiar lo antes posible su contraseña un a vez ingrese al sistema, para esto contacte a un Administrador de Base de Datos",
+                                destinatario: new List<string> { correoSolicitud }                            
+                            );
+                        return Convert.ToString(MessageBox.Show("Estimad@ " + nombreUsuario + ", el sistema de recuperación de contraseñas ha enviado al correo (" + correoSolicitud + ") que tiene registrado la contraseña correspondite a su usuario", "Recuperación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information));
                     }
                     else
                     {
-                        return false;
+                        return Convert.ToString(MessageBox.Show("El correo ingresado no corresponde a un cuenta de usuario registrada" , "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error));
                     }
                 }
             }
 
         }
-        public void btnRecuperarContraseña_Click(object sender, EventArgs e)
-        { 
-            try
-            {
-               
-                    var validarCorreo = RecuperaContraseña(Name = "correo");
-                    if (validarCorreo == true)
-                    {
-                        Correo correo = new Correo
-                        {
-                            correo = "Emmanuel301097@hotmail.com",
-                            contraseña = "EmmanuelVM",
-                            alias = "EVM",
-                            asunto = "Recuperación de contraseña",
-                            cuerpo = "Hola Estimado usuario SCI ITSAV\nSe le hace llegar a su cuenta de correo eléctronico la contraseña que ha olvidado.\n\nLa contraseña es: ",
-                            puerto = 587,
-                            smtp = "smtp.office365.com",
-                            destinatarios = new List<string>()
-                        };
 
-                        foreach (DataGridViewRow fila in dgvDestinatario.Rows)
-                        {
-                            var des = fila.Cells["Correo"].Value;
-                            if (des == null) continue;
-
-                            string destinatario = des.ToString();
-                            if (!string.IsNullOrWhiteSpace(destinatario))
-                            {
-                                correo.destinatarios.Add(destinatario);
-                            }
-                        }
-
-                    //if (Correo.Envio(correo) == true)
-                    //{
-                    //    MessageBox.Show("El e-mail fue enviado exitosamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    this.dgvDestinatario.Rows.Clear();
-                       
-                    //}
-
-                }
-                        else
-                        {
-                            MessageBox.Show("El usuario o contraseña no coinciden", "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    
-                
-
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un error inesperado al intentadr recuperar contraseña: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            //finally
-            //{
-            //    this.Close();
-            //    IS.Show();
-            //}
+        public string recuperacionContraseña (string usuarioSolicita)
+        {
+            return RecuperaContraseña(usuarioSolicita);
         }
 
-        private void txtCorreo_MouseEnter(object sender, EventArgs e)
+        public void btnRecuperarContraseña_Click(object sender, EventArgs e)
         {
-            this.txtCorreo.Text = "";
+            var resultado = RecuperaContraseña(txtCorreo.Text);
         }
 
         private void btnMinizar_Click(object sender, EventArgs e)
@@ -199,6 +98,84 @@ namespace SCI1
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtCorreo_Enter(object sender, EventArgs e)
+        {
+            if (txtCorreo.Text == "Correo eléctronico")
+            {
+                txtCorreo.Text = "";
+                txtCorreo.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtCorreo_Leave(object sender, EventArgs e)
+        {
+            if (txtCorreo.Text == "")
+            {
+                txtCorreo.Text = "Correo eléctronico";
+                txtCorreo.ForeColor = Color.Silver;
+            }
+        }
+    }
+
+    public abstract class ServidorCorreoMaestro
+    {
+        private SmtpClient smtpClient;
+        protected string remitente { get; set; }
+        protected string alias { get; set; }
+        protected string contraseña { get; set; }
+        protected string smtp { get; set; }
+        protected int puerto { get; set; }
+        protected bool ssl { get; set; }
+
+        protected void IniciarClienteSmtp()
+        {
+            smtpClient = new SmtpClient();
+            smtpClient.Credentials = new NetworkCredential(remitente, contraseña);
+            smtpClient.Host = smtp;
+            smtpClient.Port = puerto;
+            smtpClient.EnableSsl = ssl;
+        }
+
+        public void enviarCorreo(string asunto, string cuerpo, List<string> destinatario)
+        {
+            var correoMensaje = new MailMessage();
+            try
+            {
+                correoMensaje.From = new MailAddress(remitente);
+                foreach (string correo in destinatario)
+                {
+                    correoMensaje.To.Add(correo);
+                }
+
+                correoMensaje.Subject = asunto;
+                correoMensaje.Body = cuerpo;
+                correoMensaje.Priority = MailPriority.Normal;
+                smtpClient.Send(correoMensaje);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                correoMensaje?.Dispose();
+                smtpClient.Dispose();
+            }
+        }
+    }
+
+    class SoporteCorreo : ServidorCorreoMaestro
+    {
+        public SoporteCorreo()
+        {
+            remitente = "ingresospropioslerdo@gmail.com";
+            contraseña = "oebrwllmarjfdxdk";
+            smtp = "smtp.gmail.com";
+            puerto = 587;
+            ssl = true;
+            IniciarClienteSmtp();
         }
     }
 }

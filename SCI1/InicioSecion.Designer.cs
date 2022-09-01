@@ -34,19 +34,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.panelAriiba = new System.Windows.Forms.Panel();
             this.btnMinizar = new System.Windows.Forms.PictureBox();
             this.bntCerrar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxUsuario = new System.Windows.Forms.ComboBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIDataSet = new SCI1.SCIDataSet();
             this.linkRecuperarPass = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAcceder = new System.Windows.Forms.Button();
-            this.cbxUsuario = new System.Windows.Forms.ComboBox();
-            this.sCIDataSet = new SCI1.SCIDataSet();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTableAdapter = new SCI1.SCIDataSetTableAdapters.UsuarioTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -54,10 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,16 +96,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(279, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(461, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Sistema de Control de Inventario UA Lerdo";
             // 
             // panelAriiba
             // 
@@ -154,6 +144,32 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(513, 261);
             this.panel3.TabIndex = 7;
+            // 
+            // cbxUsuario
+            // 
+            this.cbxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(19)))), ((int)(((byte)(51)))));
+            this.cbxUsuario.DataSource = this.usuarioBindingSource;
+            this.cbxUsuario.DisplayMember = "Usuario";
+            this.cbxUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxUsuario.ForeColor = System.Drawing.Color.Silver;
+            this.cbxUsuario.FormattingEnabled = true;
+            this.cbxUsuario.Location = new System.Drawing.Point(84, 71);
+            this.cbxUsuario.Name = "cbxUsuario";
+            this.cbxUsuario.Size = new System.Drawing.Size(388, 28);
+            this.cbxUsuario.TabIndex = 9;
+            this.cbxUsuario.MouseEnter += new System.EventHandler(this.cbxUsuario_MouseEnter);
+            this.cbxUsuario.MouseLeave += new System.EventHandler(this.cbxUsuario_MouseLeave);
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataMember = "Usuario";
+            this.usuarioBindingSource.DataSource = this.sCIDataSet;
+            // 
+            // sCIDataSet
+            // 
+            this.sCIDataSet.DataSetName = "SCIDataSet";
+            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // linkRecuperarPass
             // 
@@ -210,35 +226,19 @@
             this.btnAcceder.UseVisualStyleBackColor = false;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
-            // cbxUsuario
-            // 
-            this.cbxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(19)))), ((int)(((byte)(51)))));
-            this.cbxUsuario.DataSource = this.usuarioBindingSource;
-            this.cbxUsuario.DisplayMember = "Usuario";
-            this.cbxUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxUsuario.ForeColor = System.Drawing.Color.Silver;
-            this.cbxUsuario.FormattingEnabled = true;
-            this.cbxUsuario.Location = new System.Drawing.Point(84, 71);
-            this.cbxUsuario.Name = "cbxUsuario";
-            this.cbxUsuario.Size = new System.Drawing.Size(388, 28);
-            this.cbxUsuario.TabIndex = 9;
-            this.cbxUsuario.MouseEnter += new System.EventHandler(this.cbxUsuario_MouseEnter);
-            this.cbxUsuario.MouseLeave += new System.EventHandler(this.cbxUsuario_MouseLeave);
-            // 
-            // sCIDataSet
-            // 
-            this.sCIDataSet.DataSetName = "SCIDataSet";
-            this.sCIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataMember = "Usuario";
-            this.usuarioBindingSource.DataSource = this.sCIDataSet;
-            // 
             // usuarioTableAdapter
             // 
             this.usuarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(279, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(461, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Sistema de Control de Inventario UA Lerdo";
             // 
             // InicioSecion
             // 
@@ -270,10 +270,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,7 +286,6 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnAcceder;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox bntCerrar;
         private System.Windows.Forms.Panel panelAriiba;
         private System.Windows.Forms.Panel panel3;
@@ -298,5 +297,6 @@
         private SCIDataSet sCIDataSet;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private SCIDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
+        private System.Windows.Forms.Label label3;
     }
 }

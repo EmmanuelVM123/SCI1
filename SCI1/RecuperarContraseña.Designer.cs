@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecuperarContraseña));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -39,8 +40,6 @@
             this.panelAriiba = new System.Windows.Forms.Panel();
             this.btnMinizar = new System.Windows.Forms.PictureBox();
             this.bntCerrar = new System.Windows.Forms.PictureBox();
-            this.dgvDestinatario = new System.Windows.Forms.DataGridView();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -48,7 +47,6 @@
             this.panelAriiba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,7 +72,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(93)))), ((int)(((byte)(97)))));
-            this.panel3.Controls.Add(this.dgvDestinatario);
             this.panel3.Controls.Add(this.txtCorreo);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label3);
@@ -97,7 +94,8 @@
             this.txtCorreo.Size = new System.Drawing.Size(388, 19);
             this.txtCorreo.TabIndex = 1;
             this.txtCorreo.Text = "Correo eléctronico";
-            this.txtCorreo.MouseEnter += new System.EventHandler(this.txtCorreo_MouseEnter);
+            this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
+            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);            
             // 
             // label1
             // 
@@ -144,7 +142,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox2.Image = global::SCI1.Properties.Resources.usuario__1_;
+            this.pictureBox2.Image = global::SCI1.Properties.Resources.envelope;
             this.pictureBox2.Location = new System.Drawing.Point(233, 57);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
@@ -190,23 +188,6 @@
             this.bntCerrar.TabStop = false;
             this.bntCerrar.Click += new System.EventHandler(this.bntCerrar_Click);
             // 
-            // dgvDestinatario
-            // 
-            this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDestinatario.ColumnHeadersVisible = false;
-            this.dgvDestinatario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Correo});
-            this.dgvDestinatario.Location = new System.Drawing.Point(74, 145);
-            this.dgvDestinatario.Name = "dgvDestinatario";
-            this.dgvDestinatario.Size = new System.Drawing.Size(346, 21);
-            this.dgvDestinatario.TabIndex = 12;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "correo";
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 250;
-            // 
             // RecuperarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +197,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelAriiba);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecuperarContraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperarContraseña";
@@ -227,7 +209,6 @@
             this.panelAriiba.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,7 +226,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvDestinatario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }
