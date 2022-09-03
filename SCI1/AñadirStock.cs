@@ -86,7 +86,7 @@ namespace SCI1
             this.ModoEdicion("Añadir");
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void Guardar()
         {
             try
             {
@@ -103,7 +103,18 @@ namespace SCI1
             {
                 MessageBox.Show("Ha ocurrido un error al añadir inventario: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.Guardar();
+        }
+        private void cantidadNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) == true)
+            {
+                this.Guardar();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -125,19 +136,19 @@ namespace SCI1
                     e.CellStyle.ForeColor = Color.White;
                     e.CellStyle.BackColor = System.Drawing.Color.SteelBlue;
                 }
-                if (Convert.ToInt32(e.Value) == Convert.ToInt32(cc) )
-                {
-                    e.CellStyle.ForeColor = System.Drawing.Color.Red;
-                    e.CellStyle.BackColor = System.Drawing.Color.FloralWhite;
-                }
-                
                 if (Convert.ToInt32(e.Value) < Convert.ToInt32(cn))
                 {
                     e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
                     e.CellStyle.BackColor = System.Drawing.Color.LightYellow;
                 }
-                              
+                if (Convert.ToInt32(e.Value) <= Convert.ToInt32(cc) )
+                {
+                    e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
+                    e.CellStyle.BackColor = System.Drawing.Color.FloralWhite;
+                }                         
             }
         }
+
+      
     }
 }

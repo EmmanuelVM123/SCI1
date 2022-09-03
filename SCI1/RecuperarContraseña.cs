@@ -79,7 +79,7 @@ namespace SCI1
 
         public void btnRecuperarContraseña_Click(object sender, EventArgs e)
         {
-            var resultado = RecuperaContraseña(txtCorreo.Text);
+            string resultado = RecuperaContraseña(txtCorreo.Text);
         }
 
         private void btnMinizar_Click(object sender, EventArgs e)
@@ -115,6 +115,14 @@ namespace SCI1
             {
                 txtCorreo.Text = "Correo eléctronico";
                 txtCorreo.ForeColor = Color.Silver;
+            }
+        }
+
+        public void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) == true)
+            {
+                var resultado = RecuperaContraseña(txtCorreo.Text);
             }
         }
     }

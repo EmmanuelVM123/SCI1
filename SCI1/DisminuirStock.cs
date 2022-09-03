@@ -85,7 +85,8 @@ namespace SCI1
             }
             return validado;
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
+        
+        private void Guardar()
         {
             try
             {
@@ -104,9 +105,22 @@ namespace SCI1
             }
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.Guardar();
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.CargaDatos();
+        }
+
+        private void cantidadNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) == true)
+            {
+                this.Guardar();
+            }
         }
     }
 }

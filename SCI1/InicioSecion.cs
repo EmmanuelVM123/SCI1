@@ -103,7 +103,7 @@ namespace SCI1
 
         }
 
-        private void btnAcceder_Click(object sender, EventArgs e)
+        private void Acceder()
         {
             try
             {
@@ -119,7 +119,7 @@ namespace SCI1
                             SCI.FormClosed += CerrarSesion;
                             this.Hide();
 
-                            
+
                         }
                         else
                         {
@@ -136,6 +136,11 @@ namespace SCI1
             {
                 MessageBox.Show("Ha ocurrido un error inesperado: " + ex.Message.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAcceder_Click(object sender, EventArgs e)
+        {
+            this.Acceder();
         }
         private void CerrarSesion(object sender, FormClosedEventArgs e)
         {
@@ -191,6 +196,14 @@ namespace SCI1
             {
                 cbxUsuario.Text = "Usuario";
                 cbxUsuario.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) == true)
+            {
+                this.Acceder();
             }
         }
     }

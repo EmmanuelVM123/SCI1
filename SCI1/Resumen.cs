@@ -31,56 +31,56 @@ namespace SCI1
         {
             try
             {
-                
-                SLDocument sl = new SLDocument("RR.xlsx");
-                sl.SetCellValue(4,15, "PROBANDO...");
-                sl.Save(); 
 
-                //Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-                //Microsoft.Office.Interop.Excel.Workbook hoja = excel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");
-                //Microsoft.Office.Interop.Excel.Worksheet x = excel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+                //SLDocument sl = new SLDocument("RR.xlsx");
+                //sl.SetCellValue(4,15, "PROBANDO...");
+                //sl.Save(); 
 
-                //Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
-                //int counRecords = userRange.Rows.Count;
-                //int add = counRecords + 1;
-                ////int ColumnIndex = 0;
-                //foreach (DataGridViewRow row in dataGridView2.Rows)
+                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook hoja = excel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");
+                Microsoft.Office.Interop.Excel.Worksheet x = excel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+
+                Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
+                int counRecords = userRange.Rows.Count;
+                int add = counRecords + 1;
+                int ColumnIndex = 0;
+                foreach (DataGridViewRow row in dgvArticulosSolcitados.Rows)
+                {
+                    excel.Cells[14, 2] = row.Selected;
+                }
+
+
+                //Insertar NOMBRE DEL ÁREA SOLICITANTE en la CELDA D9
+                x.Cells[9, 4] = cbxAreaSolicitante.Text;
+                //Insertar FECHA de solicitud en la CELDA D11
+                DateTime fecha = DateTime.Today;
+                x.Cells[11, 4] = fecha.ToShortDateString();
+                //insertar CANTIDAD SOLICITADA en la CELDA B12
+                x.Cells[14, 2] = tbxCantidad.Text;
+                //Insertar UNIDAD DE MEDIDA en la CELDA C14
+                x.Cells[14, 3] = cbxUnidadMedida.Text;
+                //Insertar NOMBRE DE ARTÍCULO en la CELDA D14
+                //foreach (DataGridViewColumn i in fila)
                 //{
-                //    excel.Cells[14, 2] = row.Selected;
+                //    x.Cells[14, 4]++;
                 //}
+                //x.Cells[14, 4] = "*" + tbxArticulo.Text;
+                //Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
+                x.Cells[27, 5] = cbxUsar.Text;
 
-
-                ////Insertar NOMBRE DEL ÁREA SOLICITANTE en la CELDA D9
-                //x.Cells[9, 4] = tbxArea.Text;
-                ////Insertar FECHA de solicitud en la CELDA D11
-                //DateTime fecha = DateTime.Today;
-                //x.Cells[11, 4] = fecha.ToShortDateString();
-                ////insertar CANTIDAD SOLICITADA en la CELDA B12
-                //x.Cells[14, 2] = tbxCantidad.Text;
-                ////Insertar UNIDAD DE MEDIDA en la CELDA C14
-                //x.Cells[14, 3] = tbxMedida.Text;
-                ////Insertar NOMBRE DE ARTÍCULO en la CELDA D14
-                ////foreach (DataGridViewColumn i in fila)
-                ////{
-                ////    x.Cells[14, 4]++;
-                ////}
-                ////x.Cells[14, 4] = "*" + tbxArticulo.Text;
-                ////Insertar DESCRIPCIÓN para el uso de los bienes en la CELDA E27
-                //x.Cells[27, 5] = tbxUso.Text;
-
-                ////Guardar lo cambios en el mismo documento
-                //hoja.Save();
+                //Guardar lo cambios en el mismo documento
+                hoja.Save();
                 MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //excel.Visible = true;
-                //hoja.PrintOutEx();
+                excel.Visible = true;
+                hoja.PrintOutEx();
 
-                ////hoja.Close(true, Type.Missing, Type.Missing);
-                ////excel.Quit();
-                //this.tbxArea.Clear();
-                //this.tbxCantidad.Clear();
-                //this.tbxMedida.Clear();
-                //this.tbxArticulo.Clear();
-                //this.tbxUso.Clear();
+                hoja.Close(true, Type.Missing, Type.Missing);
+                excel.Quit();
+                this.cbxAreaSolicitante.Text = "";
+                this.tbxCantidad.Clear();
+                this.cbxUnidadMedida.Text = "";
+                this.cbxArticulo.Text = "";
+                this.cbxUsar.Text = "";
 
             }
             catch (Exception ex)
@@ -100,7 +100,7 @@ namespace SCI1
             Microsoft.Office.Interop.Excel.Workbook hoja = exportarExcel.Workbooks.Open("C:\\Users\\Emman\\Downloads\\RR.xlsx");
             int indiceColumna = 0;
             StringConverter stringConverter = new StringConverter();
-            stringConverter.ConvertToString(dataListado = dataGridView2);
+            stringConverter.ConvertToString(dataListado = dgvArticulosSolcitados);
             foreach (DataGridViewColumn columna in dataListado.Columns)
             {
                 indiceColumna++;
@@ -126,7 +126,7 @@ namespace SCI1
 
         public void Notificacion()
         {
-            if (dataGridView1.Rows.Count != 0)
+            if (dgvArticulosASolicitar.Rows.Count != 0)
             {
                 notifyIcon1.Text = "SCI ITSAV \n*Solicite una requisición \n**Actualice stock";
                 notifyIcon1.BalloonTipTitle = "Actualice stock o solicite una Requisición";
@@ -154,7 +154,7 @@ namespace SCI1
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             
             this.Notificacion();
-            if (dataGridView1.Rows.Count > 0)
+            if (dgvArticulosASolicitar.Rows.Count > 0)
             {
                 this.btnSolicitar.Enabled = true;
             }
@@ -162,7 +162,7 @@ namespace SCI1
             {
                 this.btnSolicitar.Enabled = false;   
             }
-            if (dataGridView2.Rows.Count > 0)
+            if (dgvArticulosSolcitados.Rows.Count > 0)
             {
                 this.btnRemover.Enabled = true;
                 this.btnLimpiar.Enabled = false;
@@ -178,7 +178,7 @@ namespace SCI1
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
             this.Notificacion();
 
-            if(dataGridView1.Rows.Count > 0)
+            if(dgvArticulosASolicitar.Rows.Count > 0)
             {
                 this.btnSolicitar.Enabled = true;
                 this.btnLimpiar.Enabled = false;
@@ -187,7 +187,7 @@ namespace SCI1
             {
                 this.btnSolicitar.Enabled = false;
             }
-            if (dataGridView2.Rows.Count > 0)
+            if (dgvArticulosSolcitados.Rows.Count > 0)
             {
                 this.btnRemover.Enabled = true;
                 this.btnLimpiar.Enabled = true;
@@ -205,7 +205,7 @@ namespace SCI1
                 bool DatosEnDGV = false;
                 String valorElemento = fila.Cells["NombreArticulo"].Value.ToString().ToUpper();
 
-                foreach (DataGridViewRow fila2 in dataGridView2.Rows)
+                foreach (DataGridViewRow fila2 in dgvArticulosSolcitados.Rows)
                 {
 
                     if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
@@ -229,14 +229,14 @@ namespace SCI1
                             IdUnidadMedida = "PZS";
                             break;
                         case "2":
-                            IdUnidadMedida = "LTS";
+                            IdUnidadMedida = "KGS";
                             break;
                         case "3":
-                            IdUnidadMedida = "KGS";
+                            IdUnidadMedida = "LTS";
                             break;
                     }
 
-                    dataGridView2.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
+                    dgvArticulosSolcitados.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
                 }
             }
             catch (Exception ex)
@@ -248,13 +248,13 @@ namespace SCI1
         {
             try
             {
-                if(dataGridView1.Rows.Count != 0)
+                if(dgvArticulosASolicitar.Rows.Count != 0)
                 {
                     btnSolicitar.Enabled = true;
-                    DataGridViewRow fila = dataGridView1.SelectedRows[0] as DataGridViewRow;
+                    DataGridViewRow fila = dgvArticulosASolicitar.SelectedRows[0] as DataGridViewRow;
                     TablaDeAgregarDatos(fila);
                 }
-                if (dataGridView1.Rows.Count == 0)
+                if (dgvArticulosASolicitar.Rows.Count == 0)
                 {
                     btnSolicitar.Enabled = false;
                 }
@@ -279,8 +279,8 @@ namespace SCI1
         {
             try
             {
-                dataGridView2.Rows.RemoveAt(n);
-                if (dataGridView2.Rows.Count == 0)
+                dgvArticulosSolcitados.Rows.RemoveAt(n);
+                if (dgvArticulosSolcitados.Rows.Count == 0)
                 {
                     this.btnRemover.Enabled = false;
                     this.btnLimpiar.Enabled = false;
@@ -294,8 +294,8 @@ namespace SCI1
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Clear();
-            if (dataGridView2.Rows.Count == 0)
+            dgvArticulosSolcitados.Rows.Clear();
+            if (dgvArticulosSolcitados.Rows.Count == 0)
             {
                 this.btnLimpiar.Enabled = false;
                 this.btnRemover.Enabled = false;

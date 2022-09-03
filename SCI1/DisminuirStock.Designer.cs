@@ -209,6 +209,7 @@
             this.cantidadNumericUpDown.Name = "cantidadNumericUpDown";
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.cantidadNumericUpDown.TabIndex = 12;
+            this.cantidadNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidadNumericUpDown_KeyPress);
             // 
             // inventarioBindingSource1
             // 

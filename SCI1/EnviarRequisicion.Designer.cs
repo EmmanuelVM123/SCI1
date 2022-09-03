@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -50,7 +50,6 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tProgreso = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.txtAsunto = new System.Windows.Forms.TextBox();
             this.txtCuerpo = new System.Windows.Forms.TextBox();
@@ -228,14 +227,14 @@
             this.dgvDestinatario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDestinatario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDestinatario.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDestinatario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correoDestino});
@@ -257,10 +256,6 @@
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // tProgreso
-            // 
-            this.tProgreso.Tick += new System.EventHandler(this.tProgreso_Tick);
             // 
             // label9
             // 
@@ -409,7 +404,6 @@
         private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Timer tProgreso;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtAsunto;
         private System.Windows.Forms.TextBox txtCuerpo;

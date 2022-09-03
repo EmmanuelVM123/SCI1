@@ -95,7 +95,8 @@
             this.txtCorreo.TabIndex = 1;
             this.txtCorreo.Text = "Correo eléctronico";
             this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
-            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);            
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
+            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
             // 
             // label1
             // 

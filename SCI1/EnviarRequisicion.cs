@@ -17,8 +17,13 @@ namespace SCI1
         {
             InitializeComponent();
             conteo = 0;
+            this.destinatarioFijo();
         }
-
+        private void destinatarioFijo()
+        {
+            int filaIndice = dgvDestinatario.Rows.Add();
+            dgvDestinatario.Rows[filaIndice].Cells[0].Value = "rm_@alvarado.tecnm.mx";
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -105,12 +110,6 @@ namespace SCI1
             {
                 this.btnLimpiar.Enabled = false;
             }
-        }
-
-        private void tProgreso_Tick(object sender, EventArgs e)
-        {
-            conteo++;
-
         }
 
         private void EnviarRequisicion_Load(object sender, EventArgs e)
