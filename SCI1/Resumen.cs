@@ -56,7 +56,7 @@ namespace SCI1
                 DateTime fecha = DateTime.Today;
                 x.Cells[11, 4] = fecha.ToShortDateString();
                 //insertar CANTIDAD SOLICITADA en la CELDA B12
-                x.Cells[14, 2] = tbxCantidad.Text;
+                x.Cells[14, 2] = txtCantidad.Text;
                 //Insertar UNIDAD DE MEDIDA en la CELDA C14
                 x.Cells[14, 3] = cbxUnidadMedida.Text;
                 //Insertar NOMBRE DE ARTÍCULO en la CELDA D14
@@ -77,7 +77,7 @@ namespace SCI1
                 hoja.Close(true, Type.Missing, Type.Missing);
                 excel.Quit();
                 this.cbxAreaSolicitante.Text = "";
-                this.tbxCantidad.Clear();
+                this.txtCantidad.Clear();
                 this.cbxUnidadMedida.Text = "";
                 this.cbxArticulo.Text = "";
                 this.cbxUsar.Text = "";
@@ -268,6 +268,31 @@ namespace SCI1
             }
             
             
+        }
+
+        private void btnSolicitarNuevo_Click(object sender, EventArgs e)
+        {
+            dgvArticulosSolcitados.Rows.Add(Convert.ToString(txtCantidad.Text), Convert.ToString(cbxUnidadMedida.Text), cbxArticulo.Text);
+            try
+            {
+                if (dgvArticulosASolicitar.Rows.Count != 0)
+                {
+                    btnSolicitar.Enabled = true;
+                    //DataGridViewRow fila = dgvArticulosASolicitar.SelectedRows[0] as DataGridViewRow;
+                    //TablaDeAgregarDatos(fila);
+                }
+                if (dgvArticulosASolicitar.Rows.Count == 0)
+                {
+                    btnSolicitar.Enabled = false;
+                }
+                this.btnRemover.Enabled = true;
+                this.btnLimpiar.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido el siguiente error al solicitar artículo(s): " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

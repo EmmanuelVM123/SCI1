@@ -246,15 +246,10 @@
             // 
             this.idAreaComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.idAreaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "IdArea", true));
+            this.idAreaComboBox.DataSource = this.inventarioBindingSource;
+            this.idAreaComboBox.DisplayMember = "IdArea";
             this.idAreaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idAreaComboBox.FormattingEnabled = true;
-            this.idAreaComboBox.Items.AddRange(new object[] {
-            "CIS",
-            "ITN",
-            "MNT",
-            "SGR",
-            "LBC",
-            "AMT"});
             this.idAreaComboBox.Location = new System.Drawing.Point(167, 13);
             this.idAreaComboBox.Name = "idAreaComboBox";
             this.idAreaComboBox.Size = new System.Drawing.Size(55, 21);

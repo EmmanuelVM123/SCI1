@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resumen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
@@ -41,14 +41,30 @@
             this.articuloARequisitarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sCIDataSet = new SCI1.SCIDataSet();
             this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnEnviar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.dgvArticulosSolcitados = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
+            this.articuloARequisitar = new SCI1.SCIDataSetTableAdapters.ArticuloARequisitar();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.inventarioTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioTableAdapter();
+            this.panelSolicitarArticulos = new System.Windows.Forms.Panel();
+            this.btnSolicitar = new System.Windows.Forms.Button();
+            this.dgvArticulosASolicitar = new System.Windows.Forms.DataGridView();
+            this.IdArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdUnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadNormal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadCritica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelOtroArticulo = new System.Windows.Forms.Panel();
             this.cbxUsar = new System.Windows.Forms.ComboBox();
             this.cbxAreaSolicitante = new System.Windows.Forms.ComboBox();
@@ -56,27 +72,12 @@
             this.cbxUnidadMedida = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbxCantidad = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.articuloARequisitar = new SCI1.SCIDataSetTableAdapters.ArticuloARequisitar();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.inventarioTableAdapter = new SCI1.SCIDataSetTableAdapters.InventarioTableAdapter();
-            this.panelSolicitarArticulos = new System.Windows.Forms.Panel();
-            this.dgvArticulosASolicitar = new System.Windows.Forms.DataGridView();
-            this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CantidadCritica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadNormal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdUnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSolicitar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.btnSolicitarNuevo = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRecargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -85,11 +86,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulosSolcitados)).BeginInit();
-            this.panelOtroArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelSolicitarArticulos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulosASolicitar)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelOtroArticulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -158,29 +159,45 @@
             this.inventarioBindingSource.DataMember = "Inventario";
             this.inventarioBindingSource.DataSource = this.sCIDataSet;
             // 
-            // btnEnviar
-            // 
-            this.btnEnviar.Image = global::SCI1.Properties.Resources.icons8_generador_automotriz_32;
-            this.btnEnviar.Location = new System.Drawing.Point(343, 133);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(296, 40);
-            this.btnEnviar.TabIndex = 1;
-            this.btnEnviar.Text = "Generar requisición";
-            this.btnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEscribir_Click);
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnEnviar);
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnRemover);
             this.panel2.Controls.Add(this.dgvArticulosSolcitados);
-            this.panel2.Controls.Add(this.panelOtroArticulo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 322);
+            this.panel2.Location = new System.Drawing.Point(0, 299);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 427);
+            this.panel2.Size = new System.Drawing.Size(1014, 245);
             this.panel2.TabIndex = 5;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
+            this.btnLimpiar.Location = new System.Drawing.Point(794, 120);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(120, 40);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnRemover.Image = global::SCI1.Properties.Resources.icons8_eliminar_propiedad_32;
+            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemover.Location = new System.Drawing.Point(73, 120);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(120, 40);
+            this.btnRemover.TabIndex = 9;
+            this.btnRemover.Text = "Remover ";
+            this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // dgvArticulosSolcitados
             // 
@@ -190,14 +207,14 @@
             this.dgvArticulosSolcitados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvArticulosSolcitados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvArticulosSolcitados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulosSolcitados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulosSolcitados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvArticulosSolcitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulosSolcitados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -208,8 +225,8 @@
             this.dgvArticulosSolcitados.Name = "dgvArticulosSolcitados";
             this.dgvArticulosSolcitados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvArticulosSolcitados.RowHeadersWidth = 42;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvArticulosSolcitados.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvArticulosSolcitados.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvArticulosSolcitados.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvArticulosSolcitados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulosSolcitados.Size = new System.Drawing.Size(1014, 114);
@@ -235,52 +252,191 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 77;
             // 
-            // btnLimpiar
+            // articuloARequisitar
             // 
-            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
-            this.btnLimpiar.Location = new System.Drawing.Point(764, 156);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(120, 40);
-            this.btnLimpiar.TabIndex = 10;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.articuloARequisitar.ClearBeforeFill = true;
             // 
-            // btnRemover
+            // notifyIcon1
             // 
-            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRemover.Image = global::SCI1.Properties.Resources.icons8_eliminar_propiedad_32;
-            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.Location = new System.Drawing.Point(64, 126);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(120, 40);
-            this.btnRemover.TabIndex = 9;
-            this.btnRemover.Text = "Remover ";
-            this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // inventarioTableAdapter
+            // 
+            this.inventarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // panelSolicitarArticulos
+            // 
+            this.panelSolicitarArticulos.Controls.Add(this.btnSolicitar);
+            this.panelSolicitarArticulos.Controls.Add(this.dgvArticulosASolicitar);
+            this.panelSolicitarArticulos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSolicitarArticulos.Location = new System.Drawing.Point(0, 0);
+            this.panelSolicitarArticulos.Name = "panelSolicitarArticulos";
+            this.panelSolicitarArticulos.Size = new System.Drawing.Size(1014, 273);
+            this.panelSolicitarArticulos.TabIndex = 15;
+            // 
+            // btnSolicitar
+            // 
+            this.btnSolicitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSolicitar.Enabled = false;
+            this.btnSolicitar.Image = global::SCI1.Properties.Resources.icons8_insertar_fila_debajo_32;
+            this.btnSolicitar.Location = new System.Drawing.Point(423, 223);
+            this.btnSolicitar.Name = "btnSolicitar";
+            this.btnSolicitar.Size = new System.Drawing.Size(120, 41);
+            this.btnSolicitar.TabIndex = 8;
+            this.btnSolicitar.Text = "Solicitar";
+            this.btnSolicitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSolicitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSolicitar.UseVisualStyleBackColor = true;
+            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
+            // 
+            // dgvArticulosASolicitar
+            // 
+            this.dgvArticulosASolicitar.AllowUserToAddRows = false;
+            this.dgvArticulosASolicitar.AllowUserToDeleteRows = false;
+            this.dgvArticulosASolicitar.AllowUserToOrderColumns = true;
+            this.dgvArticulosASolicitar.AutoGenerateColumns = false;
+            this.dgvArticulosASolicitar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvArticulosASolicitar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvArticulosASolicitar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulosASolicitar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvArticulosASolicitar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulosASolicitar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdArea,
+            this.IdArticulo,
+            this.NombreArticulo,
+            this.Descripcion,
+            this.Cantidad,
+            this.IdUnidadMedida,
+            this.CantidadNormal,
+            this.CantidadCritica,
+            this.seleccionar});
+            this.dgvArticulosASolicitar.DataSource = this.articuloARequisitarBindingSource;
+            this.dgvArticulosASolicitar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvArticulosASolicitar.EnableHeadersVisualStyles = false;
+            this.dgvArticulosASolicitar.Location = new System.Drawing.Point(0, 0);
+            this.dgvArticulosASolicitar.Name = "dgvArticulosASolicitar";
+            this.dgvArticulosASolicitar.ReadOnly = true;
+            this.dgvArticulosASolicitar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvArticulosASolicitar.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvArticulosASolicitar.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvArticulosASolicitar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArticulosASolicitar.Size = new System.Drawing.Size(1014, 217);
+            this.dgvArticulosASolicitar.TabIndex = 2;
+            // 
+            // IdArea
+            // 
+            this.IdArea.DataPropertyName = "IdArea";
+            this.IdArea.HeaderText = "Área";
+            this.IdArea.Name = "IdArea";
+            this.IdArea.ReadOnly = true;
+            this.IdArea.Width = 64;
+            // 
+            // IdArticulo
+            // 
+            this.IdArticulo.DataPropertyName = "IdArticulo";
+            this.IdArticulo.HeaderText = "ID";
+            this.IdArticulo.Name = "IdArticulo";
+            this.IdArticulo.ReadOnly = true;
+            this.IdArticulo.Width = 46;
+            // 
+            // NombreArticulo
+            // 
+            this.NombreArticulo.DataPropertyName = "NombreArticulo";
+            this.NombreArticulo.HeaderText = "Artículo";
+            this.NombreArticulo.Name = "NombreArticulo";
+            this.NombreArticulo.ReadOnly = true;
+            this.NombreArticulo.Width = 83;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 114;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 93;
+            // 
+            // IdUnidadMedida
+            // 
+            this.IdUnidadMedida.DataPropertyName = "IdUnidadMedida";
+            this.IdUnidadMedida.HeaderText = "Medida";
+            this.IdUnidadMedida.Name = "IdUnidadMedida";
+            this.IdUnidadMedida.ReadOnly = true;
+            this.IdUnidadMedida.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IdUnidadMedida.Width = 83;
+            // 
+            // CantidadNormal
+            // 
+            this.CantidadNormal.DataPropertyName = "CantidadNormal";
+            this.CantidadNormal.HeaderText = "Cantidad normal";
+            this.CantidadNormal.Name = "CantidadNormal";
+            this.CantidadNormal.ReadOnly = true;
+            this.CantidadNormal.Width = 132;
+            // 
+            // CantidadCritica
+            // 
+            this.CantidadCritica.DataPropertyName = "CantidadCritica";
+            this.CantidadCritica.HeaderText = "Cantidad crítica";
+            this.CantidadCritica.Name = "CantidadCritica";
+            this.CantidadCritica.ReadOnly = true;
+            this.CantidadCritica.Width = 127;
+            // 
+            // seleccionar
+            // 
+            this.seleccionar.HeaderText = "Seleccionar";
+            this.seleccionar.Name = "seleccionar";
+            this.seleccionar.ReadOnly = true;
+            this.seleccionar.Visible = false;
+            this.seleccionar.Width = 95;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelSolicitarArticulos);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1014, 274);
+            this.panel1.TabIndex = 4;
             // 
             // panelOtroArticulo
             // 
+            this.panelOtroArticulo.Controls.Add(this.btnSolicitarNuevo);
             this.panelOtroArticulo.Controls.Add(this.cbxUsar);
             this.panelOtroArticulo.Controls.Add(this.cbxAreaSolicitante);
             this.panelOtroArticulo.Controls.Add(this.cbxArticulo);
             this.panelOtroArticulo.Controls.Add(this.cbxUnidadMedida);
             this.panelOtroArticulo.Controls.Add(this.label6);
             this.panelOtroArticulo.Controls.Add(this.label5);
-            this.panelOtroArticulo.Controls.Add(this.tbxCantidad);
+            this.panelOtroArticulo.Controls.Add(this.txtCantidad);
             this.panelOtroArticulo.Controls.Add(this.label4);
             this.panelOtroArticulo.Controls.Add(this.label3);
             this.panelOtroArticulo.Controls.Add(this.label2);
-            this.panelOtroArticulo.Controls.Add(this.btnEnviar);
             this.panelOtroArticulo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelOtroArticulo.Location = new System.Drawing.Point(0, 241);
+            this.panelOtroArticulo.Location = new System.Drawing.Point(0, 605);
             this.panelOtroArticulo.Name = "panelOtroArticulo";
-            this.panelOtroArticulo.Size = new System.Drawing.Size(1014, 186);
-            this.panelOtroArticulo.TabIndex = 1;
+            this.panelOtroArticulo.Size = new System.Drawing.Size(1014, 183);
+            this.panelOtroArticulo.TabIndex = 6;
             // 
             // cbxUsar
             // 
@@ -347,13 +503,13 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Unidad de medida";
             // 
-            // tbxCantidad
+            // txtCantidad
             // 
-            this.tbxCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxCantidad.Location = new System.Drawing.Point(203, 63);
-            this.tbxCantidad.Name = "tbxCantidad";
-            this.tbxCantidad.Size = new System.Drawing.Size(272, 20);
-            this.tbxCantidad.TabIndex = 18;
+            this.txtCantidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCantidad.Location = new System.Drawing.Point(203, 63);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(272, 20);
+            this.txtCantidad.TabIndex = 18;
             // 
             // label4
             // 
@@ -382,172 +538,31 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Área solicitante";
             // 
-            // articuloARequisitar
+            // btnEnviar
             // 
-            this.articuloARequisitar.ClearBeforeFill = true;
+            this.btnEnviar.Image = global::SCI1.Properties.Resources.icons8_generador_automotriz_32;
+            this.btnEnviar.Location = new System.Drawing.Point(349, 188);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(296, 40);
+            this.btnEnviar.TabIndex = 12;
+            this.btnEnviar.Text = "Generar requisición";
+            this.btnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEscribir_Click);
             // 
-            // notifyIcon1
+            // btnSolicitarNuevo
             // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // inventarioTableAdapter
-            // 
-            this.inventarioTableAdapter.ClearBeforeFill = true;
-            // 
-            // panelSolicitarArticulos
-            // 
-            this.panelSolicitarArticulos.Controls.Add(this.btnSolicitar);
-            this.panelSolicitarArticulos.Controls.Add(this.dgvArticulosASolicitar);
-            this.panelSolicitarArticulos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSolicitarArticulos.Location = new System.Drawing.Point(0, 0);
-            this.panelSolicitarArticulos.Name = "panelSolicitarArticulos";
-            this.panelSolicitarArticulos.Size = new System.Drawing.Size(1014, 273);
-            this.panelSolicitarArticulos.TabIndex = 15;
-            // 
-            // dgvArticulosASolicitar
-            // 
-            this.dgvArticulosASolicitar.AllowUserToAddRows = false;
-            this.dgvArticulosASolicitar.AllowUserToDeleteRows = false;
-            this.dgvArticulosASolicitar.AllowUserToOrderColumns = true;
-            this.dgvArticulosASolicitar.AutoGenerateColumns = false;
-            this.dgvArticulosASolicitar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvArticulosASolicitar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvArticulosASolicitar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulosASolicitar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvArticulosASolicitar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulosASolicitar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdArea,
-            this.IdArticulo,
-            this.NombreArticulo,
-            this.Descripcion,
-            this.Cantidad,
-            this.IdUnidadMedida,
-            this.CantidadNormal,
-            this.CantidadCritica,
-            this.seleccionar});
-            this.dgvArticulosASolicitar.DataSource = this.articuloARequisitarBindingSource;
-            this.dgvArticulosASolicitar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvArticulosASolicitar.EnableHeadersVisualStyles = false;
-            this.dgvArticulosASolicitar.Location = new System.Drawing.Point(0, 0);
-            this.dgvArticulosASolicitar.Name = "dgvArticulosASolicitar";
-            this.dgvArticulosASolicitar.ReadOnly = true;
-            this.dgvArticulosASolicitar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvArticulosASolicitar.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvArticulosASolicitar.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvArticulosASolicitar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulosASolicitar.Size = new System.Drawing.Size(1014, 217);
-            this.dgvArticulosASolicitar.TabIndex = 2;
-            // 
-            // seleccionar
-            // 
-            this.seleccionar.HeaderText = "Seleccionar";
-            this.seleccionar.Name = "seleccionar";
-            this.seleccionar.ReadOnly = true;
-            this.seleccionar.Visible = false;
-            this.seleccionar.Width = 95;
-            // 
-            // CantidadCritica
-            // 
-            this.CantidadCritica.DataPropertyName = "CantidadCritica";
-            this.CantidadCritica.HeaderText = "Cantidad crítica";
-            this.CantidadCritica.Name = "CantidadCritica";
-            this.CantidadCritica.ReadOnly = true;
-            this.CantidadCritica.Width = 127;
-            // 
-            // CantidadNormal
-            // 
-            this.CantidadNormal.DataPropertyName = "CantidadNormal";
-            this.CantidadNormal.HeaderText = "Cantidad normal";
-            this.CantidadNormal.Name = "CantidadNormal";
-            this.CantidadNormal.ReadOnly = true;
-            this.CantidadNormal.Width = 132;
-            // 
-            // IdUnidadMedida
-            // 
-            this.IdUnidadMedida.DataPropertyName = "IdUnidadMedida";
-            this.IdUnidadMedida.HeaderText = "Medida";
-            this.IdUnidadMedida.Name = "IdUnidadMedida";
-            this.IdUnidadMedida.ReadOnly = true;
-            this.IdUnidadMedida.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IdUnidadMedida.Width = 83;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 93;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 114;
-            // 
-            // NombreArticulo
-            // 
-            this.NombreArticulo.DataPropertyName = "NombreArticulo";
-            this.NombreArticulo.HeaderText = "Artículo";
-            this.NombreArticulo.Name = "NombreArticulo";
-            this.NombreArticulo.ReadOnly = true;
-            this.NombreArticulo.Width = 83;
-            // 
-            // IdArticulo
-            // 
-            this.IdArticulo.DataPropertyName = "IdArticulo";
-            this.IdArticulo.HeaderText = "ID";
-            this.IdArticulo.Name = "IdArticulo";
-            this.IdArticulo.ReadOnly = true;
-            this.IdArticulo.Width = 46;
-            // 
-            // IdArea
-            // 
-            this.IdArea.DataPropertyName = "IdArea";
-            this.IdArea.HeaderText = "Área";
-            this.IdArea.Name = "IdArea";
-            this.IdArea.ReadOnly = true;
-            this.IdArea.Width = 64;
-            // 
-            // btnSolicitar
-            // 
-            this.btnSolicitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSolicitar.Enabled = false;
-            this.btnSolicitar.Image = global::SCI1.Properties.Resources.icons8_insertar_fila_debajo_32;
-            this.btnSolicitar.Location = new System.Drawing.Point(423, 223);
-            this.btnSolicitar.Name = "btnSolicitar";
-            this.btnSolicitar.Size = new System.Drawing.Size(120, 41);
-            this.btnSolicitar.TabIndex = 8;
-            this.btnSolicitar.Text = "Solicitar";
-            this.btnSolicitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSolicitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSolicitar.UseVisualStyleBackColor = true;
-            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panelSolicitarArticulos);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 297);
-            this.panel1.TabIndex = 4;
+            this.btnSolicitarNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSolicitarNuevo.Image = global::SCI1.Properties.Resources.icons8_insertar_fila_debajo_32;
+            this.btnSolicitarNuevo.Location = new System.Drawing.Point(423, 130);
+            this.btnSolicitarNuevo.Name = "btnSolicitarNuevo";
+            this.btnSolicitarNuevo.Size = new System.Drawing.Size(120, 41);
+            this.btnSolicitarNuevo.TabIndex = 9;
+            this.btnSolicitarNuevo.Text = "Solicitar";
+            this.btnSolicitarNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSolicitarNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSolicitarNuevo.UseVisualStyleBackColor = true;
+            this.btnSolicitarNuevo.Click += new System.EventHandler(this.btnSolicitarNuevo_Click);
             // 
             // Resumen
             // 
@@ -556,6 +571,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1014, 788);
+            this.Controls.Add(this.panelOtroArticulo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitulo);
@@ -573,12 +589,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulosSolcitados)).EndInit();
-            this.panelOtroArticulo.ResumeLayout(false);
-            this.panelOtroArticulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panelSolicitarArticulos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulosASolicitar)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panelOtroArticulo.ResumeLayout(false);
+            this.panelOtroArticulo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -589,26 +605,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnRecargar;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Panel panel2;
         private SCIDataSet sCIDataSet;
         private System.Windows.Forms.BindingSource articuloARequisitarBindingSource;
         private SCIDataSetTableAdapters.ArticuloARequisitar articuloARequisitar;
-        private System.Windows.Forms.Panel panelOtroArticulo;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.BindingSource inventarioBindingSource;
         private SCIDataSetTableAdapters.InventarioTableAdapter inventarioTableAdapter;
-        private System.Windows.Forms.ComboBox cbxUsar;
-        private System.Windows.Forms.ComboBox cbxAreaSolicitante;
-        private System.Windows.Forms.ComboBox cbxArticulo;
-        private System.Windows.Forms.ComboBox cbxUnidadMedida;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox tbxCantidad;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView dgvArticulosSolcitados;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -628,5 +632,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadNormal;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadCritica;
         private System.Windows.Forms.DataGridViewCheckBoxColumn seleccionar;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.Panel panelOtroArticulo;
+        private System.Windows.Forms.Button btnSolicitarNuevo;
+        private System.Windows.Forms.ComboBox cbxUsar;
+        private System.Windows.Forms.ComboBox cbxAreaSolicitante;
+        private System.Windows.Forms.ComboBox cbxArticulo;
+        private System.Windows.Forms.ComboBox cbxUnidadMedida;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
