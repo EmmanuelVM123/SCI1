@@ -277,7 +277,8 @@
             this.idUnidadMedidaComboBox.Items.AddRange(new object[] {
             "1",
             "2",
-            "3"});
+            "3",
+            "4"});
             this.idUnidadMedidaComboBox.Location = new System.Drawing.Point(67, 113);
             this.idUnidadMedidaComboBox.Name = "idUnidadMedidaComboBox";
             this.idUnidadMedidaComboBox.Size = new System.Drawing.Size(55, 21);

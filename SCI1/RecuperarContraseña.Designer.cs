@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecuperarContraseña));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,6 +41,7 @@
             this.panelAriiba = new System.Windows.Forms.Panel();
             this.btnMinizar = new System.Windows.Forms.PictureBox();
             this.bntCerrar = new System.Windows.Forms.PictureBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -47,6 +49,7 @@
             this.panelAriiba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,6 +192,10 @@
             this.bntCerrar.TabStop = false;
             this.bntCerrar.Click += new System.EventHandler(this.bntCerrar_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // RecuperarContraseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +217,7 @@
             this.panelAriiba.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,5 +235,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

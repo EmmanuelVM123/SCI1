@@ -122,32 +122,32 @@ namespace SCI1
             this.CargaDatos();
         }
 
-        private void inventarioDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            bool cn = inventarioDataGridView.Columns[e.ColumnIndex].Index == 6;
-            bool cc = inventarioDataGridView.Columns[e.ColumnIndex].Index == 7;
+        //private void inventarioDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        //{
+        //    bool cn = inventarioDataGridView.Columns[e.ColumnIndex].Index == 6;
+        //    bool cc = inventarioDataGridView.Columns[e.ColumnIndex].Index == 7;
 
 
 
-            if (inventarioDataGridView.Columns[e.ColumnIndex].Index == 4)
-            {
-                if (Convert.ToInt32(e.Value) >= Convert.ToInt32(cn))
-                {
-                    e.CellStyle.ForeColor = Color.White;
-                    e.CellStyle.BackColor = System.Drawing.Color.SteelBlue;
-                }
-                if (Convert.ToInt32(e.Value) < Convert.ToInt32(cn))
-                {
-                    e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
-                    e.CellStyle.BackColor = System.Drawing.Color.LightYellow;
-                }
-                if (Convert.ToInt32(e.Value) <= Convert.ToInt32(cc) )
-                {
-                    e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
-                    e.CellStyle.BackColor = System.Drawing.Color.FloralWhite;
-                }                         
-            }
-        }
+        //    if (inventarioDataGridView.Columns[e.ColumnIndex].Index == 4)
+        //    {
+        //        if (Convert.ToInt32(e.Value) >= Convert.ToInt32(cn))
+        //        {
+        //            e.CellStyle.ForeColor = Color.White;
+        //            e.CellStyle.BackColor = System.Drawing.Color.SteelBlue;
+        //        }
+        //        if (Convert.ToInt32(e.Value) < Convert.ToInt32(cn))
+        //        {
+        //            e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
+        //            e.CellStyle.BackColor = System.Drawing.Color.LightYellow;
+        //        }
+        //        if (Convert.ToInt32(e.Value) <= Convert.ToInt32(cc) )
+        //        {
+        //            e.CellStyle.ForeColor = System.Drawing.Color.DarkRed;
+        //            e.CellStyle.BackColor = System.Drawing.Color.FloralWhite;
+        //        }                         
+        //    }
+        //}
 
       
     }

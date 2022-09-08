@@ -15,7 +15,7 @@ using Magnum.FileSystem;
 
 namespace SCI1
 {
-    public partial class Resumen : Form, VarDatosEntreForm
+    public partial class Resumen : Form
     {
         int n;
         public Resumen()
@@ -56,7 +56,7 @@ namespace SCI1
                 DateTime fecha = DateTime.Today;
                 x.Cells[11, 4] = fecha.ToShortDateString();
                 //insertar CANTIDAD SOLICITADA en la CELDA B12
-                x.Cells[14, 2] = txtCantidad.Text;
+                x.Cells[14, 2] = Convert.ToString(cbxCantidad.Text);
                 //Insertar UNIDAD DE MEDIDA en la CELDA C14
                 x.Cells[14, 3] = cbxUnidadMedida.Text;
                 //Insertar NOMBRE DE ARTÍCULO en la CELDA D14
@@ -77,7 +77,7 @@ namespace SCI1
                 hoja.Close(true, Type.Missing, Type.Missing);
                 excel.Quit();
                 this.cbxAreaSolicitante.Text = "";
-                this.txtCantidad.Clear();
+                Convert.ToUInt32(cbxCantidad).ToString("");
                 this.cbxUnidadMedida.Text = "";
                 this.cbxArticulo.Text = "";
                 this.cbxUsar.Text = "";
@@ -90,7 +90,11 @@ namespace SCI1
         }
         private void btnEscribir_Click(object sender, EventArgs e)
         {
-            ExportarExcel();
+            if (this.ValidaGenerar())
+            {
+                MessageBox.Show("Se insertaron datos en el archivo Excel ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
 
         }
 
@@ -152,24 +156,26 @@ namespace SCI1
             // TODO: esta línea de código carga datos en la tabla 'sCIDataSet.Inventario' Puede moverla o quitarla según sea necesario.
             this.inventarioTableAdapter.Fill(this.sCIDataSet.Inventario);
             this.articuloARequisitar.Fill(this.sCIDataSet.ArticuloARequisitar);
-            
-            this.Notificacion();
+             this.Notificacion();
+
             if (dgvArticulosASolicitar.Rows.Count > 0)
-            {
+            {                
                 this.btnSolicitar.Enabled = true;
+                this.btnSolicitarNuevo.Enabled = true;
             }
             else
             {
-                this.btnSolicitar.Enabled = false;   
+                this.btnSolicitar.Enabled = false;
+                this.btnSolicitarNuevo.Enabled = true;
             }
             if (dgvArticulosSolcitados.Rows.Count > 0)
             {
-                this.btnRemover.Enabled = true;
+                this.btnEnviar.Enabled = true;
                 this.btnLimpiar.Enabled = false;
             }
             else
             {
-                this.btnRemover.Enabled = false;
+                this.btnEnviar.Enabled = false; 
                 this.btnLimpiar.Enabled = false;
             }
         }
@@ -186,16 +192,14 @@ namespace SCI1
             else
             {
                 this.btnSolicitar.Enabled = false;
+                this.btnEnviar.Enabled = false;
             }
             if (dgvArticulosSolcitados.Rows.Count > 0)
             {
-                this.btnRemover.Enabled = true;
                 this.btnLimpiar.Enabled = true;
+                this.btnEnviar.Enabled = true;
             }
-            else
-            {
-                this.btnRemover.Enabled = false;
-            }
+
         }
         
         public void TablaDeAgregarDatos(DataGridViewRow fila)
@@ -234,6 +238,9 @@ namespace SCI1
                         case "3":
                             IdUnidadMedida = "LTS";
                             break;
+                        case "4":
+                            IdUnidadMedida = "GALON";
+                            break;
                     }
 
                     dgvArticulosSolcitados.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
@@ -244,21 +251,98 @@ namespace SCI1
                 MessageBox.Show("Error al agregar: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void TablaAgregarNuevos(DataGridViewRow fila)
+        {
+            try
+            {
+                bool DatosEnDGV = false;
+                String valorElemento = cbxArticulo.Text.ToString().ToUpper();
+
+                foreach (DataGridViewRow fila2 in dgvArticulosSolcitados.Rows)
+                {
+
+                    if (fila2.Cells[2].Value.ToString().Equals(valorElemento))
+                    {
+                        //this.errorProvider1.SetError(this.btnSolicitar, "Artículo repetido\nEl artículo '" + this.NombreArticulo.ToString() + "' ya fue agregado");
+                        MessageBox.Show("No se puede agregar de nuevo el artículo seleccionado porque que ya está en la lista a solicitar", "Artículo repetido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        DatosEnDGV = true;
+                        break;
+                    }
+                }
+
+                if (DatosEnDGV != true)
+                {
+                    //String Cantidad = cbxCantidad.Text.ToString();  
+                    //String NombreArticulo = cbxArticulo.Text.ToString();
+                    //String IdUnidadMedida = cbxUnidadMedida.Text.ToString();
+                    //dgvArticulosSolcitados.Rows.Add(new[] { Cantidad, IdUnidadMedida, NombreArticulo });
+                    dgvArticulosSolcitados.Rows.Add(cbxCantidad.Value.ToString(), cbxUnidadMedida.Text.ToString(), cbxArticulo.Text.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private bool ValidaGenerar()
+        {
+            this.errorProvider.Clear();
+            bool resultado = true;
+            //Validar el campo Usuario
+            if (this.cbxAreaSolicitante.Text.Trim() == "Seleccione el área")
+            {
+                resultado = false;
+                this.errorProvider.SetError(this.cbxAreaSolicitante, "Seleccione el área solicitante");
+            }
+
+            //Validar el campo Contraseña
+            if (this.cbxUsar.Text.Trim() == "" || this.cbxUsar.Text.Trim() == "Seleccione o describa para que o por quiénes serán utilizados los artículos solicitados")
+            {
+                resultado = false;
+                this.errorProvider.SetError(this.cbxUnidadMedida, "Seleccione o describa el uso de los artículos");
+            }
+
+            return resultado;
+        }
+
+        private bool ValidaSolicitarNuevo()
+        {
+            this.errorProvider.Clear();
+            bool resultado = true;
+            //Validar el campo Usuario
+            if (this.cbxCantidad.Value == 0 )
+            {
+                resultado = false;
+                this.errorProvider.SetError(this.cbxCantidad, "Ingrese un núnero mayor que 1");
+            }
+
+            //Validar el campo Contraseña
+            if (this.cbxUnidadMedida.Text.Trim() == "" || this.cbxUnidadMedida.Text.Trim() == "0")
+            {
+                resultado = false;
+                this.errorProvider.SetError(this.cbxUnidadMedida, "Selecciona una unidad de medida");
+            }
+
+            return resultado;
+        }
+
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
             try
             {
                 if(dgvArticulosASolicitar.Rows.Count != 0)
-                {
-                    btnSolicitar.Enabled = true;
+                {                    
                     DataGridViewRow fila = dgvArticulosASolicitar.SelectedRows[0] as DataGridViewRow;
                     TablaDeAgregarDatos(fila);
+                    btnEnviar.Enabled = true;
                 }
                 if (dgvArticulosASolicitar.Rows.Count == 0)
                 {
                     btnSolicitar.Enabled = false;
-                }
-                this.btnRemover.Enabled = true;
+                }               
                 this.btnLimpiar.Enabled = true;
 
             }
@@ -266,26 +350,23 @@ namespace SCI1
             {
                 MessageBox.Show("Ha ocurrido el siguiente error al solicitar artículo(s): " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
-            
         }
 
         private void btnSolicitarNuevo_Click(object sender, EventArgs e)
-        {
-            dgvArticulosSolcitados.Rows.Add(Convert.ToString(txtCantidad.Text), Convert.ToString(cbxUnidadMedida.Text), cbxArticulo.Text);
+        {            
             try
             {
-                if (dgvArticulosASolicitar.Rows.Count != 0)
+                if (dgvArticulosASolicitar.Rows.Count != 0 && this.ValidaSolicitarNuevo())
                 {
-                    btnSolicitar.Enabled = true;
-                    //DataGridViewRow fila = dgvArticulosASolicitar.SelectedRows[0] as DataGridViewRow;
-                    //TablaDeAgregarDatos(fila);
+                    dgvArticulosSolcitados.Rows.Add(cbxCantidad.Value.ToString(), cbxUnidadMedida.Text.ToString().ToUpper(), cbxArticulo.Text.ToString().ToUpper());
+                    //DataGridViewRow fila = dgvArticulosSolcitados.SelectedRows[0] as DataGridViewRow;
+                    //TablaAgregarNuevos(fila);
+                    btnEnviar.Enabled = true;
                 }
                 if (dgvArticulosASolicitar.Rows.Count == 0)
                 {
                     btnSolicitar.Enabled = false;
                 }
-                this.btnRemover.Enabled = true;
                 this.btnLimpiar.Enabled = true;
 
             }
@@ -299,37 +380,15 @@ namespace SCI1
         {
             n = e.RowIndex;
         }
-
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dgvArticulosSolcitados.Rows.RemoveAt(n);
-                if (dgvArticulosSolcitados.Rows.Count == 0)
-                {
-                    this.btnRemover.Enabled = false;
-                    this.btnLimpiar.Enabled = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ha ocuurrido un error al remover una fila: " + ex.Message.ToString(), "Revise", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             dgvArticulosSolcitados.Rows.Clear();
             if (dgvArticulosSolcitados.Rows.Count == 0)
             {
                 this.btnLimpiar.Enabled = false;
-                this.btnRemover.Enabled = false;
+                this.btnEnviar.Enabled = false;
             }
         }
-    }
-
-    internal interface VarDatosEntreForm
-    {
 
     }
 }

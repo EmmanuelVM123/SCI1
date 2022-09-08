@@ -27,9 +27,7 @@ namespace SCI1
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         #endregion
-
-
-        
+      
 
         private void txtContraseña_Enter(object sender, EventArgs e)
         {
@@ -140,7 +138,10 @@ namespace SCI1
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            this.Acceder();
+            if (this.Valida())
+            {
+                this.Acceder();
+            }
         }
         private void CerrarSesion(object sender, FormClosedEventArgs e)
         {

@@ -368,7 +368,7 @@
             this.inventarioDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventarioDataGridView.Size = new System.Drawing.Size(1014, 506);
             this.inventarioDataGridView.TabIndex = 0;
-            this.inventarioDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioDataGridView_CellFormatting);
+            //this.inventarioDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.inventarioDataGridView_CellFormatting);
             // 
             // dataGridViewTextBoxColumn1
             // 

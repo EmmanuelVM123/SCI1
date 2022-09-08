@@ -8,12 +8,14 @@
     <ProjectGuid>{24EB408D-89B9-4945-A5EE-4FD0FE33279D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SCI1</RootNamespace>
-    <AssemblyName>SCI1</AssemblyName>
+    <AssemblyName>SCI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>C:\Users\Emman\Desktop\SCI\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,13 +26,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,6 +62,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Itsav2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
@@ -510,6 +513,7 @@
     <None Include="Resources\cerrar-sesion %281%29.png" />
     <None Include="Resources\contrasenas.png" />
     <None Include="Resources\contrasenas %281%29.png" />
+    <Content Include="Itsav2.ico" />
     <Content Include="Resources\60720_124583074365266_1695245198_n.jpg" />
     <Content Include="Resources\Custom-Icon-Design-Flatastic-4-Male-user-remove.ico" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-4-Package-add.ico" />
@@ -568,6 +572,7 @@
     <None Include="Resources\menos2.png" />
     <None Include="Resources\icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64.png" />
     <None Include="Resources\envelope.png" />
+    <None Include="Resources\icons8-crear-archivo-32.png" />
     <Content Include="Resources\Package-download-icon.png" />
     <Content Include="Resources\Package-upload-icon.png" />
     <None Include="Resources\pngegg.png" />

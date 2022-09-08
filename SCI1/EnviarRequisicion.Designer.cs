@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -54,17 +54,19 @@
             this.txtAsunto = new System.Windows.Forms.TextBox();
             this.txtCuerpo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgvArchivos = new System.Windows.Forms.DataGridView();
-            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdjuntar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.gbxDetallesEnvio = new System.Windows.Forms.GroupBox();
+            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvArchivos = new System.Windows.Forms.DataGridView();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.gbxEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).BeginInit();
             this.gbxDetallesEnvio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -203,7 +205,7 @@
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(228, 23);
             this.txtContraseña.TabIndex = 3;
-            this.txtContraseña.Text = "dohhfawxlrpzddlq";
+            this.txtContraseña.Text = "oebrwllmarjfdxdk";
             // 
             // txtCorreo
             // 
@@ -227,14 +229,14 @@
             this.dgvDestinatario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDestinatario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDestinatario.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDestinatario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDestinatario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDestinatario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.correoDestino});
@@ -251,6 +253,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Title = "Seleccione las requisiciones";
             // 
             // notifyIcon1
             // 
@@ -289,28 +292,6 @@
             this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 5;
             this.label8.Text = "Cuerpo:";
-            // 
-            // dgvArchivos
-            // 
-            this.dgvArchivos.AllowUserToAddRows = false;
-            this.dgvArchivos.AllowUserToDeleteRows = false;
-            this.dgvArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvArchivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvArchivos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArchivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.adjuntoArchivo});
-            this.dgvArchivos.Location = new System.Drawing.Point(85, 474);
-            this.dgvArchivos.Name = "dgvArchivos";
-            this.dgvArchivos.ReadOnly = true;
-            this.dgvArchivos.Size = new System.Drawing.Size(516, 143);
-            this.dgvArchivos.TabIndex = 6;
-            // 
-            // adjuntoArchivo
-            // 
-            this.adjuntoArchivo.HeaderText = "Archivos";
-            this.adjuntoArchivo.Name = "adjuntoArchivo";
-            this.adjuntoArchivo.ReadOnly = true;
             // 
             // btnAdjuntar
             // 
@@ -356,6 +337,33 @@
             this.gbxDetallesEnvio.TabStop = false;
             this.gbxDetallesEnvio.Text = "Detalles de envío";
             // 
+            // adjuntoArchivo
+            // 
+            this.adjuntoArchivo.HeaderText = "Archivos";
+            this.adjuntoArchivo.Name = "adjuntoArchivo";
+            this.adjuntoArchivo.ReadOnly = true;
+            // 
+            // dgvArchivos
+            // 
+            this.dgvArchivos.AllowUserToAddRows = false;
+            this.dgvArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvArchivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvArchivos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvArchivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArchivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.adjuntoArchivo});
+            this.dgvArchivos.Location = new System.Drawing.Point(85, 474);
+            this.dgvArchivos.Name = "dgvArchivos";
+            this.dgvArchivos.ReadOnly = true;
+            this.dgvArchivos.RowHeadersVisible = false;
+            this.dgvArchivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArchivos.Size = new System.Drawing.Size(516, 143);
+            this.dgvArchivos.TabIndex = 6;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // EnviarRequisicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,9 +383,10 @@
             this.gbxEnvio.ResumeLayout(false);
             this.gbxEnvio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinatario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).EndInit();
             this.gbxDetallesEnvio.ResumeLayout(false);
             this.gbxDetallesEnvio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArchivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -408,10 +417,11 @@
         private System.Windows.Forms.TextBox txtAsunto;
         private System.Windows.Forms.TextBox txtCuerpo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dgvArchivos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
         private System.Windows.Forms.Button btnAdjuntar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.GroupBox gbxDetallesEnvio;
+        private System.Windows.Forms.DataGridView dgvArchivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adjuntoArchivo;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

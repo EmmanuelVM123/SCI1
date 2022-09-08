@@ -563,6 +563,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_crear_archivo_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-crear-archivo-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_dinámica_negativa_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dinámica-negativa-64", resourceCulture);

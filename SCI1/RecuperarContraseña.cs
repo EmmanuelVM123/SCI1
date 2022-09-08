@@ -50,18 +50,19 @@ namespace SCI1
                     SqlDataReader reader = comando.ExecuteReader();
                     if (reader.Read() == true)
                     {
-                        string nombreUsuario = reader.GetString(2);
+                        string usuario = reader.GetString(1);
+                        string nombre = reader.GetString(2);
                         string correoSolicitud = reader.GetString(4);
                         string contraseña = reader.GetString(3);
 
                         var servicioCorreo = new SoporteCorreo();
                         servicioCorreo.enviarCorreo
                             (
-                                asunto: "Sistema de Recuperacuón de contraseña: Solicitud de recuperación de contraseña",
-                                cuerpo: "¡Hola, " + nombreUsuario + " su Solicitud de Recuperación de Contraseña ha sido exitosa!\n" + "Su contraseña de ingreso es: " + contraseña + "\nSin embargo, se le recomienda cambiar lo antes posible su contraseña un a vez ingrese al sistema, para esto contacte a un Administrador de Base de Datos",
+                                asunto: "Sistema de Recuperación de contraseña: Solicitud de recuperación de contraseña",
+                                cuerpo: "¡Hola, " + nombre + " su Solicitud de Recuperación de Contraseña ha sido exitosa!\n" + "Su Usuario es: " + usuario + "\n" + "Su contraseña de ingreso es: " + contraseña + "\nSin embargo, se le recomienda cambiar lo antes posible su contraseña un a vez ingrese al sistema, para esto contacte a un Administrador de Base de Datos",
                                 destinatario: new List<string> { correoSolicitud }                            
                             );
-                        return Convert.ToString(MessageBox.Show("Estimad@ " + nombreUsuario + ", el sistema de recuperación de contraseñas ha enviado al correo (" + correoSolicitud + ") que tiene registrado la contraseña correspondite a su usuario", "Recuperación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information));
+                        return Convert.ToString(MessageBox.Show("Estimad@ " + nombre + ", el sistema de recuperación de contraseñas ha enviado al correo (" + correoSolicitud + ") que tiene registrado la contraseña correspondite a su usuario", "Recuperación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information));
                     }
                     else
                     {
@@ -79,7 +80,15 @@ namespace SCI1
 
         public void btnRecuperarContraseña_Click(object sender, EventArgs e)
         {
-            string resultado = RecuperaContraseña(txtCorreo.Text);
+            if (this.txtCorreo.Text != "" && this.txtCorreo.Text != "Correo eléctronico")
+            {
+                string resultado = RecuperaContraseña(txtCorreo.Text);
+                this.errorProvider.Clear();
+            }
+            else
+            {
+                this.errorProvider.SetError(this.txtCorreo, "Ingrese un correo eléctronico válido");
+            }
         }
 
         private void btnMinizar_Click(object sender, EventArgs e)
@@ -89,8 +98,7 @@ namespace SCI1
 
         private void bntCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            
+            this.Close(); 
             IS.Show();
         }
 

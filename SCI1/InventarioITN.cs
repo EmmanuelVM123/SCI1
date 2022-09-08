@@ -105,6 +105,7 @@ namespace SCI1
                     this.inventarioITNTableAdapter.Update(this.idAreaComboBox.Text, this.nombreArticuloTextBox.Text, this.descripcionTextBox.Text, Convert.ToInt32(this.idUnidadMedidaComboBox.Text), Convert.ToInt32(this.cantidadNormalNumericUpDown.Value), Convert.ToInt32(this.cantidadCriticaNumericUpDown.Value),
                         id);                    
                     MessageBox.Show("Se han actualizados los datos ", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.errorProvider1.Clear();
                     this.CargaDatos();
                 }
             }
