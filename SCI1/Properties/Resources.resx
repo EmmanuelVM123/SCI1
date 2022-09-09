@@ -118,17 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="En lo que consiste el Reino de Dios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\En lo que consiste el Reino de Dios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Presentar bien el Evangelio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Presentar bien el Evangelio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Su Palabra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Su Palabra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Use Case Diagram (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Use Case Diagram (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IMG_20220426_123729" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_20220426_123729.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,26 +142,26 @@
   <data name="Bajas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bajas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maximize3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maximize3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Para airarse con el pecado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Para airarse con el pecado.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="78301644_473990513227161_1516089284728193024_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\78301644_473990513227161_1516089284728193024_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Siempre" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Siempre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maximize3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maximize3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="limpieza-de-datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\limpieza-de-datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="satellite-dish (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\satellite-dish (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="La Integridad de Dios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\La Integridad de Dios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Custom-Icon-Design-Flatastic-4-Inventory-maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Custom-Icon-Design-Flatastic-4-Inventory-maintenance.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minimize1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Minimize1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Iconshock-Real-Vista-Project-Managment-Data-management" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Iconshock-Real-Vista-Project-Managment-Data-management.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,14 +184,11 @@
   <data name="Apps-menu-editor-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Apps-menu-editor-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icono-cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo ITSAV1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo ITSAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoUI2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoUI2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maximize2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maximize2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cerrar-sesion (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar-sesion (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +205,8 @@
   <data name="JJR-" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\JJR-.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-crear-archivo-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-crear-archivo-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Use Case Diagram (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Use Case Diagram (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bajas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bajas.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +214,8 @@
   <data name="Custom-Icon-Design-Flatastic-5-Product-sale-report" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Custom-Icon-Design-Flatastic-5-Product-sale-report.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Membresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Membresia.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoUI2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoUI2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Reload-2-2-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reload-2-2-icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,6 +247,15 @@
   <data name="icons8-dinámica-positiva-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-dinámica-positiva-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-shrink-32 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-shrink-32 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contrasenas (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contrasenas (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads-Seo-Services-Services-portfolio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graphicloads-Seo-Services-Services-portfolio.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Tal como es Dios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tal como es Dios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,11 +271,11 @@
   <data name="Oración" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Oración.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="satellite-dish (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\satellite-dish (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngwing1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngwing.com (19)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new logo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new logo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-enter-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-enter-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Use Case Diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Use Case Diagram.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,14 +295,14 @@
   <data name="Logo ITSAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo ITSAV.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Su Palabra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Su Palabra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Siempre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Siempre.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Itsav2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Itsav2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,11 +316,8 @@
   <data name="2021-01-16 12.24.43" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2021-01-16 12.24.43.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-adjuntar-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-adjuntar-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="60720_124583074365266_1695245198_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\60720_124583074365266_1695245198_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Membresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Membresia.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IMG_20200529_080316" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_20200529_080316.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,8 +328,8 @@
   <data name="new logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contrasenas (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contrasenas (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-crear-archivo-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-crear-archivo-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Disciplina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Disciplina.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,8 +340,8 @@
   <data name="Awicons-Vista-Artistic-Chart-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Awicons-Vista-Artistic-Chart-add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Windows-Close-Program-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Windows-Close-Program-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Me parace bien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Me parace bien.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,11 +364,11 @@
   <data name="icons8-subir-correo-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-subir-correo-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="data-upload-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\data-upload-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icono-cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono-cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuario (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\main.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -367,8 +376,8 @@
   <data name="Más o menos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Más o menos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Graphicloads-Seo-Services-Services-portfolio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Graphicloads-Seo-Services-Services-portfolio.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-adjuntar-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-adjuntar-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agregar-archivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-archivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,11 +400,11 @@
   <data name="menu2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-enter-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-enter-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo ITSAV1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo ITSAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngwing.com (19)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngwing.com (19).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-resume-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-resume-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="APs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\APs.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -412,8 +421,8 @@
   <data name="new logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Use Case Diagram (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Use Case Diagram (4).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="limpieza-de-datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\limpieza-de-datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shut-down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shut-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -448,11 +457,11 @@
   <data name="94258733_563952254230986_1413690001601855488_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\94258733_563952254230986_1413690001601855488_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maximize2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maximize2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new logo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new logo5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="60720_124583074365266_1695245198_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\60720_124583074365266_1695245198_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Uno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Uno.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -469,11 +478,11 @@
   <data name="inventario (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventario (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-resume-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-resume-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngwing.com (19)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngwing.com (19).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="U" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\U.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Windows-Close-Program-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows-Close-Program-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-agregar-enlace-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-agregar-enlace-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -481,11 +490,8 @@
   <data name="Sí s" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sí s.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Use Case Diagram (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Use Case Diagram (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="En lo que consiste el Reino de Dios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\En lo que consiste el Reino de Dios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="data-upload-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\data-upload-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sí" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sí.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -511,16 +517,16 @@
   <data name="envelope" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\envelope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new logo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new logo5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new logo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new logo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Planes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Planes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Minimize1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minimize1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="U" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\U.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngwing1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngwing.com (19)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-alternar-pantalla-completa-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-alternar-pantalla-completa-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

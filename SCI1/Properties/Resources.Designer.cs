@@ -543,6 +543,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_alternar_pantalla_completa_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-alternar-pantalla-completa-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_aumentar_fuente_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-aumentar-fuente-50", resourceCulture);
@@ -666,6 +676,16 @@ namespace SCI1.Properties {
         internal static System.Drawing.Bitmap icons8_resume_70 {
             get {
                 object obj = ResourceManager.GetObject("icons8-resume-70", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_shrink_32__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-shrink-32 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -57,9 +57,11 @@
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCabecera = new System.Windows.Forms.Panel();
+            this.bntAchicar = new System.Windows.Forms.PictureBox();
             this.btnMinizar = new System.Windows.Forms.PictureBox();
-            this.bntCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAgrandar = new System.Windows.Forms.PictureBox();
+            this.bntCerrar = new System.Windows.Forms.PictureBox();
             this.panelInicial.SuspendLayout();
             this.panelLateral.SuspendLayout();
             this.panelBajas.SuspendLayout();
@@ -69,7 +71,9 @@
             this.panelUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bntAchicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgrandar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -548,8 +552,10 @@
             // panelCabecera
             // 
             this.panelCabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(195)))), ((int)(((byte)(161)))));
-            this.panelCabecera.Controls.Add(this.label1);
+            this.panelCabecera.Controls.Add(this.bntAchicar);
             this.panelCabecera.Controls.Add(this.btnMinizar);
+            this.panelCabecera.Controls.Add(this.label1);
+            this.panelCabecera.Controls.Add(this.btnAgrandar);
             this.panelCabecera.Controls.Add(this.bntCerrar);
             this.panelCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecera.Location = new System.Drawing.Point(0, 0);
@@ -558,31 +564,31 @@
             this.panelCabecera.TabIndex = 1;
             this.panelCabecera.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCabecera_MouseDown);
             // 
+            // bntAchicar
+            // 
+            this.bntAchicar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntAchicar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntAchicar.Image = global::SCI1.Properties.Resources.icons8_shrink_32__1_;
+            this.bntAchicar.Location = new System.Drawing.Point(1301, 3);
+            this.bntAchicar.Name = "bntAchicar";
+            this.bntAchicar.Size = new System.Drawing.Size(25, 25);
+            this.bntAchicar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bntAchicar.TabIndex = 11;
+            this.bntAchicar.TabStop = false;
+            this.bntAchicar.Click += new System.EventHandler(this.bntAchicar_Click);
+            // 
             // btnMinizar
             // 
             this.btnMinizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinizar.Image = global::SCI1.Properties.Resources.menos2;
-            this.btnMinizar.Location = new System.Drawing.Point(1305, 2);
+            this.btnMinizar.Location = new System.Drawing.Point(1262, 2);
             this.btnMinizar.Name = "btnMinizar";
             this.btnMinizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinizar.TabIndex = 8;
+            this.btnMinizar.TabIndex = 10;
             this.btnMinizar.TabStop = false;
             this.btnMinizar.Click += new System.EventHandler(this.btnMinizar_Click);
-            // 
-            // bntCerrar
-            // 
-            this.bntCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntCerrar.Image = global::SCI1.Properties.Resources.pngwing1;
-            this.bntCerrar.Location = new System.Drawing.Point(1342, 2);
-            this.bntCerrar.Name = "bntCerrar";
-            this.bntCerrar.Size = new System.Drawing.Size(25, 25);
-            this.bntCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bntCerrar.TabIndex = 7;
-            this.bntCerrar.TabStop = false;
-            this.bntCerrar.Click += new System.EventHandler(this.bntCerrar_Click);
             // 
             // label1
             // 
@@ -596,6 +602,32 @@
             this.label1.Text = "Bienvenido al Sistema de Control de Inventario de la Unidad Académica Lerdo ITSAV" +
     "";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAgrandar
+            // 
+            this.btnAgrandar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgrandar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgrandar.Image = global::SCI1.Properties.Resources.icons8_alternar_pantalla_completa_32;
+            this.btnAgrandar.Location = new System.Drawing.Point(1301, 2);
+            this.btnAgrandar.Name = "btnAgrandar";
+            this.btnAgrandar.Size = new System.Drawing.Size(25, 25);
+            this.btnAgrandar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgrandar.TabIndex = 8;
+            this.btnAgrandar.TabStop = false;
+            this.btnAgrandar.Click += new System.EventHandler(this.btnAgrandar_Click);
+            // 
+            // bntCerrar
+            // 
+            this.bntCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntCerrar.Image = global::SCI1.Properties.Resources.pngwing1;
+            this.bntCerrar.Location = new System.Drawing.Point(1340, 2);
+            this.bntCerrar.Name = "bntCerrar";
+            this.bntCerrar.Size = new System.Drawing.Size(25, 25);
+            this.bntCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bntCerrar.TabIndex = 7;
+            this.bntCerrar.TabStop = false;
+            this.bntCerrar.Click += new System.EventHandler(this.bntCerrar_Click);
             // 
             // SistemaControlInventario
             // 
@@ -611,7 +643,6 @@
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Control de Inventario";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SistemaControlInventario_Load_1);
             this.panelInicial.ResumeLayout(false);
             this.panelLateral.ResumeLayout(false);
@@ -623,7 +654,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bntAchicar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgrandar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
             this.ResumeLayout(false);
 
@@ -659,8 +692,10 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Panel panelCabecera;
-        private System.Windows.Forms.PictureBox btnMinizar;
+        private System.Windows.Forms.PictureBox btnAgrandar;
         private System.Windows.Forms.PictureBox bntCerrar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox bntAchicar;
+        private System.Windows.Forms.PictureBox btnMinizar;
     }
 }

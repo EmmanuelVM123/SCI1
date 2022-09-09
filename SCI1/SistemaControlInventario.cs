@@ -19,6 +19,8 @@ namespace SCI1
         }
         private void SistemaControlInventario_Load_1(object sender, EventArgs e)
         {
+            this.btnMinizar.Visible = true;
+            this.bntAchicar.Visible = false;
             btnResumen_Click(sender, e);
         }
         #region Arrastre
@@ -217,6 +219,26 @@ namespace SCI1
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void bntAchicar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+                this.bntAchicar.Visible = false;
+                this.btnAgrandar.Visible = true;
+            }
+        }
+
+        private void btnAgrandar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+                this.btnAgrandar.Visible = false;
+                this.bntAchicar.Visible = true;
+            }
         }
     }
 
