@@ -468,6 +468,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pngwing.com %2819%291.png" />
     <None Include="Resources\usuario %281%29.png" />
     <None Include="Resources\usuario.png" />
     <None Include="Resources\pngwing.com %2819%29.png" />

@@ -320,7 +320,7 @@ namespace SCI1
             }
 
             //Validar el campo Contraseña
-            if (this.cbxUnidadMedida.Text.Trim() == "" || this.cbxUnidadMedida.Text.Trim() == "0")
+            if (this.cbxUnidadMedida.Text.Trim() == "" || this.cbxUnidadMedida.Text.Trim() == "Seleccione o describa la unidad de medida")
             {
                 resultado = false;
                 this.errorProvider.SetError(this.cbxUnidadMedida, "Selecciona una unidad de medida");
@@ -390,5 +390,13 @@ namespace SCI1
             }
         }
 
+        private void dgvArticulosSolcitados_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvArticulosSolcitados.Rows.Count == 0)
+            {
+                this.btnEnviar.Enabled = false;
+                this.btnLimpiar.Enabled = false; 
+            }
+        }
     }
 }

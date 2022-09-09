@@ -125,7 +125,7 @@
             // bntCerrar
             // 
             this.bntCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bntCerrar.Image = global::SCI1.Properties.Resources.pngwing_com__19_;
+            this.bntCerrar.Image = global::SCI1.Properties.Resources.pngwing1;
             this.bntCerrar.Location = new System.Drawing.Point(738, 2);
             this.bntCerrar.Name = "bntCerrar";
             this.bntCerrar.Size = new System.Drawing.Size(25, 25);

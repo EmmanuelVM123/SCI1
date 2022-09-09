@@ -57,8 +57,8 @@
             this.btnAdjuntar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.gbxDetallesEnvio = new System.Windows.Forms.GroupBox();
-            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvArchivos = new System.Windows.Forms.DataGridView();
+            this.adjuntoArchivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -145,6 +145,7 @@
             // 
             // btnEnviarCorreo
             // 
+            this.btnEnviarCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnviarCorreo.Image = global::SCI1.Properties.Resources.Fasticon_Isimple_System_Email_send;
             this.btnEnviarCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnviarCorreo.Location = new System.Drawing.Point(10, 171);
@@ -242,6 +243,8 @@
             this.correoDestino});
             this.dgvDestinatario.Location = new System.Drawing.Point(655, 31);
             this.dgvDestinatario.Name = "dgvDestinatario";
+            this.dgvDestinatario.RowHeadersVisible = false;
+            this.dgvDestinatario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDestinatario.Size = new System.Drawing.Size(347, 292);
             this.dgvDestinatario.TabIndex = 3;
             // 
@@ -295,6 +298,7 @@
             // 
             // btnAdjuntar
             // 
+            this.btnAdjuntar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdjuntar.Image = global::SCI1.Properties.Resources.icons8_adjuntar_50;
             this.btnAdjuntar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdjuntar.Location = new System.Drawing.Point(85, 405);
@@ -307,6 +311,7 @@
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.Location = new System.Drawing.Point(361, 406);
@@ -337,12 +342,6 @@
             this.gbxDetallesEnvio.TabStop = false;
             this.gbxDetallesEnvio.Text = "Detalles de envío";
             // 
-            // adjuntoArchivo
-            // 
-            this.adjuntoArchivo.HeaderText = "Archivos";
-            this.adjuntoArchivo.Name = "adjuntoArchivo";
-            this.adjuntoArchivo.ReadOnly = true;
-            // 
             // dgvArchivos
             // 
             this.dgvArchivos.AllowUserToAddRows = false;
@@ -359,6 +358,13 @@
             this.dgvArchivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArchivos.Size = new System.Drawing.Size(516, 143);
             this.dgvArchivos.TabIndex = 6;
+            this.dgvArchivos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvArchivos_RowsRemoved);
+            // 
+            // adjuntoArchivo
+            // 
+            this.adjuntoArchivo.HeaderText = "Archivos";
+            this.adjuntoArchivo.Name = "adjuntoArchivo";
+            this.adjuntoArchivo.ReadOnly = true;
             // 
             // errorProvider
             // 

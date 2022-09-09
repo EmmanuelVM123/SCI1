@@ -152,5 +152,14 @@ namespace SCI1
                 this.btnEnviarCorreo.Enabled = false;
             }
         }
+
+        private void dgvArchivos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvArchivos.Rows.Count == 0)
+            {
+                this.btnLimpiar.Enabled = false;
+                this.btnEnviarCorreo.Enabled = false;
+            }
+        }
     }
 }

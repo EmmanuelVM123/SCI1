@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resumen));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resumen));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRecargar = new System.Windows.Forms.PictureBox();
@@ -167,15 +168,18 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 299);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 245);
+            this.panel2.Size = new System.Drawing.Size(1014, 210);
             this.panel2.TabIndex = 5;
             // 
             // btnEnviar
             // 
+            this.btnEnviar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnviar.Image = global::SCI1.Properties.Resources.icons8_generador_automotriz_32;
-            this.btnEnviar.Location = new System.Drawing.Point(334, 184);
+            this.btnEnviar.Location = new System.Drawing.Point(423, 163);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(296, 40);
+            this.btnEnviar.Size = new System.Drawing.Size(120, 40);
             this.btnEnviar.TabIndex = 12;
             this.btnEnviar.Text = "Generar requisición";
             this.btnEnviar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -186,8 +190,9 @@
             // 
             this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Image = global::SCI1.Properties.Resources.limpieza_de_datos;
-            this.btnLimpiar.Location = new System.Drawing.Point(423, 129);
+            this.btnLimpiar.Location = new System.Drawing.Point(423, 120);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(120, 40);
             this.btnLimpiar.TabIndex = 10;
@@ -206,7 +211,7 @@
             this.dgvArticulosSolcitados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -218,16 +223,27 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgvArticulosSolcitados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvArticulosSolcitados.EnableHeadersVisualStyles = false;
             this.dgvArticulosSolcitados.Location = new System.Drawing.Point(0, 0);
             this.dgvArticulosSolcitados.Name = "dgvArticulosSolcitados";
             this.dgvArticulosSolcitados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvArticulosSolcitados.RowHeadersWidth = 42;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvArticulosSolcitados.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulosSolcitados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvArticulosSolcitados.RowHeadersVisible = false;
+            this.dgvArticulosSolcitados.RowHeadersWidth = 42;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvArticulosSolcitados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvArticulosSolcitados.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvArticulosSolcitados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulosSolcitados.Size = new System.Drawing.Size(1014, 114);
             this.dgvArticulosSolcitados.TabIndex = 11;
+            this.dgvArticulosSolcitados.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvArticulosSolcitados_RowsRemoved);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -235,19 +251,19 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.Width = 82;
+            this.dataGridViewTextBoxColumn1.Width = 93;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Medida";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 73;
+            this.dataGridViewTextBoxColumn2.Width = 83;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Artículo";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 77;
+            this.dataGridViewTextBoxColumn3.Width = 83;
             // 
             // articuloARequisitar
             // 
@@ -279,12 +295,14 @@
             // 
             // btnSolicitar
             // 
-            this.btnSolicitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSolicitar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSolicitar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSolicitar.Enabled = false;
             this.btnSolicitar.Image = global::SCI1.Properties.Resources.icons8_insertar_fila_debajo_32;
             this.btnSolicitar.Location = new System.Drawing.Point(423, 223);
             this.btnSolicitar.Name = "btnSolicitar";
-            this.btnSolicitar.Size = new System.Drawing.Size(120, 41);
+            this.btnSolicitar.Size = new System.Drawing.Size(120, 40);
             this.btnSolicitar.TabIndex = 8;
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -301,14 +319,14 @@
             this.dgvArticulosASolicitar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvArticulosASolicitar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvArticulosASolicitar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulosASolicitar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulosASolicitar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvArticulosASolicitar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulosASolicitar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdArea,
@@ -328,8 +346,8 @@
             this.dgvArticulosASolicitar.ReadOnly = true;
             this.dgvArticulosASolicitar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvArticulosASolicitar.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvArticulosASolicitar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvArticulosASolicitar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvArticulosASolicitar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulosASolicitar.Size = new System.Drawing.Size(1014, 217);
             this.dgvArticulosASolicitar.TabIndex = 2;
@@ -430,13 +448,14 @@
             this.panelOtroArticulo.Controls.Add(this.label3);
             this.panelOtroArticulo.Controls.Add(this.label2);
             this.panelOtroArticulo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelOtroArticulo.Location = new System.Drawing.Point(0, 605);
+            this.panelOtroArticulo.Location = new System.Drawing.Point(0, 509);
             this.panelOtroArticulo.Name = "panelOtroArticulo";
             this.panelOtroArticulo.Size = new System.Drawing.Size(1014, 183);
             this.panelOtroArticulo.TabIndex = 6;
             // 
             // cbxCantidad
             // 
+            this.cbxCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbxCantidad.Location = new System.Drawing.Point(203, 63);
             this.cbxCantidad.Name = "cbxCantidad";
             this.cbxCantidad.Size = new System.Drawing.Size(272, 20);
@@ -444,11 +463,13 @@
             // 
             // btnSolicitarNuevo
             // 
-            this.btnSolicitarNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnSolicitarNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSolicitarNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSolicitarNuevo.Image = global::SCI1.Properties.Resources.icons8_crear_archivo_32;
             this.btnSolicitarNuevo.Location = new System.Drawing.Point(423, 130);
             this.btnSolicitarNuevo.Name = "btnSolicitarNuevo";
-            this.btnSolicitarNuevo.Size = new System.Drawing.Size(120, 41);
+            this.btnSolicitarNuevo.Size = new System.Drawing.Size(120, 40);
             this.btnSolicitarNuevo.TabIndex = 9;
             this.btnSolicitarNuevo.Text = "Solicitar nuevo";
             this.btnSolicitarNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -458,6 +479,7 @@
             // 
             // cbxUsar
             // 
+            this.cbxUsar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbxUsar.FormattingEnabled = true;
             this.cbxUsar.Items.AddRange(new object[] {
             "POR EL PERSONAL DE OFICINA.",
@@ -473,15 +495,16 @@
             // 
             // cbxAreaSolicitante
             // 
+            this.cbxAreaSolicitante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbxAreaSolicitante.FormattingEnabled = true;
             this.cbxAreaSolicitante.Items.AddRange(new object[] {
             "CIS - COORDINACIÓN/OFICINA",
-            "ITN - INTEN",
+            "ITN - INTENDENCIA",
             "MNT - MANTENIMIENTO",
             "SGR - SERVICIOS GENERALES",
             "LBC -LABORATORIO DE CÓMPUTO",
             "AMT - ARCHIVO MUERTO"});
-            this.cbxAreaSolicitante.Location = new System.Drawing.Point(203, 23);
+            this.cbxAreaSolicitante.Location = new System.Drawing.Point(204, 23);
             this.cbxAreaSolicitante.Name = "cbxAreaSolicitante";
             this.cbxAreaSolicitante.Size = new System.Drawing.Size(272, 21);
             this.cbxAreaSolicitante.TabIndex = 23;
@@ -489,6 +512,7 @@
             // 
             // cbxArticulo
             // 
+            this.cbxArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbxArticulo.DataSource = this.inventarioBindingSource;
             this.cbxArticulo.DisplayMember = "NombreArticulo";
             this.cbxArticulo.FormattingEnabled = true;
@@ -500,6 +524,7 @@
             // 
             // cbxUnidadMedida
             // 
+            this.cbxUnidadMedida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbxUnidadMedida.FormattingEnabled = true;
             this.cbxUnidadMedida.Items.AddRange(new object[] {
             "PZS",
@@ -513,6 +538,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(205, 86);
             this.label6.Name = "label6";
@@ -522,6 +548,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(499, 48);
             this.label5.Name = "label5";
@@ -531,6 +558,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(205, 48);
             this.label4.Name = "label4";
@@ -540,6 +568,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(499, 8);
             this.label3.Name = "label3";
@@ -549,6 +578,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(205, 8);
             this.label2.Name = "label2";
@@ -562,13 +592,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1014, 788);
+            this.ClientSize = new System.Drawing.Size(1014, 692);
             this.Controls.Add(this.panelOtroArticulo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(900, 718);
             this.Name = "Resumen";
             this.Text = "Resumen";
             this.Load += new System.EventHandler(this.Resumen_Load);

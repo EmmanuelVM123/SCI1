@@ -1143,6 +1143,16 @@ namespace SCI1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing1 {
+            get {
+                object obj = ResourceManager.GetObject("pngwing1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Presentar_bien_el_Evangelio {
             get {
                 object obj = ResourceManager.GetObject("Presentar bien el Evangelio", resourceCulture);

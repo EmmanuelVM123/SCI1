@@ -56,6 +56,10 @@
             this.btnResumen = new System.Windows.Forms.Button();
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelCabecera = new System.Windows.Forms.Panel();
+            this.btnMinizar = new System.Windows.Forms.PictureBox();
+            this.bntCerrar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelInicial.SuspendLayout();
             this.panelLateral.SuspendLayout();
             this.panelBajas.SuspendLayout();
@@ -64,6 +68,9 @@
             this.panelUsuarioResumen.SuspendLayout();
             this.panelUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInicial
@@ -71,9 +78,9 @@
             this.panelInicial.Controls.Add(this.panelContenedor);
             this.panelInicial.Controls.Add(this.panelLateral);
             this.panelInicial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelInicial.Location = new System.Drawing.Point(0, 0);
+            this.panelInicial.Location = new System.Drawing.Point(0, 30);
             this.panelInicial.Name = "panelInicial";
-            this.panelInicial.Size = new System.Drawing.Size(1370, 749);
+            this.panelInicial.Size = new System.Drawing.Size(1370, 719);
             this.panelInicial.TabIndex = 0;
             // 
             // panelContenedor
@@ -83,7 +90,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(260, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1110, 749);
+            this.panelContenedor.Size = new System.Drawing.Size(1110, 719);
             this.panelContenedor.TabIndex = 1;
             // 
             // panelLateral
@@ -100,7 +107,7 @@
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(260, 749);
+            this.panelLateral.Size = new System.Drawing.Size(260, 719);
             this.panelLateral.TabIndex = 0;
             // 
             // btnCerrarSesion
@@ -538,18 +545,72 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panelCabecera
+            // 
+            this.panelCabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(195)))), ((int)(((byte)(161)))));
+            this.panelCabecera.Controls.Add(this.label1);
+            this.panelCabecera.Controls.Add(this.btnMinizar);
+            this.panelCabecera.Controls.Add(this.bntCerrar);
+            this.panelCabecera.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCabecera.Location = new System.Drawing.Point(0, 0);
+            this.panelCabecera.Name = "panelCabecera";
+            this.panelCabecera.Size = new System.Drawing.Size(1370, 30);
+            this.panelCabecera.TabIndex = 1;
+            this.panelCabecera.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCabecera_MouseDown);
+            // 
+            // btnMinizar
+            // 
+            this.btnMinizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinizar.Image = global::SCI1.Properties.Resources.menos2;
+            this.btnMinizar.Location = new System.Drawing.Point(1305, 2);
+            this.btnMinizar.Name = "btnMinizar";
+            this.btnMinizar.Size = new System.Drawing.Size(25, 25);
+            this.btnMinizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinizar.TabIndex = 8;
+            this.btnMinizar.TabStop = false;
+            this.btnMinizar.Click += new System.EventHandler(this.btnMinizar_Click);
+            // 
+            // bntCerrar
+            // 
+            this.bntCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bntCerrar.Image = global::SCI1.Properties.Resources.pngwing1;
+            this.bntCerrar.Location = new System.Drawing.Point(1342, 2);
+            this.bntCerrar.Name = "bntCerrar";
+            this.bntCerrar.Size = new System.Drawing.Size(25, 25);
+            this.bntCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bntCerrar.TabIndex = 7;
+            this.bntCerrar.TabStop = false;
+            this.bntCerrar.Click += new System.EventHandler(this.bntCerrar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(13, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(805, 24);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Bienvenido al Sistema de Control de Inventario de la Unidad Académica Lerdo ITSAV" +
+    "";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SistemaControlInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelInicial);
+            this.Controls.Add(this.panelCabecera);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1364, 718);
             this.Name = "SistemaControlInventario";
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SistemaControlInventario";
+            this.Text = "Sistema de Control de Inventario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SistemaControlInventario_Load_1);
             this.panelInicial.ResumeLayout(false);
@@ -560,6 +621,10 @@
             this.panelUsuarioResumen.ResumeLayout(false);
             this.panelUsuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelCabecera.ResumeLayout(false);
+            this.panelCabecera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bntCerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -593,5 +658,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Panel panelCabecera;
+        private System.Windows.Forms.PictureBox btnMinizar;
+        private System.Windows.Forms.PictureBox bntCerrar;
+        private System.Windows.Forms.Label label1;
     }
 }
