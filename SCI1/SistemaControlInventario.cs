@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.TextFormatting;
 
 namespace SCI1
 {
@@ -21,6 +22,7 @@ namespace SCI1
         {
             this.btnMinizar.Visible = true;
             this.bntAchicar.Visible = false;
+            this.btnReportes.Visible = false;
             btnResumen_Click(sender, e);
         }
         #region Arrastre
@@ -199,7 +201,8 @@ namespace SCI1
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está segur@ de cerrar la sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
+            
+            if (MessageBox.Show("¿Está segur@ de cerrar la sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -207,7 +210,12 @@ namespace SCI1
 
         private void bntCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            InicioSecion IS = new InicioSecion();
+            if (MessageBox.Show("¿Está segur@ de cerrar la Sesión? y salir de la Apliación", "Cerrar sesión y salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+                IS.Close();
+            }
         }
 
         private void btnMinizar_Click(object sender, EventArgs e)
@@ -223,26 +231,17 @@ namespace SCI1
 
         private void bntAchicar_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Maximized)
-            {
-                WindowState = FormWindowState.Normal;
+                this.Size = new Size(1370, 749);
                 this.bntAchicar.Visible = false;
-                this.btnAgrandar.Visible = true;
-            }
+                this.btnAgrandar.Visible = true;   
         }
 
         private void btnAgrandar_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
+        {  
+                this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                this.Location = Screen.PrimaryScreen.WorkingArea.Location;  
                 this.btnAgrandar.Visible = false;
-                this.bntAchicar.Visible = true;
-            }
+                this.bntAchicar.Visible = true;   
         }
-    }
-
-    class panelContenedor
-    {
     }
 }

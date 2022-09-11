@@ -181,7 +181,7 @@
             this.linkRecuperarPass.Size = new System.Drawing.Size(164, 22);
             this.linkRecuperarPass.TabIndex = 0;
             this.linkRecuperarPass.TabStop = true;
-            this.linkRecuperarPass.Text = "¿Olvido su contraseña?";
+            this.linkRecuperarPass.Text = "¿Olvidó su contraseña?";
             this.linkRecuperarPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRecuperarPass_LinkClicked);
             // 
             // pictureBox3

@@ -398,5 +398,10 @@ namespace SCI1
                 this.btnLimpiar.Enabled = false; 
             }
         }
+
+        private void panelOtroArticulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

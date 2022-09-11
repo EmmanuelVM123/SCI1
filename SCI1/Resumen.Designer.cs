@@ -452,6 +452,7 @@
             this.panelOtroArticulo.Name = "panelOtroArticulo";
             this.panelOtroArticulo.Size = new System.Drawing.Size(1014, 183);
             this.panelOtroArticulo.TabIndex = 6;
+            this.panelOtroArticulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelOtroArticulo_Paint);
             // 
             // cbxCantidad
             // 

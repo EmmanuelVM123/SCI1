@@ -120,7 +120,7 @@
             this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.Image = global::SCI1.Properties.Resources.icons8_cierre_de_sesión_redondeado_hacia_la_izquierda_64;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 910);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 863);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(243, 71);
             this.btnCerrarSesion.TabIndex = 7;
@@ -134,7 +134,7 @@
             this.panelBajas.Controls.Add(this.btnDisminuirExistencia);
             this.panelBajas.Controls.Add(this.btnEliminarArticulo);
             this.panelBajas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBajas.Location = new System.Drawing.Point(0, 810);
+            this.panelBajas.Location = new System.Drawing.Point(0, 763);
             this.panelBajas.Name = "panelBajas";
             this.panelBajas.Size = new System.Drawing.Size(243, 100);
             this.panelBajas.TabIndex = 6;
@@ -192,7 +192,7 @@
             this.btnBajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBajas.Image = global::SCI1.Properties.Resources.data_download_icon__1_;
-            this.btnBajas.Location = new System.Drawing.Point(0, 760);
+            this.btnBajas.Location = new System.Drawing.Point(0, 713);
             this.btnBajas.Name = "btnBajas";
             this.btnBajas.Size = new System.Drawing.Size(243, 50);
             this.btnBajas.TabIndex = 5;
@@ -208,7 +208,7 @@
             this.panelAltas.Controls.Add(this.btnAñadirExistencia);
             this.panelAltas.Controls.Add(this.btnAñadirArticulo);
             this.panelAltas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAltas.Location = new System.Drawing.Point(0, 660);
+            this.panelAltas.Location = new System.Drawing.Point(0, 613);
             this.panelAltas.Name = "panelAltas";
             this.panelAltas.Size = new System.Drawing.Size(243, 100);
             this.panelAltas.TabIndex = 4;
@@ -266,7 +266,7 @@
             this.btnAltas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltas.Image = global::SCI1.Properties.Resources.data_upload_icon;
-            this.btnAltas.Location = new System.Drawing.Point(0, 610);
+            this.btnAltas.Location = new System.Drawing.Point(0, 563);
             this.btnAltas.Name = "btnAltas";
             this.btnAltas.Size = new System.Drawing.Size(243, 50);
             this.btnAltas.TabIndex = 3;
@@ -287,7 +287,7 @@
             this.panelAreas.Controls.Add(this.button2);
             this.panelAreas.Controls.Add(this.btnCIS);
             this.panelAreas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAreas.Location = new System.Drawing.Point(0, 310);
+            this.panelAreas.Location = new System.Drawing.Point(0, 263);
             this.panelAreas.Name = "panelAreas";
             this.panelAreas.Size = new System.Drawing.Size(243, 300);
             this.panelAreas.TabIndex = 2;
@@ -444,7 +444,7 @@
             this.btnIAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIAreas.Image = global::SCI1.Properties.Resources.Custom_Icon_Design_Flatastic_4_Inventory_maintenance;
             this.btnIAreas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIAreas.Location = new System.Drawing.Point(0, 260);
+            this.btnIAreas.Location = new System.Drawing.Point(0, 213);
             this.btnIAreas.Name = "btnIAreas";
             this.btnIAreas.Size = new System.Drawing.Size(243, 50);
             this.btnIAreas.TabIndex = 1;
@@ -463,7 +463,7 @@
             this.panelUsuarioResumen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsuarioResumen.Location = new System.Drawing.Point(0, 0);
             this.panelUsuarioResumen.Name = "panelUsuarioResumen";
-            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 260);
+            this.panelUsuarioResumen.Size = new System.Drawing.Size(243, 213);
             this.panelUsuarioResumen.TabIndex = 0;
             // 
             // btnReportes
